@@ -12,6 +12,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.Random;
 
@@ -31,7 +32,7 @@ public class WindColumnObject
     public WindColumnObject(XydraxEliteEntity owner, BlockPos startPos, int life)
     {
         this.owner = owner;
-        this.level = (ServerLevel)owner.getLevel();
+        this.level = (ServerLevel)owner.level();
         this.position = startPos;
         this.life = life;
 
@@ -114,8 +115,8 @@ public class WindColumnObject
     {
         for(int i = 0; i < this.height; i += 3)
         {
-            BlockPos particlePos = this.position.offset(0.5, i, 0.5);
-            this.level.sendParticles(new BlockParticleOption(ParticleTypes.FALLING_DUST, Blocks.WHITE_WOOL.defaultBlockState()), particlePos.getX(), particlePos.getY(), particlePos.getZ(), 1, 0.15, 0, 0.15, 2.0);
+            Vec3 particlePos = new Vec3(this.position.getX() + 0.5, this.position.getY() + i, this.position.getZ() + 0.5);
+            this.level.sendParticles(new BlockParticleOption(ParticleTypes.FALLING_DUST, Blocks.WHITE_WOOL.defaultBlockState()), particlePos.x(), particlePos.y(), particlePos.z(), 1, 0.15, 0, 0.15, 2.0);
         }
     }
 

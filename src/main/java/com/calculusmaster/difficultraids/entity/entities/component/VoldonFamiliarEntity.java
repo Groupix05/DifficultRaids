@@ -86,7 +86,7 @@ public class VoldonFamiliarEntity extends AbstractPillagerVariant
     {
         super.readAdditionalSaveData(pCompound);
 
-        this.voldon = pCompound.getInt("VoldonID") == -1 ? null : (VoldonEliteEntity)this.level.getEntity(pCompound.getInt("VoldonID"));
+        this.voldon = pCompound.getInt("VoldonID") == -1 ? null : (VoldonEliteEntity)this.level().getEntity(pCompound.getInt("VoldonID"));
     }
 
     @Override
@@ -139,7 +139,7 @@ public class VoldonFamiliarEntity extends AbstractPillagerVariant
 
         if(this.voldon == null || this.voldon.isDeadOrDying())
         {
-            this.hurt(DamageSource.STARVE, this.getHealth() + 1.0F);
+            this.hurt(this.damageSources().starve(), this.getHealth() + 1.0F);
             return;
         }
 

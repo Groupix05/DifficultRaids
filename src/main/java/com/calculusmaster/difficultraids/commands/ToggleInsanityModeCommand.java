@@ -29,7 +29,7 @@ public class ToggleInsanityModeCommand
                 })
                 .executes(css -> {
                     ServerPlayer player = css.getSource().getPlayerOrException();
-                    ServerLevel level = player.getLevel();
+                    ServerLevel level = player.serverLevel();
                     Raid raid = level.getRaidAt(player.blockPosition());
 
                     boolean current = DifficultRaidsConfig.INSANITY_MODE.get();
@@ -40,7 +40,7 @@ public class ToggleInsanityModeCommand
 
                     if(raid != null) result.append(Component.literal(" (This change will apply on the next wave of the current Raid.)"));
 
-                    css.getSource().sendSuccess(result, true);
+                    css.getSource().sendSuccess(() -> result, true);
                     return 1;
         });
 

@@ -3,6 +3,7 @@ package com.calculusmaster.difficultraids.entity.entities.component;
 import com.calculusmaster.difficultraids.entity.entities.raider.AshenmancerIllagerEntity;
 import com.calculusmaster.difficultraids.raids.RaidDifficulty;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -27,7 +28,7 @@ public class AshenadoObject
     private final ServerLevel level;
     private final RaidDifficulty raidDifficulty;
 
-    private Vec3 center;
+    private Vec3i center;
     private int life;
 
     private AABB coreArea;
@@ -35,10 +36,10 @@ public class AshenadoObject
     private List<Vec3> particlePositions;
     private boolean firstTick;
 
-    public AshenadoObject(AshenmancerIllagerEntity owner, RaidDifficulty raidDifficulty, Vec3 center, int life)
+    public AshenadoObject(AshenmancerIllagerEntity owner, RaidDifficulty raidDifficulty, Vec3i center, int life)
     {
         this.owner = owner;
-        this.level = (ServerLevel)owner.getLevel();
+        this.level = (ServerLevel)owner.level();
         this.raidDifficulty = raidDifficulty;
         this.center = center;
         this.life = life;
@@ -51,10 +52,11 @@ public class AshenadoObject
     public AshenadoObject(AshenmancerIllagerEntity owner, CompoundTag tag)
     {
         this.owner = owner;
-        this.level = (ServerLevel)owner.getLevel();
+        this.level = (ServerLevel)owner.level();
 
         this.raidDifficulty = RaidDifficulty.valueOf(tag.getString("AshenadoRaidDifficulty"));
-        this.center = new Vec3(tag.getDouble("AshenadoCenterX"), tag.getDouble("AshenadoCenterY"), tag.getDouble("AshenadoCenterZ"));
+        Vec3 center = new Vec3(tag.getDouble("AshenadoCenterX"), tag.getDouble("AshenadoCenterY"), tag.getDouble("AshenadoCenterZ"));
+        this.center = new Vec3i((int) center.x, (int) center.y, (int) center.z);
         this.life = tag.getInt("AshenadoLife");
 
         this.firstTick = true;
@@ -65,9 +67,9 @@ public class AshenadoObject
     public void save(CompoundTag tag)
     {
         tag.putString("AshenadoRaidDifficulty", this.raidDifficulty.toString());
-        tag.putDouble("AshenadoCenterX", this.center.x());
-        tag.putDouble("AshenadoCenterY", this.center.y());
-        tag.putDouble("AshenadoCenterZ", this.center.z());
+        tag.putDouble("AshenadoCenterX", this.center.getX());
+        tag.putDouble("AshenadoCenterY", this.center.getY());
+        tag.putDouble("AshenadoCenterZ", this.center.getZ());
         tag.putInt("AshenadoLife", this.life);
     }
 
@@ -78,11 +80,11 @@ public class AshenadoObject
 
         this.coreArea = new AABB(new BlockPos(this.center))
                 .inflate(radius * 0.5, 0, radius * 0.5)
-                .setMaxY(this.center.y() + height);
+                .setMaxY(this.center.getY() + height);
 
         this.fullArea = new AABB(new BlockPos(this.center))
                 .inflate(radius, 0, radius)
-                .setMaxY(this.center.y() + height);
+                .setMaxY(this.center.getY() + height);
 
         this.particlePositions = new ArrayList<>();
         for(float y = 0; y < height; y += 0.25)
@@ -115,7 +117,10 @@ public class AshenadoObject
 
             if(!this.firstTick && this.life % 100 == 0)
             {
-                this.center = this.center.add(5 - this.level.random.nextInt(11), 0, 5 - this.level.random.nextInt(11));
+//                this.center = this.center.add(5 - this.level.random.nextInt(11), 0, 5 - this.level.random.nextInt(11));
+                this.center = new Vec3i(this.center.getX() + 5 - this.level.random.nextInt(11),
+                                        this.center.getY(),
+                                        this.center.getZ() + 5 - this.level.random.nextInt(11));
                 this.generateArea();
             }
 
@@ -146,7 +151,9 @@ public class AshenadoObject
 
         this.level
                 .getEntitiesOfClass(LivingEntity.class, this.coreArea, validTarget)
-                .forEach(l -> l.hurt(DamageSource.mobAttack(this.owner).bypassArmor().bypassEnchantments().bypassMagic(), 2.0F));
+                // this damage is supposed to bypass armor, enchantments, and magic.
+                // but idk how to make that happen. so for now it will do none of those things
+                .forEach(l -> l.hurt(l.damageSources().mobAttack(this.owner), 2.0F));
     }
 
     public boolean isComplete()
@@ -154,7 +161,7 @@ public class AshenadoObject
         return this.life == 0;
     }
 
-    public Vec3 getCenter()
+    public Vec3i getCenter()
     {
         return this.center;
     }

@@ -7,7 +7,9 @@ import com.calculusmaster.difficultraids.util.Compat;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -69,7 +71,7 @@ public class FrostIllagerEntity extends AbstractEvokerVariant
     @Override
     public boolean hurt(DamageSource pSource, float pAmount)
     {
-        return super.hurt(pSource, pSource.isProjectile() ? pAmount * 2 : pAmount);
+        return super.hurt(pSource, pSource.is(DamageTypeTags.IS_PROJECTILE) ? pAmount * 2 : pAmount);
     }
 
     @Override
@@ -98,7 +100,7 @@ public class FrostIllagerEntity extends AbstractEvokerVariant
         {
             final AABB aabb = this.getBoundingBox().inflate(this.config().frostmage.slownessAuraRadius);
 
-            this.level.getEntitiesOfClass(LivingEntity.class, aabb, e -> !e.isAlliedTo(this) && !e.hasEffect(MobEffects.MOVEMENT_SLOWDOWN) && (!(e instanceof Player p) || !p.isSpectator() && !p.isCreative())).forEach(e -> e.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 5, 3)));
+            this.level().getEntitiesOfClass(LivingEntity.class, aabb, e -> !e.isAlliedTo(this) && !e.hasEffect(MobEffects.MOVEMENT_SLOWDOWN) && (!(e instanceof Player p) || !p.isSpectator() && !p.isCreative())).forEach(e -> e.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20 * 5, 3)));
         }
 
         //Barrage
@@ -117,7 +119,7 @@ public class FrostIllagerEntity extends AbstractEvokerVariant
 
                 for(int i = 0; i < size; i++)
                 {
-                    FrostSnowballEntity snowball = DifficultRaidsEntityTypes.FROST_SNOWBALL.get().create(this.level);
+                    FrostSnowballEntity snowball = DifficultRaidsEntityTypes.FROST_SNOWBALL.get().create(this.level());
                     snowball.setOwner(this);
                     snowball.setPos(this.getEyePosition().x(), this.getEyePosition().y() - 0.2, this.getEyePosition().z());
                     snowball.setDamage(this.config().frostmage.barrageSnowballDamage);
@@ -128,7 +130,7 @@ public class FrostIllagerEntity extends AbstractEvokerVariant
                     double targetSnowballY = targetY - snowball.getY();
                     snowball.shoot(targetX, targetSnowballY + distanceY, targetZ, 1.6F, 14.0F);
 
-                    this.level.addFreshEntity(snowball);
+                    this.level().addFreshEntity(snowball);
                 }
 
                 this.playSound(SoundEvents.SNOW_GOLEM_SHOOT, 1.0F, 0.4F / (this.random.nextFloat() * 0.4F + 0.8F));
@@ -167,7 +169,7 @@ public class FrostIllagerEntity extends AbstractEvokerVariant
 
                 for(int i = 0; i < size; i++)
                 {
-                    FrostSnowballEntity snowball = DifficultRaidsEntityTypes.FROST_SNOWBALL.get().create(FrostIllagerEntity.this.level);
+                    FrostSnowballEntity snowball = DifficultRaidsEntityTypes.FROST_SNOWBALL.get().create(FrostIllagerEntity.this.level());
                     snowball.setOwner(FrostIllagerEntity.this);
                     snowball.setPos(FrostIllagerEntity.this.getEyePosition().x(), FrostIllagerEntity.this.getEyePosition().y() - 0.2, FrostIllagerEntity.this.getEyePosition().z());
                     snowball.setDamage(damage);
@@ -179,7 +181,7 @@ public class FrostIllagerEntity extends AbstractEvokerVariant
                     double distanceY = Math.sqrt(targetX * targetX + targetZ * targetZ) * (double)0.2F;
 
                     snowball.shoot(targetX, targetSnowballY + distanceY, targetZ, 1.6F, 3.0F);
-                    FrostIllagerEntity.this.level.addFreshEntity(snowball);
+                    FrostIllagerEntity.this.level().addFreshEntity(snowball);
                 }
             }
         }

@@ -65,7 +65,7 @@ public class DRForgeBusEvents
     @SubscribeEvent
     public static void onSoundPlayedAtPosition(PlayLevelSoundEvent.AtPosition event)
     {
-        BlockPos pos = new BlockPos(event.getPosition().x(), event.getPosition().y(), event.getPosition().z());
+        BlockPos pos = new BlockPos((int)event.getPosition().x(), (int)event.getPosition().y(), (int)event.getPosition().z());
         if(event.getSource().equals(SoundSource.WEATHER) && (event.getLevel() instanceof ServerLevel sl && sl.getRaidAt(pos) != null))
         {
             if(event.getSound().equals(SoundEvents.LIGHTNING_BOLT_THUNDER)) event.setNewVolume(event.getOriginalVolume() / 100);
@@ -180,7 +180,7 @@ public class DRForgeBusEvents
     @SubscribeEvent
     public static void onLivingDeath(LivingDeathEvent event)
     {
-        if(event.getEntity() instanceof Raider raider && raider.getLevel() instanceof ServerLevel serverLevel)
+        if(event.getEntity() instanceof Raider raider && raider.level() instanceof ServerLevel serverLevel)
         {
             Optional.ofNullable(serverLevel.getNearestEntity(
                     NecromancerIllagerEntity.class,
@@ -205,7 +205,7 @@ public class DRForgeBusEvents
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event)
     {
-        if(event.getSource().equals(DamageSource.WITHER)
+        if(event.getSource().equals(event.getSource().getEntity().damageSources().wither())
                 && event.getSource().getEntity() instanceof AshenmancerIllagerEntity ashenmancer
                 && ashenmancer.isInDifficultRaid()
         )

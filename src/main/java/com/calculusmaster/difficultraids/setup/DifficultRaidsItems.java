@@ -6,6 +6,7 @@ import com.calculusmaster.difficultraids.items.GMArmorItem;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -21,7 +22,7 @@ public class DifficultRaidsItems
 {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, DifficultRaids.MODID);
 
-    private static final Supplier<Item.Properties> DEFAULT_TOTEM_PROPERTIES = () -> new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_COMBAT).rarity(Rarity.UNCOMMON).fireResistant();
+    private static final Supplier<Item.Properties> DEFAULT_TOTEM_PROPERTIES = () -> new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).fireResistant();
 
     //Totems
 
@@ -64,16 +65,16 @@ public class DifficultRaidsItems
     //Armor
 
     public static final RegistryObject<Item> GRANDMASTER_HELMET =
-            ITEMS.register("grandmaster_helmet", () -> new GMArmorItem(EquipmentSlot.HEAD));
+            ITEMS.register("grandmaster_helmet", () -> new GMArmorItem(ArmorItem.Type.HELMET));
 
     public static final RegistryObject<Item> GRANDMASTER_CHESTPLATE =
-            ITEMS.register("grandmaster_chestplate", () -> new GMArmorItem(EquipmentSlot.CHEST));
+            ITEMS.register("grandmaster_chestplate", () -> new GMArmorItem(ArmorItem.Type.CHESTPLATE));
 
     public static final RegistryObject<Item> GRANDMASTER_LEGGINGS =
-            ITEMS.register("grandmaster_leggings", () -> new GMArmorItem(EquipmentSlot.LEGS));
+            ITEMS.register("grandmaster_leggings", () -> new GMArmorItem(ArmorItem.Type.LEGGINGS));
 
     public static final RegistryObject<Item> GRANDMASTER_BOOTS =
-            ITEMS.register("grandmaster_boots", () -> new GMArmorItem(EquipmentSlot.FEET));
+            ITEMS.register("grandmaster_boots", () -> new GMArmorItem(ArmorItem.Type.BOOTS));
 
     //Spawn Eggs
     public static final RegistryObject<Item> SPAWN_EGG_WARRIOR_ILLAGER =
@@ -105,7 +106,7 @@ public class DifficultRaidsItems
 
     private static <T extends Mob> RegistryObject<Item> registerSpawnEgg(String name, RegistryObject<EntityType<T>> entityType, int highlight)
     {
-        return ITEMS.register(name + "_spawn_egg", () -> new ForgeSpawnEggItem(entityType, 0x565B5C, highlight, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+        return ITEMS.register(name + "_spawn_egg", () -> new ForgeSpawnEggItem(entityType, 0x565B5C, highlight, new Item.Properties()));
     }
 
 

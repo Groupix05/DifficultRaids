@@ -13,15 +13,21 @@ import java.util.List;
 
 public class GMArmorItem extends ArmorItem
 {
-    private static final Properties DEFAULT_PROPERTIES = new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_COMBAT).rarity(Rarity.EPIC).fireResistant();
+    private static final Properties DEFAULT_PROPERTIES = new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant();
 
-    public GMArmorItem(EquipmentSlot pSlot)
+    public GMArmorItem(ArmorItem.Type pSlot)
     {
+//        ArmorItem.Type[] types = {Type.HELMET, Type.CHESTPLATE, Type.LEGGINGS, Type.BOOTS};
+//        for(ArmorItem.Type type: types) {
+//            if (pSlot.equals(type.getSlot())) {
+//                super(ArmorMaterials.NETHERITE, type, DEFAULT_PROPERTIES);
+//            }
+//        }
         super(ArmorMaterials.NETHERITE, pSlot, DEFAULT_PROPERTIES);
     }
 
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player)
+    public void onInventoryTick(ItemStack stack, Level level, Player player, int slotIndex, int selectedIndex)
     {
         if(this.hasFullSet(player))
         {

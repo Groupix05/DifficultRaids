@@ -4,6 +4,7 @@ import com.calculusmaster.difficultraids.entity.entities.core.AbstractPillagerVa
 import com.calculusmaster.difficultraids.setup.DifficultRaidsEnchantments;
 import com.calculusmaster.difficultraids.util.Compat;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
@@ -97,7 +98,8 @@ public class AssassinIllagerEntity extends AbstractPillagerVariant
         {
             if(this.distanceTo(target) > 8 && this.canTeleport() && this.random.nextFloat() < 0.25F)
             {
-                BlockPos targetPos = new BlockPos(target.getEyePosition()).offset(this.random.nextInt(5) - 2, 0, this.random.nextInt(5) - 2);
+                Vec3i eye_pos = new Vec3i((int)target.getEyePosition().x, (int)target.getEyePosition().y, (int)target.getEyePosition().z);
+                BlockPos targetPos = new BlockPos(eye_pos).offset(this.random.nextInt(5) - 2, 0, this.random.nextInt(5) - 2);
                 this.randomTeleport(targetPos.getX(), targetPos.getY(), targetPos.getZ(), true);
 
                 this.teleportCooldown = this.config().assassin.teleportCooldown;

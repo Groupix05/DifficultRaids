@@ -2,7 +2,10 @@ package com.calculusmaster.difficultraids.mixins;
 
 import com.calculusmaster.difficultraids.setup.DifficultRaidsItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -57,7 +60,7 @@ public abstract class LivingEntityMixin extends Entity
     @Inject(at = @At("HEAD"), method = "checkTotemDeathProtection", cancellable = true)
     private void difficultraids_useCustomTotem(DamageSource damageSource, CallbackInfoReturnable<Boolean> callback)
     {
-        if(damageSource.isBypassInvul()) callback.setReturnValue(false);
+        if(damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) callback.setReturnValue(false);
 
         final Item totemInvisibility = DifficultRaidsItems.TOTEM_OF_INVISIBILITY.get();
         final Item totemLightning = DifficultRaidsItems.TOTEM_OF_LIGHTNING.get();
@@ -102,7 +105,7 @@ public abstract class LivingEntityMixin extends Entity
             {
                 this.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 600, 1));
 
-                this.level
+                this.level()
                         .getEntitiesOfClass(Monster.class, new AABB(this.blockPosition()).inflate(5.0D))
                         .stream()
                         .filter(Monster::isAlive)
@@ -112,23 +115,23 @@ public abstract class LivingEntityMixin extends Entity
             //Totem of Lightning
             if(totem.is(totemLightning))
             {
-                this.level
+                this.level()
                         .getEntitiesOfClass(Monster.class, new AABB(this.blockPosition()).inflate(6.0D))
                         .stream()
                         .filter(Monster::isAlive)
                         .map(Entity::blockPosition)
                         .forEach(pos -> {
-                            LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(this.level);
+                            LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(this.level());
                             bolt.setDamage(this.random.nextFloat() * 5.0F);
                             bolt.moveTo(pos, 0.0F, 0.0F);
-                            this.level.addFreshEntity(bolt);
+                            this.level().addFreshEntity(bolt);
                         });
             }
 
             //Totem of Poison
             if(totem.is(totemPoison))
             {
-                this.level
+                this.level()
                         .getEntitiesOfClass(Monster.class, new AABB(this.blockPosition()).inflate(5.0D))
                         .stream()
                         .filter(Monster::isAlive)
@@ -153,23 +156,23 @@ public abstract class LivingEntityMixin extends Entity
             if(totem.is(totemDestiny))
             {
                 if(damageSource.getEntity() instanceof LivingEntity attacker)
-                    attacker.hurt(DamageSource.MAGIC, attacker.getHealth() + 1.0F);
+                    attacker.hurt(attacker.damageSources().magic(), attacker.getHealth() + 1.0F);
 
-                this.level.getEntitiesOfClass(Monster.class, new AABB(this.blockPosition()).inflate(10.0D))
+                this.level().getEntitiesOfClass(Monster.class, new AABB(this.blockPosition()).inflate(10.0D))
                         .stream()
                         .filter(Monster::isAlive)
                         .forEach(m -> {
                             double distance = Math.pow(m.blockPosition().distSqr(this.blockPosition()), 0.5);
                             float damage = (float)(Math.max(0.1F, 6.0F - (distance / 2.0F)));
 
-                            m.hurt(DamageSource.MAGIC, damage);
+                            m.hurt(m.damageSources().magic(), damage);
                         });
             }
 
             //Totem of Levitation
             if(totem.is(totemLevitation))
             {
-                this.level
+                this.level()
                         .getEntitiesOfClass(Monster.class, new AABB(this.blockPosition()).inflate(6.0D))
                         .stream()
                         .filter(Monster::isAlive)
@@ -187,8 +190,8 @@ public abstract class LivingEntityMixin extends Entity
                 BlockPos offset1 = this.blockPosition().offset(this.random.nextInt(2, 6), 2, this.random.nextInt(2, 6));
                 BlockPos offset2 = this.blockPosition().offset(this.random.nextInt(2, 6) * -1, 2, this.random.nextInt(2, 6) * -1);
 
-                IronGolem golem1 = EntityType.IRON_GOLEM.create(this.level);
-                IronGolem golem2 = EntityType.IRON_GOLEM.create(this.level);
+                IronGolem golem1 = EntityType.IRON_GOLEM.create(this.level());
+                IronGolem golem2 = EntityType.IRON_GOLEM.create(this.level());
 
                 golem1.moveTo(offset1, 0.0F, 0.0F);
                 golem2.moveTo(offset2, 0.0F, 0.0F);
@@ -201,14 +204,14 @@ public abstract class LivingEntityMixin extends Entity
                     golem2.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(golem2, attacker.getClass(), true));
                 }
 
-                this.level.addFreshEntity(golem1);
-                this.level.addFreshEntity(golem2);
+                this.level().addFreshEntity(golem1);
+                this.level().addFreshEntity(golem2);
             }
 
             //Totem of Freezing
             if(totem.is(totemFreezing))
             {
-                this.level
+                this.level()
                         .getEntitiesOfClass(Monster.class, new AABB(this.blockPosition()).inflate(6.0D))
                         .stream()
                         .filter(Monster::isAlive)
@@ -222,12 +225,13 @@ public abstract class LivingEntityMixin extends Entity
             //Totem of Teleportation
             if(totem.is(totemTeleportation))
             {
-                BlockPos current = new BlockPos(this.getEyePosition());
+                Vec3i eye_pos = new Vec3i((int) this.getEyePosition().x, (int) this.getEyePosition().y, (int) this.getEyePosition().z);
+                BlockPos current = new BlockPos(eye_pos);
                 BlockPos target;
 
                 int tries = 0;
                 int maxTries = 10;
-                Predicate<BlockPos> isInvalidPos = pos -> this.level.getBlockState(pos).isAir() || this.level.getBlockState(pos.offset(0, this.getEyeHeight(), 0)).isAir();
+                Predicate<BlockPos> isInvalidPos = pos -> this.level().getBlockState(pos).isAir() || this.level().getBlockState(pos.offset(0, (int)this.getEyeHeight(), 0)).isAir();
                 do
                 {
                     int x = (this.random.nextInt(2) == 0 ? 1 : -1) * this.random.nextInt(5, 16);
@@ -250,7 +254,8 @@ public abstract class LivingEntityMixin extends Entity
             //Totem of Fireballs
             if(totem.is(totemFireball))
             {
-                BlockPos source = new BlockPos(this.getEyePosition());
+                Vec3i eye_pos = new Vec3i((int) this.getEyePosition().x, (int) this.getEyePosition().y, (int) this.getEyePosition().z);
+                BlockPos source = new BlockPos(eye_pos);
                 Stream.of(
                         new Vec3(1, 0.33, 0),
                         new Vec3(1, 0.33, 1),
@@ -261,16 +266,16 @@ public abstract class LivingEntityMixin extends Entity
                         new Vec3(-1, 0.33, 1),
                         new Vec3(1, 0.33, -1)
                 ).forEach(v -> {
-                    Fireball fireball = EntityType.FIREBALL.create(this.level);
+                    Fireball fireball = EntityType.FIREBALL.create(this.level());
                     fireball.moveTo(source, 0.0F, 0.0F);
                     fireball.shoot(v.x, v.y, v.z, this.random.nextFloat() * 6 + 2.0F, 2.0F);
-                    this.level.addFreshEntity(fireball);
+                    this.level().addFreshEntity(fireball);
                 });
 
                 this.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 100, 1));
             }
 
-            this.level.broadcastEntityEvent(this, (byte)35);
+            this.level().broadcastEntityEvent(this, (byte)35);
             callback.setReturnValue(true);
         }
     }

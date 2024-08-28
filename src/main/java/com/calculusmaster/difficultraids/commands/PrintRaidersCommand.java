@@ -34,7 +34,7 @@ public class PrintRaidersCommand
                 })
                 .executes(css -> {
                         ServerPlayer player = css.getSource().getPlayerOrException();
-                        ServerLevel level = player.getLevel();
+                        ServerLevel level = player.serverLevel();
                         Raid raid = level.getRaidAt(player.blockPosition());
 
                         if(raid == null) css.getSource().sendFailure(Component.literal("You must be near a Raid to use this command!"));
@@ -50,7 +50,7 @@ public class PrintRaidersCommand
 
                             String raiderList = "Raiders Currently Alive:\n" + s;
                             String totalRaiders = "Total Raiders Alive: " + raiderTypeCounts.values().stream().mapToInt(i -> i).sum();
-                            css.getSource().sendSuccess(Component.literal(raiderList + "\n" + totalRaiders), true);
+                            css.getSource().sendSuccess(() -> Component.literal(raiderList + "\n" + totalRaiders), true);
                         }
 
                         return 1;

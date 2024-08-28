@@ -8,6 +8,7 @@ import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsEffects;
 import com.calculusmaster.difficultraids.util.Compat;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Position;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -162,10 +163,10 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
         {
             //Slow Descent
             Vec3 deltaMove = this.getDeltaMovement();
-            if(!this.isVortexActive() && !this.isOnGround() && deltaMove.y() < 0) this.setDeltaMovement(deltaMove.multiply(1.0D, 0.55D, 1.0D));
+            if(!this.isVortexActive() && !this.onGround() && deltaMove.y() < 0) this.setDeltaMovement(deltaMove.multiply(1.0D, 0.55D, 1.0D));
 
             //Healing Checks
-            if(this.isOnGround()) this.isHealing = false;
+            if(this.onGround()) this.isHealing = false;
             else if(this.random.nextBoolean())
             {
                 float currentHealth = this.getHealth();
@@ -192,21 +193,21 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
 
             //Extremely slow descent
             Vec3 deltaMove = this.getDeltaMovement();
-            if(!this.isOnGround() && deltaMove.y() < 0) this.setDeltaMovement(deltaMove.multiply(1.0D, 0.1D, 1.0D));
+            if(!this.onGround() && deltaMove.y() < 0) this.setDeltaMovement(deltaMove.multiply(1.0D, 0.1D, 1.0D));
 
             //Particles
             for(int i = this.vortexFloor.getY(); i < this.blockPosition().getY(); i++)
             {
-                BlockPos pos = new BlockPos(this.vortexFloor.getX() + 0.5, i, this.vortexFloor.getZ() + 0.5);
-                ((ServerLevel)this.level).sendParticles(ParticleTypes.FALLING_OBSIDIAN_TEAR, pos.getX(), pos.getY(), pos.getZ(), 1, 0.05, 0, 0.05, 1.0);
+                Vec3 pos = new Vec3(this.vortexFloor.getX() + 0.5, i, this.vortexFloor.getZ() + 0.5);
+                ((ServerLevel)this.level()).sendParticles(ParticleTypes.FALLING_OBSIDIAN_TEAR, pos.x(), pos.y(), pos.z(), 1, 0.05, 0, 0.05, 1.0);
             }
 
             //Vortex Pull
             if(this.vortexTicks % cfg.xydrax.vortexPullInterval == 0)
             {
                 this.getVortexTargets().forEach(e -> {
-                    BlockPos targetPos = e.blockPosition().offset(0.5, 0, 0.5);
-                    Vec3 targetVector = new Vec3(this.vortexFloor.getX() - targetPos.getX(), this.vortexFloor.getY() - targetPos.getY(), this.vortexFloor.getZ() - targetPos.getZ()).normalize();
+                    Vec3 targetPos = new Vec3(e.position().x() + 0.5, e.position().y(), e.position().z() + 0.5);
+                    Vec3 targetVector = new Vec3(this.vortexFloor.getX() - targetPos.x(), this.vortexFloor.getY() - targetPos.y(), this.vortexFloor.getZ() - targetPos.z()).normalize();
 
                     double force = cfg.xydrax.vortexForce;
 
@@ -234,7 +235,7 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
 
                     damage *= cfg.xydrax.vortexDamageMultiplier;
 
-                    if(damage != 0.0F) e.hurt(DamageSource.mobAttack(this), (float)damage);
+                    if(damage != 0.0F) e.hurt(this.damageSources().mobAttack(this), (float)damage);
                 });
             }
         }
@@ -295,7 +296,7 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
 
     private void summonWindColumns()
     {
-        BlockPos center = new BlockPos(this.blockPosition()).offset(0, 0.05, 0);
+        BlockPos center = new BlockPos(this.blockPosition());
 
         RaidDifficulty raidDifficulty = this.isInDifficultRaid() ? this.getRaidDifficulty() : RaidDifficulty.DEFAULT;
 
@@ -357,7 +358,7 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
 
     private List<LivingEntity> getVortexTargets()
     {
-        return this.level.getEntitiesOfClass(LivingEntity.class, this.vortexAABB, e ->
+        return this.level().getEntitiesOfClass(LivingEntity.class, this.vortexAABB, e ->
         {
             if(e.isAlliedTo(this)) return false;
             else if(e instanceof Player player) return !player.isCreative() && !player.isSpectator();
@@ -404,8 +405,8 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
         private boolean isEntityNearby()
         {
             XydraxEliteEntity xydrax = XydraxEliteEntity.this;
-            AABB search = new AABB(xydrax.blockPosition().offset(0.5, 1.0, 0.5)).inflate(10.0);
-            return !xydrax.level.getEntitiesOfClass(LivingEntity.class, search, e -> !e.isAlliedTo(XydraxEliteEntity.this)).isEmpty();
+            AABB search = new AABB(xydrax.blockPosition().offset(0, 1, 0)).inflate(10.0);
+            return !xydrax.level().getEntitiesOfClass(LivingEntity.class, search, e -> !e.isAlliedTo(XydraxEliteEntity.this)).isEmpty();
         }
 
         @Override
@@ -414,7 +415,7 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
             XydraxEliteEntity xydrax = XydraxEliteEntity.this;
 
             //Set up vortex bounds
-            xydrax.vortexFloor = XydraxEliteEntity.this.blockPosition().offset(0.5, -0.05, 0.5);
+            xydrax.vortexFloor = XydraxEliteEntity.this.blockPosition();
             xydrax.createVortexAABB();
 
             //Push Xydrax into air
@@ -480,7 +481,7 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
         @Override
         public boolean canUse()
         {
-            return super.canUse() && !XydraxEliteEntity.this.isInExtendedSpellState() && XydraxEliteEntity.this.isOnGround();
+            return super.canUse() && !XydraxEliteEntity.this.isInExtendedSpellState() && XydraxEliteEntity.this.onGround();
         }
 
         @Override
@@ -585,7 +586,7 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
 
                 for(int i = 0; i < 12; i++)
                 {
-                    Arrow arrow = new Arrow(XydraxEliteEntity.this.level, XydraxEliteEntity.this)
+                    Arrow arrow = new Arrow(XydraxEliteEntity.this.level(), XydraxEliteEntity.this)
                     {
                         @Override
                         protected void onHitBlock(BlockHitResult p_36755_) { super.onHitBlock(p_36755_); this.discard(); }
@@ -612,7 +613,7 @@ public class XydraxEliteEntity extends AbstractEvokerVariant
                     double distanceY = Math.sqrt(targetX * targetX + targetZ * targetZ) * (double)0.2F;
 
                     arrow.shoot(targetX, targetArrowY + distanceY, targetZ, 1.5F, 25.0F);
-                    XydraxEliteEntity.this.level.addFreshEntity(arrow);
+                    XydraxEliteEntity.this.level().addFreshEntity(arrow);
                 }
             }
         }

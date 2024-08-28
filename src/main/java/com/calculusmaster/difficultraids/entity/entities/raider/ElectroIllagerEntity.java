@@ -74,13 +74,13 @@ public class ElectroIllagerEntity extends AbstractEvokerVariant
     {
         super.tick();
 
-        if(this.level.isClientSide && this.isCastingSpell())
+        if(this.level().isClientSide && this.isCastingSpell())
         {
             SpellType spellType = this.getSpellType();
             double d0 = spellType.getColor(0), d1 = spellType.getColor(1), d2 = spellType.getColor(2);
             float f = this.yBodyRot * ((float)Math.PI / 180F) + Mth.cos((float)this.tickCount * 0.6662F) * 0.25F;
-            this.level.addParticle(ParticleTypes.ELECTRIC_SPARK, this.getX() + Math.cos(f) * 0.6D, this.getY() + 1.8D, this.getZ() + Math.sin(f) * 0.6D, d0, d1, d2);
-            this.level.addParticle(ParticleTypes.ELECTRIC_SPARK, this.getX() - Math.cos(f) * 0.6D, this.getY() + 1.8D, this.getZ() - Math.sin(f) * 0.6D, d0, d1, d2);
+            this.level().addParticle(ParticleTypes.ELECTRIC_SPARK, this.getX() + Math.cos(f) * 0.6D, this.getY() + 1.8D, this.getZ() + Math.sin(f) * 0.6D, d0, d1, d2);
+            this.level().addParticle(ParticleTypes.ELECTRIC_SPARK, this.getX() - Math.cos(f) * 0.6D, this.getY() + 1.8D, this.getZ() - Math.sin(f) * 0.6D, d0, d1, d2);
         }
     }
 
@@ -110,7 +110,7 @@ public class ElectroIllagerEntity extends AbstractEvokerVariant
         protected void castSpell()
         {
             LivingEntity target = ElectroIllagerEntity.this.getTarget();
-            ServerLevel level = (ServerLevel)ElectroIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)ElectroIllagerEntity.this.level();
             boolean rain = level.isRainingAt(ElectroIllagerEntity.this.blockPosition());
             boolean thunder = level.isThundering();
 
@@ -179,7 +179,7 @@ public class ElectroIllagerEntity extends AbstractEvokerVariant
         protected void castSpell()
         {
             LivingEntity target = ElectroIllagerEntity.this.getTarget();
-            ServerLevel level = (ServerLevel)ElectroIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)ElectroIllagerEntity.this.level();
             boolean rain = level.isRainingAt(ElectroIllagerEntity.this.blockPosition());
             boolean thunder = level.isThundering();
 
@@ -249,7 +249,7 @@ public class ElectroIllagerEntity extends AbstractEvokerVariant
         protected void castSpell()
         {
             LivingEntity target = ElectroIllagerEntity.this.getTarget();
-            ServerLevel level = (ServerLevel)ElectroIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)ElectroIllagerEntity.this.level();
             boolean thunder = level.isThundering();
 
             if(target != null)

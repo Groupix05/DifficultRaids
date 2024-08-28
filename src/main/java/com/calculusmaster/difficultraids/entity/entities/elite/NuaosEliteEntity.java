@@ -8,6 +8,8 @@ import com.calculusmaster.difficultraids.setup.DifficultRaidsEnchantments;
 import com.calculusmaster.difficultraids.util.Compat;
 import com.calculusmaster.difficultraids.util.DifficultRaidsUtil;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -210,8 +212,10 @@ public class NuaosEliteEntity extends AbstractIllagerVariant
             if(charge == ChargeState.HIGH_CHARGE || charge == ChargeState.MAX_CHARGE)
                 for(int i = 0; i < 3; i++)
                 {
-                    BlockPos particlePos = new BlockPos(this.getEyePosition()).offset(0.25 + 0.4 - this.random.nextFloat() * 0.8, 0.25 + this.random.nextFloat() * 0.1,0.25 + 0.4 - this.random.nextFloat() * 0.8);
-                    this.level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, particlePos.getX(), particlePos.getY(), particlePos.getZ(), 0.05, 0.2, 0.05);
+                    Vec3 eye_pos = new Vec3(this.getEyePosition().x, (int)this.getEyePosition().y, (int)this.getEyePosition().z);
+                    Vec3 particle_pos = new Vec3(eye_pos.x() + 0.25 + 0.4 - this.random.nextFloat() * 0.8, eye_pos.y() + 0.25 + this.random.nextFloat() * 0.1, eye_pos.z() + 0.25 + 0.4 - this.random.nextFloat() * 0.8);
+//                    BlockPos particlePos = new BlockPos(eye_pos).offset(0.25 + 0.4 - this.random.nextFloat() * 0.8, 0.25 + this.random.nextFloat() * 0.1,0.25 + 0.4 - this.random.nextFloat() * 0.8);
+                    this.level().addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, particle_pos.x(), particle_pos.y(), particle_pos.z(), 0.05, 0.2, 0.05);
                 }
         }
     }
@@ -246,7 +250,7 @@ public class NuaosEliteEntity extends AbstractIllagerVariant
             double shockwaveRadius = rd.config().nuaos.shockwaveRadius;
 
             AABB shockwaveAABB = new AABB(this.blockPosition()).inflate(shockwaveRadius);
-            List<LivingEntity> targets = this.level.getEntitiesOfClass(LivingEntity.class, shockwaveAABB, entity -> canReceiveDamage.stream().anyMatch(type -> entity.getType().equals(type)));
+            List<LivingEntity> targets = this.level().getEntitiesOfClass(LivingEntity.class, shockwaveAABB, entity -> canReceiveDamage.stream().anyMatch(type -> entity.getType().equals(type)));
 
             if(!targets.isEmpty())
             {
@@ -265,7 +269,7 @@ public class NuaosEliteEntity extends AbstractIllagerVariant
                         damage = Math.max(falloffDamage, minDamage);
                     }
 
-                    t.hurt(DamageSource.mobAttack(this), damage);
+                    t.hurt(this.damageSources().mobAttack(this), damage);
                 }
             }
         }
@@ -276,13 +280,13 @@ public class NuaosEliteEntity extends AbstractIllagerVariant
 
             int strengthAmplifier = rd.config().nuaos.buffAuraStrengthLevel;
 
-            this.level.getEntitiesOfClass(Raider.class, auraRadius, r -> DifficultRaidsUtil.STANDARD_RAIDERS.contains(r.getType())).forEach(raider ->
+            this.level().getEntitiesOfClass(Raider.class, auraRadius, r -> DifficultRaidsUtil.STANDARD_RAIDERS.contains(r.getType())).forEach(raider ->
             {
                 if(!raider.hasEffect(MobEffects.DAMAGE_BOOST))
                     raider.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20 * 10, strengthAmplifier, false, true));
             });
 
-            this.level.playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.SPLASH_POTION_BREAK, SoundSource.HOSTILE, 3.0F, 1.0F, false);
+            this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.SPLASH_POTION_BREAK, SoundSource.HOSTILE, 3.0F, 1.0F, false);
         }
     }
 

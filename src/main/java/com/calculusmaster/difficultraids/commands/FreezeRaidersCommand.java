@@ -31,7 +31,7 @@ public class FreezeRaidersCommand
                 })
                 .executes(css -> {
                     ServerPlayer player = css.getSource().getPlayerOrException();
-                    ServerLevel level = player.getLevel();
+                    ServerLevel level = player.serverLevel();
                     Raid raid = level.getRaidAt(player.blockPosition());
 
                     if(raid == null) css.getSource().sendFailure(Component.literal("You must be near a Raid to use this command!"));
@@ -44,7 +44,7 @@ public class FreezeRaidersCommand
                             r.lookAt(css.getSource().getAnchor(), new Vec3(player.getX() - r.getX(), player.getY() - r.getY(), player.getZ() - r.getZ()));
                             r.setNoAi(true);
                         });
-                        css.getSource().sendSuccess(Component.literal(alive.size() + " raiders frozen!"), true);
+                        css.getSource().sendSuccess(() -> Component.literal(alive.size() + " raiders frozen!"), true);
                     }
 
                     return 1;

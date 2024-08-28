@@ -140,7 +140,7 @@ public abstract class AbstractIllagerMixin extends Raider
                 }
 
                 //General Easy/Hard Modifiers
-                Difficulty difficulty = this.level.getDifficulty();
+                Difficulty difficulty = this.level().getDifficulty();
 
                 if(difficulty.equals(Difficulty.EASY) || difficulty.equals(Difficulty.HARD))
                     armor.addPermanentModifier(new AttributeModifier(TAG_RAIDER_DIFFICULTY_ARMOR_MODIFIER, difficulty.equals(Difficulty.EASY) ? 0.9 : 1.1, AttributeModifier.Operation.MULTIPLY_TOTAL));

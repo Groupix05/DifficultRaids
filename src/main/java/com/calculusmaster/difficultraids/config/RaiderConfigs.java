@@ -2,6 +2,7 @@ package com.calculusmaster.difficultraids.config;
 
 import com.calculusmaster.difficultraids.raids.RaidDifficulty;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -476,10 +477,10 @@ public class RaiderConfigs
 
     public static class Necromancer extends RaiderConfig
     {
-        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_HERO = TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("difficultraids:necromancer/minion_types_hero"));
-        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_LEGEND = TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("difficultraids:necromancer/minion_types_legend"));
-        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_MASTER = TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("difficultraids:necromancer/minion_types_master"));
-        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_GRANDMASTER = TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("difficultraids:necromancer/minion_types_grandmaster"));
+        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_HERO = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:necromancer/minion_types_hero"));
+        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_LEGEND = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:necromancer/minion_types_legend"));
+        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_MASTER = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:necromancer/minion_types_master"));
+        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_GRANDMASTER = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:necromancer/minion_types_grandmaster"));
 
         public static final TagKey<Item> TAG_HELMETS_HERO = ItemTags.create(new ResourceLocation("difficultraids:necromancer/helmets_hero"));
         public static final TagKey<Item> TAG_HELMETS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:necromancer/helmets_legend"));

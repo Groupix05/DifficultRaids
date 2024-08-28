@@ -4,6 +4,7 @@ import com.calculusmaster.difficultraids.config.RaiderConfigs;
 import com.calculusmaster.difficultraids.entity.entities.core.AbstractEvokerVariant;
 import com.calculusmaster.difficultraids.util.Compat;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -148,7 +149,7 @@ public class NecromancerIllagerEntity extends AbstractEvokerVariant
 
     public void setMinionTargets(Mob minion)
     {
-        minion.targetSelector.removeAllGoals();
+        minion.targetSelector.removeAllGoals((goal) -> true);
         minion.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(minion, Player.class, true));
         minion.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(minion, IronGolem.class, true));
         minion.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(minion, AbstractVillager.class, true));
@@ -224,7 +225,7 @@ public class NecromancerIllagerEntity extends AbstractEvokerVariant
         super.tick();
 
         //Loading
-        if(this.level instanceof ServerLevel serverLevel)
+        if(this.level() instanceof ServerLevel serverLevel)
         {
             if(this.checkMinions)
             {
@@ -266,7 +267,7 @@ public class NecromancerIllagerEntity extends AbstractEvokerVariant
         protected void castSpell()
         {
             LivingEntity target = NecromancerIllagerEntity.this.getTarget();
-            ServerLevel level = (ServerLevel)NecromancerIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)NecromancerIllagerEntity.this.level();
 
             if(target != null)
             {
@@ -357,7 +358,7 @@ public class NecromancerIllagerEntity extends AbstractEvokerVariant
         protected void castSpell()
         {
             LivingEntity target = NecromancerIllagerEntity.this.getTarget();
-            ServerLevel level = (ServerLevel)NecromancerIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)NecromancerIllagerEntity.this.level();
 
             if(target != null)
             {
@@ -448,7 +449,7 @@ public class NecromancerIllagerEntity extends AbstractEvokerVariant
         protected void castSpell()
         {
             LivingEntity target = NecromancerIllagerEntity.this.getTarget();
-            ServerLevel level = (ServerLevel)NecromancerIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)NecromancerIllagerEntity.this.level();
             boolean raid = NecromancerIllagerEntity.this.isInRaid();
 
             if(target != null)
@@ -459,11 +460,12 @@ public class NecromancerIllagerEntity extends AbstractEvokerVariant
                 //Bury Logic
                 target.playSound(SoundEvents.DROWNED_AMBIENT_WATER, 5.0F, 0.75F);
 
-                int buryDistance = 2 + Mth.ceil(target.getBbHeight()) * (target.isOnGround() ? 1 : 2);
+                int buryDistance = 2 + Mth.ceil(target.getBbHeight()) * (target.onGround() ? 1 : 2);
 
                 target.moveTo(target.getBlockX(), target.getBlockY() - buryDistance, target.getBlockZ());
 
-                if(!level.getBlockState(new BlockPos(target.getEyePosition())).isAir() && target instanceof AbstractVillager villager)
+                Vec3i eye_pos = new Vec3i((int)target.getEyePosition().x, (int)target.getEyePosition().y, (int)target.getEyePosition().z);
+                if(!level.getBlockState(new BlockPos(eye_pos)).isAir() && target instanceof AbstractVillager villager)
                     villager.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 1));
             }
         }
@@ -471,9 +473,10 @@ public class NecromancerIllagerEntity extends AbstractEvokerVariant
         @Override
         public boolean canUse()
         {
-            Level level = NecromancerIllagerEntity.this.getLevel();
+            Level level = NecromancerIllagerEntity.this.level();
             LivingEntity target = NecromancerIllagerEntity.this.getTarget();
-            return super.canUse() && level.getBlockState(new BlockPos(target.getEyePosition())).isAir() && Math.pow(NecromancerIllagerEntity.this.blockPosition().distSqr(target.blockPosition()), 0.5) < 4;
+            Vec3i eye_pos = new Vec3i((int)target.getEyePosition().x, (int)target.getEyePosition().y, (int)target.getEyePosition().z);
+            return super.canUse() && level.getBlockState(new BlockPos(eye_pos)).isAir() && Math.pow(NecromancerIllagerEntity.this.blockPosition().distSqr(target.blockPosition()), 0.5) < 4;
         }
 
         @Override

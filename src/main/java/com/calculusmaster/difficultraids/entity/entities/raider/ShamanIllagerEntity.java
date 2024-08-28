@@ -4,6 +4,7 @@ import com.calculusmaster.difficultraids.entity.entities.component.ShamanDebuffB
 import com.calculusmaster.difficultraids.entity.entities.core.AbstractEvokerVariant;
 import com.calculusmaster.difficultraids.util.Compat;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -65,7 +66,7 @@ public class ShamanIllagerEntity extends AbstractEvokerVariant
 
     private List<Raider> getNearbyRaiders(double distance)
     {
-        return this.level.getNearbyEntities(
+        return this.level().getNearbyEntities(
                 Raider.class,
                 TargetingConditions.forNonCombat().range(distance),
                 this,
@@ -75,7 +76,7 @@ public class ShamanIllagerEntity extends AbstractEvokerVariant
 
     private Raider getNearestRaider()
     {
-        return this.getCurrentRaid() == null ? null : this.level.getNearestEntity(
+        return this.getCurrentRaid() == null ? null : this.level().getNearestEntity(
                 Raider.class,
                 TargetingConditions.forNonCombat().ignoreLineOfSight(),
                 this,
@@ -193,7 +194,7 @@ public class ShamanIllagerEntity extends AbstractEvokerVariant
         @Override
         protected void castSpell()
         {
-            ServerLevel level = (ServerLevel)ShamanIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)ShamanIllagerEntity.this.level();
             LivingEntity target = ShamanIllagerEntity.this.getTarget();
             Random random = new Random();
 
@@ -231,7 +232,9 @@ public class ShamanIllagerEntity extends AbstractEvokerVariant
                     projectile.loadDebuff(new MobEffectInstance(effect, duration, amplifier));
                 });
 
-                projectile.moveTo(new BlockPos(ShamanIllagerEntity.this.getEyePosition()).offset(0.0, ShamanIllagerEntity.this.getEyeHeight() + 1, 0.0), 0.0F, 0.0F);
+                ShamanIllagerEntity shaman = ShamanIllagerEntity.this;
+                Vec3i eye_pos = new Vec3i((int)shaman.getEyePosition().x, (int)shaman.getEyePosition().y, (int)shaman.getEyePosition().z);
+                projectile.moveTo(new BlockPos(eye_pos).offset(0, (int) ShamanIllagerEntity.this.getEyeHeight() + 1, 0), 0.0F, 0.0F);
                 level.addFreshEntity(projectile);
                 ShamanIllagerEntity.this.playSound(SoundEvents.SHULKER_SHOOT, 2.0F, 1.0F);
             }
@@ -280,7 +283,7 @@ public class ShamanIllagerEntity extends AbstractEvokerVariant
         @Override
         protected void castSpell()
         {
-            ServerLevel level = (ServerLevel)ShamanIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)ShamanIllagerEntity.this.level();
 
             AABB buffAABB = new AABB(ShamanIllagerEntity.this.blockPosition()).inflate(ShamanIllagerEntity.this.config().shaman.allyBuffRadius);
 
@@ -344,7 +347,7 @@ public class ShamanIllagerEntity extends AbstractEvokerVariant
         @Override
         protected void castSpell()
         {
-            ServerLevel level = (ServerLevel)ShamanIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)ShamanIllagerEntity.this.level();
 
             AABB buffAABB = new AABB(ShamanIllagerEntity.this.blockPosition()).inflate(ShamanIllagerEntity.this.config().shaman.allyBuffRadius);
 

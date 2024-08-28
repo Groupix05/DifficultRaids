@@ -94,7 +94,7 @@ public class VoldonEliteEntity extends AbstractEvokerVariant implements RangedAt
     {
         super.readAdditionalSaveData(pCompound);
 
-        for(int ID : pCompound.getIntArray("FamiliarIDs")) if(this.level.getEntity(ID) instanceof LivingEntity familiar) this.familiars.add(familiar);
+        for(int ID : pCompound.getIntArray("FamiliarIDs")) if(this.level().getEntity(ID) instanceof LivingEntity familiar) this.familiars.add(familiar);
 
         this.checkFamiliars = pCompound.getBoolean("CheckFamiliars");
         this.familiarTag = pCompound.getString("FamiliarTag");
@@ -168,10 +168,10 @@ public class VoldonEliteEntity extends AbstractEvokerVariant implements RangedAt
         {
             BlockPos spawnPos = pos.offset(5 - this.random.nextInt(1, 10), 1, 5 - this.random.nextInt(1, 10));
 
-            Monster zombie = EntityType.ZOMBIE.create(this.level);
+            Monster zombie = EntityType.ZOMBIE.create(this.level());
             zombie.moveTo(spawnPos, this.getYHeadRot(), this.getXRot());
 
-            zombie.targetSelector.removeAllGoals();
+            zombie.targetSelector.removeAllGoals(goal -> (true));
             zombie.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(zombie, Villager.class, true));
             zombie.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(zombie, Player.class, true));
             zombie.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(zombie, IronGolem.class, true));
@@ -179,7 +179,7 @@ public class VoldonEliteEntity extends AbstractEvokerVariant implements RangedAt
 
             if(pCause.getEntity() instanceof LivingEntity living) zombie.setTarget(living);
 
-            this.level.addFreshEntity(zombie);
+            this.level().addFreshEntity(zombie);
         }
     }
 
@@ -187,9 +187,9 @@ public class VoldonEliteEntity extends AbstractEvokerVariant implements RangedAt
     public void tick()
     {
         super.tick();
-        if(!this.level.isClientSide) this.familiars.removeIf(LivingEntity::isDeadOrDying);
+        if(!this.level().isClientSide) this.familiars.removeIf(LivingEntity::isDeadOrDying);
 
-        if(this.checkFamiliars && this.level instanceof ServerLevel serverLevel)
+        if(this.checkFamiliars && this.level() instanceof ServerLevel serverLevel)
         {
             this.familiars.addAll(serverLevel.getEntitiesOfClass(VoldonFamiliarEntity.class, this.getBoundingBox().inflate(FAMILIAR_CHECK_RADIUS), e -> e.getTags().contains(this.familiarTag)));
 
@@ -216,7 +216,7 @@ public class VoldonEliteEntity extends AbstractEvokerVariant implements RangedAt
 
         for(int i = 0; i < count; i++)
         {
-            SmallFireball fireball = new SmallFireball(this.level, this, this.random.triangle(d1, 2.297D * d4), d2, this.random.triangle(d3, 2.297D * d4))
+            SmallFireball fireball = new SmallFireball(this.level(), this, this.random.triangle(d1, 2.297D * d4), d2, this.random.triangle(d3, 2.297D * d4))
             {
                 @Override
                 protected void onHitEntity(EntityHitResult pResult)
@@ -227,10 +227,10 @@ public class VoldonEliteEntity extends AbstractEvokerVariant implements RangedAt
             };
 
             fireball.setPos(fireball.getX(), this.getY(0.5D) + 0.5D, fireball.getZ());
-            this.level.addFreshEntity(fireball);
+            this.level().addFreshEntity(fireball);
         }
 
-        this.level.addParticle(ParticleTypes.SMALL_FLAME, this.getX(), this.getEyeY() + 0.4, this.getZ(), 0.2, 0.0, 0.3);
+        this.level().addParticle(ParticleTypes.SMALL_FLAME, this.getX(), this.getEyeY() + 0.4, this.getZ(), 0.2, 0.0, 0.3);
     }
 
     private class VoldonCastSpellGoal extends SpellcastingIllagerCastSpellGoal
@@ -273,7 +273,7 @@ public class VoldonEliteEntity extends AbstractEvokerVariant implements RangedAt
                     f.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, effectDuration / 4, 1, false, false));
                 });
 
-                sacrifice.hurt(DamageSource.STARVE, sacrifice.getHealth() + 1.0F);
+                sacrifice.hurt(sacrifice.damageSources().starve(), sacrifice.getHealth() + 1.0F);
             }
         }
 
@@ -334,8 +334,8 @@ public class VoldonEliteEntity extends AbstractEvokerVariant implements RangedAt
                 VoldonEliteEntity.this.getLookControl().setLookAt(target);
 
                 double yOffset = 0.3;
-                BlockPos targetPos = target.blockPosition().offset(0, yOffset, 0);
-                BlockPos thisPos = VoldonEliteEntity.this.blockPosition().offset(0, yOffset, 0);
+                BlockPos targetPos = target.blockPosition();
+                BlockPos thisPos = VoldonEliteEntity.this.blockPosition();
 
                 VoldonEliteEntity.this.teleportToWithTicket(targetPos.getX(), targetPos.getY(), targetPos.getZ());
                 target.teleportToWithTicket(thisPos.getX(), thisPos.getY(), thisPos.getZ());
@@ -397,14 +397,14 @@ public class VoldonEliteEntity extends AbstractEvokerVariant implements RangedAt
             Supplier<BlockPos> familiarPos = () -> sourcePos.offset(VoldonEliteEntity.this.random.nextInt(2, 10), VoldonEliteEntity.this.random.nextInt(2, 4), VoldonEliteEntity.this.random.nextInt(2, 10));
             for(int i = 0; i < familiarCount; i++)
             {
-                Monster familiar = new VoldonFamiliarEntity(VoldonEliteEntity.this.level, VoldonEliteEntity.this);
+                Monster familiar = new VoldonFamiliarEntity(VoldonEliteEntity.this.level(), VoldonEliteEntity.this);
                 familiar.moveTo(familiarPos.get(), 0.0F, 0.0F);
                 familiar.setOnGround(true);
                 familiar.addTag(VoldonEliteEntity.this.familiarTag);
 
                 familiar.addEffect(new MobEffectInstance(MobEffects.GLOWING, 10000, 1, false, false));
 
-                VoldonEliteEntity.this.level.addFreshEntity(familiar);
+                VoldonEliteEntity.this.level().addFreshEntity(familiar);
                 VoldonEliteEntity.this.familiars.add(familiar);
             }
         }

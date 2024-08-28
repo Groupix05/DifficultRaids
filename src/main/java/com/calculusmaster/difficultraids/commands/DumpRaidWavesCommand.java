@@ -9,6 +9,8 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 
+import java.util.function.Supplier;
+
 public class DumpRaidWavesCommand
 {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher)
@@ -27,7 +29,7 @@ public class DumpRaidWavesCommand
 
                     RaidEnemyRegistry.printWaveData(LogUtils.getLogger());
 
-                    css.getSource().sendSuccess(Component.literal("Dumped Raid Wave Data into the console!"), true);
+                    css.getSource().sendSuccess(() -> Component.literal("Dumped Raid Wave Data into the console!"), true);
                     return 1;
         });
 

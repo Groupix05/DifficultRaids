@@ -10,6 +10,7 @@ import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsEnchantments;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -85,12 +86,12 @@ public class DREntityEvents
                 float reduction = (equipped / (float)max) * maxReduction;
 
                 event.setAmount(event.getAmount() * (1.0F - reduction));
-                target.getLevel().playSound(null, target, SoundEvents.GLASS_PLACE, SoundSource.PLAYERS, 2.5F, 0.7F);
+                target.level().playSound(null, target, SoundEvents.GLASS_PLACE, SoundSource.PLAYERS, 2.5F, 0.7F);
             }
         }
 
         //Projectile Evasion
-        if(event.getSource().isProjectile() && !event.getSource().isBypassArmor())
+        if(event.getSource().is(DamageTypeTags.IS_PROJECTILE) && !event.getSource().is(DamageTypeTags.BYPASSES_ARMOR))
         {
             int projectileEvasionLevel = event.getEntity().getItemBySlot(EquipmentSlot.FEET).getEnchantmentLevel(DifficultRaidsEnchantments.PROJECTILE_EVASION.get());
 
@@ -158,7 +159,7 @@ public class DREntityEvents
                 if(random.nextFloat() < chance)
                 {
                     event.setAmount(event.getAmount() * multiplier);
-                    living.getLevel().playSound(null, living, SoundEvents.GLASS_BREAK, SoundSource.HOSTILE, 4.25F, 0.65F);
+                    living.level().playSound(null, living, SoundEvents.GLASS_BREAK, SoundSource.HOSTILE, 4.25F, 0.65F);
                 }
             }
         }
@@ -175,7 +176,7 @@ public class DREntityEvents
             };
 
             float damage = event.getAmount() * shieldedPercent;
-            List<TankIllagerEntity> nearbyTanks = raider.getLevel()
+            List<TankIllagerEntity> nearbyTanks = raider.level()
                     .getNearbyEntities(TankIllagerEntity.class, TargetingConditions.DEFAULT, raider, raider.getBoundingBox().inflate(4.0D))
                     .stream()
                     .filter(tank -> tank.getHealth() > damage)

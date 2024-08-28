@@ -30,7 +30,7 @@ public class AdvanceRaidWaveCommand
                 })
                 .executes(css -> {
                         ServerPlayer player = css.getSource().getPlayerOrException();
-                        ServerLevel level = player.getLevel();
+                        ServerLevel level = player.serverLevel();
                         Raid raid = level.getRaidAt(player.blockPosition());
 
                         if(raid == null) css.getSource().sendFailure(Component.literal("You must be near a Raid to use this command!"));
@@ -39,7 +39,7 @@ public class AdvanceRaidWaveCommand
                             List<Raider> alive = raid.getAllRaiders().stream().filter(LivingEntity::isAlive).toList();
 
                             alive.forEach(LivingEntity::kill);
-                            css.getSource().sendSuccess(Component.literal("Wave successfully cleared!"), true);
+                            css.getSource().sendSuccess(() -> Component.literal("Wave successfully cleared!"), true);
                         }
 
                         return 1;

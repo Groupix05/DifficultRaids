@@ -33,7 +33,7 @@ public class FrostSnowballEntity extends Snowball
         //Blaze stuff is handled by the super call
         if(!(entity instanceof Blaze) && !(entity instanceof Raider))
         {
-            entity.hurt(DamageSource.thrown(this, this.getOwner()), this.damage);
+            entity.hurt(this.damageSources().thrown(this, this.getOwner()), this.damage);
         }
     }
 }

@@ -128,9 +128,9 @@ public class ModurEliteEntity extends AbstractEvokerVariant implements RangedAtt
     {
         super.die(pCause);
 
-        this.spawnCustomBolt(this.blockPosition().offset(0, 0.2, 0), 15.0F);
+        this.spawnCustomBolt(this.blockPosition(), 15.0F);
 
-        if(!this.level.isClientSide && this.level.isThundering()) ((ServerLevel)ModurEliteEntity.this.level).setWeatherParameters(6000, 0, false, false);
+        if(!this.level().isClientSide && this.level().isThundering()) ((ServerLevel)ModurEliteEntity.this.level()).setWeatherParameters(6000, 0, false, false);
     }
 
     @Override
@@ -194,15 +194,15 @@ public class ModurEliteEntity extends AbstractEvokerVariant implements RangedAtt
 
     private void spawnCustomBolt(BlockPos spawn, float damage)
     {
-        LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(this.level); if(bolt == null) return;
+        LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(this.level()); if(bolt == null) return;
 
-        if(this.level.isThundering()) damage *= 1.25F;
+        if(this.level().isThundering()) damage *= 1.25F;
 
         bolt.setCustomName(Component.literal(DifficultRaidsUtil.ELECTRO_ILLAGER_CUSTOM_BOLT_TAG));
         bolt.setDamage(damage);
         bolt.moveTo(spawn, 0.0F, 0.0F);
 
-        this.level.addFreshEntity(bolt);
+        this.level().addFreshEntity(bolt);
     }
 
     @Override
@@ -222,7 +222,7 @@ public class ModurEliteEntity extends AbstractEvokerVariant implements RangedAtt
                 int strikeZ = this.random.nextInt((int)this.stormAABB.minZ, (int)(this.stormAABB.maxZ + 1));
 
                 BlockPos strikePos = new BlockPos(strikeX, strikeY, strikeZ);
-                int tries = 0; while(!this.level.getBlockState(strikePos).isAir() && tries++ < 20) strikePos = strikePos.above(1);
+                int tries = 0; while(!this.level().getBlockState(strikePos).isAir() && tries++ < 20) strikePos = strikePos.above(1);
 
                 ModurEliteEntity.this.spawnCustomBolt(strikePos, cfg.stormStrikeDamage);
             }
@@ -234,7 +234,7 @@ public class ModurEliteEntity extends AbstractEvokerVariant implements RangedAtt
         if(this.chargedBoltWarmup > 0)
         {
             //Sounds
-            if(this.chargedBoltWarmup % 30 == 0) this.level.playLocalSound(this.chargedBoltPos.getX(), this.chargedBoltPos.getY(), this.chargedBoltPos.getZ(),
+            if(this.chargedBoltWarmup % 30 == 0) this.level().playLocalSound(this.chargedBoltPos.getX(), this.chargedBoltPos.getY(), this.chargedBoltPos.getZ(),
                     SoundEvents.EVOKER_PREPARE_SUMMON, SoundSource.HOSTILE, 2.0F, 0.7F, false);
 
             //Particles
@@ -247,7 +247,7 @@ public class ModurEliteEntity extends AbstractEvokerVariant implements RangedAtt
                         this.chargedBoltPos.offset(1, i, 0),
                         this.chargedBoltPos.offset(0, i, 1),
                         this.chargedBoltPos.offset(1, i, 1)
-                ).forEach(pos -> ((ServerLevel)this.level).sendParticles(new BlockParticleOption(ParticleTypes.FALLING_DUST, Blocks.WHITE_WOOL.defaultBlockState()), pos.getX(), pos.getY(), pos.getZ(), 2, 0.15, 0, 0.15, 2.0));
+                ).forEach(pos -> ((ServerLevel)this.level()).sendParticles(new BlockParticleOption(ParticleTypes.FALLING_DUST, Blocks.WHITE_WOOL.defaultBlockState()), pos.getX(), pos.getY(), pos.getZ(), 2, 0.15, 0, 0.15, 2.0));
             }
 
             //Logic
@@ -293,8 +293,8 @@ public class ModurEliteEntity extends AbstractEvokerVariant implements RangedAtt
         {
             ModurEliteEntity modur = ModurEliteEntity.this;
 
-            Vec3 v = ModurEliteEntity.this.getLookAngle();
-            modur.homingBoltPos = modur.blockPosition().offset(v.x, 0, v.z);
+//            Vec3 v = ModurEliteEntity.this.getLookAngle();
+            modur.homingBoltPos = modur.blockPosition();
 
             modur.homingBoltTicks = modur.config().modur.homingBoltTime;
         }
@@ -399,7 +399,7 @@ public class ModurEliteEntity extends AbstractEvokerVariant implements RangedAtt
             if(!this.targetPos.equals(BlockPos.ZERO))
             {
                 for(int i = 0; i < 3; i++)
-                    ModurEliteEntity.this.spawnCustomBolt(this.targetPos.offset(0.5 - Math.random(), 0, 0.5 - Math.random()),
+                    ModurEliteEntity.this.spawnCustomBolt(this.targetPos,
                             ModurEliteEntity.this.config().modur.zapBoltDamage);
             }
         }
@@ -478,7 +478,7 @@ public class ModurEliteEntity extends AbstractEvokerVariant implements RangedAtt
         @Override
         public boolean canUse()
         {
-            return super.canUse() && ModurEliteEntity.this.level.isThundering() && !ModurEliteEntity.this.isInExtendedSpellState();
+            return super.canUse() && ModurEliteEntity.this.level().isThundering() && !ModurEliteEntity.this.isInExtendedSpellState();
         }
 
         @Override
@@ -520,13 +520,13 @@ public class ModurEliteEntity extends AbstractEvokerVariant implements RangedAtt
         @Override
         protected void castSpell()
         {
-            ((ServerLevel)ModurEliteEntity.this.level).setWeatherParameters(0, 20 * 60 * 5, true, true);
+            ((ServerLevel)ModurEliteEntity.this.level()).setWeatherParameters(0, 20 * 60 * 5, true, true);
         }
 
         @Override
         public boolean canUse()
         {
-            return !ModurEliteEntity.this.level.getLevelData().isThundering();
+            return !ModurEliteEntity.this.level().getLevelData().isThundering();
         }
 
         @Override

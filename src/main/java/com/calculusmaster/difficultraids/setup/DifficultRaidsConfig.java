@@ -8,6 +8,7 @@ import com.calculusmaster.difficultraids.raids.RaidEnemyRegistry;
 import com.calculusmaster.difficultraids.util.DifficultRaidsUtil;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
@@ -48,7 +49,7 @@ public class DifficultRaidsConfig
     public static RaidDifficultyConfig DEFAULT, HERO, LEGEND, MASTER, GRANDMASTER;
 
     //Misc Tags
-    public static TagKey<EntityType<?>> WINDS_CURSE_IMMUNE = TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("difficultraids:winds_curse_immune"));
+    public static TagKey<EntityType<?>> WINDS_CURSE_IMMUNE = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:winds_curse_immune"));
 
     public static void initializeConfigs()
     {

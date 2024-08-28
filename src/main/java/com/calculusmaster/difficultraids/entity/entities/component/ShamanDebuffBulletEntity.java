@@ -60,7 +60,7 @@ public class ShamanDebuffBulletEntity extends ShulkerBullet
     {
         if(this.getOwner() instanceof LivingEntity owner && pResult.getEntity() instanceof LivingEntity hitEntity && !(hitEntity instanceof Raider))
         {
-            boolean hitSuccess = hitEntity.hurt(DamageSource.indirectMobAttack(this, owner), 3.0F);
+            boolean hitSuccess = hitEntity.hurt(this.damageSources().mobAttack(owner), 3.0F);
             if(hitSuccess) this.doEnchantDamageEffects(owner, this);
 
             this.getModifiedDebuffs(hitSuccess ? 1.0 : 0.5).forEach(d -> hitEntity.addEffect(d, this));
@@ -73,16 +73,16 @@ public class ShamanDebuffBulletEntity extends ShulkerBullet
         BlockPos pos = p_37343_.getBlockPos();
         AABB applyRange = new AABB(pos).inflate(2.0);
 
-        if(this.level.isClientSide)
+        if(this.level().isClientSide)
         {
-            this.level.addParticle(ParticleTypes.ASH, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.2D, 0.0D);
+            this.level().addParticle(ParticleTypes.ASH, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.2D, 0.0D);
         }
 
         List<LivingEntity> targets = new ArrayList<>();
-        targets.addAll(this.level.getEntitiesOfClass(Player.class, applyRange));
-        targets.addAll(this.level.getEntitiesOfClass(IronGolem.class, applyRange));
-        targets.addAll(this.level.getEntitiesOfClass(AbstractVillager.class, applyRange));
-        if(Compat.GUARD_VILLAGERS.isLoaded()) targets.addAll(this.level.getEntitiesOfClass(Guard.class, applyRange));
+        targets.addAll(this.level().getEntitiesOfClass(Player.class, applyRange));
+        targets.addAll(this.level().getEntitiesOfClass(IronGolem.class, applyRange));
+        targets.addAll(this.level().getEntitiesOfClass(AbstractVillager.class, applyRange));
+        if(Compat.GUARD_VILLAGERS.isLoaded()) targets.addAll(this.level().getEntitiesOfClass(Guard.class, applyRange));
 
         List<MobEffectInstance> debuffs = this.getModifiedDebuffs(0.75);
         targets.forEach(living -> debuffs.forEach(living::addEffect));

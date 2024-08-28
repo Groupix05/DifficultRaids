@@ -39,7 +39,7 @@ public abstract class EvokerFangsMixin extends Entity
 
             float damage = rd.config().evoker.evokerFangDamage;
 
-            pTarget.hurt(DamageSource.indirectMagic(this, owner), damage);
+            pTarget.hurt(pTarget.damageSources().indirectMagic(this, owner), damage);
             callback.cancel();
         }
     }

@@ -21,7 +21,7 @@ public class DifficultyRaiderEntries
         try
         { return DataResult.success(RaidDifficulty.valueOf(difficultyString.toUpperCase())); }
         catch(IllegalArgumentException e)
-        { return DataResult.error("Invalid Raid Difficulty: " + difficultyString); }
+        { return DataResult.error(() -> "Invalid Raid Difficulty: " + difficultyString); }
     }
 
     private final RaidDifficulty raidDifficulty; public RaidDifficulty getRaidDifficulty() { return this.raidDifficulty; }

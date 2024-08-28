@@ -6,6 +6,7 @@ import com.calculusmaster.difficultraids.entity.entities.core.AbstractEvokerVari
 import com.calculusmaster.difficultraids.raids.RaidDifficulty;
 import com.calculusmaster.difficultraids.util.Compat;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -149,7 +150,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
 
     public void setMinionTargets(WitherSkeleton minion)
     {
-        minion.targetSelector.removeAllGoals();
+        minion.targetSelector.removeAllGoals(goal -> (true));
         minion.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(minion, Player.class, true));
         minion.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(minion, IronGolem.class, true));
         minion.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(minion, AbstractVillager.class, true));
@@ -184,7 +185,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
         //Loading
         if(this.checkMinions)
         {
-            this.minions.addAll(this.level.getEntitiesOfClass(WitherSkeleton.class, this.getBoundingBox().inflate(SUMMON_CHECK_RADIUS), e -> e.getTags().contains(this.minionTag)));
+            this.minions.addAll(this.level().getEntitiesOfClass(WitherSkeleton.class, this.getBoundingBox().inflate(SUMMON_CHECK_RADIUS), e -> e.getTags().contains(this.minionTag)));
 
             this.checkMinions = this.tickCount <= 100 && this.minions.isEmpty();
 
@@ -205,7 +206,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
                 if(this.tickCount % 40 == 0 && ws.getHealth() < ws.getMaxHealth() * 0.75 && ws.distanceTo(this) <= 3.0)
                 {
                     ws.heal(1.0F);
-                    ((ServerLevel)this.level).sendParticles(ParticleTypes.HAPPY_VILLAGER, ws.getX(), ws.getEyeY() + 0.25, ws.getZ(), 3, this.random.nextFloat() / 2, this.random.nextFloat() / 2, this.random.nextFloat() / 2, 0.4);
+                    ((ServerLevel)this.level()).sendParticles(ParticleTypes.HAPPY_VILLAGER, ws.getX(), ws.getEyeY() + 0.25, ws.getZ(), 3, this.random.nextFloat() / 2, this.random.nextFloat() / 2, this.random.nextFloat() / 2, 0.4);
                 }
             }
         }
@@ -251,7 +252,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
 
                 Predicate<Entity> validTarget = e -> !(e instanceof Raider) && !e.isAlliedTo(this) && !(e instanceof WitherSkeleton);
 
-                WitherSkull witherSkull = new WitherSkull(this.level, this, dX, dY, dZ)
+                WitherSkull witherSkull = new WitherSkull(this.level(), this, dX, dY, dZ)
                 {
                     @Override
                     protected void onHitEntity(EntityHitResult pResult)
@@ -265,7 +266,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
 
                 witherSkull.setOwner(this);
                 witherSkull.setPos(aX, aY, aZ);
-                this.level.addFreshEntity(witherSkull);
+                this.level().addFreshEntity(witherSkull);
 
                 this.turretCount--;
             }
@@ -275,7 +276,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
             if(this.ticksNoTarget >= 40 && this.turretCount > 0) this.turretCount = 0;
 
             //Particles
-            if(this.tickCount % 5 == 0 && this.level instanceof ServerLevel serverLevel) for(int i = 0; i < 4; i++)
+            if(this.tickCount % 5 == 0 && this.level() instanceof ServerLevel serverLevel) for(int i = 0; i < 4; i++)
                 serverLevel.sendParticles(ParticleTypes.SMOKE, this.getX() + (0.25 - this.random.nextFloat() * 0.5), this.getEyeY(), this.getZ() + (0.25 - this.random.nextFloat() * 0.5), 1, 0, 0, 0, 0.2);
         }
         else if(this.isTurretActive() && this.turretCount == 0) this.setTurretActive(false);
@@ -338,7 +339,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
         protected void castSpell()
         {
             LivingEntity target = AshenmancerIllagerEntity.this.getTarget();
-            ServerLevel level = (ServerLevel) AshenmancerIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel) AshenmancerIllagerEntity.this.level();
 
             if(target != null)
             {
@@ -437,7 +438,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
         protected void castSpell()
         {
             LivingEntity target = AshenmancerIllagerEntity.this.getTarget();
-            ServerLevel level = (ServerLevel)AshenmancerIllagerEntity.this.getLevel();
+            ServerLevel level = (ServerLevel)AshenmancerIllagerEntity.this.level();
             AshenmancerIllagerEntity ashenmancer = AshenmancerIllagerEntity.this;
 
             List<WitherSkullType> pool = new ArrayList<>(List.of(WitherSkullType.values()));
@@ -510,7 +511,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
 
                                 if(ashenmancer.ashenado != null)
                                 {
-                                    Vec3 dir = new Vec3(pResult.getEntity().getX() - ashenmancer.ashenado.getCenter().x(), pResult.getEntity().getY() - ashenmancer.ashenado.getCenter().y(), pResult.getEntity().getZ() - ashenmancer.ashenado.getCenter().z()).normalize();
+                                    Vec3 dir = new Vec3(pResult.getEntity().getX() - ashenmancer.ashenado.getCenter().getX(), pResult.getEntity().getY() - ashenmancer.ashenado.getCenter().getY(), pResult.getEntity().getZ() - ashenmancer.ashenado.getCenter().getZ()).normalize();
 
                                     final float force = type == WitherSkullType.PUSHER ? ashenmancer.config().ashenmancer.pusherSkullForce : 1.25F;
                                     pResult.getEntity().push(dir.x() * force, dir.y() * force, dir.z() * force);
@@ -644,10 +645,10 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
             {
                 BlockPos targetCenter = target.blockPosition().offset(-3 + ashenmancer.random.nextInt(7), 0, -3 + ashenmancer.random.nextInt(7));
                 Vec3 center = Vec3.atCenterOf(targetCenter).subtract(0, -0.5, 0);
-
+                Vec3i center_int = new Vec3i((int)center.x, (int)center.y, (int)center.z);
                 ashenmancer.ashenado = new AshenadoObject(ashenmancer,
                         ashenmancer.isInDifficultRaid() ? ashenmancer.getRaidDifficulty() : RaidDifficulty.DEFAULT,
-                        center,
+                        center_int,
                         ashenmancer.config().ashenmancer.ashenadoDuration
                 );
             }

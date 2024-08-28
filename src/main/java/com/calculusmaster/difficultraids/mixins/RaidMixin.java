@@ -29,6 +29,8 @@ import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootDataResolver;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
@@ -234,7 +236,7 @@ public abstract class RaidMixin
         {
             LOGGER.info("DifficultRaids: Generating " + raidDifficulty.getFormattedName() + " Raid Loot!");
 
-            LootTable valuablesLT = this.level.getServer().getLootTables().get(switch(raidDifficulty)
+            LootTable valuablesLT = this.level.getServer().getLootData().getLootTable(switch(raidDifficulty)
             {
                 case DEFAULT, HERO -> RaidLoot.HERO_VALUABLES;
                 case LEGEND -> RaidLoot.LEGEND_VALUABLES;
@@ -242,7 +244,7 @@ public abstract class RaidMixin
                 case GRANDMASTER -> RaidLoot.GRANDMASTER_VALUABLES;
             });
 
-            LootTable magicLT = this.level.getServer().getLootTables().get(switch(raidDifficulty)
+            LootTable magicLT = this.level.getServer().getLootData().getLootTable(switch(raidDifficulty)
             {
                 case DEFAULT, HERO -> RaidLoot.HERO_MAGIC;
                 case LEGEND -> RaidLoot.LEGEND_MAGIC;
@@ -296,12 +298,13 @@ public abstract class RaidMixin
         BlockEntity blockEntity = this.level.getExistingBlockEntity(pos);
         if(blockEntity instanceof Container container)
         {
-            LootContext context = new LootContext.Builder(this.level)
-                    .withLuck(this.level.getDifficulty() == Difficulty.HARD ? 1.0F : 0.0F)
-                    .withParameter(LootContextParams.ORIGIN, Vec3.atCenterOf(pos))
+            LootParams params = new LootParams.Builder(this.level).withLuck(this.level.getDifficulty() == Difficulty.HARD ? 1.0F : 0.0F)
                     .create(LootContextParamSets.CHEST);
+//                    .hasParam(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)))
 
-            table.fill(container, context);
+//                    .create(table.getLootTableId());
+
+            table.fill(container, params, random.nextLong());
             container.setChanged();
         }
         else LOGGER.warn("Could not find container for " + type + " Raid Loot at {" + pos.getX() + ", " + pos.getY() + ", " + pos.getZ() + "}!");

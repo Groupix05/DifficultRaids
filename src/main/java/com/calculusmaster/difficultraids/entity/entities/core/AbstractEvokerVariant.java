@@ -63,7 +63,7 @@ public abstract class AbstractEvokerVariant extends AbstractIllagerVariant
 
     public boolean isCastingSpell()
     {
-        if(this.level.isClientSide) return this.entityData.get(SPELL_DATA) > 0;
+        if(this.level().isClientSide) return this.entityData.get(SPELL_DATA) > 0;
         else return this.spellTicks > 0;
     }
 
@@ -75,7 +75,7 @@ public abstract class AbstractEvokerVariant extends AbstractIllagerVariant
 
     protected SpellType getSpellType()
     {
-        return !this.level.isClientSide ? this.activeSpell : SpellType.getFromID(this.entityData.get(SPELL_DATA));
+        return !this.level().isClientSide ? this.activeSpell : SpellType.getFromID(this.entityData.get(SPELL_DATA));
     }
 
     @Override
@@ -96,7 +96,7 @@ public abstract class AbstractEvokerVariant extends AbstractIllagerVariant
     {
         super.tick();
 
-        if(this.level.isClientSide && this.isCastingSpell() && this.spawnDefaultSpellcastingParticles())
+        if(this.level().isClientSide && this.isCastingSpell() && this.spawnDefaultSpellcastingParticles())
         {
             SpellType spellType = this.getSpellType();
             double d0 = spellType.spellColor[0];
@@ -105,8 +105,8 @@ public abstract class AbstractEvokerVariant extends AbstractIllagerVariant
             float f = this.yBodyRot * ((float)Math.PI / 180F) + Mth.cos((float)this.tickCount * 0.6662F) * 0.25F;
             float f1 = Mth.cos(f);
             float f2 = Mth.sin(f);
-            this.level.addParticle(ParticleTypes.ENTITY_EFFECT, this.getX() + (double)f1 * 0.6D, this.getY() + 1.8D, this.getZ() + (double)f2 * 0.6D, d0, d1, d2);
-            this.level.addParticle(ParticleTypes.ENTITY_EFFECT, this.getX() - (double)f1 * 0.6D, this.getY() + 1.8D, this.getZ() - (double)f2 * 0.6D, d0, d1, d2);
+            this.level().addParticle(ParticleTypes.ENTITY_EFFECT, this.getX() + (double)f1 * 0.6D, this.getY() + 1.8D, this.getZ() + (double)f2 * 0.6D, d0, d1, d2);
+            this.level().addParticle(ParticleTypes.ENTITY_EFFECT, this.getX() - (double)f1 * 0.6D, this.getY() + 1.8D, this.getZ() - (double)f2 * 0.6D, d0, d1, d2);
         }
     }
 

@@ -1,6 +1,12 @@
 package com.calculusmaster.difficultraids.effects;
 
+import net.minecraft.core.Holder;
+import net.minecraft.core.Holder.*;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -38,7 +44,8 @@ public class WindCurseEffect extends MobEffect
             float damage = 1.25F * pAmplifier;
 
             pLivingEntity.push(dX * modifier, dY, dZ * modifier);
-            pLivingEntity.hurt(DamageSource.MAGIC, damage);
+            DamageSource damage_source = pLivingEntity.damageSources().magic();
+            pLivingEntity.hurt(damage_source, damage);
         }
     }
 }
