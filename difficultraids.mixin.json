@@ -34,12 +34,12 @@
     "raider.illusioner.IllusionerBlindnessSpellGoalMixin",
     "raider.illusioner.IllusionerMirrorSpellGoalMixin"
   ],
+  "injectors": {
+    "defaultRequire": 1
+  },
   "client": [
     "WitherSkullRendererMixin",
     "raider.PillagerRendererMixin"
   ],
-  "server": [],
-  "injectors": {
-    "defaultRequire": 1
-  }
+  "server": []
 }
