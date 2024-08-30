@@ -473,10 +473,14 @@ public class NecromancerIllagerEntity extends AbstractEvokerVariant
         @Override
         public boolean canUse()
         {
-            Level level = NecromancerIllagerEntity.this.level();
-            LivingEntity target = NecromancerIllagerEntity.this.getTarget();
-            Vec3i eye_pos = new Vec3i((int)target.getEyePosition().x, (int)target.getEyePosition().y, (int)target.getEyePosition().z);
-            return super.canUse() && level.getBlockState(new BlockPos(eye_pos)).isAir() && Math.pow(NecromancerIllagerEntity.this.blockPosition().distSqr(target.blockPosition()), 0.5) < 4;
+            try {
+                Level level = NecromancerIllagerEntity.this.level();
+                LivingEntity target = NecromancerIllagerEntity.this.getTarget();
+                Vec3i eye_pos = new Vec3i((int) target.getEyePosition().x, (int) target.getEyePosition().y, (int) target.getEyePosition().z);
+                return super.canUse() && level.getBlockState(new BlockPos(eye_pos)).isAir() && Math.pow(NecromancerIllagerEntity.this.blockPosition().distSqr(target.blockPosition()), 0.5) < 4;
+            } catch (Exception e) {
+                return false;
+            }
         }
 
         @Override

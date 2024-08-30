@@ -60,7 +60,7 @@ public class ShamanDebuffBulletEntity extends ShulkerBullet
     {
         if(this.getOwner() instanceof LivingEntity owner && pResult.getEntity() instanceof LivingEntity hitEntity && !(hitEntity instanceof Raider))
         {
-            boolean hitSuccess = hitEntity.hurt(this.damageSources().mobAttack(owner), 3.0F);
+            boolean hitSuccess = hitEntity.hurt(this.damageSources().indirectMagic(owner, hitEntity), 3.0F);
             if(hitSuccess) this.doEnchantDamageEffects(owner, this);
 
             this.getModifiedDebuffs(hitSuccess ? 1.0 : 0.5).forEach(d -> hitEntity.addEffect(d, this));

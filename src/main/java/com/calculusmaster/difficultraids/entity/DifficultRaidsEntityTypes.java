@@ -80,7 +80,7 @@ public class DifficultRaidsEntityTypes
     {
         return ENTITY_TYPES.register(registryName,
                 () -> EntityType.Builder.of(entityFactory, MobCategory.MONSTER)
-                        .sized(0.6F, 1.95F).clientTrackingRange(8).fireImmune()
+                        .sized(0.6F, 1.95F).clientTrackingRange(8)
                         .build(new ResourceLocation(DifficultRaids.MODID, registryName).toString())
         );
     }

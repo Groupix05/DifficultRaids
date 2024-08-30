@@ -149,11 +149,11 @@ public class AshenadoObject
                     l.addEffect(new MobEffectInstance(MobEffects.WITHER, 20 * 7, 1, false, false));
                 });
 
+
         this.level
                 .getEntitiesOfClass(LivingEntity.class, this.coreArea, validTarget)
                 // this damage is supposed to bypass armor, enchantments, and magic.
-                // but idk how to make that happen. so for now it will do none of those things
-                .forEach(l -> l.hurt(l.damageSources().mobAttack(this.owner), 2.0F));
+                .forEach(l -> l.hurt(l.damageSources().indirectMagic(this.owner, l), 2.0F));
     }
 
     public boolean isComplete()

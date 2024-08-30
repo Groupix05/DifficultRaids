@@ -205,6 +205,9 @@ public class DRForgeBusEvents
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event)
     {
+        if (event.getSource().getEntity() == null){
+            return;
+        }
         if(event.getSource().equals(event.getSource().getEntity().damageSources().wither())
                 && event.getSource().getEntity() instanceof AshenmancerIllagerEntity ashenmancer
                 && ashenmancer.isInDifficultRaid()

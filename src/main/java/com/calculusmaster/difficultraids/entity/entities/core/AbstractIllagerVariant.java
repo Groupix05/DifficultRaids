@@ -2,13 +2,19 @@ package com.calculusmaster.difficultraids.entity.entities.core;
 
 import com.calculusmaster.difficultraids.config.RaidDifficultyConfig;
 import com.calculusmaster.difficultraids.raids.RaidDifficulty;
+import com.calculusmaster.difficultraids.util.Compat;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.level.Level;
+import tallestegg.guardvillagers.entities.Guard;
 
 public abstract class AbstractIllagerVariant extends AbstractIllager
 {
@@ -52,4 +58,5 @@ public abstract class AbstractIllagerVariant extends AbstractIllager
     {
         return this.isInRaid() && !this.getRaidDifficulty().isDefault();
     }
+
 }
