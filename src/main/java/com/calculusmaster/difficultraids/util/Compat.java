@@ -13,7 +13,8 @@ public enum Compat
 //    DUNGEONS_MOBS("dungeons_mobs"),
     ILLAGER_REVOLUTION("illagerrevolutionmod"),
     LEOS_ILLAGERS("leosillagers"),
-    RECRUITS("recruits")
+    RECRUITS("recruits"),
+    WORKERS("workers")
     ;
 
     private final String modid;

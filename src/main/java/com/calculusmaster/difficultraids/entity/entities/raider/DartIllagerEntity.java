@@ -1,7 +1,9 @@
 package com.calculusmaster.difficultraids.entity.entities.raider;
 
 import com.calculusmaster.difficultraids.entity.entities.core.AbstractVindicatorVariant;
+import com.calculusmaster.difficultraids.util.Compat;
 import com.calculusmaster.difficultraids.util.DifficultRaidsUtil;
+import com.talhanation.recruits.entities.AbstractRecruitEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.DifficultyInstance;
@@ -29,6 +31,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.Nullable;
+import tallestegg.guardvillagers.entities.Guard;
 
 public class DartIllagerEntity extends AbstractVindicatorVariant
 {
@@ -57,7 +60,8 @@ public class DartIllagerEntity extends AbstractVindicatorVariant
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Sheep.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Pig.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Chicken.class, true));
-
+        if(Compat.GUARD_VILLAGERS.isLoaded()) this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Guard.class, true));
+        if(Compat.RECRUITS.isLoaded()) this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, AbstractRecruitEntity.class, true));
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.9D));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 3.0F, 1.0F));
         this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, 8.0F));

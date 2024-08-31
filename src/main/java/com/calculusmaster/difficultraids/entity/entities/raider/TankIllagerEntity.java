@@ -1,6 +1,9 @@
 package com.calculusmaster.difficultraids.entity.entities.raider;
 
 import com.calculusmaster.difficultraids.entity.entities.core.AbstractVindicatorVariant;
+import com.calculusmaster.difficultraids.util.Compat;
+import com.talhanation.recruits.entities.AbstractRecruitEntity;
+import com.talhanation.workers.entities.AbstractWorkerEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
@@ -27,6 +30,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import tallestegg.guardvillagers.entities.Guard;
 
 public class TankIllagerEntity extends AbstractVindicatorVariant
 {
@@ -52,7 +56,10 @@ public class TankIllagerEntity extends AbstractVindicatorVariant
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, Raider.class)).setAlertOthers());
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, true));
+        if(Compat.WORKERS.isLoaded()) this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractWorkerEntity.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
+        if(Compat.GUARD_VILLAGERS.isLoaded()) this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Guard.class, true));
+        if(Compat.RECRUITS.isLoaded()) this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractRecruitEntity.class, true));
 
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6D));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 3.0F, 1.0F));

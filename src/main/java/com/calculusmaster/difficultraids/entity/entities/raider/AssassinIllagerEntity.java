@@ -3,6 +3,8 @@ package com.calculusmaster.difficultraids.entity.entities.raider;
 import com.calculusmaster.difficultraids.entity.entities.core.AbstractPillagerVariant;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsEnchantments;
 import com.calculusmaster.difficultraids.util.Compat;
+import com.talhanation.recruits.entities.AbstractRecruitEntity;
+import com.talhanation.workers.entities.AbstractWorkerEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
@@ -53,13 +55,14 @@ public class AssassinIllagerEntity extends AbstractPillagerVariant
 
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, Raider.class)).setAlertOthers());
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, true));
+        if(Compat.WORKERS.isLoaded()) this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractWorkerEntity.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Cow.class, true));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Sheep.class, true));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Pig.class, true));
         this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, Chicken.class, true));
         if(Compat.GUARD_VILLAGERS.isLoaded()) this.targetSelector.addGoal(8, new NearestAttackableTargetGoal<>(this, Guard.class, true));
-
+        if(Compat.RECRUITS.isLoaded()) this.targetSelector.addGoal(8, new NearestAttackableTargetGoal<>(this, AbstractRecruitEntity.class, true));
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.9D));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 3.0F, 1.0F));
         this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, 8.0F));

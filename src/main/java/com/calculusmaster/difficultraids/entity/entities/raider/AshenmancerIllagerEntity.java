@@ -5,6 +5,8 @@ import com.calculusmaster.difficultraids.entity.entities.component.AshenadoObjec
 import com.calculusmaster.difficultraids.entity.entities.core.AbstractEvokerVariant;
 import com.calculusmaster.difficultraids.raids.RaidDifficulty;
 import com.calculusmaster.difficultraids.util.Compat;
+import com.talhanation.recruits.entities.AbstractRecruitEntity;
+import com.talhanation.workers.entities.AbstractWorkerEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.particles.ParticleTypes;
@@ -85,6 +87,7 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
         this.goalSelector.addGoal(1, new AshenmancerCastSpellGoal());
         this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 6.0F, 0.6D, 1.0D));
         if(Compat.GUARD_VILLAGERS.isLoaded()) this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Guard.class, 6.0F, 0.7D, 1.0D));
+        if(Compat.RECRUITS.isLoaded()) this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, AbstractRecruitEntity.class, 6.0F, 0.7D, 1.0D));
         this.goalSelector.addGoal(3, new AshenmancerSummonMinionsSpellGoal());
         //TODO: Ashenado Rework this.goalSelector.addGoal(4, new AshenmancerAshenadoSpellGoal());
         this.goalSelector.addGoal(5, new AshenmancerWitherSkullTurretSpellGoal());
@@ -97,9 +100,10 @@ public class AshenmancerIllagerEntity extends AbstractEvokerVariant
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, Raider.class)).setAlertOthers());
         this.targetSelector.addGoal(2, (new NearestAttackableTargetGoal<>(this, Player.class, true)).setUnseenMemoryTicks(300));
         if(Compat.GUARD_VILLAGERS.isLoaded()) this.targetSelector.addGoal(2, (new NearestAttackableTargetGoal<>(this, Guard.class, true)).setUnseenMemoryTicks(300));
+        if(Compat.RECRUITS.isLoaded()) this.targetSelector.addGoal(2, (new NearestAttackableTargetGoal<>(this, AbstractRecruitEntity.class, true)).setUnseenMemoryTicks(300));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
         this.targetSelector.addGoal(3, (new NearestAttackableTargetGoal<>(this, AbstractVillager.class, true)).setUnseenMemoryTicks(300));
-
+        if(Compat.WORKERS.isLoaded()) this.targetSelector.addGoal(3, (new NearestAttackableTargetGoal<>(this, AbstractWorkerEntity.class, true)).setUnseenMemoryTicks(300));
     }
 
     @Override
