@@ -1,7 +1,7 @@
 package com.calculusmaster.difficultraids.mixins.compat;
 
-import baguchan.hunterillager.entity.HunterIllagerEntity;
-import baguchan.hunterillager.init.HunterItems;
+import baguchan.hunters_return.entity.Hunter;
+import baguchan.hunters_return.init.HunterItems;
 import com.calculusmaster.difficultraids.config.RaidDifficultyConfig;
 import com.calculusmaster.difficultraids.raids.RaidDifficulty;
 import com.calculusmaster.difficultraids.util.Compat;
@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(HunterIllagerEntity.class)
+@Mixin(Hunter.class)
 public abstract class HunterIllagerMixin extends AbstractIllager
 {
     @Shadow @Final private SimpleContainer inventory;

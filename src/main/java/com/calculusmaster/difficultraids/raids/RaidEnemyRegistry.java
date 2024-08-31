@@ -4,9 +4,9 @@ import com.calculusmaster.difficultraids.DifficultRaids;
 import com.calculusmaster.difficultraids.data.raiderentries.RaiderEntriesHolder;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.util.Compat;
-import com.infamous.dungeons_mobs.mod.ModEntityTypes;
+//import com.infamous.dungeons_mobs.mod.ModEntityTypes;
 import com.mojang.logging.LogUtils;
-import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
+//import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
@@ -134,8 +134,8 @@ public class RaidEnemyRegistry
         RaidEnemyRegistry.createRaiderType(VOLDON, VOLDON_ELITE.get());
 
         //Compatibility
-        if(Compat.SAVAGE_AND_RAVAGE.isLoaded()) RaidEnemyRegistry.createRaiderType(ICEOLOGER_SR, SREntityTypes.ICEOLOGER.get());
-        if(Compat.DUNGEONS_MOBS.isLoaded()) RaidEnemyRegistry.createRaiderType(ILLUSIONER_DM, ModEntityTypes.ILLUSIONER.get());
+//        if(Compat.SAVAGE_AND_RAVAGE.isLoaded()) RaidEnemyRegistry.createRaiderType(ICEOLOGER_SR, SREntityTypes.ICEOLOGER.get());
+//        if(Compat.DUNGEONS_MOBS.isLoaded()) RaidEnemyRegistry.createRaiderType(ILLUSIONER_DM, ModEntityTypes.ILLUSIONER.get());
     }
 
     public static void compileWaveData(final Map<ResourceLocation, RaiderEntriesHolder> data)

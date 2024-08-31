@@ -163,47 +163,50 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    //Guard Villagers 1.5.2
-    implementation fg.deobf("curse.maven:guardvillagers-360203:3970122")
+    //Guard Villagers 1.6.7
+    implementation fg.deobf("curse.maven:guardvillagers-360203:5619709")
 
-    //Hunter Illager 6.0.2
-    implementation fg.deobf("curse.maven:hunterillager-318857:4034397")
+    //Villager Recruits 1.12.1
+    implementation fg.deobf("curse.maven:recruits-523860:5680361")
 
-    //Enchant with Mob 6.4.1
-    compileOnly fg.deobf("curse.maven:enchantwithmob-391187:4026539")
+    //Hunter Illager 11.5.0
+    implementation fg.deobf("curse.maven:hunterillager-318857:5580223")
+
+    //Enchant with Mob 12.0.1
+    compileOnly fg.deobf("curse.maven:enchantwithmob-913523:5676281")
 
     //Illage & Spillage 1.2.4
-    implementation fg.deobf("curse.maven:illage-and-spillage-576368:4263798")
+//    implementation fg.deobf("curse.maven:illage-and-spillage-576368:4263798")
 
     //It Takes a Pillage 1.0.3
-    implementation fg.deobf("curse.maven:it-takes-a-pillage-635843:4388334")
+    implementation fg.deobf("curse.maven:it-takes-a-pillage-635843:4981343")
 
     //Savage and Ravage 5.0.4
-    implementation fg.deobf("curse.maven:savage-and-ravage-381736:4429231")
+//    implementation fg.deobf("curse.maven:savage-and-ravage-381736:4429231")
 
     //Dungeons Mobs 4.0.8 + GeckoLib 3.1.40 + Dungeons Libraries 3.0.10
-    implementation fg.deobf("curse.maven:dungeons-mobs-428883:4501524")
-    implementation fg.deobf("curse.maven:geckolib-388172:4407241")
-    implementation fg.deobf("curse.maven:dungeons-libraries-550941:4496767")
+//    implementation fg.deobf("curse.maven:dungeons-mobs-428883:4501524")
+//    implementation fg.deobf("curse.maven:geckolib-388172:4407241")
+//    implementation fg.deobf("curse.maven:dungeons-libraries-550941:4496767")
 
     //Leo's Illagers
-    implementation fg.deobf("curse.maven:leos-illagers-812954:4370803")
+//    implementation fg.deobf("curse.maven:leos-illagers-812954:4370803")
 
     //Pyrologer & Friends
-    implementation fg.deobf("curse.maven:pyrologer-and-friends-573099:4433602")
+//    implementation fg.deobf("curse.maven:pyrologer-and-friends-573099:4433602")
 
-    //L Ender's Cataclysm
-    implementation fg.deobf("curse.maven:l_ender-s-cataclysm-551586:4654770")
+    //L Ender's Cataclysm 1.99.6
+    implementation fg.deobf("curse.maven:l_ender-s-cataclysm-551586:5474791")
 
     //Mob Entity Path Visualizer 1.1.0-release.6
-    runtimeOnly fg.deobf("curse.maven:mob-entity-path-visualizer-590716:4063117")
+//    runtimeOnly fg.deobf("curse.maven:mob-entity-path-visualizer-590716:4063117")
 
-    //Enchantment Descriptions 13.0.3 + Bookshelf 16.1.5
-    runtimeOnly fg.deobf("curse.maven:enchantmentdescriptions-250419:3955030")
-    runtimeOnly fg.deobf("curse.maven:bookshelf-228525:3964325")
+    //Enchantment Descriptions 17.1.18 + Bookshelf 20.2.13
+    runtimeOnly fg.deobf("curse.maven:enchantmentdescriptions-250419:5598368")
+    runtimeOnly fg.deobf("curse.maven:bookshelf-228525:5423987")
 
     //ToroHealth Damage Indicators 1.19.2 1.0.0
-    runtimeOnly fg.deobf("curse.maven:torohealth-damage-indicators-245733:3895068")
+//    runtimeOnly fg.deobf("curse.maven:torohealth-damage-indicators-245733:3895068")
 }
 
 mixin {
