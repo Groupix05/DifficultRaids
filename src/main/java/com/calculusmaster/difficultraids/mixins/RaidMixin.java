@@ -58,6 +58,7 @@ public abstract class RaidMixin
 {
     private int players;
     private AABB validRaidArea;
+    private int totalSpawned;
 
     @Mutable @Shadow @Final private int numGroups;
     @Shadow private int groupsSpawned;
@@ -286,10 +287,12 @@ public abstract class RaidMixin
         //Find suitable spawn location
         BlockPos pos = new BlockPos(
                 randomizer.apply(this.center.getX()),
-                this.center.getY() + 5,
+                this.center.getY(),
                 randomizer.apply(this.center.getZ())
         );
-        while(!this.level.getBlockState(pos).isAir()) pos = pos.offset(randomizer.apply(pos.getX()), 1, randomizer.apply(pos.getZ()));
+        while(!this.level.getBlockState(pos).isAir()) pos = pos.offset(0, 1, 0);
+
+
 
         //Spawn chest
         this.level.setBlock(pos, Blocks.CHEST.defaultBlockState(), 2);
@@ -298,7 +301,9 @@ public abstract class RaidMixin
         BlockEntity blockEntity = this.level.getExistingBlockEntity(pos);
         if(blockEntity instanceof Container container)
         {
+
             LootParams params = new LootParams.Builder(this.level).withLuck(this.level.getDifficulty() == Difficulty.HARD ? 1.0F : 0.0F)
+                    .withParameter(LootContextParams.ORIGIN, pos.getCenter())
                     .create(LootContextParamSets.CHEST);
 //                    .hasParam(LootContextParams.ORIGIN, Vec3.atCenterOf(pos)))
 

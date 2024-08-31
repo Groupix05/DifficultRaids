@@ -2,14 +2,21 @@ package com.calculusmaster.difficultraids.events;
 
 import com.calculusmaster.difficultraids.DifficultRaids;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
+import com.calculusmaster.difficultraids.setup.DifficultRaidsItems;
+import com.mojang.logging.LogUtils;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.RegistryObject;
+import org.slf4j.Logger;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -159,4 +166,8 @@ public class DREntityAttributeRegistry
             event.add(type, Attributes.ARMOR_TOUGHNESS);
         });
     }
+
+
+
+
 }

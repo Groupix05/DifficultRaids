@@ -3,19 +3,22 @@ package com.calculusmaster.difficultraids.setup;
 import com.calculusmaster.difficultraids.DifficultRaids;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.calculusmaster.difficultraids.items.GMArmorItem;
+import com.mojang.logging.LogUtils;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.slf4j.Logger;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class DifficultRaidsItems
@@ -109,9 +112,59 @@ public class DifficultRaidsItems
         return ITEMS.register(name + "_spawn_egg", () -> new ForgeSpawnEggItem(entityType, 0x565B5C, highlight, new Item.Properties()));
     }
 
+    public static final List<RegistryObject<Item>> SPAWN_EGGS = Arrays.asList(
+            SPAWN_EGG_ASHENMANCER_ILLAGER,
+            SPAWN_EGG_ASSASSIN_ILLAGER,
+            SPAWN_EGG_DART_ILLAGER,
+            SPAWN_EGG_ELECTRO_ILLAGER,
+            SPAWN_EGG_FROST_ILLAGER,
+            SPAWN_EGG_NECROMANCER_ILLAGER,
+            SPAWN_EGG_SHAMAN_ILLAGER,
+            SPAWN_EGG_TANK_ILLAGER,
+            SPAWN_EGG_WARRIOR_ILLAGER
+    );
+
+    public static final List<RegistryObject<Item>> ARMOR = Arrays.asList(
+            GRANDMASTER_HELMET, GRANDMASTER_CHESTPLATE, GRANDMASTER_LEGGINGS, GRANDMASTER_BOOTS
+    );
+
+    public static final List<RegistryObject<Item>> TOTEMS = Arrays.asList(
+            TOTEM_OF_PERSISTENCE,
+            TOTEM_OF_DESTINY,
+            TOTEM_OF_FIREBALLS,
+            TOTEM_OF_FREEZING,
+            TOTEM_OF_LEVITATION,
+            TOTEM_OF_LIGHTNING,
+            TOTEM_OF_POISON,
+            TOTEM_OF_PROTECTION,
+            TOTEM_OF_SPEED,
+            TOTEM_OF_INVISIBILITY,
+            TOTEM_OF_VENGEANCE
+    );
+
+
 
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);
+    }
+
+    private static final Logger LOGGER = LogUtils.getLogger();
+
+    public static void buildContents(BuildCreativeModeTabContentsEvent event) {
+        // Add to ingredients tab
+        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            for (RegistryObject<Item> item : DifficultRaidsItems.SPAWN_EGGS) {
+                event.accept(item);
+            }
+        }
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            for (RegistryObject<Item> item : DifficultRaidsItems.ARMOR) {
+                event.accept(item);
+            }
+            for (RegistryObject<Item> item : DifficultRaidsItems.TOTEMS) {
+                event.accept(item);
+            }
+        }
     }
 }

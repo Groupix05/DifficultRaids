@@ -13,8 +13,10 @@ import com.calculusmaster.difficultraids.entity.entities.raider.*;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsEffects;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsEnchantments;
+import com.calculusmaster.difficultraids.setup.DifficultRaidsItems;
 import com.calculusmaster.difficultraids.util.Compat;
 import com.calculusmaster.difficultraids.util.DifficultRaidsUtil;
+import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -30,7 +32,10 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.raid.Raider;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.PlayLevelSoundEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
@@ -44,6 +49,8 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+import org.slf4j.Logger;
 import tallestegg.guardvillagers.entities.Guard;
 
 import java.util.Optional;
@@ -214,4 +221,6 @@ public class DRForgeBusEvents
         )
             event.setAmount(ashenmancer.config().ashenmancer.witherSkullWitherTickDamage);
     }
+
+
 }

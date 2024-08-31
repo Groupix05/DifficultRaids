@@ -33,6 +33,7 @@ public class DifficultRaids
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         DifficultRaidsItems.register(eventBus);
+        eventBus.addListener(DifficultRaidsItems::buildContents);
 
         DifficultRaidsConfig.register();
 
