@@ -139,7 +139,8 @@ public class DifficultRaidsItems
             TOTEM_OF_PROTECTION,
             TOTEM_OF_SPEED,
             TOTEM_OF_INVISIBILITY,
-            TOTEM_OF_VENGEANCE
+            TOTEM_OF_VENGEANCE,
+            TOTEM_OF_TELEPORTATION
     );
 
 
