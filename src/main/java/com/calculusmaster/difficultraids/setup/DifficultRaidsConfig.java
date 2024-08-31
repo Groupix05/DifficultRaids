@@ -166,31 +166,31 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ARCHER, GENERAL.define("enableArchers", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SKIRMISHER, GENERAL.define("enableSkirmishers", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.LEGIONER, GENERAL.define("enableLegioners", true));
-        GENERAL.pop().push("Requires Illage & Spillage");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.IGNITER, GENERAL.define("enableIgniters", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.TWITTOLLAGER, GENERAL.define("enableTwittollagers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.PRESERVER, GENERAL.define("enablePreservers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.ABSORBER, GENERAL.define("enableAbsorbers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.CROCOFANG, GENERAL.define("enableCrocofangs", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.MAGISPELLER, GENERAL.define("enableMagispellers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.SPIRITCALLER, GENERAL.define("enableSpiritcallers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.FREAKAGER, GENERAL.define("enableFreakagers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.BOSS_RANDOMIZER, GENERAL.define("enableBossRandomizers", true));
-        GENERAL.pop().push("Requires Savage and Ravage");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.GRIEFER, GENERAL.define("enableGriefers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.EXECUTIONER, GENERAL.define("enableExecutioners", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.TRICKSTER, GENERAL.define("enableTricksters", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_SR, GENERAL.define("enableSavageRavageIceologers", true));
-        GENERAL.pop().push("Requires Dungeon Mobs");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.MOUNTAINEER, GENERAL.define("enableMountaineers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.ROYAL_GUARD, GENERAL.define("enableRoyalGuards", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.GEOMANCER, GENERAL.define("enableGeomancers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLUSIONER_DM, GENERAL.define("enableDungeonMobsIllusioners", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.MAGE, GENERAL.define("enableMages", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_DM, GENERAL.define("enableDungeonMobsIceologers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.WINDCALLER, GENERAL.define("enableWindcallers", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.SQUALL_GOLEM, GENERAL.define("enableSquallGolems", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.REDSTONE_GOLEM, GENERAL.define("enableRedstoneGolems", true));
+//        GENERAL.pop().push("Requires Illage & Spillage");
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.IGNITER, GENERAL.define("enableIgniters", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.TWITTOLLAGER, GENERAL.define("enableTwittollagers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.PRESERVER, GENERAL.define("enablePreservers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.ABSORBER, GENERAL.define("enableAbsorbers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.CROCOFANG, GENERAL.define("enableCrocofangs", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.MAGISPELLER, GENERAL.define("enableMagispellers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.SPIRITCALLER, GENERAL.define("enableSpiritcallers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.FREAKAGER, GENERAL.define("enableFreakagers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.BOSS_RANDOMIZER, GENERAL.define("enableBossRandomizers", true));
+//        GENERAL.pop().push("Requires Savage and Ravage");
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.GRIEFER, GENERAL.define("enableGriefers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.EXECUTIONER, GENERAL.define("enableExecutioners", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.TRICKSTER, GENERAL.define("enableTricksters", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_SR, GENERAL.define("enableSavageRavageIceologers", true));
+//        GENERAL.pop().push("Requires Dungeon Mobs");
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.MOUNTAINEER, GENERAL.define("enableMountaineers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.ROYAL_GUARD, GENERAL.define("enableRoyalGuards", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.GEOMANCER, GENERAL.define("enableGeomancers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLUSIONER_DM, GENERAL.define("enableDungeonMobsIllusioners", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.MAGE, GENERAL.define("enableMages", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_DM, GENERAL.define("enableDungeonMobsIceologers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.WINDCALLER, GENERAL.define("enableWindcallers", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.SQUALL_GOLEM, GENERAL.define("enableSquallGolems", true));
+//        ENABLED_RAIDERS.put(RaidEnemyRegistry.REDSTONE_GOLEM, GENERAL.define("enableRedstoneGolems", true));
         GENERAL.pop();
 
         GENERAL.pop();
@@ -331,24 +331,24 @@ public class DifficultRaidsConfig
             spec.pop();
 
             //Executioner
-            spec.comment("REQUIRES 'Savage and Ravage'").push("Executioner Settings");
-            config.executioner = new RaiderConfigs.Executioner(rd, spec);
-            spec.pop();
+//            spec.comment("REQUIRES 'Savage and Ravage'").push("Executioner Settings");
+//            config.executioner = new RaiderConfigs.Executioner(rd, spec);
+//            spec.pop();
 
             //Mountaineer
-            spec.comment("REQUIRES 'Dungeon Mobs'").push("Mountaineer Settings");
-            config.mountaineer = new RaiderConfigs.Mountaineer(rd, spec);
-            spec.pop();
-
-            //Royal Guard
-            spec.comment("REQUIRES 'Dungeon Mobs'").push("Royal Guard Settings");
-            config.royalguard = new RaiderConfigs.RoyalGuard(rd, spec);
-            spec.pop();
+//            spec.comment("REQUIRES 'Dungeon Mobs'").push("Mountaineer Settings");
+//            config.mountaineer = new RaiderConfigs.Mountaineer(rd, spec);
+//            spec.pop();
+//
+//            //Royal Guard
+//            spec.comment("REQUIRES 'Dungeon Mobs'").push("Royal Guard Settings");
+//            config.royalguard = new RaiderConfigs.RoyalGuard(rd, spec);
+//            spec.pop();
 
             //Vindicator With Shield
-            spec.comment("REQUIRES 'Leo's Illagers'").push("Vindicator With Shield Settings");
-            config.vindicatorWithShield = new RaiderConfigs.VindicatorWithShield(rd, spec);
-            spec.pop();
+//            spec.comment("REQUIRES 'Leo's Illagers'").push("Vindicator With Shield Settings");
+//            config.vindicatorWithShield = new RaiderConfigs.VindicatorWithShield(rd, spec);
+//            spec.pop();
 
             spec.pop();
 
