@@ -124,7 +124,7 @@ public abstract class RaidMixin
                 MutableComponent current = Component.literal(this.raidEvent.getName().getString());
 
                 MutableComponent additions = Component.empty();
-                if(DifficultRaidsConfig.INSANITY_MODE.get()) additions.append(Component.literal("Insane ").withStyle(ChatFormatting.RED));
+                if(DifficultRaidsConfig.INSANITY_MODE.get() && DifficultRaidsConfig.DISPLAY_INSANITY_MODE.get()) additions.append(Component.literal("Insane ").withStyle(ChatFormatting.RED));
                 additions.append(raidDifficulty.getFormattedName() + " ");
 
                 MutableComponent wave = DifficultRaidsConfig.SHOW_WAVE_INFORMATION.get() ? Component.literal(" (Wave " + this.getGroupsSpawned() + " of " + this.numGroups + ")").withStyle(ChatFormatting.GRAY) : Component.empty();

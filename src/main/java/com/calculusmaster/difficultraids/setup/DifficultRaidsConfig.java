@@ -43,6 +43,7 @@ public class DifficultRaidsConfig
 
     public static ForgeConfigSpec.BooleanValue INSANITY_MODE;
     public static ForgeConfigSpec.DoubleValue INSANITY_COUNT_MULTIPLIER;
+    public static ForgeConfigSpec.BooleanValue DISPLAY_INSANITY_MODE;
 
     public static Map<String, ForgeConfigSpec.BooleanValue> ENABLED_RAIDERS = new HashMap<>();
 
@@ -136,8 +137,12 @@ public class DifficultRaidsConfig
                 .comment("The multiplier for the number of raiders spawned in Insanity mode.")
                 .comment("This gets applied on top of whatever difficulty a Raid is at. This will not apply to Default Raids.")
                 .defineInRange("insanityCountMultiplier", 3.0, 1.0, Double.MAX_VALUE);
+        DISPLAY_INSANITY_MODE = GENERAL
+                .comment("Toggles whether or not to display 'Insane' on the raid")
+                .define("displayInsanityMode", true);
 
         GENERAL.pop();
+
 
         GENERAL.comment("Customize which Raiders will show up in Raids. By default, all raiders are enabled.")
                 .push("Enabled Raiders");
@@ -194,6 +199,7 @@ public class DifficultRaidsConfig
         GENERAL.pop();
 
         GENERAL.pop();
+
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, GENERAL.build(), DifficultRaids.MODID + "/general.toml");
 
@@ -362,6 +368,8 @@ public class DifficultRaidsConfig
                 case MASTER -> MASTER = config;
                 case GRANDMASTER -> GRANDMASTER = config;
             }
+
+
         }
     }
 }

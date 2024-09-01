@@ -172,8 +172,9 @@ dependencies {
     //Villager Workers 1.7.8
     implementation fg.deobf("curse.maven:workers-567450:5314033")
 
-    //Hunter Illager 11.5.0
+    //Hunter Illager 11.5.0 & Bagus Lib 5.2.3
     implementation fg.deobf("curse.maven:hunterillager-318857:5580223")
+    implementation fg.deobf("curse.maven:baguslib-866533:5662323")
 
     //Enchant with Mob 12.0.1
     compileOnly fg.deobf("curse.maven:enchantwithmob-913523:5676281")
@@ -198,8 +199,10 @@ dependencies {
     //Pyrologer & Friends
 //    implementation fg.deobf("curse.maven:pyrologer-and-friends-573099:4433602")
 
-    //L Ender's Cataclysm 1.99.6
+    //L Ender's Cataclysm 1.99.6 & Lionfish API 1.9
     implementation fg.deobf("curse.maven:l_ender-s-cataclysm-551586:5474791")
+    implementation fg.deobf("curse.maven:lionfish-api-1001614:5363774")
+    implementation fg.deobf("curse.maven:curios-api-309927:5680164")
 
     //Mob Entity Path Visualizer 1.1.0-release.6
 //    runtimeOnly fg.deobf("curse.maven:mob-entity-path-visualizer-590716:4063117")

@@ -11,6 +11,7 @@ import com.calculusmaster.difficultraids.util.DifficultRaidsUtil;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.eventbus.EventBus;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -38,7 +39,6 @@ public class DifficultRaids
         DifficultRaidsConfig.register();
 
         DifficultRaidsEntityTypes.register(eventBus);
-
         DifficultRaidsEnchantments.register(eventBus);
         DifficultRaidsEffects.register(eventBus);
 
