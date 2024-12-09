@@ -65,6 +65,7 @@ public class RaidEnemyRegistry
     public static final String PRESERVER = "entity.illageandspillage.preserver";
     public static final String ABSORBER = "entity.illageandspillage.absorber";
     public static final String CROCOFANG = "entity.illageandspillage.crocofang";
+    public static final String ENGINEER = "entity.illageandspillage.engineer";
     public static final String MAGISPELLER = "entity.illageandspillage.magispeller";
     public static final String SPIRITCALLER = "entity.illageandspillage.spiritcaller";
     public static final String FREAKAGER = "entity.illageandspillage.freakager";
@@ -211,6 +212,7 @@ public class RaidEnemyRegistry
                 .withRaider(PRESERVER,          0, 1, 0, 1, 2, 1, 3, 4)
                 .withRaider(ABSORBER,           0, 0, 1, 0, 1, 0, 0, 2)
                 .withRaider(CROCOFANG,          0, 0, 1, 1, 2, 3, 1, 3)
+                .withRaider(ENGINEER,           0, 0, 1, 2, 2, 2, 2, 4)
                 .withRaider(MAGISPELLER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPIRITCALLER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FREAKAGER,          0, 0, 0, 0, 0, 0, 0, 0)
@@ -270,6 +272,7 @@ public class RaidEnemyRegistry
                 .withRaider(PRESERVER,          0, 1, 1, 2, 2, 2, 4, 4)
                 .withRaider(ABSORBER,           0, 0, 1, 1, 2, 0, 1, 2)
                 .withRaider(CROCOFANG,          0, 1, 2, 1, 2, 3, 2, 4)
+                .withRaider(ENGINEER,           0, 0, 1, 2, 3, 3, 2, 4)
                 .withRaider(MAGISPELLER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPIRITCALLER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FREAKAGER,          0, 0, 0, 0, 0, 0, 0, 0)
@@ -330,6 +333,7 @@ public class RaidEnemyRegistry
                 .withRaider(PRESERVER,          0, 2, 2, 2, 2, 2, 4, 4)
                 .withRaider(ABSORBER,           0, 1, 1, 1, 2, 1, 1, 3)
                 .withRaider(CROCOFANG,          0, 2, 2, 3, 2, 4, 2, 5)
+                .withRaider(ENGINEER,           0, 1, 2, 3, 3, 3, 4, 6)
                 .withRaider(MAGISPELLER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPIRITCALLER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FREAKAGER,          0, 0, 0, 0, 0, 0, 0, 0)
@@ -392,10 +396,11 @@ public class RaidEnemyRegistry
                 .withRaider(PRESERVER,          0, 2, 2, 2, 2, 2, 4, 4)
                 .withRaider(ABSORBER,           0, 1, 1, 1, 2, 1, 1, 3)
                 .withRaider(CROCOFANG,          0, 2, 2, 3, 2, 4, 2, 5)
+                .withRaider(ENGINEER,           0, 2, 3, 4, 5, 4, 5, 7)
                 .withRaider(MAGISPELLER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPIRITCALLER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FREAKAGER,          0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(BOSS_RANDOMIZER,    0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(BOSS_RANDOMIZER,    0, 0, 1, 1, 1, 2, 3, 2)
                 .withRaider(GRIEFER,            0, 2, 3, 2, 3, 3, 3, 4)
                 .withRaider(EXECUTIONER,        0, 2, 2, 2, 3, 2, 3, 4)
                 .withRaider(TRICKSTER,          0, 1, 2, 1, 2, 2, 2, 3)

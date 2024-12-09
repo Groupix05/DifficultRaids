@@ -44,17 +44,18 @@ public class DifficultRaidsUtil
             ADVANCED_RAIDERS.add(ModEntityTypes.LEGIONER.get());
         }
 
-//        if(Compat.ILLAGE_AND_SPILLAGE.isLoaded()) //Skipping: Absorber, Magispeller/Freakager/Spiritcaller/Boss Randomizer
-//        {
-//            STANDARD_RAIDERS.addAll(List.of(
-//                    com.yellowbrossproductions.illageandspillage.init.ModEntityTypes.Preserver.get(),
-//                    com.yellowbrossproductions.illageandspillage.init.ModEntityTypes.Igniter.get()
-//            ));
-//            ADVANCED_RAIDERS.addAll(List.of(
-//                    com.yellowbrossproductions.illageandspillage.init.ModEntityTypes.Twittollager.get(),
-//                    com.yellowbrossproductions.illageandspillage.init.ModEntityTypes.Crocofang.get()
-//            ));
-//        }
+        if(Compat.ILLAGE_AND_SPILLAGE.isLoaded()) //Skipping: Absorber, Magispeller/Freakager/Spiritcaller/Boss Randomizer
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    com.yellowbrossproductions.illageandspillage.init.ModEntityTypes.Preserver.get(),
+                    com.yellowbrossproductions.illageandspillage.init.ModEntityTypes.Igniter.get()
+            ));
+            ADVANCED_RAIDERS.addAll(List.of(
+                    com.yellowbrossproductions.illageandspillage.init.ModEntityTypes.Twittollager.get(),
+                    com.yellowbrossproductions.illageandspillage.init.ModEntityTypes.Crocofang.get(),
+                    com.yellowbrossproductions.illageandspillage.init.ModEntityTypes.Engineer.get()
+            ));
+        }
 
 //        if(Compat.SAVAGE_AND_RAVAGE.isLoaded())
 //        {
