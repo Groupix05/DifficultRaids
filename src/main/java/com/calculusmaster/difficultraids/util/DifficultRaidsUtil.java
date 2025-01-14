@@ -5,7 +5,7 @@ import baguchan.hunters_return.init.HunterEntityRegistry;
 //import cn.leolezury.leosillagers.init.EntityInit;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
-//import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
+import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -36,7 +36,7 @@ public class DifficultRaidsUtil
         //Mod Compat
         if(Compat.HUNTER_ILLAGER.isLoaded()) STANDARD_RAIDERS.add(HunterEntityRegistry.HUNTERILLAGER.get());
 
-//        if(Compat.ENCHANT_WITH_MOB.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(ModEntities.ENCHANTER.get());
+        if(Compat.ENCHANT_WITH_MOB.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(ModEntities.ENCHANTER.get());
 
         if(Compat.IT_TAKES_A_PILLAGE.isLoaded())
         {
@@ -57,12 +57,12 @@ public class DifficultRaidsUtil
             ));
         }
 
-//        if(Compat.SAVAGE_AND_RAVAGE.isLoaded())
-//        {
-//            ADVANCED_RAIDERS.add(SREntityTypes.EXECUTIONER.get());
-//            BASIC_MAGIC_RAIDERS.addAll(List.of(SREntityTypes.GRIEFER.get(), SREntityTypes.TRICKSTER.get()));
-//            ADVANCED_MAGIC_RAIDERS.add(SREntityTypes.ICEOLOGER.get());
-//        }
+        if(Compat.SAVAGE_AND_RAVAGE.isLoaded())
+        {
+            ADVANCED_RAIDERS.add(SREntityTypes.EXECUTIONER.get());
+            BASIC_MAGIC_RAIDERS.addAll(List.of(SREntityTypes.GRIEFER.get(), SREntityTypes.TRICKSTER.get()));
+            ADVANCED_MAGIC_RAIDERS.add(SREntityTypes.ICEOLOGER.get());
+        }
 
 //        if(Compat.DUNGEONS_MOBS.isLoaded()) //Skipping: Squall Golem, Redstone Golem
 //        {

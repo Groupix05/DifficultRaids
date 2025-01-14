@@ -182,11 +182,11 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SPIRITCALLER, GENERAL.define("enableSpiritcallers", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.FREAKAGER, GENERAL.define("enableFreakagers", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BOSS_RANDOMIZER, GENERAL.define("enableBossRandomizers", true));
-//        GENERAL.pop().push("Requires Savage and Ravage");
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.GRIEFER, GENERAL.define("enableGriefers", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.EXECUTIONER, GENERAL.define("enableExecutioners", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.TRICKSTER, GENERAL.define("enableTricksters", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_SR, GENERAL.define("enableSavageRavageIceologers", true));
+        GENERAL.pop().push("Requires Savage and Ravage");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GRIEFER, GENERAL.define("enableGriefers", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.EXECUTIONER, GENERAL.define("enableExecutioners", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.TRICKSTER, GENERAL.define("enableTricksters", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_SR, GENERAL.define("enableSavageRavageIceologers", true));
 //        GENERAL.pop().push("Requires Dungeon Mobs");
 //        ENABLED_RAIDERS.put(RaidEnemyRegistry.MOUNTAINEER, GENERAL.define("enableMountaineers", true));
 //        ENABLED_RAIDERS.put(RaidEnemyRegistry.ROYAL_GUARD, GENERAL.define("enableRoyalGuards", true));
@@ -338,9 +338,9 @@ public class DifficultRaidsConfig
             spec.pop();
 
             //Executioner
-//            spec.comment("REQUIRES 'Savage and Ravage'").push("Executioner Settings");
-//            config.executioner = new RaiderConfigs.Executioner(rd, spec);
-//            spec.pop();
+            spec.comment("REQUIRES 'Savage and Ravage'").push("Executioner Settings");
+            config.executioner = new RaiderConfigs.Executioner(rd, spec);
+            spec.pop();
 
             //Mountaineer
 //            spec.comment("REQUIRES 'Dungeon Mobs'").push("Mountaineer Settings");

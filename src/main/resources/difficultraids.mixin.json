@@ -10,6 +10,7 @@
     "RaidMixin",
     "VillagerMixin",
     "compat.ArcherMixin",
+    "compat.ExecutionerMixin",
     "compat.FreakagerMixin",
     "compat.GuardMixin",
     "compat.HunterIllagerMixin",

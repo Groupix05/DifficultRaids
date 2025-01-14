@@ -30,7 +30,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '2.0-beta.13'
+version = '2.0-beta.14'
 group = 'com.calculusmaster.difficultraids'
 archivesBaseName = 'difficultraids-1.20.1'
 
@@ -185,8 +185,9 @@ dependencies {
     //It Takes a Pillage 1.0.3
     implementation fg.deobf("curse.maven:it-takes-a-pillage-635843:4981343")
 
-    //Savage and Ravage 5.0.4
-//    implementation fg.deobf("curse.maven:savage-and-ravage-381736:4429231")
+    //Savage and Ravage 6.0.0
+    implementation fg.deobf("curse.maven:savage-and-ravage-381736:6040963")
+    implementation fg.deobf("curse.maven:blueprint-382216:5292242")
 
     //Dungeons Mobs 4.0.8 + GeckoLib 3.1.40 + Dungeons Libraries 3.0.10
 //    implementation fg.deobf("curse.maven:dungeons-mobs-428883:4501524")
