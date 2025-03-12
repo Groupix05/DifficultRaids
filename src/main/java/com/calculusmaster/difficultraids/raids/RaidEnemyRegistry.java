@@ -6,7 +6,7 @@ import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.util.Compat;
 //import com.infamous.dungeons_mobs.mod.ModEntityTypes;
 import com.mojang.logging.LogUtils;
-//import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
+import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
@@ -65,6 +65,7 @@ public class RaidEnemyRegistry
     public static final String PRESERVER = "entity.illageandspillage.preserver";
     public static final String ABSORBER = "entity.illageandspillage.absorber";
     public static final String CROCOFANG = "entity.illageandspillage.crocofang";
+    public static final String ENGINEER = "entity.illageandspillage.engineer";
     public static final String MAGISPELLER = "entity.illageandspillage.magispeller";
     public static final String SPIRITCALLER = "entity.illageandspillage.spiritcaller";
     public static final String FREAKAGER = "entity.illageandspillage.freakager";
@@ -134,7 +135,7 @@ public class RaidEnemyRegistry
         RaidEnemyRegistry.createRaiderType(VOLDON, VOLDON_ELITE.get());
 
         //Compatibility
-//        if(Compat.SAVAGE_AND_RAVAGE.isLoaded()) RaidEnemyRegistry.createRaiderType(ICEOLOGER_SR, SREntityTypes.ICEOLOGER.get());
+        if(Compat.SAVAGE_AND_RAVAGE.isLoaded()) RaidEnemyRegistry.createRaiderType(ICEOLOGER_SR, SREntityTypes.ICEOLOGER.get());
 //        if(Compat.DUNGEONS_MOBS.isLoaded()) RaidEnemyRegistry.createRaiderType(ILLUSIONER_DM, ModEntityTypes.ILLUSIONER.get());
     }
 
@@ -211,6 +212,7 @@ public class RaidEnemyRegistry
                 .withRaider(PRESERVER,          0, 1, 0, 1, 2, 1, 3, 4)
                 .withRaider(ABSORBER,           0, 0, 1, 0, 1, 0, 0, 2)
                 .withRaider(CROCOFANG,          0, 0, 1, 1, 2, 3, 1, 3)
+                .withRaider(ENGINEER,           0, 0, 0, 1, 0, 1, 1, 2)
                 .withRaider(MAGISPELLER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPIRITCALLER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FREAKAGER,          0, 0, 0, 0, 0, 0, 0, 0)
@@ -270,6 +272,7 @@ public class RaidEnemyRegistry
                 .withRaider(PRESERVER,          0, 1, 1, 2, 2, 2, 4, 4)
                 .withRaider(ABSORBER,           0, 0, 1, 1, 2, 0, 1, 2)
                 .withRaider(CROCOFANG,          0, 1, 2, 1, 2, 3, 2, 4)
+                .withRaider(ENGINEER,           0, 0, 1, 1, 1, 1, 1, 2)
                 .withRaider(MAGISPELLER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPIRITCALLER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FREAKAGER,          0, 0, 0, 0, 0, 0, 0, 0)
@@ -330,6 +333,7 @@ public class RaidEnemyRegistry
                 .withRaider(PRESERVER,          0, 2, 2, 2, 2, 2, 4, 4)
                 .withRaider(ABSORBER,           0, 1, 1, 1, 2, 1, 1, 3)
                 .withRaider(CROCOFANG,          0, 2, 2, 3, 2, 4, 2, 5)
+                .withRaider(ENGINEER,           0, 1, 1, 0, 2, 1, 1, 2)
                 .withRaider(MAGISPELLER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPIRITCALLER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FREAKAGER,          0, 0, 0, 0, 0, 0, 0, 0)
@@ -392,10 +396,11 @@ public class RaidEnemyRegistry
                 .withRaider(PRESERVER,          0, 2, 2, 2, 2, 2, 4, 4)
                 .withRaider(ABSORBER,           0, 1, 1, 1, 2, 1, 1, 3)
                 .withRaider(CROCOFANG,          0, 2, 2, 3, 2, 4, 2, 5)
+                .withRaider(ENGINEER,           0, 1, 2, 2, 1, 2, 3, 3)
                 .withRaider(MAGISPELLER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPIRITCALLER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FREAKAGER,          0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(BOSS_RANDOMIZER,    0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(BOSS_RANDOMIZER,    0, 0, 1, 1, 1, 2, 3, 2)
                 .withRaider(GRIEFER,            0, 2, 3, 2, 3, 3, 3, 4)
                 .withRaider(EXECUTIONER,        0, 2, 2, 2, 3, 2, 3, 4)
                 .withRaider(TRICKSTER,          0, 1, 2, 1, 2, 2, 2, 3)
