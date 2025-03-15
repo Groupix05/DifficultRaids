@@ -2,7 +2,8 @@ package com.calculusmaster.difficultraids.util;
 
 import baguchan.enchantwithmob.registry.ModEntities;
 import baguchan.hunters_return.init.HunterEntityRegistry;
-//import cn.leolezury.leosillagers.init.EntityInit;
+import cn.leolezury.leosillagers.init.EntityInit;
+import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
@@ -88,12 +89,16 @@ public class DifficultRaidsUtil
             ADVANCED_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("illagerrevolutionmod", "blade_knight")));
         }
 
-//        if(Compat.LEOS_ILLAGERS.isLoaded()) //Skipped: Lightningcaller, Clownager
-//        {
-//            STANDARD_RAIDERS.addAll(List.of(EntityInit.VINDICATOR_WITH_SHIELD.get(), EntityInit.TROUBLEMAKER.get()));
-//            ADVANCED_RAIDERS.add(EntityInit.CONFUSER.get());
-//            BASIC_MAGIC_RAIDERS.addAll(List.of(EntityInit.SNOWOLAGER.get(), EntityInit.NECROMANCER.get()));
-//            ADVANCED_MAGIC_RAIDERS.addAll(List.of(EntityInit.METEORITE_CALLER.get(), EntityInit.SUMMONER.get()));
-//        }
+        if(Compat.LEOS_ILLAGERS.isLoaded()) //Skipped: Lightningcaller, Clownager
+        {
+            STANDARD_RAIDERS.addAll(List.of(EntityInit.VINDICATOR_WITH_SHIELD.get(), EntityInit.TROUBLEMAKER.get()));
+            ADVANCED_RAIDERS.add(EntityInit.CONFUSER.get());
+            BASIC_MAGIC_RAIDERS.addAll(List.of(EntityInit.SNOWOLAGER.get(), EntityInit.NECROMANCER.get()));
+            ADVANCED_MAGIC_RAIDERS.addAll(List.of(EntityInit.METEORITE_CALLER.get(), EntityInit.SUMMONER.get()));
+        }
+        if(Compat.CONJURER.isLoaded())
+        {
+            STANDARD_RAIDERS.add(IllagerEntityTypes.CONJURER);
+        }
     }
 }

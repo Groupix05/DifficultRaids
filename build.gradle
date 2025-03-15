@@ -189,13 +189,15 @@ dependencies {
     implementation fg.deobf("curse.maven:savage-and-ravage-381736:6040963")
     implementation fg.deobf("curse.maven:blueprint-382216:5292242")
 
-    //Dungeons Mobs 4.0.8 + GeckoLib 3.1.40 + Dungeons Libraries 3.0.10
+    //Dungeons Mobs 4.0.8 + Dungeons Libraries 3.0.10
 //    implementation fg.deobf("curse.maven:dungeons-mobs-428883:4501524")
-//    implementation fg.deobf("curse.maven:geckolib-388172:4407241")
 //    implementation fg.deobf("curse.maven:dungeons-libraries-550941:4496767")
 
-    //Leo's Illagers
-//    implementation fg.deobf("curse.maven:leos-illagers-812954:4370803")
+    //GeckoLib 4.7 (required for Dungeons Mobs, Illager Revolution and Illager Additions)
+    implementation fg.deobf("curse.maven:geckolib-388172:6027567")
+
+    //Leo's Illagers 1.1.2
+    implementation fg.deobf("curse.maven:leos-illagers-812954:6206843")
 
     //Pyrologer & Friends
 //    implementation fg.deobf("curse.maven:pyrologer-and-friends-573099:4433602")
@@ -205,15 +207,34 @@ dependencies {
     implementation fg.deobf("curse.maven:lionfish-api-1001614:5363774")
     implementation fg.deobf("curse.maven:curios-api-309927:5680164")
 
-    //Mob Entity Path Visualizer 1.1.0-release.6
-//    runtimeOnly fg.deobf("curse.maven:mob-entity-path-visualizer-590716:4063117")
-
     //Enchantment Descriptions 17.1.18 + Bookshelf 20.2.13
     runtimeOnly fg.deobf("curse.maven:enchantmentdescriptions-250419:5598368")
     runtimeOnly fg.deobf("curse.maven:bookshelf-228525:5423987")
 
-    //ToroHealth Damage Indicators 1.19.2 1.0.0
-//    runtimeOnly fg.deobf("curse.maven:torohealth-damage-indicators-245733:3895068")
+    //Raided 0.1.4
+    implementation fg.deobf("curse.maven:raided-580942:5128249")
+
+    //Illager Revolution 1.4
+    implementation fg.deobf("curse.maven:illager-revolution-841586:5185405")
+
+    //Illager Additions 0.1.0-beta
+    implementation fg.deobf("curse.maven:illager-additions-682835:5643823")
+
+    //Friends&Foes
+    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:6283388")
+
+    //The Conjurer 1.1.6 + StructureGel 2.16.2
+    implementation fg.deobf("curse.maven:the-conjurer-377798:4733239")
+    implementation fg.deobf("curse.maven:structure-gel-api-378802:5278429")
+
+    //Brazier 1.1.6 + Architectury 9.2.14 + Cloth Config 11.1.136
+    implementation fg.deobf("curse.maven:brazier-402616:4702302")
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+    implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
+
+    //Utilities
+    runtimeOnly fg.deobf("curse.maven:jade-324717:6271651") //Jade 11.13.1
+//    runtimeOnly fg.deobf("curse.maven:mob-entity-path-visualizer-590716:4063117") //Mob Entity Path Visualizer 1.1.0-release.6
 
 }
 

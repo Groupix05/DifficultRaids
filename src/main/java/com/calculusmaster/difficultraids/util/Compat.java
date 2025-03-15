@@ -14,7 +14,8 @@ public enum Compat
     ILLAGER_REVOLUTION("illagerrevolutionmod"),
     LEOS_ILLAGERS("leosillagers"),
     RECRUITS("recruits"),
-    WORKERS("workers")
+    WORKERS("workers"),
+    CONJURER("conjurer_illager")
     ;
 
     private final String modid;

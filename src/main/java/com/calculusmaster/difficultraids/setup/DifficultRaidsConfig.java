@@ -187,6 +187,18 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.EXECUTIONER, GENERAL.define("enableExecutioners", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.TRICKSTER, GENERAL.define("enableTricksters", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_SR, GENERAL.define("enableSavageRavageIceologers", true));
+        GENERAL.pop().push("Requires Leo's Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SHIELD_VINDICATOR, GENERAL.define("enableShieldVindicator", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.LIGHTNINGCALLER, GENERAL.define("enableLightningCaller", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CLOWNAGER, GENERAL.define("enableClownager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CONFUSER, GENERAL.define("enableConfuser", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.METEORITE_CALLER, GENERAL.define("enableMeteoriteCaller", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SNOWOLAGER, GENERAL.define("enableSnowolager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_LEO, GENERAL.define("enableNecromancerLeo", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SUMMONER, GENERAL.define("enableSummoner", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.TROUBLEMAKER, GENERAL.define("enableTroublemaker", true));
+        GENERAL.pop().push("Requires The Conjurer");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CONJURER, GENERAL.define("enableConjurer", true));
 //        GENERAL.pop().push("Requires Dungeon Mobs");
 //        ENABLED_RAIDERS.put(RaidEnemyRegistry.MOUNTAINEER, GENERAL.define("enableMountaineers", true));
 //        ENABLED_RAIDERS.put(RaidEnemyRegistry.ROYAL_GUARD, GENERAL.define("enableRoyalGuards", true));
@@ -353,9 +365,9 @@ public class DifficultRaidsConfig
 //            spec.pop();
 
             //Vindicator With Shield
-//            spec.comment("REQUIRES 'Leo's Illagers'").push("Vindicator With Shield Settings");
-//            config.vindicatorWithShield = new RaiderConfigs.VindicatorWithShield(rd, spec);
-//            spec.pop();
+            spec.comment("REQUIRES 'Leo's Illagers'").push("Vindicator With Shield Settings");
+            config.vindicatorWithShield = new RaiderConfigs.VindicatorWithShield(rd, spec);
+            spec.pop();
 
             spec.pop();
 
