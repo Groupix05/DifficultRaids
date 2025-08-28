@@ -38,7 +38,7 @@ public abstract class HunterIllagerMixin extends AbstractIllager
         boolean inRaid = this.getCurrentRaid() != null;
         RaidDifficulty raidDifficulty = inRaid ? RaidDifficulty.get(this.getCurrentRaid().getBadOmenLevel()) : null;
 
-        if(inRaid && !raidDifficulty.isDefault() && Compat.HUNTER_ILLAGER.isLoaded())
+        if(inRaid && !raidDifficulty.isDefault() && Compat.HUNTERS_RETURN.isLoaded())
         {
             RaidDifficultyConfig cfg = raidDifficulty.config();
 

@@ -23,38 +23,48 @@ public class PrintRaidersCommand
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher)
     {
         LiteralArgumentBuilder<CommandSourceStack> literalArgumentBuilder = Commands
-                .literal("difficultraids_printraiders")
-                .requires(css -> {
-                        try { return css.getPlayerOrException().hasPermissions(2); }
-                        catch (CommandSyntaxException e)
-                        {
-                            e.printStackTrace();
-                            return false;
-                        }
-                })
-                .executes(css -> {
-                        ServerPlayer player = css.getSource().getPlayerOrException();
-                        ServerLevel level = player.serverLevel();
-                        Raid raid = level.getRaidAt(player.blockPosition());
+                .literal("difficultraids")
+                .then(
+                        Commands.literal("printraiders")
+                                .requires(css -> {
+                                    try { return css.getPlayerOrException().hasPermissions(2); }
+                                    catch (CommandSyntaxException e)
+                                    {
+                                        e.printStackTrace();
+                                        return false;
+                                    }
+                                })
+                                .executes(css -> {
+                                    ServerPlayer player = css.getSource().getPlayerOrException();
+                                    ServerLevel level = player.serverLevel();
+                                    Raid raid = level.getRaidAt(player.blockPosition());
 
-                        if(raid == null) css.getSource().sendFailure(Component.literal("You must be near a Raid to use this command!"));
-                        else
-                        {
-                            List<Raider> alive = raid.getAllRaiders().stream().filter(LivingEntity::isAlive).toList();
+                                    if(raid == null)
+                                    {
+                                        css.getSource().sendFailure(Component.literal("You must be near a Raid to use this command!"));
+                                    }
+                                    else
+                                    {
+                                        List<Raider> alive = raid.getAllRaiders().stream().filter(LivingEntity::isAlive).toList();
 
-                            Map<EntityType<?>, Integer> raiderTypeCounts = new HashMap<>();
-                            alive.forEach(r -> raiderTypeCounts.put(r.getType(), raiderTypeCounts.getOrDefault(r.getType(), 0) + 1));
+                                        Map<EntityType<?>, Integer> raiderTypeCounts = new HashMap<>();
+                                        alive.forEach(r -> raiderTypeCounts.put(r.getType(), raiderTypeCounts.getOrDefault(r.getType(), 0) + 1));
 
-                            StringJoiner s = new StringJoiner("\n");
-                            raiderTypeCounts.forEach((key, value) -> s.add(key.toShortString() + ": " + value));
+                                        StringJoiner s = new StringJoiner("\n");
+                                        raiderTypeCounts.forEach((key, value) -> s.add(key.toShortString() + ": " + value));
 
-                            String raiderList = "Raiders Currently Alive:\n" + s;
-                            String totalRaiders = "Total Raiders Alive: " + raiderTypeCounts.values().stream().mapToInt(i -> i).sum();
-                            css.getSource().sendSuccess(() -> Component.literal(raiderList + "\n" + totalRaiders), true);
-                        }
+                                        String raiderList = "Raiders Currently Alive:\n" + s;
+                                        String totalRaiders = "Total Raiders Alive: " + raiderTypeCounts.values().stream().mapToInt(i -> i).sum();
 
-                        return 1;
-        });
+                                        css.getSource().sendSuccess(
+                                                () -> Component.literal(raiderList + "\n" + totalRaiders),
+                                                true
+                                        );
+                                    }
+
+                                    return 1;
+                                })
+                );
 
         dispatcher.register(literalArgumentBuilder);
     }

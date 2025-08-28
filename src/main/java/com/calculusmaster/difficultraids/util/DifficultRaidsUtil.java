@@ -35,7 +35,7 @@ public class DifficultRaidsUtil
         ADVANCED_MAGIC_RAIDERS.addAll(List.of(DifficultRaidsEntityTypes.ELECTRO_ILLAGER.get(), DifficultRaidsEntityTypes.NECROMANCER_ILLAGER.get(), DifficultRaidsEntityTypes.FROST_ILLAGER.get(), DifficultRaidsEntityTypes.ASHENMANCER_ILLAGER.get()));
 
         //Mod Compat
-        if(Compat.HUNTER_ILLAGER.isLoaded()) STANDARD_RAIDERS.add(HunterEntityRegistry.HUNTERILLAGER.get());
+        if(Compat.HUNTERS_RETURN.isLoaded()) STANDARD_RAIDERS.add(HunterEntityRegistry.HUNTERILLAGER.get());
 
         if(Compat.ENCHANT_WITH_MOB.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(ModEntities.ENCHANTER.get());
 
@@ -65,22 +65,19 @@ public class DifficultRaidsUtil
             ADVANCED_MAGIC_RAIDERS.add(SREntityTypes.ICEOLOGER.get());
         }
 
-//        if(Compat.DUNGEONS_MOBS.isLoaded()) //Skipping: Squall Golem, Redstone Golem
-//        {
-//            STANDARD_RAIDERS.add(com.infamous.dungeons_mobs.mod.ModEntityTypes.MOUNTAINEER.get());
-//            ADVANCED_RAIDERS.addAll(List.of(
-//                    com.infamous.dungeons_mobs.mod.ModEntityTypes.ROYAL_GUARD.get(),
-//                    com.infamous.dungeons_mobs.mod.ModEntityTypes.ILLUSIONER.get()
-//            ));
-//            BASIC_MAGIC_RAIDERS.addAll(List.of(
-//                    com.infamous.dungeons_mobs.mod.ModEntityTypes.MAGE.get(),
-//                    com.infamous.dungeons_mobs.mod.ModEntityTypes.ICEOLOGER.get()
-//            ));
-//            ADVANCED_MAGIC_RAIDERS.addAll(List.of(
-//                    com.infamous.dungeons_mobs.mod.ModEntityTypes.GEOMANCER.get(),
-//                    com.infamous.dungeons_mobs.mod.ModEntityTypes.WINDCALLER.get()
-//            ));
-//        }
+        if(Compat.DUNGEONS_MOBS.isLoaded()) //Skipping: Squall Golem, Redstone Golem
+        {
+            STANDARD_RAIDERS.add(net.firefoxsalesman.dungeonsmobs.entity.ModEntities.MOUNTAINEER.get());
+            ADVANCED_RAIDERS.add(net.firefoxsalesman.dungeonsmobs.entity.ModEntities.ROYAL_GUARD.get());
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    net.firefoxsalesman.dungeonsmobs.entity.ModEntities.MAGE.get(),
+                    net.firefoxsalesman.dungeonsmobs.entity.ModEntities.ICEOLOGER.get()
+            ));
+            ADVANCED_MAGIC_RAIDERS.addAll(List.of(
+                    net.firefoxsalesman.dungeonsmobs.entity.ModEntities.GEOMANCER.get(),
+                    net.firefoxsalesman.dungeonsmobs.entity.ModEntities.WINDCALLER.get()
+            ));
+        }
 
         if(Compat.ILLAGER_REVOLUTION.isLoaded())
         {
@@ -96,9 +93,9 @@ public class DifficultRaidsUtil
             BASIC_MAGIC_RAIDERS.addAll(List.of(EntityInit.SNOWOLAGER.get(), EntityInit.NECROMANCER.get()));
             ADVANCED_MAGIC_RAIDERS.addAll(List.of(EntityInit.METEORITE_CALLER.get(), EntityInit.SUMMONER.get()));
         }
-        if(Compat.CONJURER.isLoaded())
-        {
-            STANDARD_RAIDERS.add(IllagerEntityTypes.CONJURER);
-        }
+
+        if(Compat.CONJURER.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(IllagerEntityTypes.CONJURER);
+
+        if(Compat.NECROMANCER.isLoaded()) BASIC_MAGIC_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("necromancer", "necromancer")));
     }
 }

@@ -147,11 +147,13 @@ public class DifficultRaidsConfig
         GENERAL.comment("Customize which Raiders will show up in Raids. By default, all raiders are enabled.")
                 .push("Enabled Raiders");
 
+        GENERAL.push("Vanilla Raiders");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.VINDICATOR, GENERAL.define("enableVindicators", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.EVOKER, GENERAL.define("enableEvokers", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.PILLAGER, GENERAL.define("enablePillagers", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.WITCH, GENERAL.define("enableWitches", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.RAVAGER, GENERAL.define("enableRavagers", true));
+        GENERAL.pop().push("DifficultRaids");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLUSIONER, GENERAL.define("enableIllusioners", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.WARRIOR, GENERAL.define("enableWarriors", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.DART, GENERAL.define("enableDarts", true));
@@ -162,8 +164,14 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ASSASSIN, GENERAL.define("enableAssassins", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.FROSTMAGE, GENERAL.define("enableFrostmages", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ASHENMANCER, GENERAL.define("enableAshenmancers", true));
+        GENERAL.pop().push("DifficultRaids Special Illagers (not working at the moment)");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NUAOS, GENERAL.define("enableNuaos", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.XYDRAX, GENERAL.define("enableXydrax", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MODUR, GENERAL.define("enableModur", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.VOLDON, GENERAL.define("enableVoldon", true));
 
-        GENERAL.push("Requires HunterIllager");
+
+        GENERAL.pop().push("Requires HuntersReturn (not working at the moment)");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.HUNTER, GENERAL.define("enableHunters", true));
         GENERAL.pop().push("Requires EnchantWithMob");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ENCHANTER, GENERAL.define("enableEnchanters", true));
@@ -197,18 +205,20 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_LEO, GENERAL.define("enableNecromancerLeo", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SUMMONER, GENERAL.define("enableSummoner", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.TROUBLEMAKER, GENERAL.define("enableTroublemaker", true));
-        GENERAL.pop().push("Requires The Conjurer");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.CONJURER, GENERAL.define("enableConjurer", true));
-//        GENERAL.pop().push("Requires Dungeon Mobs");
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.MOUNTAINEER, GENERAL.define("enableMountaineers", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.ROYAL_GUARD, GENERAL.define("enableRoyalGuards", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.GEOMANCER, GENERAL.define("enableGeomancers", true));
+        GENERAL.pop().push("Requires Dungeon Mobs");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MOUNTAINEER, GENERAL.define("enableMountaineers", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ROYAL_GUARD, GENERAL.define("enableRoyalGuards", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GEOMANCER, GENERAL.define("enableGeomancers", true));
 //        ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLUSIONER_DM, GENERAL.define("enableDungeonMobsIllusioners", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.MAGE, GENERAL.define("enableMages", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_DM, GENERAL.define("enableDungeonMobsIceologers", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.WINDCALLER, GENERAL.define("enableWindcallers", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.SQUALL_GOLEM, GENERAL.define("enableSquallGolems", true));
-//        ENABLED_RAIDERS.put(RaidEnemyRegistry.REDSTONE_GOLEM, GENERAL.define("enableRedstoneGolems", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MAGE, GENERAL.define("enableMages", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_DM, GENERAL.define("enableDungeonMobsIceologers", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.WINDCALLER, GENERAL.define("enableWindcallers", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SQUALL_GOLEM, GENERAL.define("enableSquallGolems", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.REDSTONE_GOLEM, GENERAL.define("enableRedstoneGolems", true));
+        GENERAL.pop().push("Requires The Conjurer");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CONJURER, GENERAL.define("enableConjurer", false));
+        GENERAL.pop().push("Requires Necromancer Mod Port");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_MOD, GENERAL.define("enableNecromancer", true));
         GENERAL.pop();
 
         GENERAL.pop();
@@ -329,8 +339,8 @@ public class DifficultRaidsConfig
 
             spec.push("Compatibility");
 
-            //Hunter Illager
-            spec.comment("REQUIRES 'HunterIllager'").push("Hunter Illager Settings");
+            //Hunters Return
+            spec.comment("REQUIRES 'Hunters Return'").push("Hunter Illager Settings");
             config.hunter = new RaiderConfigs.Hunter(rd, spec);
             spec.pop();
 
@@ -355,14 +365,14 @@ public class DifficultRaidsConfig
             spec.pop();
 
             //Mountaineer
-//            spec.comment("REQUIRES 'Dungeon Mobs'").push("Mountaineer Settings");
-//            config.mountaineer = new RaiderConfigs.Mountaineer(rd, spec);
-//            spec.pop();
-//
-//            //Royal Guard
-//            spec.comment("REQUIRES 'Dungeon Mobs'").push("Royal Guard Settings");
-//            config.royalguard = new RaiderConfigs.RoyalGuard(rd, spec);
-//            spec.pop();
+            spec.comment("REQUIRES 'Dungeon Mobs'").push("Mountaineer Settings");
+            config.mountaineer = new RaiderConfigs.Mountaineer(rd, spec);
+            spec.pop();
+
+            //Royal Guard
+            spec.comment("REQUIRES 'Dungeon Mobs'").push("Royal Guard Settings");
+            config.royalguard = new RaiderConfigs.RoyalGuard(rd, spec);
+            spec.pop();
 
             //Vindicator With Shield
             spec.comment("REQUIRES 'Leo's Illagers'").push("Vindicator With Shield Settings");

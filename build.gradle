@@ -166,21 +166,21 @@ dependencies {
     //Guard Villagers 1.6.7
     implementation fg.deobf("curse.maven:guardvillagers-360203:5619709")
 
-    //Villager Recruits 1.12.1
-    implementation fg.deobf("curse.maven:recruits-523860:5680361")
+    //Villager Recruits 1.13.5
+    implementation fg.deobf("curse.maven:recruits-523860:6646247")
 
-    //Villager Workers 1.7.8
-    implementation fg.deobf("curse.maven:workers-567450:5314033")
+    //Villager Workers 1.7.9.1
+    implementation fg.deobf("curse.maven:workers-567450:6339807")
 
-    //Hunter Illager 11.5.0 & Bagus Lib 5.2.3
-    implementation fg.deobf("curse.maven:hunterillager-318857:5580223")
-    implementation fg.deobf("curse.maven:baguslib-866533:5662323")
+    //Hunter'sReturn 11.7.0 + Bagus Lib 5.4.0
+    implementation fg.deobf("curse.maven:huntersreturn-318857:6142107")
+    implementation fg.deobf("curse.maven:baguslib-866533:6711183")
 
-    //Enchant with Mob 12.0.1
-    compileOnly fg.deobf("curse.maven:enchantwithmob-913523:5676281")
+    //Enchant with Mob 11.17.0
+    compileOnly fg.deobf("curse.maven:enchantwithmob-913523:6593792")
 
-    //Illage & Spillage: Respillaged 1.2.2
-    implementation fg.deobf("curse.maven:illage-and-spillage-finally-ported-1079714:5871923")
+    //Illage & Spillage: Respillaged 1.2.8
+    implementation fg.deobf("curse.maven:illage-and-spillage-finally-ported-1079714:6156035")
 
     //It Takes a Pillage 1.0.3
     implementation fg.deobf("curse.maven:it-takes-a-pillage-635843:4981343")
@@ -189,53 +189,193 @@ dependencies {
     implementation fg.deobf("curse.maven:savage-and-ravage-381736:6040963")
     implementation fg.deobf("curse.maven:blueprint-382216:5292242")
 
-    //Dungeons Mobs 4.0.8 + Dungeons Libraries 3.0.10
-//    implementation fg.deobf("curse.maven:dungeons-mobs-428883:4501524")
-//    implementation fg.deobf("curse.maven:dungeons-libraries-550941:4496767")
+    //Dungeons Mobs port 1.9.2 + GeckoLib 4.7.4
+    implementation fg.deobf("curse.maven:dungeons-mobs-port-1214518:6785377")
+    implementation fg.deobf("curse.maven:geckolib-388172:6920925")
 
-    //GeckoLib 4.7 (required for Dungeons Mobs, Illager Revolution and Illager Additions)
-    implementation fg.deobf("curse.maven:geckolib-388172:6027567")
-
-    //Leo's Illagers 1.1.2
+    //Leo's Illagers
     implementation fg.deobf("curse.maven:leos-illagers-812954:6206843")
 
     //Pyrologer & Friends
 //    implementation fg.deobf("curse.maven:pyrologer-and-friends-573099:4433602")
 
-    //L Ender's Cataclysm 1.99.6 & Lionfish API 1.9
-    implementation fg.deobf("curse.maven:l_ender-s-cataclysm-551586:5474791")
-    implementation fg.deobf("curse.maven:lionfish-api-1001614:5363774")
-    implementation fg.deobf("curse.maven:curios-api-309927:5680164")
-
-    //Enchantment Descriptions 17.1.18 + Bookshelf 20.2.13
-    runtimeOnly fg.deobf("curse.maven:enchantmentdescriptions-250419:5598368")
-    runtimeOnly fg.deobf("curse.maven:bookshelf-228525:5423987")
-
-    //Raided 0.1.4
-    implementation fg.deobf("curse.maven:raided-580942:5128249")
-
-    //Illager Revolution 1.4
-    implementation fg.deobf("curse.maven:illager-revolution-841586:5185405")
-
-    //Illager Additions 0.1.0-beta
-    implementation fg.deobf("curse.maven:illager-additions-682835:5643823")
-
-    //Friends&Foes
-    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:6283388")
+    //L Ender's Cataclysm 3.16 + Lionfish API 2.4-Fix + Curios API 5.14.1
+    implementation fg.deobf("curse.maven:l_ender-s-cataclysm-551586:6906993")
+    implementation fg.deobf("curse.maven:lionfish-api-1001614:5922047")
+    implementation fg.deobf("curse.maven:curios-api-309927:6418456")
 
     //The Conjurer 1.1.6 + StructureGel 2.16.2
     implementation fg.deobf("curse.maven:the-conjurer-377798:4733239")
     implementation fg.deobf("curse.maven:structure-gel-api-378802:5278429")
 
-    //Brazier 1.1.6 + Architectury 9.2.14 + Cloth Config 11.1.136
-    implementation fg.deobf("curse.maven:brazier-402616:4702302")
-    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
-    implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
+    //Necromancer Mod Port, Continuation 1.0.0
+    implementation fg.deobf("curse.maven:necromancer-mod-port-continuation-1221478:6557928")
+
+
+
+
+
 
     //Utilities
-    runtimeOnly fg.deobf("curse.maven:jade-324717:6271651") //Jade 11.13.1
-//    runtimeOnly fg.deobf("curse.maven:mob-entity-path-visualizer-590716:4063117") //Mob Entity Path Visualizer 1.1.0-release.6
 
+    //Jade 11.13.1
+    runtimeOnly fg.deobf("curse.maven:jade-324717:6271651")
+
+    //ToroHealth Damage Indicators unofficial 1.20.1 1.0.0
+    runtimeOnly fg.deobf("curse.maven:torohealth-unofficial-931345:4831219")
+
+    //Mob Path Visualizer 0.1
+    runtimeOnly fg.deobf("curse.maven:mob-path-visualizer-1120194:5806831")
+
+    //Enchantment Descriptions 17.1.19 + Bookshelf 20.2.13
+    runtimeOnly fg.deobf("curse.maven:enchantmentdescriptions-250419:5855251")
+    runtimeOnly fg.deobf("curse.maven:bookshelf-228525:5423987")
+
+
+
+
+
+
+    //Mods we need to add compatibility
+    //Thanks to Looking1for1illagers1for1raids for the list of illager related mods
+
+    //Werden's Illagers + 1.1.0
+//    implementation fg.deobf("curse.maven:werdens-illagers-1247652:6564785")
+
+    //Iron's Spells 'n Spellbooks 3.4.0.10 + Player Animator 1.0.2-rc1 + Gambler Illager 1.0.0
+//    implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6833927")
+//    implementation fg.deobf("curse.maven:playeranimator-658587:4587214")
+//    implementation fg.deobf("curse.maven:gambler-illager-irons-spells-and-spellbooks-addon-1253824:6908084")
+
+    //Guard Illagers 1.0.2
+//    implementation fg.deobf("curse.maven:guard-illagers-311899:6502154")
+
+    //Illager Additions 0.1.0
+//    implementation fg.deobf("curse.maven:illager-additions-682835:5643823")
+
+    //Village and Villagers 1.0.0 + Tickrate API 4.0.0
+//    implementation fg.deobf("curse.maven:village-and-villagers-1275176:6908041")
+//    implementation fg.deobf("curse.maven:tickrate-api-969702:6830640")
+
+    //PillagersPlus 5.0.7
+//    implementation fg.deobf("curse.maven:pillagersplus-1252604:6864819")
+
+    //Illager Invasion 8.0.7 + Puzzles Lib 8.1.33
+//    implementation fg.deobf("curse.maven:illager-invasion-891324:6192869")
+//    implementation fg.deobf("curse.maven:puzzles-lib-495476:6918565")
+
+    //MobZ 4.2.1 + Cloth Config API 11.1.136
+//    implementation fg.deobf("curse.maven:mobz-336554:6495914")
+//    implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
+
+    //Bones Update 1.2.0-1
+//    implementation fg.deobf("curse.maven:bones-update-958749:5803104")
+
+    //Goety - The Dark Arts 2.5.36.1
+//    implementation fg.deobf("curse.maven:goety-586095:6778940")
+
+    //Pillager Boss 1.0.0
+//    implementation fg.deobf("curse.maven:pillager-boss-1181395:6583995")
+
+    //The Summoner Illager Port 1.0.0
+//    implementation fg.deobf("curse.maven:the-summoner-port-1220635:6557663")
+
+    //Musketeer Illager Port 1.0.1
+//    implementation fg.deobf("curse.maven:musketeer-illager-port-1247152:6531882")
+
+    //Mischief Illagers 1.2
+//    implementation fg.deobf("curse.maven:mischief-illagers-1242852:6508234")
+
+    //Burning Illagers 1.3.1
+//    implementation fg.deobf("curse.maven:burning-illagers-1227507:6473130")
+
+    //Sensei Illager 1.0.1
+//    implementation fg.deobf("curse.maven:sensei-illager-1240874:6444802")
+
+    //Bagus Mob 4.0.2
+//    implementation fg.deobf("curse.maven:bagus-mob-885655:5545460")
+
+    //Illager Universe 1.0.0
+//    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
+
+    //Terramity 0.9.8 + Caelus API 3.2.0 + Patchouli 84.1
+//    implementation fg.deobf("curse.maven:terramity-1084134:6054971")
+//    implementation fg.deobf("curse.maven:caelus-308989:5281700")
+//    implementation fg.deobf("curse.maven:patchouli-306770:6164575")
+
+    //The Modifiger 1.0.0
+//    implementation fg.deobf("curse.maven:the-modifiger-1115268:5784152")
+
+    //The Masquerade (Illager Boss) 1.2.2
+//    implementation fg.deobf("curse.maven:the-masquerade-illager-boss-1074613:5726614")
+
+    //Raided 0.1.4
+//    implementation fg.deobf("curse.maven:raided-580942:5128249")
+
+    //more illagers 1.0.7
+//    implementation fg.deobf("curse.maven:more-illagers-501714:5620839")
+
+    //Slash Illager 2.0.1 + SlashBlade: Resharped 1.5.49
+//    implementation fg.deobf("curse.maven:slash-illager-1024478:5466149")
+//    implementation fg.deobf("curse.maven:slashblade-resharped-1022428:6927996")
+
+    //Supernatural 2.12.1
+//    implementation fg.deobf("curse.maven:supernatural-610880:5820483")
+
+    //Illager Revolution 1.4
+//    implementation fg.deobf("curse.maven:illager-revolution-841586:5185405")
+
+    //Dark Side 1.4.1
+//    implementation fg.deobf("curse.maven:dark-side-creatures-928324:5182327")
+
+    //CrimsonSteve's more mobs 1.1.2
+//    implementation fg.deobf("curse.maven:crimsonsteves-more-mobs-735413:4718160")
+
+    //Mo' Features 1.1
+//    implementation fg.deobf("curse.maven:mo-features-416140:4858710")
+
+    //All Bark, All Bite 1.0.2
+//    implementation fg.deobf("curse.maven:all-bark-all-bite-833755:4817227")
+
+    //Biome Makeover (Forge) 1.11.4 + Architectury API 9.2.14
+//    implementation fg.deobf("curse.maven:biome-makeover-forge-567709:4815822")
+//    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+
+    //Ravage & Cabbage 1.2.4
+//    implementation fg.deobf("curse.maven:ravage-and-cabbage-440594:4787340")
+
+    //Brazier 6.1.1
+//    implementation fg.deobf("curse.maven:brazier-402616:4702302")
+
+    //Friends&Foes 3.0.9
+//    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:6354624")
+
+    //Karate Illager Java Port 1.0.0
+//    implementation fg.deobf("curse.maven:karate-illager-finally-ported-1234733:6550373")
+
+    //Francis's Illagers 1.0.9
+//    implementation fg.deobf("curse.maven:francis-illagers-1273063:6681058")
+
+    //Sorcerer illager 1.0.1
+//    implementation fg.deobf("curse.maven:sorcerer-illager-1314339:6832744")
+
+    //Illager Rebels 1.0.0
+//    implementation fg.deobf("curse.maven:illager-rebels-994298:5270196")
+
+    //Illager brute 1.0.0
+//    implementation fg.deobf("curse.maven:illager-brute-1250110:6459251")
+
+    //Homeless Illager 1.0.1
+//    implementation fg.deobf("curse.maven:homeless-illager-1214650:6763733")
+
+    //The Wandering Illagers 1.2
+//    implementation fg.deobf("curse.maven:the-wandering-illagers-1245267:6757425")
+
+    //Expado's Illagers 1.0.4
+//    implementation fg.deobf("curse.maven:expados-illagers-1313064:6863477")
+
+    //Illager World War 1.1.2
+//    implementation fg.deobf("curse.maven:illager-world-war-1083239:5808688")
 }
 
 mixin {
