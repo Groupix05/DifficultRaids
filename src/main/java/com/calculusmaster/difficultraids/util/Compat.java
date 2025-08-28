@@ -16,7 +16,11 @@ public enum Compat
     RECRUITS("recruits"),
     WORKERS("workers"),
     CONJURER("conjurer_illager"),
-    NECROMANCER("necromancer")
+    NECROMANCER("necromancer"),
+    WERDENS_ILLAGERS("wip"),
+    IRONS_SPELLBOOKS("irons_spellbooks"),
+    GAMBLER("gambler"),
+    GUARD_ILLAGERS("guardillagers")
     ;
 
     private final String modid;

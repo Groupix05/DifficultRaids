@@ -5,11 +5,13 @@ import com.calculusmaster.difficultraids.data.raiderentries.RaiderEntriesHolder;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.util.Compat;
 //import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
+import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.raid.Raid;
 import net.minecraft.world.entity.raid.Raider;
 import org.slf4j.Logger;
@@ -111,6 +113,19 @@ public class RaidEnemyRegistry
     //Necromancer Mod Port
     public static final String NECROMANCER_MOD = "necromancer";
 
+    //Werden's Illagers +
+    public static final String SINISTER = "sinister";
+    public static final String SHADOMANCER = "shadomancer";
+
+    //Iron's Spells and Spellbooks
+    public static final String ARCHEVOKER = "archevoker";
+
+    //Gambler Illager
+    public static final String GAMBLER = "gambler";
+
+    //Guard Illagers
+    public static final String GUARD_ILLAGER = "guard_illager";
+
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
     public static boolean isRaiderTypeEnabled(String raiderType)
@@ -145,6 +160,8 @@ public class RaidEnemyRegistry
         if(Compat.SAVAGE_AND_RAVAGE.isLoaded()) RaidEnemyRegistry.createRaiderType(ICEOLOGER_SR, SREntityTypes.ICEOLOGER.get());
         //if(Compat.DUNGEONS_MOBS.isLoaded()) RaidEnemyRegistry.createRaiderType(ILLUSIONER_DM, ModEntities.ILLUSIONER.get());
         if(Compat.CONJURER.isLoaded()) RaidEnemyRegistry.createRaiderType(CONJURER, IllagerEntityTypes.CONJURER);
+        if(Compat.IRONS_SPELLBOOKS.isLoaded()) RaidEnemyRegistry.createRaiderType(ARCHEVOKER, EntityRegistry.ARCHEVOKER.get());
+        if(Compat.GAMBLER.isLoaded()) RaidEnemyRegistry.createRaiderType(GAMBLER, castToRaiderType(com.min01.gambler.entity.ModEntities.GAMBLER.get()));
     }
 
     public static void compileWaveData(final Map<ResourceLocation, RaiderEntriesHolder> data)
@@ -191,6 +208,7 @@ public class RaidEnemyRegistry
     {
         Raid.RaiderType.create(typeName, type, BLANK);
     }
+
 
     public static void registerWaves()
     {
@@ -252,6 +270,11 @@ public class RaidEnemyRegistry
                 .withRaider(TROUBLEMAKER,       0, 1, 0, 1, 1, 1, 0, 1)
                 .withRaider(CONJURER,           0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(NECROMANCER_MOD,    0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(SINISTER,           0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(SHADOMANCER,        0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(ARCHEVOKER,         0, 0, 0, 1, 0, 0, 0, 0)
+                .withRaider(GAMBLER,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(GUARD_ILLAGER,      0, 1, 1, 2, 1, 2, 1, 1)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -314,6 +337,11 @@ public class RaidEnemyRegistry
                 .withRaider(TROUBLEMAKER,       0, 1, 1, 2, 2, 1, 1, 1)
                 .withRaider(CONJURER,           0, 0, 0, 0, 1, 0, 0, 1)
                 .withRaider(NECROMANCER_MOD,    0, 0, 1, 0, 0, 0, 1, 1)
+                .withRaider(SINISTER,           0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(SHADOMANCER,        0, 0, 0, 1, 0, 0, 0, 0)
+                .withRaider(ARCHEVOKER,         0, 0, 0, 1, 1, 0, 0, 0)
+                .withRaider(GAMBLER,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(GUARD_ILLAGER,      0, 2, 2, 2, 2, 3, 2, 2)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -377,6 +405,11 @@ public class RaidEnemyRegistry
                 .withRaider(TROUBLEMAKER,       0, 3, 2, 3, 2, 3, 2, 3)
                 .withRaider(CONJURER,           0, 0, 1, 0, 1, 0, 1, 1)
                 .withRaider(NECROMANCER_MOD,    0, 1, 1, 0, 0, 1, 1, 2)
+                .withRaider(SINISTER,           0, 0, 0, 1, 1, 0, 0, 0)
+                .withRaider(SHADOMANCER,        0, 0, 1, 1, 0, 0, 0, 1)
+                .withRaider(ARCHEVOKER,         0, 0, 1, 1, 1, 1, 0, 0)
+                .withRaider(GAMBLER,            0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(GUARD_ILLAGER,      0, 2, 5, 4, 2, 3, 3, 4)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -442,6 +475,11 @@ public class RaidEnemyRegistry
                 .withRaider(TROUBLEMAKER,       0, 3, 2, 3, 2, 3, 2, 3)
                 .withRaider(CONJURER,           0, 1, 1, 0, 1, 2, 1, 2)
                 .withRaider(NECROMANCER_MOD,    0, 1, 2, 1, 0, 1, 2, 2)
+                .withRaider(SINISTER,           0, 0, 0, 1, 1, 0, 1, 2)
+                .withRaider(SHADOMANCER,        0, 0, 1, 1, 0, 0, 1, 0)
+                .withRaider(ARCHEVOKER,         0, 0, 1, 1, 1, 1, 0, 0)
+                .withRaider(GAMBLER,            0, 0, 1, 0, 1, 2, 0, 0)
+                .withRaider(GUARD_ILLAGER,      0, 3, 6, 4, 3, 5, 4, 4)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

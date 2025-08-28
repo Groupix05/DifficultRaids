@@ -219,6 +219,15 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.CONJURER, GENERAL.define("enableConjurer", false));
         GENERAL.pop().push("Requires Necromancer Mod Port");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_MOD, GENERAL.define("enableNecromancer", true));
+        GENERAL.pop().push("Requires Werden's Illagers +");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SINISTER, GENERAL.define("enableSinister", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SHADOMANCER, GENERAL.define("enableShadomancer", true));
+        GENERAL.pop().push("Requires Iron's Spells and Spellbooks");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ARCHEVOKER, GENERAL.define("enableArchevoker", true));
+        GENERAL.pop().push("Requires Gambler Illager");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GAMBLER, GENERAL.define("enableGambler", true));
+        GENERAL.pop().push("Requires Guard Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GUARD_ILLAGER, GENERAL.define("enableGuardillager", true));
         GENERAL.pop();
 
         GENERAL.pop();

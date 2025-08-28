@@ -30,7 +30,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '2.0-beta.14'
+version = '2.0.0'
 group = 'com.calculusmaster.difficultraids'
 archivesBaseName = 'difficultraids-1.20.1'
 
@@ -146,7 +146,7 @@ repositories {
 
 dependencies {
     //Minecraft
-    minecraft 'net.minecraftforge:forge:1.20.1-47.3.7'
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.0'
 
     // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
@@ -211,6 +211,9 @@ dependencies {
     //Necromancer Mod Port, Continuation 1.0.0
     implementation fg.deobf("curse.maven:necromancer-mod-port-continuation-1221478:6557928")
 
+    //Werden's Illagers + 1.1.0
+    implementation fg.deobf("curse.maven:werdens-illagers-1247652:6564785")
+
 
 
 
@@ -239,16 +242,14 @@ dependencies {
     //Mods we need to add compatibility
     //Thanks to Looking1for1illagers1for1raids for the list of illager related mods
 
-    //Werden's Illagers + 1.1.0
-//    implementation fg.deobf("curse.maven:werdens-illagers-1247652:6564785")
-
-    //Iron's Spells 'n Spellbooks 3.4.0.10 + Player Animator 1.0.2-rc1 + Gambler Illager 1.0.0
-//    implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6833927")
-//    implementation fg.deobf("curse.maven:playeranimator-658587:4587214")
-//    implementation fg.deobf("curse.maven:gambler-illager-irons-spells-and-spellbooks-addon-1253824:6908084")
+    //Iron's Spells 'n Spellbooks 3.4.0.10 + Player Animator 1.0.2-rc1 + Caelus API 3.2.0 + Gambler Illager 1.0.0
+    implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6833927")
+    implementation fg.deobf("curse.maven:playeranimator-658587:4587214")
+    implementation fg.deobf("curse.maven:caelus-308989:5281700")
+    implementation fg.deobf("curse.maven:gambler-illager-irons-spells-and-spellbooks-addon-1253824:6908084")
 
     //Guard Illagers 1.0.2
-//    implementation fg.deobf("curse.maven:guard-illagers-311899:6502154")
+    implementation fg.deobf("curse.maven:guard-illagers-311899:6502154")
 
     //Illager Additions 0.1.0
 //    implementation fg.deobf("curse.maven:illager-additions-682835:5643823")
@@ -298,9 +299,8 @@ dependencies {
     //Illager Universe 1.0.0
 //    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
 
-    //Terramity 0.9.8 + Caelus API 3.2.0 + Patchouli 84.1
+    //Terramity 0.9.8 + Patchouli 84.1
 //    implementation fg.deobf("curse.maven:terramity-1084134:6054971")
-//    implementation fg.deobf("curse.maven:caelus-308989:5281700")
 //    implementation fg.deobf("curse.maven:patchouli-306770:6164575")
 
     //The Modifiger 1.0.0

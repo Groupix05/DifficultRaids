@@ -7,6 +7,7 @@ import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
+import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -97,5 +98,17 @@ public class DifficultRaidsUtil
         if(Compat.CONJURER.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(IllagerEntityTypes.CONJURER);
 
         if(Compat.NECROMANCER.isLoaded()) BASIC_MAGIC_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("necromancer", "necromancer")));
+
+        if(Compat.WERDENS_ILLAGERS.isLoaded())
+        {
+            BASIC_MAGIC_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("wip", "sinister")));
+            ADVANCED_MAGIC_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("wip", "shadomancer")));
+        }
+
+        if(Compat.IRONS_SPELLBOOKS.isLoaded()) BASIC_MAGIC_RAIDERS.add(EntityRegistry.ARCHEVOKER.get());
+
+        if(Compat.GAMBLER.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(com.min01.gambler.entity.ModEntities.GAMBLER.get());
+
+        if(Compat.GUARD_ILLAGERS.isLoaded()) STANDARD_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("guardillagers", "guard_illager")));
     }
 }
