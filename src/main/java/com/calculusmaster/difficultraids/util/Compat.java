@@ -20,7 +20,10 @@ public enum Compat
     WERDENS_ILLAGERS("wip"),
     IRONS_SPELLBOOKS("irons_spellbooks"),
     GAMBLER("gambler"),
-    GUARD_ILLAGERS("guardillagers")
+    GUARD_ILLAGERS("guardillagers"),
+    ILLAGER_ADDITIONS("illager_additions"),
+    MOBZ("mobz"),
+    ILLAGER_INVASION("illagerinvasion")
     ;
 
     private final String modid;

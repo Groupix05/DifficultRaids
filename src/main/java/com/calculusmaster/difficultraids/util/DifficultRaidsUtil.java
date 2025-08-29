@@ -7,6 +7,9 @@ import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
+import comfrancisplayz446.necromancer.init.NecromancerModEntities;
+import fuzs.illagerinvasion.init.ModRegistry;
+import net.mobz.init.MobZEntities;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -97,18 +100,60 @@ public class DifficultRaidsUtil
 
         if(Compat.CONJURER.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(IllagerEntityTypes.CONJURER);
 
-        if(Compat.NECROMANCER.isLoaded()) BASIC_MAGIC_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("necromancer", "necromancer")));
+        if(Compat.NECROMANCER.isLoaded()) BASIC_MAGIC_RAIDERS.add(NecromancerModEntities.NECROMANCER.get());
 
         if(Compat.WERDENS_ILLAGERS.isLoaded())
         {
-            BASIC_MAGIC_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("wip", "sinister")));
-            ADVANCED_MAGIC_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("wip", "shadomancer")));
+            BASIC_MAGIC_RAIDERS.add(net.werdenrc5.wip.entity.ModEntities.SINISTER.get());
+            ADVANCED_MAGIC_RAIDERS.add(net.werdenrc5.wip.entity.ModEntities.SHADOMANCER.get());
         }
 
         if(Compat.IRONS_SPELLBOOKS.isLoaded()) BASIC_MAGIC_RAIDERS.add(EntityRegistry.ARCHEVOKER.get());
 
         if(Compat.GAMBLER.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(com.min01.gambler.entity.ModEntities.GAMBLER.get());
 
-        if(Compat.GUARD_ILLAGERS.isLoaded()) STANDARD_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("guardillagers", "guard_illager")));
+        if(Compat.GUARD_ILLAGERS.isLoaded()) STANDARD_RAIDERS.add(com.min01.guardillagers.init.ModEntityTypes.GUARD_ILLAGER.get());
+
+        if(Compat.ILLAGER_ADDITIONS.isLoaded())
+        {
+            ADVANCED_RAIDERS.addAll(List.of(
+                    com.pikachu.mod.illager_more.init.ModEntityTypes.ROYAL_GUARD_SPEAR.get(),
+                    com.pikachu.mod.illager_more.init.ModEntityTypes.SPEARMAN.get(),
+                    com.pikachu.mod.illager_more.init.ModEntityTypes.HARD_SAMURAI.get(),
+                    com.pikachu.mod.illager_more.init.ModEntityTypes.COWBOY.get(),
+                    com.pikachu.mod.illager_more.init.ModEntityTypes.SHOGUN.get()
+            ));
+            BASIC_MAGIC_RAIDERS.add(com.pikachu.mod.illager_more.init.ModEntityTypes.BLASTIONER.get());
+        }
+
+        if(Compat.MOBZ.isLoaded()) // Skipping Baby ravager
+        {
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    MobZEntities.SPIDER_MAGE.get(),
+                    MobZEntities.ZOMBIE_MAGE.get()
+            ));
+            ADVANCED_RAIDERS.addAll(List.of(
+                    MobZEntities.PILLAGER_BOSS.get(),
+                    MobZEntities.ILLUSIONER.get()
+            ));
+        }
+
+        if(Compat.ILLAGER_INVASION.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    ModRegistry.PROVOKER_ENTITY_TYPE.get(),
+                    ModRegistry.INQUISITOR_ENTITY_TYPE.get(),
+                    ModRegistry.MARAUDER_ENTITY_TYPE.get(),
+                    ModRegistry.BASHER_ENTITY_TYPE.get()
+            ));
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    ModRegistry.FIRECALLER_ENTITY_TYPE.get(),
+                    ModRegistry.NECROMANCER_ENTITY_TYPE.get(),
+                    ModRegistry.ALCHEMIST_ENTITY_TYPE.get(),
+                    ModRegistry.SORCERER_ENTITY_TYPE.get(),
+                    ModRegistry.ARCHIVIST_ENTITY_TYPE.get()
+            ));
+            ADVANCED_MAGIC_RAIDERS.add(ModRegistry.INVOKER_ENTITY_TYPE.get());
+        }
     }
 }

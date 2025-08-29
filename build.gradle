@@ -177,7 +177,7 @@ dependencies {
     implementation fg.deobf("curse.maven:baguslib-866533:6711183")
 
     //Enchant with Mob 11.17.0
-    compileOnly fg.deobf("curse.maven:enchantwithmob-913523:6593792")
+    implementation fg.deobf("curse.maven:enchantwithmob-913523:6593792")
 
     //Illage & Spillage: Respillaged 1.2.8
     implementation fg.deobf("curse.maven:illage-and-spillage-finally-ported-1079714:6156035")
@@ -214,6 +214,20 @@ dependencies {
     //Werden's Illagers + 1.1.0
     implementation fg.deobf("curse.maven:werdens-illagers-1247652:6564785")
 
+    //Guard Illagers 1.0.2
+    implementation fg.deobf("curse.maven:guard-illagers-311899:6502154")
+
+    //Illager Invasion 8.0.7 + Puzzles Lib 8.1.33
+    implementation fg.deobf("curse.maven:illager-invasion-891324:6192869")
+    implementation fg.deobf("curse.maven:puzzles-lib-495476:6918565")
+
+    //MobZ 4.2.1 + Cloth Config API 11.1.136
+    implementation fg.deobf("curse.maven:mobz-336554:6495914")
+    implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
+
+    //Illager Additions 0.1.0
+    implementation fg.deobf("curse.maven:illager-additions-682835:5643823")
+
 
 
 
@@ -238,7 +252,6 @@ dependencies {
 
 
 
-
     //Mods we need to add compatibility
     //Thanks to Looking1for1illagers1for1raids for the list of illager related mods
 
@@ -248,26 +261,12 @@ dependencies {
     implementation fg.deobf("curse.maven:caelus-308989:5281700")
     implementation fg.deobf("curse.maven:gambler-illager-irons-spells-and-spellbooks-addon-1253824:6908084")
 
-    //Guard Illagers 1.0.2
-    implementation fg.deobf("curse.maven:guard-illagers-311899:6502154")
-
-    //Illager Additions 0.1.0
-//    implementation fg.deobf("curse.maven:illager-additions-682835:5643823")
-
-    //Village and Villagers 1.0.0 + Tickrate API 4.0.0
+    //Village and Villagers 1.0.0 + Tickrate API 4.0.0 (doesnt add any illager rn)
 //    implementation fg.deobf("curse.maven:village-and-villagers-1275176:6908041")
 //    implementation fg.deobf("curse.maven:tickrate-api-969702:6830640")
 
-    //PillagersPlus 5.0.7
+    //PillagersPlus 5.0.7 (no third party)
 //    implementation fg.deobf("curse.maven:pillagersplus-1252604:6864819")
-
-    //Illager Invasion 8.0.7 + Puzzles Lib 8.1.33
-//    implementation fg.deobf("curse.maven:illager-invasion-891324:6192869")
-//    implementation fg.deobf("curse.maven:puzzles-lib-495476:6918565")
-
-    //MobZ 4.2.1 + Cloth Config API 11.1.136
-//    implementation fg.deobf("curse.maven:mobz-336554:6495914")
-//    implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
 
     //Bones Update 1.2.0-1
 //    implementation fg.deobf("curse.maven:bones-update-958749:5803104")
