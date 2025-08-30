@@ -2,11 +2,13 @@ package com.calculusmaster.difficultraids.util;
 
 import baguchan.enchantwithmob.registry.ModEntities;
 import baguchan.hunters_return.init.HunterEntityRegistry;
+import baguchan.the_modifiger.registry.ModEntityRegistry;
 import cn.leolezury.leosillagers.init.EntityInit;
 import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
+import com.mysticmage.musketeer_illager.init.MusketeerIllagerModEntities;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
@@ -187,5 +189,17 @@ public class DifficultRaidsUtil
         if(Compat.SUMMONER.isLoaded()) BASIC_MAGIC_RAIDERS.addAll(List.of(ThesummonerModEntities.SUMMONER.get(),ThesummonerModEntities.SUMMONER_BOSS.get()));
 
         if(Compat.BONES_UPDATE.isLoaded()) BASIC_MAGIC_RAIDERS.add(BonesEntities.NECROMANCER.get());
+
+        if(Compat.MUSKETEER.isLoaded()) STANDARD_RAIDERS.add(MusketeerIllagerModEntities.MARKSMAN.get());
+
+        if(Compat.MODIFIGER.isLoaded()) BASIC_MAGIC_RAIDERS.add(ModEntityRegistry.MODIFIGER.get());
+
+        if(Compat.BAGUS_MOB.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    baguchan.bagusmob.registry.ModEntityRegistry.NINJAR.get(),
+                    baguchan.bagusmob.registry.ModEntityRegistry.TENGU.get()
+            ));
+        }
     }
 }

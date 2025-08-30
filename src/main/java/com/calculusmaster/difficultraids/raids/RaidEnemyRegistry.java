@@ -12,10 +12,8 @@ import com.mojang.logging.LogUtils;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
-import fuzs.illagerinvasion.init.ModRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.raid.Raid;
 import net.minecraft.world.entity.raid.Raider;
 import net.mobz.init.MobZEntities;
@@ -185,6 +183,19 @@ public class RaidEnemyRegistry
 
     //Bones Update
     public static final String NECROMANCER_BONES = "NECROMANCER_BONES";
+
+    //Musketeer Illager
+    public static final String MARKSMAN = "marksman";
+
+    //The Modifiger
+    public static final String MODIFIGER = "modifiger";
+
+    //Masquerader
+    public static final String MASQUERADER = "masquerader";
+
+    //Bagus Mob
+    public static final String TENGU = "tengu";
+    public static final String NINJAR = "ninjar";
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -395,6 +406,11 @@ public class RaidEnemyRegistry
                 .withRaider(THE_SUMMONER,       0, 0, 1, 0, 0, 1, 0, 0)
                 .withRaider(THE_SUMMONER_BOSS,  0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(NECROMANCER_BONES,  0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(MODIFIGER,          0, 0, 0, 0, 1, 0, 1, 1)
+                .withRaider(MARKSMAN,           0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(MASQUERADER,        0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(TENGU,              0, 0, 0, 1, 0, 0, 1, 0)
+                .withRaider(NINJAR,             0, 1, 0, 0, 1, 2, 1, 1)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -505,6 +521,11 @@ public class RaidEnemyRegistry
                 .withRaider(THE_SUMMONER,       0, 1, 1, 0, 1, 1, 0, 1)
                 .withRaider(THE_SUMMONER_BOSS,  0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(NECROMANCER_BONES,  0, 0, 1, 1, 1, 0, 0, 1)
+                .withRaider(MODIFIGER,          0, 0, 0, 2, 1, 1, 2, 1)
+                .withRaider(MARKSMAN,           0, 1, 1, 1, 2, 1, 0, 1)
+                .withRaider(MASQUERADER,        0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(TENGU,              0, 1, 1, 1, 0, 1, 2, 1)
+                .withRaider(NINJAR,             0, 1, 1, 1, 2, 2, 2, 1)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -616,6 +637,11 @@ public class RaidEnemyRegistry
                 .withRaider(THE_SUMMONER,       0, 2, 1, 0, 1, 2, 0, 1)
                 .withRaider(THE_SUMMONER_BOSS,  0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(NECROMANCER_BONES,  0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(MODIFIGER,          0, 1, 1, 3, 2, 2, 3, 3)
+                .withRaider(MARKSMAN,           0, 1, 2, 2, 3, 2, 1, 2)
+                .withRaider(MASQUERADER,        0, 0, 0, 0, 2, 0, 0, 0)
+                .withRaider(TENGU,              0, 1, 2, 3, 2, 1, 2, 1)
+                .withRaider(NINJAR,             0, 2, 2, 2, 3, 2, 2, 2)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -653,7 +679,7 @@ public class RaidEnemyRegistry
                 .withRaider(MAGISPELLER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPIRITCALLER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FREAKAGER,          0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(BOSS_RANDOMIZER,    0, 0, 1, 1, 1, 2, 2, 2)
+                .withRaider(BOSS_RANDOMIZER,    0, 0, 1, 1, 0, 2, 2, 2)
                 .withRaider(GRIEFER,            0, 2, 3, 2, 3, 3, 3, 4)
                 .withRaider(EXECUTIONER,        0, 2, 2, 2, 3, 2, 3, 4)
                 .withRaider(TRICKSTER,          0, 1, 2, 1, 2, 2, 2, 3)
@@ -729,6 +755,11 @@ public class RaidEnemyRegistry
                 .withRaider(THE_SUMMONER,       0, 2, 2, 1, 2, 3, 1, 2)
                 .withRaider(THE_SUMMONER_BOSS,  0, 0, 0, 1, 1, 1, 0, 2)
                 .withRaider(NECROMANCER_BONES,  0, 1, 2, 2, 1, 2, 1, 2)
+                .withRaider(MODIFIGER,          0, 2, 2, 3, 2, 3, 3, 3)
+                .withRaider(MARKSMAN,           0, 2, 2, 3, 4, 3, 2, 2)
+                .withRaider(MASQUERADER,        0, 1, 0, 0, 3, 0, 0, 0)
+                .withRaider(TENGU,              0, 2, 3, 4, 2, 2, 3, 2)
+                .withRaider(NINJAR,             0, 2, 3, 2, 3, 2, 3, 2)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

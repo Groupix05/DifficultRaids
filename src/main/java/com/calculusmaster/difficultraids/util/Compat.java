@@ -26,7 +26,11 @@ public enum Compat
     ILLAGER_INVASION("illagerinvasion"),
     GOETY("goety"),
     SUMMONER("thesummoner"),
-    BONES_UPDATE("bonesupdate")
+    BONES_UPDATE("bonesupdate"),
+    MODIFIGER("the_modifiger"),
+    MASQUERADER("masquerader_mod"),
+    MUSKETEER("musketeer_illager"),
+    BAGUS_MOB("bagusmob")
     ;
 
     private final String modid;

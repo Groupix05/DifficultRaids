@@ -276,6 +276,16 @@ public class DifficultRaidsConfig
         GENERAL.comment("If you enable Cowboy or Shogun, make sure to enable them in Illager Additions config");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.COWBOY, GENERAL.define("enableCowboy", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SHOGUN, GENERAL.define("enableShogun", false));
+        GENERAL.pop().push("Requires The Modifiger");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MODIFIGER, GENERAL.define("enableModifiger", true));
+        GENERAL.pop().push("Requires Musketeer Illager");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MARKSMAN, GENERAL.define("enableMarksman", true));
+        GENERAL.pop().push("Requires The Masquerader");
+        GENERAL.comment("If you change the spawn rate of this mob, make sure no other bosses from Illage & Spillage spawn in the same wave, or they will have infinite force field.");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MASQUERADER, GENERAL.define("enableMasquerader", true));
+        GENERAL.pop().push("Requires Bagus Mob");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.TENGU, GENERAL.define("enableTengu", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NINJAR, GENERAL.define("enableNinjar", true));
 
         GENERAL.pop();
 
