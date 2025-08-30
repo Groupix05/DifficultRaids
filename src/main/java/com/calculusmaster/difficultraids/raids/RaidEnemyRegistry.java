@@ -1,5 +1,6 @@
 package com.calculusmaster.difficultraids.raids;
 
+import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.calculusmaster.difficultraids.DifficultRaids;
 import com.calculusmaster.difficultraids.data.raiderentries.RaiderEntriesHolder;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
@@ -8,6 +9,7 @@ import com.calculusmaster.difficultraids.util.Compat;
 //import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.mojang.logging.LogUtils;
+import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import fuzs.illagerinvasion.init.ModRegistry;
@@ -114,7 +116,7 @@ public class RaidEnemyRegistry
     public static final String CONJURER = "conjurer";
 
     //Necromancer Mod Port
-    public static final String NECROMANCER_MOD = "necromancer";
+    public static final String NECROMANCER_MOD = "necromancer_mod";
 
     //Werden's Illagers +
     public static final String SINISTER = "sinister";
@@ -155,6 +157,34 @@ public class RaidEnemyRegistry
     public static final String SORCERER = "ILLAGERINVASION_SORCERER";
     public static final String ARCHIVIST = "ILLAGERINVASION_ARCHIVIST";
     public static final String INVOKER = "ILLAGERINVASION_INVOKER";
+
+    //Goety
+    public static final String WARLOCK = "GOETY_WARLOCK";
+    public static final String MAVERICK = "GOETY_MAVERICK";
+    public static final String HERETIC = "GOETY_HERETIC";
+    public static final String PIKER = "GOETY_PIKER";
+    public static final String RIPPER = "GOETY_RIPPER";
+    public static final String CRUSHER = "GOETY_CRUSHER";
+    public static final String STORM_CASTER = "GOETY_STORM_CASTER";
+    public static final String CRYOLOGER = "GOETY_CRYOLOGER";
+    public static final String PREACHER = "GOETY_PREACHER";
+    public static final String CONQUILLAGER = "GOETY_CONQUILLAGER";
+    public static final String INQUILLAGER = "GOETY_INQUILLAGER";
+    public static final String ENVIOKER = "GOETY_ENVIOKER";
+    public static final String SORCERER_GOETY = "GOETY_SORCERER";
+    public static final String HOSTILE_RED_GOLEM = "GOETY_HOSTILE_RED_GOLEM";
+    public static final String HOSTILE_RED_MONSTER = "GOETY_HOSTILE_RED_MONSTER";
+    public static final String MINISTER = "GOETY_MINISTER";
+    public static final String TRAMPLER = "GOETY_TRAMPLER";
+    public static final String VIZIER = "GOETY_VIZIER";
+    public static final String APOSTLE = "GOETY_APOSTLE";
+
+    //The Summoner Illager
+    public static final String THE_SUMMONER = "summoner";
+    public static final String THE_SUMMONER_BOSS = "summoner_boss";
+
+    //Bones Update
+    public static final String NECROMANCER_BONES = "NECROMANCER_BONES";
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -201,7 +231,14 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(ILLUSIONER_MOBZ, MobZEntities.ILLUSIONER.get());
             RaidEnemyRegistry.createRaiderType(BABY_RAVAGER, MobZEntities.BABY_RAVAGER.get());
         }
-        //if(Compat.NECROMANCER.isLoaded()) RaidEnemyRegistry.createRaiderType(NECROMANCER_MOD, NecromancerModEntities.NECROMANCER.get());
+        if(Compat.NECROMANCER.isLoaded()) RaidEnemyRegistry.createRaiderType(NECROMANCER_MOD, NecromancerModEntities.NECROMANCER.get());
+        if(Compat.BONES_UPDATE.isLoaded()) RaidEnemyRegistry.createRaiderType(NECROMANCER_BONES, BonesEntities.NECROMANCER.get());
+        if(Compat.GOETY.isLoaded())
+        {
+            RaidEnemyRegistry.createRaiderType(TRAMPLER, ModEntityType.TRAMPLER.get());
+            RaidEnemyRegistry.createRaiderType(VIZIER, ModEntityType.VIZIER.get());
+            RaidEnemyRegistry.createRaiderType(APOSTLE, ModEntityType.APOSTLE.get());
+        }
     }
 
     public static void compileWaveData(final Map<ResourceLocation, RaiderEntriesHolder> data)
@@ -336,6 +373,28 @@ public class RaidEnemyRegistry
                 .withRaider(SORCERER,           0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(ARCHIVIST,          0, 0, 0, 1, 0, 0, 0, 0)
                 .withRaider(INVOKER,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(WARLOCK,            0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(MAVERICK,           0, 0, 1, 0, 0, 0, 1, 0)
+                .withRaider(HERETIC,            0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(PIKER,              0, 2, 2, 1, 2, 2, 1, 1)
+                .withRaider(RIPPER,             0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(CRUSHER,            0, 0, 1, 0, 1, 0, 1, 1)
+                .withRaider(STORM_CASTER,       0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CRYOLOGER,          0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(PREACHER,           0, 0, 0, 0, 1, 1, 0, 0)
+                .withRaider(CONQUILLAGER,       0, 1, 0, 1, 1, 0, 1, 0)
+                .withRaider(INQUILLAGER,        0, 0, 1, 0, 0, 1, 0, 0)
+                .withRaider(ENVIOKER,           0, 0, 0, 1, 0, 0, 1, 1)
+                .withRaider(SORCERER_GOETY,     0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(HOSTILE_RED_GOLEM,  0, 0, 1, 0, 0, 1, 0, 0)
+                .withRaider(HOSTILE_RED_MONSTER,0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(MINISTER,           0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(TRAMPLER,           0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(VIZIER,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(APOSTLE,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(THE_SUMMONER,       0, 0, 1, 0, 0, 1, 0, 0)
+                .withRaider(THE_SUMMONER_BOSS,  0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NECROMANCER_BONES,  0, 0, 0, 0, 1, 0, 0, 1)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -424,6 +483,28 @@ public class RaidEnemyRegistry
                 .withRaider(SORCERER,           0, 0, 0, 0, 1, 1, 0, 1)
                 .withRaider(ARCHIVIST,          0, 1, 0, 1, 0, 0, 0, 1)
                 .withRaider(INVOKER,            0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(WARLOCK,            0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(MAVERICK,           0, 0, 1, 1, 0, 1, 1, 0)
+                .withRaider(HERETIC,            0, 1, 0, 0, 1, 1, 0, 1)
+                .withRaider(PIKER,              0, 3, 3, 2, 3, 3, 2, 2)
+                .withRaider(RIPPER,             0, 0, 1, 2, 1, 1, 1, 0)
+                .withRaider(CRUSHER,            0, 1, 2, 1, 2, 1, 2, 1)
+                .withRaider(STORM_CASTER,       0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(CRYOLOGER,          0, 0, 1, 0, 1, 0, 1, 1)
+                .withRaider(PREACHER,           0, 1, 0, 1, 2, 1, 0, 1)
+                .withRaider(CONQUILLAGER,       0, 2, 1, 2, 1, 0, 1, 1)
+                .withRaider(INQUILLAGER,        0, 1, 2, 0, 1, 1, 0, 0)
+                .withRaider(ENVIOKER,           0, 0, 1, 1, 1, 0, 1, 1)
+                .withRaider(SORCERER_GOETY,     0, 1, 1, 0, 1, 0, 0, 1)
+                .withRaider(HOSTILE_RED_GOLEM,  0, 0, 1, 1, 1, 1, 0, 1)
+                .withRaider(HOSTILE_RED_MONSTER,0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(MINISTER,           0, 1, 1, 0, 1, 0, 1, 1)
+                .withRaider(TRAMPLER,           0, 1, 0, 2, 1, 1, 0, 2)
+                .withRaider(VIZIER,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(APOSTLE,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(THE_SUMMONER,       0, 1, 1, 0, 1, 1, 0, 1)
+                .withRaider(THE_SUMMONER_BOSS,  0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(NECROMANCER_BONES,  0, 0, 1, 1, 1, 0, 0, 1)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -513,6 +594,28 @@ public class RaidEnemyRegistry
                 .withRaider(SORCERER,           0, 0, 1, 1, 2, 1, 0, 2)
                 .withRaider(ARCHIVIST,          0, 1, 0, 1, 2, 1, 0, 1)
                 .withRaider(INVOKER,            0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(WARLOCK,            0, 1, 1, 1, 2, 1, 1, 1)
+                .withRaider(MAVERICK,           0, 1, 1, 2, 1, 2, 1, 0)
+                .withRaider(HERETIC,            0, 2, 1, 0, 2, 1, 0, 2)
+                .withRaider(PIKER,              0, 4, 4, 3, 4, 4, 3, 3)
+                .withRaider(RIPPER,             0, 1, 1, 3, 2, 2, 1, 1)
+                .withRaider(CRUSHER,            0, 2, 3, 2, 3, 2, 3, 2)
+                .withRaider(STORM_CASTER,       0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(CRYOLOGER,          0, 1, 1, 1, 2, 1, 1, 2)
+                .withRaider(PREACHER,           0, 1, 1, 2, 2, 1, 1, 1)
+                .withRaider(CONQUILLAGER,       0, 3, 2, 3, 1, 1, 2, 2)
+                .withRaider(INQUILLAGER,        0, 2, 2, 1, 2, 1, 0, 1)
+                .withRaider(ENVIOKER,           0, 1, 1, 2, 1, 1, 2, 1)
+                .withRaider(SORCERER_GOETY,     0, 1, 2, 1, 1, 0, 1, 1)
+                .withRaider(HOSTILE_RED_GOLEM,  0, 1, 2, 1, 1, 2, 1, 1)
+                .withRaider(HOSTILE_RED_MONSTER,0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(MINISTER,           0, 1, 2, 1, 1, 1, 1, 1)
+                .withRaider(TRAMPLER,           0, 1, 1, 2, 3, 1, 1, 2)
+                .withRaider(VIZIER,             0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(APOSTLE,            0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(THE_SUMMONER,       0, 2, 1, 0, 1, 2, 0, 1)
+                .withRaider(THE_SUMMONER_BOSS,  0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(NECROMANCER_BONES,  0, 1, 1, 1, 1, 1, 1, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -604,6 +707,28 @@ public class RaidEnemyRegistry
                 .withRaider(SORCERER,           0, 2, 1, 1, 2, 1, 0, 2)
                 .withRaider(ARCHIVIST,          0, 1, 1, 3, 2, 1, 0, 1)
                 .withRaider(INVOKER,            0, 0, 0, 1, 1, 1, 0, 1)
+                .withRaider(WARLOCK,            0, 2, 1, 2, 3, 1, 2, 1)
+                .withRaider(MAVERICK,           0, 1, 2, 2, 1, 3, 1, 0)
+                .withRaider(HERETIC,            0, 2, 3, 1, 3, 1, 1, 2)
+                .withRaider(PIKER,              0, 5, 5, 4, 5, 5, 4, 4)
+                .withRaider(RIPPER,             0, 1, 2, 4, 3, 3, 2, 1)
+                .withRaider(CRUSHER,            0, 3, 4, 3, 4, 3, 4, 3)
+                .withRaider(STORM_CASTER,       0, 1, 2, 1, 1, 2, 2, 1)
+                .withRaider(CRYOLOGER,          0, 1, 1, 1, 3, 1, 2, 2)
+                .withRaider(PREACHER,           0, 1, 2, 3, 3, 2, 2, 2)
+                .withRaider(CONQUILLAGER,       0, 3, 3, 4, 2, 2, 2, 2)
+                .withRaider(INQUILLAGER,        0, 2, 3, 1, 2, 1, 0, 1)
+                .withRaider(ENVIOKER,           0, 1, 2, 3, 2, 2, 2, 1)
+                .withRaider(SORCERER_GOETY,     0, 1, 2, 1, 2, 2, 2, 1)
+                .withRaider(HOSTILE_RED_GOLEM,  0, 1, 2, 2, 1, 3, 2, 1)
+                .withRaider(HOSTILE_RED_MONSTER,0, 0, 0, 1, 2, 1, 2, 1)
+                .withRaider(MINISTER,           0, 1, 3, 2, 1, 2, 2, 1)
+                .withRaider(TRAMPLER,           0, 1, 2, 3, 4, 2, 2, 3)
+                .withRaider(VIZIER,             0, 0, 0, 1, 0, 1, 1, 2)
+                .withRaider(APOSTLE,            0, 0, 0, 0, 1, 1, 0, 2)
+                .withRaider(THE_SUMMONER,       0, 2, 2, 1, 2, 3, 1, 2)
+                .withRaider(THE_SUMMONER_BOSS,  0, 0, 0, 1, 1, 1, 0, 2)
+                .withRaider(NECROMANCER_BONES,  0, 1, 2, 2, 1, 2, 1, 2)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

@@ -3,12 +3,15 @@ package com.calculusmaster.difficultraids.util;
 import baguchan.enchantwithmob.registry.ModEntities;
 import baguchan.hunters_return.init.HunterEntityRegistry;
 import cn.leolezury.leosillagers.init.EntityInit;
+import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
+import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import fuzs.illagerinvasion.init.ModRegistry;
+import net.francisplayz446.summoner.init.ThesummonerModEntities;
 import net.mobz.init.MobZEntities;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import net.minecraft.resources.ResourceLocation;
@@ -155,5 +158,34 @@ public class DifficultRaidsUtil
             ));
             ADVANCED_MAGIC_RAIDERS.add(ModRegistry.INVOKER_ENTITY_TYPE.get());
         }
+
+        if(Compat.GOETY.isLoaded()) // Skipping trampler, Redstone Monstrosity, Redstone Golem and Ripper
+        {
+            ADVANCED_MAGIC_RAIDERS.addAll(List.of(
+                    ModEntityType.VIZIER.get(),
+                    ModEntityType.APOSTLE.get()
+            ));
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    ModEntityType.WARLOCK.get(),
+                    ModEntityType.HERETIC.get(),
+                    ModEntityType.MINISTER.get(),
+                    ModEntityType.ENVIOKER.get(),
+                    ModEntityType.PREACHER.get(),
+                    ModEntityType.CRYOLOGER.get(),
+                    ModEntityType.STORM_CASTER.get(),
+                    ModEntityType.SORCERER.get()
+            ));
+            STANDARD_RAIDERS.addAll(List.of(
+                    ModEntityType.MAVERICK.get(),
+                    ModEntityType.INQUILLAGER.get(),
+                    ModEntityType.CONQUILLAGER.get(),
+                    ModEntityType.CRUSHER.get(),
+                    ModEntityType.PIKER.get()
+            ));
+        }
+
+        if(Compat.SUMMONER.isLoaded()) BASIC_MAGIC_RAIDERS.addAll(List.of(ThesummonerModEntities.SUMMONER.get(),ThesummonerModEntities.SUMMONER_BOSS.get()));
+
+        if(Compat.BONES_UPDATE.isLoaded()) BASIC_MAGIC_RAIDERS.add(BonesEntities.NECROMANCER.get());
     }
 }

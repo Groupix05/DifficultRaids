@@ -23,7 +23,10 @@ public enum Compat
     GUARD_ILLAGERS("guardillagers"),
     ILLAGER_ADDITIONS("illager_additions"),
     MOBZ("mobz"),
-    ILLAGER_INVASION("illagerinvasion")
+    ILLAGER_INVASION("illagerinvasion"),
+    GOETY("goety"),
+    SUMMONER("thesummoner"),
+    BONES_UPDATE("bonesupdate")
     ;
 
     private final String modid;

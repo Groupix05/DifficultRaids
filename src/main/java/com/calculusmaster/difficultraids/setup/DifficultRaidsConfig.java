@@ -144,7 +144,7 @@ public class DifficultRaidsConfig
         GENERAL.pop();
 
 
-        GENERAL.comment("Customize which Raiders will show up in Raids. By default, all raiders are enabled.")
+        GENERAL.comment("Customize which Raiders will show up in Raids. A game restart is required.")
                 .push("Enabled Raiders");
 
         GENERAL.push("Vanilla Raiders");
@@ -223,7 +223,6 @@ public class DifficultRaidsConfig
         //ENABLED_RAIDERS.put(RaidEnemyRegistry.GAMBLER, GENERAL.define("enableGambler", true));
         GENERAL.pop().push("Requires Guard Illagers");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.GUARD_ILLAGER, GENERAL.define("enableGuardillager", true));
-        GENERAL.pop().push("To disable/enable Illager Additions mobs in raid, you need to do it in their config");
         GENERAL.pop().push("Requires MobZ");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SPIDER_MAGE, GENERAL.define("enableSpiderMage", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ZOMBIE_MAGE, GENERAL.define("enableZombieMage", true));
@@ -241,6 +240,43 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SORCERER, GENERAL.define("enableSorcerer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ARCHIVIST, GENERAL.define("enableArchivist", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.INVOKER, GENERAL.define("enableInvoker", true));
+        GENERAL.pop().push("Requires Goety");
+        GENERAL.comment("Those settings can be overwritten by Goety");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.WARLOCK, GENERAL.define("enableWarlock", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MAVERICK, GENERAL.define("enableMaverick", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HERETIC, GENERAL.define("enableHeretic", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PIKER, GENERAL.define("enablePiker", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RIPPER, GENERAL.define("enableRipper", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRUSHER, GENERAL.define("enableCrusher", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.STORM_CASTER, GENERAL.define("enableStorm_caster", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRYOLOGER, GENERAL.define("enableCryologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PREACHER, GENERAL.define("enablePreacher", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CONQUILLAGER, GENERAL.define("enableConquillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.INQUILLAGER, GENERAL.define("enableInquillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ENVIOKER, GENERAL.define("enableEnvioker", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SORCERER_GOETY, GENERAL.define("enableSorcererGoety", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MINISTER, GENERAL.define("enableMinister", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.TRAMPLER, GENERAL.define("enableTrampler", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.VIZIER, GENERAL.define("enableVizier", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.APOSTLE, GENERAL.define("enableApostle", false));
+        GENERAL.comment("If you enable Redstone Golem and Redstone Monstrosity, make sure to enable them in Goety config");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HOSTILE_RED_GOLEM, GENERAL.define("enableRedstoneGolemGoety", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HOSTILE_RED_MONSTER, GENERAL.define("enableRedstoneMonstrosity", false));
+        GENERAL.pop().push("Requires The Summoner Illager Port");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.THE_SUMMONER, GENERAL.define("enableSummoner", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.THE_SUMMONER_BOSS, GENERAL.define("enableSummonerBoss", true));
+        GENERAL.pop().push("Requires Bones Update");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_BONES, GENERAL.define("enableNecromancerBones", true));
+        GENERAL.pop().push("Requires Illager Additions");
+        GENERAL.comment("Those settings can be overwritten by Illager Additions");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ROYAL_GUARD_SPEAR, GENERAL.define("enableRoyalGuardSpear", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SPEARMAN, GENERAL.define("enableSpearman", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SAMURAI, GENERAL.define("enableSamurai", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BEAMLOGER, GENERAL.define("enableBeamloger", true));
+        GENERAL.comment("If you enable Cowboy or Shogun, make sure to enable them in Illager Additions config");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.COWBOY, GENERAL.define("enableCowboy", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SHOGUN, GENERAL.define("enableShogun", false));
+
         GENERAL.pop();
 
         GENERAL.pop();

@@ -228,6 +228,16 @@ dependencies {
     //Illager Additions 0.1.0
     implementation fg.deobf("curse.maven:illager-additions-682835:5643823")
 
+    //The Summoner Illager Port 1.0.0
+    implementation fg.deobf("curse.maven:the-summoner-port-1220635:6557663")
+
+    //Bones Update 1.2.0-1
+    implementation fg.deobf("curse.maven:bones-update-958749:5803104")
+
+    //Goety - The Dark Arts 2.5.36.1
+    implementation fg.deobf("curse.maven:goety-586095:6778940")
+
+
 
 
 
@@ -256,6 +266,7 @@ dependencies {
     //Thanks to Looking1for1illagers1for1raids for the list of illager related mods
 
     //Iron's Spells 'n Spellbooks 3.4.0.10 + Player Animator 1.0.2-rc1 + Caelus API 3.2.0 + Gambler Illager 1.0.0
+    //We cant add them in raids because they do not extend raiders
     implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6833927")
     implementation fg.deobf("curse.maven:playeranimator-658587:4587214")
     implementation fg.deobf("curse.maven:caelus-308989:5281700")
@@ -268,17 +279,8 @@ dependencies {
     //PillagersPlus 5.0.7 (no third party)
 //    implementation fg.deobf("curse.maven:pillagersplus-1252604:6864819")
 
-    //Bones Update 1.2.0-1
-//    implementation fg.deobf("curse.maven:bones-update-958749:5803104")
-
-    //Goety - The Dark Arts 2.5.36.1
-//    implementation fg.deobf("curse.maven:goety-586095:6778940")
-
-    //Pillager Boss 1.0.0
+    //Pillager Boss 1.0.0 (no third party)
 //    implementation fg.deobf("curse.maven:pillager-boss-1181395:6583995")
-
-    //The Summoner Illager Port 1.0.0
-//    implementation fg.deobf("curse.maven:the-summoner-port-1220635:6557663")
 
     //Musketeer Illager Port 1.0.1
 //    implementation fg.deobf("curse.maven:musketeer-illager-port-1247152:6531882")

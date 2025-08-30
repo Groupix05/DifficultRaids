@@ -182,6 +182,9 @@ public abstract class RaidMixin
             //Disable the regular Dungeons Mobs Illusioner spawns (replaced by a custom re-registration of the RaiderType)
             else if(raiderType.toString().equals("illusioner"))
                 callbackInfoReturnable.setReturnValue(0);
+            //Disable "necromancer" spawns (because of conflicts between mods)
+            else if( raiderType.toString().equals("necromancer") || raiderType.toString().equals("NECROMANCER") )
+                callbackInfoReturnable.setReturnValue(0);
 
             //Check if the Raider Type is enabled
             else if(isRegistered && !isEnabled) callbackInfoReturnable.setReturnValue(0);
