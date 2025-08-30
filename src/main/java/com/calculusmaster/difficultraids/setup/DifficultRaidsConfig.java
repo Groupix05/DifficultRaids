@@ -286,6 +286,26 @@ public class DifficultRaidsConfig
         GENERAL.pop().push("Requires Bagus Mob");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.TENGU, GENERAL.define("enableTengu", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.NINJAR, GENERAL.define("enableNinjar", true));
+        GENERAL.pop().push("Requires Illager Revolution");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BEAST_TAMER, GENERAL.define("enableBeastTamer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLADE_KNIGHT, GENERAL.define("enableBladeKnight", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SCAVENGER, GENERAL.define("enableScavenger", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SOUL_SAGE, GENERAL.define("enableSoulSage", true));
+        GENERAL.pop().push("Requires Raided");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_RAIDED, GENERAL.define("enableNecromancerRaided", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ELECTROMANCER_RAIDED, GENERAL.define("enableElectromancerRaided", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SAVAGER, GENERAL.define("enableSavager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.INCINERATOR, GENERAL.define("enableIncinerator", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.INQUISITOR_RAIDED, GENERAL.define("enableInquisitorRaided", true));
+        GENERAL.pop().push("Requires More Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GUNILLAGER, GENERAL.define("enableGunillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLIGEVE, GENERAL.define("enableIlligeve", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SURPRISER, GENERAL.define("enableSurpriser", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ROCKETILLAGER, GENERAL.define("enableRocketillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CREEPILLAGER, GENERAL.define("enableCreepillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MONSTERILLAGER, GENERAL.define("enableMonsterillager", true));
+        GENERAL.pop().push("Requires Slash Illager");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLADE_MASTER, GENERAL.define("enableBladeMaster", true));
 
         GENERAL.pop();
 

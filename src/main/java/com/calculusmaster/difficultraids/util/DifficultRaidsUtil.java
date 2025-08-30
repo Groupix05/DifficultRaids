@@ -8,17 +8,17 @@ import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
+import com.mrbysco.raided.registry.RaidedRegistry;
 import com.mysticmage.musketeer_illager.init.MusketeerIllagerModEntities;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import fuzs.illagerinvasion.init.ModRegistry;
 import net.francisplayz446.summoner.init.ThesummonerModEntities;
+import net.mcreator.moreillagers.init.MoreIllagersModEntities;
 import net.mobz.init.MobZEntities;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,9 +90,10 @@ public class DifficultRaidsUtil
 
         if(Compat.ILLAGER_REVOLUTION.isLoaded())
         {
-            STANDARD_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("illagerrevolutionmod", "illager_scavenger")));
-            BASIC_MAGIC_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("illagerrevolutionmod", "illager_beast_tamer")));
-            ADVANCED_RAIDERS.add(ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation("illagerrevolutionmod", "blade_knight")));
+            STANDARD_RAIDERS.add(net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.ILLAGER_SCAVENGER.get());
+            BASIC_MAGIC_RAIDERS.add(net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.ILLAGER_BEAST_TAMER.get());
+            ADVANCED_RAIDERS.add(net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.BLADE_KNIGHT.get());
+            ADVANCED_MAGIC_RAIDERS.add(net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.SOUL_SAGE.get());
         }
 
         if(Compat.LEOS_ILLAGERS.isLoaded()) //Skipped: Lightningcaller, Clownager
@@ -201,5 +202,29 @@ public class DifficultRaidsUtil
                     baguchan.bagusmob.registry.ModEntityRegistry.TENGU.get()
             ));
         }
+
+        if(Compat.RAIDED.isLoaded()) //Skipping Savager
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    RaidedRegistry.INQUISITOR.getEntityType(),
+                    RaidedRegistry.INCINERATOR.getEntityType()
+            ));
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    RaidedRegistry.NECROMANCER.getEntityType(),
+                    RaidedRegistry.ELECTROMANCER.getEntityType()
+            ));
+        }
+
+        if(Compat.MORE_ILLAGERS.isLoaded()) //Skipping Monsterillager and Creepillager
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    MoreIllagersModEntities.GUNILLAGER.get(),
+                    MoreIllagersModEntities.ROCKETILLAGER.get(),
+                    MoreIllagersModEntities.ILLGEVE.get(),
+                    MoreIllagersModEntities.SURPRISER.get()
+            ));
+        }
+
+        if(Compat.SLASH_ILLAGER.isLoaded()) ADVANCED_RAIDERS.add(baguchan.slash_illager.registry.ModEntityRegistry.BLADE_MASTER.get());
     }
 }

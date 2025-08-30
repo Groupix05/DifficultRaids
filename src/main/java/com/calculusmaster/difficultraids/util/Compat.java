@@ -30,7 +30,10 @@ public enum Compat
     MODIFIGER("the_modifiger"),
     MASQUERADER("masquerader_mod"),
     MUSKETEER("musketeer_illager"),
-    BAGUS_MOB("bagusmob")
+    BAGUS_MOB("bagusmob"),
+    RAIDED("raided"),
+    MORE_ILLAGERS("more_illagers"),
+    SLASH_ILLAGER("slash_illager")
     ;
 
     private final String modid;

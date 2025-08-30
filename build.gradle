@@ -249,6 +249,19 @@ dependencies {
     //Bagus Mob 4.0.2
     implementation fg.deobf("curse.maven:bagus-mob-885655:5545460")
 
+    //Illager Revolution 1.4
+    implementation fg.deobf("curse.maven:illager-revolution-841586:5185405")
+
+    //Raided 0.1.4
+    implementation fg.deobf("curse.maven:raided-580942:5128249")
+
+    //More Illagers 1.0.7
+    implementation fg.deobf("curse.maven:more-illagers-501714:5620839")
+
+    //Slash Illager 2.0.1 + SlashBlade: Resharped 1.5.49
+    implementation fg.deobf("curse.maven:slash-illager-1024478:5466149")
+    implementation fg.deobf("curse.maven:slashblade-resharped-1022428:6927996")
+
 
 
 
@@ -300,33 +313,20 @@ dependencies {
     //Burning Illagers 1.3.1 (no third party)
 //    implementation fg.deobf("curse.maven:burning-illagers-1227507:6473130")
 
+    //Illager Universe 1.0.0 (no third party)
+//    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
+
     //Sensei Illager 1.0.1
     //Doesnt extend Raider, se we cant add them in raids
 //    implementation fg.deobf("curse.maven:sensei-illager-1240874:6444802")
-
-    //Illager Universe 1.0.0 (no third party)
-//    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
 
     //Terramity 0.9.8 + Patchouli 84.1
     //Terramity Mobs doesnt extend raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:terramity-1084134:6054971")
     implementation fg.deobf("curse.maven:patchouli-306770:6164575")
 
-    //Raided 0.1.4
-//    implementation fg.deobf("curse.maven:raided-580942:5128249")
-
-    //more illagers 1.0.7
-//    implementation fg.deobf("curse.maven:more-illagers-501714:5620839")
-
-    //Slash Illager 2.0.1 + SlashBlade: Resharped 1.5.49
-//    implementation fg.deobf("curse.maven:slash-illager-1024478:5466149")
-//    implementation fg.deobf("curse.maven:slashblade-resharped-1022428:6927996")
-
-    //Supernatural 2.12.1
+    //Supernatural 2.12.1 (useless because they burn, and SuperNatural adds custom logic for their spawn)
 //    implementation fg.deobf("curse.maven:supernatural-610880:5820483")
-
-    //Illager Revolution 1.4
-//    implementation fg.deobf("curse.maven:illager-revolution-841586:5185405")
 
     //Dark Side 1.4.1
 //    implementation fg.deobf("curse.maven:dark-side-creatures-928324:5182327")
@@ -379,6 +379,21 @@ dependencies {
 
     //Illager World War 1.1.2
 //    implementation fg.deobf("curse.maven:illager-world-war-1083239:5808688")
+
+    //Colds: Wandering Trader Port 1.0.0
+//    implementation fg.deobf("curse.maven:colds-wandering-trader-port-1238387:6535387")
+
+    //Earth Mobs 10.5.0
+//    implementation fg.deobf("curse.maven:earth-mobs-913527:5497489")
+
+    //Virtuso's Grand Battle 1.1.0
+//    implementation fg.deobf("curse.maven:virtusos-grand-battle-1328536:6921334")
+
+    //The Mutant Mobs Mod 1.0.7
+//    implementation fg.deobf("curse.maven:mutant-mobs-mod-907562:6944438")
+
+    //Mutant Iceologer 2.0.2
+//    implementation fg.deobf("curse.maven:mutant-iceologer-947258:5945048")
 }
 
 mixin {
