@@ -33,7 +33,13 @@ public enum Compat
     BAGUS_MOB("bagusmob"),
     RAIDED("raided"),
     MORE_ILLAGERS("more_illagers"),
-    SLASH_ILLAGER("slash_illager")
+    SLASH_ILLAGER("slash_illager"),
+    BRAZIER("brazier"),
+    FRIENDS_AND_FOES("friendsandfoes"),
+    ALL_BARK_ALL_BITE("all_bark_all_bite"),
+    RAVAGE_AND_CABBAGE("ravageandcabbage"),
+    MO_FEATURES("morefeatures"),
+    CRIMSON_STEVES_MOBS("crimson_steves_mobs")
     ;
 
     private final String modid;

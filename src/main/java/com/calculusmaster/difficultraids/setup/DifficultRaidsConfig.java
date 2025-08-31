@@ -213,7 +213,7 @@ public class DifficultRaidsConfig
         GENERAL.pop().push("Requires The Conjurer");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.CONJURER, GENERAL.define("enableConjurer", false));
         GENERAL.pop().push("Requires Necromancer Mod Port");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_MOD, GENERAL.define("enableNecromancerMod", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_MOD, GENERAL.define("enableModNecromancer", true));
         GENERAL.pop().push("Requires Werden's Illagers +");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SINISTER, GENERAL.define("enableSinister", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SHADOMANCER, GENERAL.define("enableShadomancer", true));
@@ -227,7 +227,7 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SPIDER_MAGE, GENERAL.define("enableSpiderMage", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ZOMBIE_MAGE, GENERAL.define("enableZombieMage", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.PILLAGER_BOSS, GENERAL.define("enablePillagerBoss", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLUSIONER_MOBZ, GENERAL.define("enableIllusionerMobZ", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLUSIONER_MOBZ, GENERAL.define("enableMobZIllusioner", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BABY_RAVAGER, GENERAL.define("enableBabyRavager", true));
         GENERAL.pop().push("Requires Illager Invasion");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.PROVOKER, GENERAL.define("enablePovoker", true));
@@ -235,7 +235,7 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.MARAUDER, GENERAL.define("enableMarauder", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BASHER, GENERAL.define("enableBasher", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.FIRECALLER, GENERAL.define("enableFirecaller", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_INV, GENERAL.define("enableNecromancerInv", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_INV, GENERAL.define("enableInvasionNecromancer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ALCHEMIST, GENERAL.define("enableAlchemist", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SORCERER, GENERAL.define("enableSorcerer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ARCHIVIST, GENERAL.define("enableArchivist", true));
@@ -254,7 +254,7 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.CONQUILLAGER, GENERAL.define("enableConquillager", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.INQUILLAGER, GENERAL.define("enableInquillager", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ENVIOKER, GENERAL.define("enableEnvioker", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.SORCERER_GOETY, GENERAL.define("enableSorcererGoety", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SORCERER_GOETY, GENERAL.define("enableGoetySorcerer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.MINISTER, GENERAL.define("enableMinister", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.TRAMPLER, GENERAL.define("enableTrampler", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.VIZIER, GENERAL.define("enableVizier", false));
@@ -266,7 +266,7 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.THE_SUMMONER, GENERAL.define("enableSummoner", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.THE_SUMMONER_BOSS, GENERAL.define("enableSummonerBoss", true));
         GENERAL.pop().push("Requires Bones Update");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_BONES, GENERAL.define("enableNecromancerBones", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_BONES, GENERAL.define("enableBonesNecromancer", true));
         GENERAL.pop().push("Requires Illager Additions");
         GENERAL.comment("Those settings can be overwritten by Illager Additions");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ROYAL_GUARD_SPEAR, GENERAL.define("enableRoyalGuardSpear", true));
@@ -292,11 +292,11 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SCAVENGER, GENERAL.define("enableScavenger", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SOUL_SAGE, GENERAL.define("enableSoulSage", true));
         GENERAL.pop().push("Requires Raided");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_RAIDED, GENERAL.define("enableNecromancerRaided", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.ELECTROMANCER_RAIDED, GENERAL.define("enableElectromancerRaided", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_RAIDED, GENERAL.define("enableRaidedNecromancer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ELECTROMANCER_RAIDED, GENERAL.define("enableRaidedElectromancer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SAVAGER, GENERAL.define("enableSavager", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.INCINERATOR, GENERAL.define("enableIncinerator", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.INQUISITOR_RAIDED, GENERAL.define("enableInquisitorRaided", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.INQUISITOR_RAIDED, GENERAL.define("enableRaidedInquisitor", true));
         GENERAL.pop().push("Requires More Illagers");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.GUNILLAGER, GENERAL.define("enableGunillager", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLIGEVE, GENERAL.define("enableIlligeve", true));
@@ -306,6 +306,24 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.MONSTERILLAGER, GENERAL.define("enableMonsterillager", true));
         GENERAL.pop().push("Requires Slash Illager");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BLADE_MASTER, GENERAL.define("enableBladeMaster", true));
+        GENERAL.pop().push("Requires Friends & Foes");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_FF, GENERAL.define("enableFriendsAndFoesIceologer", true));
+        GENERAL.pop().push("Requires Mo' Features");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PILLAGER_BRUTE, GENERAL.define("enablePillagerBrute", true));
+        GENERAL.pop().push("Requires Brazier");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRAZED, GENERAL.define("enableCrazed", false));
+        GENERAL.pop().push("Requires Ravage & Cabbage");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CABBAGER, GENERAL.define("enableCabbager", true));
+        GENERAL.pop().push("Requires CrimsonSteve's more mobs");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PHANTOM_TAMER, GENERAL.define("enablePhamtomTamer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.T_RABUS, GENERAL.define("enableTRabus", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CYBORG_VINDICATOR, GENERAL.define("enableCyborgVindicator", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRUDE_RED_GOLEM, GENERAL.define("enableCrudeRedstoneGolem", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRUDE_RED_MONSTROSITY, GENERAL.define("enableCrudeRedstoneMonstrosity", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RED_MONSTROSITY_CSM, GENERAL.define("enableCrimsonStevesRedstoneMonstrosity", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MINI_CRUDE_RED_GOLEM, GENERAL.define("enableMiniCrudeRedstoneGolem", true));
+        GENERAL.pop().push("Requires All Bark, All Bite");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HOUNDMASTER, GENERAL.define("enableHoundmaster", true));
 
         GENERAL.pop();
 

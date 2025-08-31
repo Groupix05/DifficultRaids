@@ -4,17 +4,24 @@ import baguchan.enchantwithmob.registry.ModEntities;
 import baguchan.hunters_return.init.HunterEntityRegistry;
 import baguchan.the_modifiger.registry.ModEntityRegistry;
 import cn.leolezury.leosillagers.init.EntityInit;
+import codyhuh.ravagecabbage.registry.RCEntities;
 import com.Polarice3.Goety.common.entities.ModEntityType;
+import com.belgieyt.morefeatures.core.registry.MFEntity;
+import com.calculusmaster.difficultraids.DifficultRaids;
+import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.infamous.all_bark_all_bite.common.registry.ABABEntityTypes;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
 import com.mrbysco.raided.registry.RaidedRegistry;
 import com.mysticmage.musketeer_illager.init.MusketeerIllagerModEntities;
+import com.possible_triangle.brazier.Content;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import fuzs.illagerinvasion.init.ModRegistry;
 import net.francisplayz446.summoner.init.ThesummonerModEntities;
+import net.mcreator.crimson_steves_mobs.init.CrimsonStevesMobsModEntities;
 import net.mcreator.moreillagers.init.MoreIllagersModEntities;
 import net.mobz.init.MobZEntities;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
@@ -226,5 +233,18 @@ public class DifficultRaidsUtil
         }
 
         if(Compat.SLASH_ILLAGER.isLoaded()) ADVANCED_RAIDERS.add(baguchan.slash_illager.registry.ModEntityRegistry.BLADE_MASTER.get());
+
+        if(Compat.BRAZIER.isLoaded()) BASIC_MAGIC_RAIDERS.add(Content.CRAZED.get());
+
+        if(Compat.MO_FEATURES.isLoaded()) STANDARD_RAIDERS.add(MFEntity.PILLAGER_BRUTE.get());
+
+        if(Compat.FRIENDS_AND_FOES.isLoaded()) BASIC_MAGIC_RAIDERS.add(FriendsAndFoesEntityTypes.ICEOLOGER.get());
+
+        if(Compat.ALL_BARK_ALL_BITE.isLoaded()) STANDARD_RAIDERS.add(ABABEntityTypes.HOUNDMASTER.get());
+
+        if(Compat.RAVAGE_AND_CABBAGE.isLoaded()) STANDARD_RAIDERS.add(RCEntities.CABBAGER.get());
+
+        //Skipping T-Rabus, Cyborg Vindicator, Crude Redstone Golem, Curde Redstone Monstosity, Crude Minion Redstone Golem and Redstone Monstrosity
+        if(Compat.CRIMSON_STEVES_MOBS.isLoaded()) BASIC_MAGIC_RAIDERS.add(CrimsonStevesMobsModEntities.PHANTOM_TAMER.get());
     }
 }

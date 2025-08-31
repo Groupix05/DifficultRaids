@@ -30,7 +30,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '2.0.0'
+version = '2.0-beta15'
 group = 'com.calculusmaster.difficultraids'
 archivesBaseName = 'difficultraids-1.20.1'
 
@@ -262,6 +262,24 @@ dependencies {
     implementation fg.deobf("curse.maven:slash-illager-1024478:5466149")
     implementation fg.deobf("curse.maven:slashblade-resharped-1022428:6927996")
 
+    //Ravage & Cabbage 1.2.4
+    implementation fg.deobf("curse.maven:ravage-and-cabbage-440594:4787340")
+
+    //Brazier 6.1.1
+    implementation fg.deobf("curse.maven:brazier-402616:4702302")
+
+    //Friends&Foes 3.0.9
+    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:6354624")
+
+    //CrimsonSteve's more mobs 1.1.2
+    implementation fg.deobf("curse.maven:crimsonsteves-more-mobs-735413:4718160")
+
+    //Mo' Features 1.1
+    implementation fg.deobf("curse.maven:mo-features-416140:4858710")
+
+    //All Bark, All Bite 1.0.2
+    implementation fg.deobf("curse.maven:all-bark-all-bite-833755:4817227")
+
 
 
 
@@ -291,7 +309,7 @@ dependencies {
     //Thanks to Looking1for1illagers1for1raids for the list of illager related mods
 
     //Iron's Spells 'n Spellbooks 3.4.0.10 + Player Animator 1.0.2-rc1 + Caelus API 3.2.0 + Gambler Illager 1.0.0
-    //We cant add them in raids because they do not extend raiders
+    //Doesnt extend Raider, se we cant add them in raids
     implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6833927")
     implementation fg.deobf("curse.maven:playeranimator-658587:4587214")
     implementation fg.deobf("curse.maven:caelus-308989:5281700")
@@ -321,7 +339,7 @@ dependencies {
 //    implementation fg.deobf("curse.maven:sensei-illager-1240874:6444802")
 
     //Terramity 0.9.8 + Patchouli 84.1
-    //Terramity Mobs doesnt extend raider, so we cant add them in raids
+    //Doesnt extend Raider, se we cant add them in raids
 //    implementation fg.deobf("curse.maven:terramity-1084134:6054971")
     implementation fg.deobf("curse.maven:patchouli-306770:6164575")
 
@@ -329,29 +347,12 @@ dependencies {
 //    implementation fg.deobf("curse.maven:supernatural-610880:5820483")
 
     //Dark Side 1.4.1
+    //Doesnt extend Raider, se we cant add them in raids
 //    implementation fg.deobf("curse.maven:dark-side-creatures-928324:5182327")
 
-    //CrimsonSteve's more mobs 1.1.2
-//    implementation fg.deobf("curse.maven:crimsonsteves-more-mobs-735413:4718160")
-
-    //Mo' Features 1.1
-//    implementation fg.deobf("curse.maven:mo-features-416140:4858710")
-
-    //All Bark, All Bite 1.0.2
-//    implementation fg.deobf("curse.maven:all-bark-all-bite-833755:4817227")
-
-    //Biome Makeover (Forge) 1.11.4 + Architectury API 9.2.14
+    //Biome Makeover (Forge) 1.11.4 + Architectury API 9.2.14 (mixin issues)
 //    implementation fg.deobf("curse.maven:biome-makeover-forge-567709:4815822")
-//    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
-
-    //Ravage & Cabbage 1.2.4
-//    implementation fg.deobf("curse.maven:ravage-and-cabbage-440594:4787340")
-
-    //Brazier 6.1.1
-//    implementation fg.deobf("curse.maven:brazier-402616:4702302")
-
-    //Friends&Foes 3.0.9
-//    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:6354624")
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
     //Karate Illager Java Port 1.0.0
 //    implementation fg.deobf("curse.maven:karate-illager-finally-ported-1234733:6550373")
