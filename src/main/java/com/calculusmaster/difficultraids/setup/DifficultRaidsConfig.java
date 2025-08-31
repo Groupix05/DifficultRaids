@@ -324,6 +324,34 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.MINI_CRUDE_RED_GOLEM, GENERAL.define("enableMiniCrudeRedstoneGolem", true));
         GENERAL.pop().push("Requires All Bark, All Bite");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.HOUNDMASTER, GENERAL.define("enableHoundmaster", true));
+        GENERAL.pop().push("Requires Karate Illager");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.KARATE, GENERAL.define("enableKarateIllager", true));
+        GENERAL.pop().push("Requires Illager Brute");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLAGER_BRUTE, GENERAL.define("enableIllagerBrute", true));
+        GENERAL.pop().push("Requires Sorcerer Illager");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SORCERER_ILLAGER, GENERAL.define("enableSorcererIllager", true));
+        GENERAL.pop().push("Requires Wandering Illager");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.WANDERING_ILLAGER, GENERAL.define("enableWanderingIllager", true));
+        GENERAL.pop().push("Requires Expado's Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BRASHER, GENERAL.define("enableBrasher", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.KNOCKER, GENERAL.define("enableKnocker", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.WRECKER, GENERAL.define("enableWrecker", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HACKLE, GENERAL.define("enableHackle", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.JUGGERNAUT, GENERAL.define("enableJuggernaut", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLUDGEONER, GENERAL.define("enableBludgeoner", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PIKELOGER, GENERAL.define("enablePikeloger", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GRINDICATOR, GENERAL.define("enableGrindicator", true));
+        GENERAL.pop().push("Requires Francis Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.OMNILLAGER, GENERAL.define("enableOmnillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.COWBOY_FRANCIS, GENERAL.define("enableFrancisCowboy", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.THROWER, GENERAL.define("enableThrower", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLADE_GUARD, GENERAL.define("enableBladeGuard", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RUNNER, GENERAL.define("enableRunner", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.DESERT_ILLAGER, GENERAL.define("enableDesertIllager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRINDICATOR, GENERAL.define("enableCrindicator", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CREAKOLOGER, GENERAL.define("enableCreakologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.JURGOLOGER, GENERAL.define("enableJurgologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLACK_MASTER, GENERAL.define("enableBlackMaster", true));
 
         GENERAL.pop();
 

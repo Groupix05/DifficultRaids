@@ -188,6 +188,9 @@ public abstract class RaidMixin
             //Disable "iceologer" spawns (because of conflicts between mods)
             else if(raiderType.toString().equals("iceologer") || raiderType.toString().equals("ICEOLOGER"))
                 callbackInfoReturnable.setReturnValue(0);
+            //Disable "cowboy" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("cowboy") || raiderType.toString().equals("COWBOY"))
+                callbackInfoReturnable.setReturnValue(0);
 
             //Check if the Raider Type is enabled
             else if(isRegistered && !isEnabled) callbackInfoReturnable.setReturnValue(0);

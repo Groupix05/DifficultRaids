@@ -280,6 +280,24 @@ dependencies {
     //All Bark, All Bite 1.0.2
     implementation fg.deobf("curse.maven:all-bark-all-bite-833755:4817227")
 
+    //Karate Illager Java Port 1.0.0
+    implementation fg.deobf("curse.maven:karate-illager-finally-ported-1234733:6550373")
+
+    //Francis's Illagers 1.0.9
+    implementation fg.deobf("curse.maven:francis-illagers-1273063:6681058")
+
+    //Sorcerer illager 1.0.1
+    implementation fg.deobf("curse.maven:sorcerer-illager-1314339:6832744")
+
+    //Illager brute 1.0.0
+    implementation fg.deobf("curse.maven:illager-brute-1250110:6459251")
+
+    //The Wandering Illagers 1.2
+    implementation fg.deobf("curse.maven:the-wandering-illagers-1245267:6757425")
+
+    //Expado's Illagers 1.0.4
+    implementation fg.deobf("curse.maven:expados-illagers-1313064:6863477")
+
 
 
 
@@ -309,7 +327,7 @@ dependencies {
     //Thanks to Looking1for1illagers1for1raids for the list of illager related mods
 
     //Iron's Spells 'n Spellbooks 3.4.0.10 + Player Animator 1.0.2-rc1 + Caelus API 3.2.0 + Gambler Illager 1.0.0
-    //Doesnt extend Raider, se we cant add them in raids
+    //Doesnt extend Raider, so we cant add them in raids
     implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6833927")
     implementation fg.deobf("curse.maven:playeranimator-658587:4587214")
     implementation fg.deobf("curse.maven:caelus-308989:5281700")
@@ -334,12 +352,15 @@ dependencies {
     //Illager Universe 1.0.0 (no third party)
 //    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
 
+    //Illager Rebels 1.0.0 (no third party)
+//    implementation fg.deobf("curse.maven:illager-rebels-994298:5270196")
+
     //Sensei Illager 1.0.1
-    //Doesnt extend Raider, se we cant add them in raids
+    //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:sensei-illager-1240874:6444802")
 
     //Terramity 0.9.8 + Patchouli 84.1
-    //Doesnt extend Raider, se we cant add them in raids
+    //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:terramity-1084134:6054971")
     implementation fg.deobf("curse.maven:patchouli-306770:6164575")
 
@@ -347,36 +368,16 @@ dependencies {
 //    implementation fg.deobf("curse.maven:supernatural-610880:5820483")
 
     //Dark Side 1.4.1
-    //Doesnt extend Raider, se we cant add them in raids
+    //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:dark-side-creatures-928324:5182327")
 
     //Biome Makeover (Forge) 1.11.4 + Architectury API 9.2.14 (mixin issues)
 //    implementation fg.deobf("curse.maven:biome-makeover-forge-567709:4815822")
     implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
-    //Karate Illager Java Port 1.0.0
-//    implementation fg.deobf("curse.maven:karate-illager-finally-ported-1234733:6550373")
-
-    //Francis's Illagers 1.0.9
-//    implementation fg.deobf("curse.maven:francis-illagers-1273063:6681058")
-
-    //Sorcerer illager 1.0.1
-//    implementation fg.deobf("curse.maven:sorcerer-illager-1314339:6832744")
-
-    //Illager Rebels 1.0.0
-//    implementation fg.deobf("curse.maven:illager-rebels-994298:5270196")
-
-    //Illager brute 1.0.0
-//    implementation fg.deobf("curse.maven:illager-brute-1250110:6459251")
-
     //Homeless Illager 1.0.1
+    //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:homeless-illager-1214650:6763733")
-
-    //The Wandering Illagers 1.2
-//    implementation fg.deobf("curse.maven:the-wandering-illagers-1245267:6757425")
-
-    //Expado's Illagers 1.0.4
-//    implementation fg.deobf("curse.maven:expados-illagers-1313064:6863477")
 
     //Illager World War 1.1.2
 //    implementation fg.deobf("curse.maven:illager-world-war-1083239:5808688")

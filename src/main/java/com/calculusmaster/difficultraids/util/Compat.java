@@ -39,7 +39,13 @@ public enum Compat
     ALL_BARK_ALL_BITE("all_bark_all_bite"),
     RAVAGE_AND_CABBAGE("ravageandcabbage"),
     MO_FEATURES("morefeatures"),
-    CRIMSON_STEVES_MOBS("crimson_steves_mobs")
+    CRIMSON_STEVES_MOBS("crimson_steves_mobs"),
+    WANDERING_ILLAGER("wandering_illager"),
+    FRANCIS_ILLAGERS("francisillagers"),
+    EXPADOS_ILLAGERS("expados_illagers"),
+    KARATE_ILLAGER("karateillagerfinallyported"),
+    ILLAGER_BRUTE("illager_brute"),
+    SORCERER_ILLAGER("sorcerer_illager")
     ;
 
     private final String modid;

@@ -19,10 +19,15 @@ import com.possible_triangle.brazier.Content;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
+import francisplayz446.karateillagerfinallyported.init.KarateillagerfinallyportedModEntities;
 import fuzs.illagerinvasion.init.ModRegistry;
 import net.francisplayz446.summoner.init.ThesummonerModEntities;
 import net.mcreator.crimson_steves_mobs.init.CrimsonStevesMobsModEntities;
+import net.mcreator.expadosillagers.init.ExpadosIllagersModEntities;
+import net.mcreator.francisillagers.init.FrancisillagersModEntities;
+import net.mcreator.illagerbrute.init.IllagerBruteModEntities;
 import net.mcreator.moreillagers.init.MoreIllagersModEntities;
+import net.mcreator.sorcererillager.init.SorcererIllagerModEntities;
 import net.mobz.init.MobZEntities;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import net.minecraft.world.entity.EntityType;
@@ -246,5 +251,42 @@ public class DifficultRaidsUtil
 
         //Skipping T-Rabus, Cyborg Vindicator, Crude Redstone Golem, Curde Redstone Monstosity, Crude Minion Redstone Golem and Redstone Monstrosity
         if(Compat.CRIMSON_STEVES_MOBS.isLoaded()) BASIC_MAGIC_RAIDERS.add(CrimsonStevesMobsModEntities.PHANTOM_TAMER.get());
+
+        if(Compat.SORCERER_ILLAGER.isLoaded()) BASIC_MAGIC_RAIDERS.add(SorcererIllagerModEntities.SORCERERILLAGER.get());
+
+        if(Compat.ILLAGER_BRUTE.isLoaded()) STANDARD_RAIDERS.add(IllagerBruteModEntities.ILLAGERBRUTE.get());
+
+        if(Compat.WANDERING_ILLAGER.isLoaded()) STANDARD_RAIDERS.add(de.achtii.wandering_illager.entity.ModEntities.WANDERINGILLAGER.get());
+
+        if(Compat.KARATE_ILLAGER.isLoaded()) STANDARD_RAIDERS.add(KarateillagerfinallyportedModEntities.KARATE_ILLAGER.get());
+
+        if(Compat.EXPADOS_ILLAGERS.isLoaded()) //Skipping Juggernaut
+        {
+            ADVANCED_MAGIC_RAIDERS.add(ExpadosIllagersModEntities.GRINDICATOR.get());
+            STANDARD_RAIDERS.addAll(List.of(
+                    ExpadosIllagersModEntities.PIKELOGER.get(),
+                    ExpadosIllagersModEntities.KNOCKER.get(),
+                    ExpadosIllagersModEntities.HACKLE.get(),
+                    ExpadosIllagersModEntities.BLUDGEONER.get(),
+                    ExpadosIllagersModEntities.BRASHER.get(),
+                    ExpadosIllagersModEntities.WRECKER.get()
+            ));
+        }
+
+        if(Compat.FRANCIS_ILLAGERS.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    FrancisillagersModEntities.COWBOY.get(),
+                    FrancisillagersModEntities.THROWER.get(),
+                    FrancisillagersModEntities.BLADE_GUARD.get(),
+                    FrancisillagersModEntities.RUNNER.get(),
+                    FrancisillagersModEntities.CRINDICATOR.get(),
+                    FrancisillagersModEntities.LIGHTNING_CALLER.get(),
+                    FrancisillagersModEntities.BLACKMASTER.get(),
+                    FrancisillagersModEntities.CREAKOLOGER.get()
+            ));
+            BASIC_MAGIC_RAIDERS.add(FrancisillagersModEntities.JURGOLOGER.get());
+            ADVANCED_RAIDERS.add(FrancisillagersModEntities.OMNILLAGER.get());
+        }
     }
 }
