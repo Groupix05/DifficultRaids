@@ -49,7 +49,13 @@ public enum Compat
     EARTH_MOBS("earthmobsmod"),
     ILLAGER_WORLD_WAR("illager_world_war"),
     JUST_ILLAGERS("justillagers"),
-    COLDS_WANDERING_TRADER("coldstrader")
+    COLDS_WANDERING_TRADER("coldstrader"),
+    ILLAGER_UNIVERSE("illager_universe"),
+    PILLAGER_BOSS("pillager_boss"),
+    MISCHIEF_ILLAGERS("mischief_illagers"),
+    VIRTUSOS_GRAND_BATTLE("virtusosgrandbattle"),
+    BURNING_ILLAGERS("burning_illagers"),
+    PILLAGERS_PLUS("pillagersplus")
     ;
 
     private final String modid;

@@ -310,6 +310,30 @@ dependencies {
     //Earth Mobs 10.5.0
     implementation fg.deobf("curse.maven:earth-mobs-913527:5497489")
 
+    //PillagersPlus 5.0.7 (no third party)
+//    implementation fg.deobf("curse.maven:pillagersplus-1252604:6864819")
+    compileOnly files('libs/pillagersplus-5.0.7-forge-1.20.1.jar')
+
+    //Pillager Boss 1.0.0 (no third party)
+//    implementation fg.deobf("curse.maven:pillager-boss-1181395:6583995")
+    compileOnly files('libs/pillager_boss-1.0.0-forge-1.20.1_after.jar')
+
+    //Mischief Illagers 1.2 (no third party)
+//    implementation fg.deobf("curse.maven:mischief-illagers-1242852:6508234")
+    compileOnly files('libs/mischief_illagers-1.2-forge-1.20.1.jar')
+
+    //Burning Illagers 1.3.1 (no third party)
+//    implementation fg.deobf("curse.maven:burning-illagers-1227507:6473130")
+    compileOnly files('libs/burning_illagers-1.3.1-forge-1.20.1.jar')
+
+    //Illager Universe 1.0.5 (no third party)
+//    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
+    compileOnly files('libs/illager_universe-1.0.5-forge-1.20.1.jar')
+
+    //Virtuso's Grand Battle 1.1.0 (no third party)
+//    implementation fg.deobf("curse.maven:virtusos-grand-battle-1328536:6921334")
+    compileOnly files('libs/virtusosgrandbattle-1.1.0-forge-1.20.1.jar')
+
 
 
 
@@ -331,6 +355,9 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:enchantmentdescriptions-250419:5855251")
     runtimeOnly fg.deobf("curse.maven:bookshelf-228525:5423987")
 
+    //Architectury API 9.2.14 + Patchouli 84.1
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+    implementation fg.deobf("curse.maven:patchouli-306770:6164575")
 
 
 
@@ -345,50 +372,20 @@ dependencies {
     implementation fg.deobf("curse.maven:caelus-308989:5281700")
     implementation fg.deobf("curse.maven:gambler-illager-irons-spells-and-spellbooks-addon-1253824:6908084")
 
-    //Village and Villagers 1.0.0 + Tickrate API 4.0.0 (doesnt add any illager rn)
-//    implementation fg.deobf("curse.maven:village-and-villagers-1275176:6908041")
-//    implementation fg.deobf("curse.maven:tickrate-api-969702:6830640")
-
-    //PillagersPlus 5.0.7 (no third party)
-//    implementation fg.deobf("curse.maven:pillagersplus-1252604:6864819")
-
-    //Pillager Boss 1.0.0 (no third party)
-//    implementation fg.deobf("curse.maven:pillager-boss-1181395:6583995")
-
-    //Mischief Illagers 1.2 (no third party)
-//    implementation fg.deobf("curse.maven:mischief-illagers-1242852:6508234")
-
-    //Burning Illagers 1.3.1 (no third party)
-//    implementation fg.deobf("curse.maven:burning-illagers-1227507:6473130")
-
-    //Illager Universe 1.0.0 (no third party)
-//    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
-
-    //Illager Rebels 1.0.0 (no third party)
-//    implementation fg.deobf("curse.maven:illager-rebels-994298:5270196")
-
-    //Virtuso's Grand Battle 1.1.0 (no third party)
-//    implementation fg.deobf("curse.maven:virtusos-grand-battle-1328536:6921334")
-
     //Sensei Illager 1.0.1
     //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:sensei-illager-1240874:6444802")
 
-    //Terramity 0.9.8 + Patchouli 84.1
+    //Terramity 0.9.8
     //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:terramity-1084134:6054971")
-    implementation fg.deobf("curse.maven:patchouli-306770:6164575")
-
-    //Supernatural 2.12.1 (useless because they burn, and SuperNatural adds custom logic for their spawn)
-//    implementation fg.deobf("curse.maven:supernatural-610880:5820483")
 
     //Dark Side 1.4.1
     //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:dark-side-creatures-928324:5182327")
 
-    //Biome Makeover (Forge) 1.11.4 + Architectury API 9.2.14 (mixin issues)
+    //Biome Makeover (Forge) 1.11.4 (mixin issues and not required)
 //    implementation fg.deobf("curse.maven:biome-makeover-forge-567709:4815822")
-    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
     //Homeless Illager 1.0.1
     //Doesnt extend Raider, so we cant add them in raids
@@ -404,8 +401,15 @@ dependencies {
     //Spies 1.0.3 (not stable enough)
 //    implementation fg.deobf("curse.maven:spies-984638:5629671")
 
-    //Viking Ages Craft 1.7
+    //Viking Ages Craft 1.7 (not made for raids)
 //    implementation fg.deobf("curse.maven:viking-ages-craft-895600:6886945")
+
+    //Supernatural 2.12.1 (useless because they burn, and SuperNatural adds custom logic for their spawn)
+//    implementation fg.deobf("curse.maven:supernatural-610880:5820483")
+
+    //Village and Villagers 1.0.0 + Tickrate API 4.0.0 (doesnt add any illager rn)
+//    implementation fg.deobf("curse.maven:village-and-villagers-1275176:6908041")
+//    implementation fg.deobf("curse.maven:tickrate-api-969702:6830640")
 }
 
 mixin {

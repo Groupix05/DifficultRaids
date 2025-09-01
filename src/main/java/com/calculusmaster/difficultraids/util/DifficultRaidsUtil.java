@@ -19,6 +19,7 @@ import com.mysticmage.musketeer_illager.init.MusketeerIllagerModEntities;
 import com.possible_triangle.brazier.Content;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
+import com.vpillagersgood.burningillagers.init.BurningIllagersModEntities;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import francisplayz446.karateillagerfinallyported.init.KarateillagerfinallyportedModEntities;
 import fuzs.illagerinvasion.init.ModRegistry;
@@ -27,13 +28,18 @@ import net.mcreator.crimson_steves_mobs.init.CrimsonStevesMobsModEntities;
 import net.mcreator.expadosillagers.init.ExpadosIllagersModEntities;
 import net.mcreator.francisillagers.init.FrancisillagersModEntities;
 import net.mcreator.illagerbrute.init.IllagerBruteModEntities;
+import net.mcreator.illageruniverse.init.IllagerUniverseModEntities;
 import net.mcreator.illagerworldwar.init.IllagerWorldWarModEntities;
 import net.mcreator.justillagers.init.JustillagersModEntities;
 import net.mcreator.moreillagers.init.MoreIllagersModEntities;
+import net.mcreator.pillagerboss.init.PillagerBossModEntities;
+import net.mcreator.pillagersplus.init.PillagersplusModEntities;
 import net.mcreator.sorcererillager.init.SorcererIllagerModEntities;
+import net.mcreator.virtusosgrandbattle.init.VirtusosgrandbattleModEntities;
 import net.mobz.init.MobZEntities;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import net.minecraft.world.entity.EntityType;
+import net.tamirsvn.mischiefillagers.init.MischiefIllagersModEntities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -317,5 +323,67 @@ public class DifficultRaidsUtil
         }
 
         if(Compat.COLDS_WANDERING_TRADER.isLoaded()) BASIC_MAGIC_RAIDERS.add(ColdstraderModEntities.WANDERING_TRAITOR.get());
+
+        if(Compat.ILLAGER_UNIVERSE.isLoaded()) //Skipping Shadow Goat
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    IllagerUniverseModEntities.CALLOLOGER.get(),
+                    IllagerUniverseModEntities.PRINZOLOGER.get()
+            ));
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    IllagerUniverseModEntities.UPGRADER.get(),
+                    IllagerUniverseModEntities.UPGRADER_GOLD.get(),
+                    IllagerUniverseModEntities.UPGRADER_DIAMOND.get()
+            ));
+        }
+
+        if(Compat.PILLAGER_BOSS.isLoaded())
+        {
+            ADVANCED_RAIDERS.addAll(List.of(
+                    PillagerBossModEntities.PILLAGERBOSS.get(),
+                    PillagerBossModEntities.AFTERLIFEPILLAGERBOSS.get()
+            ));
+        }
+
+        if(Compat.VIRTUSOS_GRAND_BATTLE.isLoaded()) ADVANCED_RAIDERS.add(VirtusosgrandbattleModEntities.VIRTUOSO_OF_VARIETY.get());
+
+        if(Compat.MISCHIEF_ILLAGERS.isLoaded())
+        {
+            ADVANCED_RAIDERS.addAll(List.of(
+                    MischiefIllagersModEntities.SPARKOLOGER.get(),
+                    MischiefIllagersModEntities.FANGCLAW.get(),
+                    MischiefIllagersModEntities.PHOTOGRAPHER.get(),
+                    MischiefIllagersModEntities.MISCHIEVER.get()
+            ));
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    MischiefIllagersModEntities.LIBRAVOKER.get(),
+                    MischiefIllagersModEntities.BUBBLEOLOGER.get(),
+                    MischiefIllagersModEntities.PARTYGER.get(),
+                    MischiefIllagersModEntities.DOODLER.get(),
+                    MischiefIllagersModEntities.MAGNETIZER.get(),
+                    MischiefIllagersModEntities.IMPRECATOR.get(),
+                    MischiefIllagersModEntities.BASS_BLASTER.get(),
+                    MischiefIllagersModEntities.WITHERMANCER.get()
+            ));
+        }
+
+        if(Compat.BURNING_ILLAGERS.isLoaded())
+        {
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    BurningIllagersModEntities.MICROMANCER.get(),
+                    BurningIllagersModEntities.DISVOKER.get()
+            ));
+            STANDARD_RAIDERS.add(BurningIllagersModEntities.GHARZUL.get());
+            ADVANCED_MAGIC_RAIDERS.add(BurningIllagersModEntities.RAVAMAGE.get());
+        }
+
+        if(Compat.PILLAGERS_PLUS.isLoaded()) //Other Illagers cannot be added because they dont extend Raider
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    PillagersplusModEntities.SWORD_PILLAGER.get(),
+                    PillagersplusModEntities.SPEAR_PILLAGER.get(),
+                    PillagersplusModEntities.HOG_RIDER.get()
+            ));
+        }
     }
 }

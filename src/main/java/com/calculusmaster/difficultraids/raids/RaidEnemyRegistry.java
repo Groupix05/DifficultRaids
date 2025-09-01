@@ -18,6 +18,7 @@ import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
 import net.mcreator.francisillagers.init.FrancisillagersModEntities;
 import net.mcreator.justillagers.init.JustillagersModEntities;
+import net.mcreator.pillagersplus.init.PillagersplusModEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
@@ -302,6 +303,45 @@ public class RaidEnemyRegistry
     public static final String TOXICIST = "toxicist";
     public static final String REVENANT = "reverant";
     public static final String AMPI = "ampi";
+
+    //Illager Universe
+    public static final String UPGRADER = "upgrader";
+    public static final String UPGRADER_GOLD = "upgrader_gold";
+    public static final String UPGRADER_DIAMOND = "upgrader_diamond";
+    public static final String SHADOW_GOAT = "shadow_goat";
+    public static final String PRINZOLOGER = "prinzologer";
+    public static final String CALLOLOGER = "callologer";
+
+    //Pillager Boss
+    public static final String PILLAGER_BOSS_MOD = "pillagerboss";
+
+    //Virtuso's Grand Battle
+    public static final String VIRTUOSO_OF_VARIETY = "virtuoso_of_variety";
+
+    //Mischief Illagers
+    public static final String MISCHIEVER = "mischiever";
+    public static final String WITHERMANCER = "withermancer";
+    public static final String DOODLER = "doodler";
+    public static final String FANGCLAW = "fangclaw";
+    public static final String SPARKOLOGER = "sparkologer";
+    public static final String LIBRAVOKER = "libravoker";
+    public static final String BUBBLEOLOGER = "bubbleologer";
+    public static final String BASS_BLASTER = "bass_blaster";
+    public static final String IMPRECATOR = "imprecator";
+    public static final String MAGNETIZER = "magnetizer";
+    public static final String PHOTOGRAPHER = "photographer";
+    public static final String PARTYGER = "partyger";
+
+    //Burning Illagers
+    public static final String MICROMANCER = "micromancer";
+    public static final String DISVOKER = "disvoker";
+    public static final String GHARZUL = "gharzul";
+    public static final String RAVAMAGE = "ravamage";
+
+    //Pillagers Plus
+    public static final String SWORD_PILLAGER = "sword_pillager";
+    public static final String SPEAR_PILLAGER = "spear_pillager";
+    public static final String HOG_RIDER = "hog_rider";
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -590,6 +630,33 @@ public class RaidEnemyRegistry
                 .withRaider(TOXICIST,               0, 2, 2, 2, 2, 1, 2, 2)
                 .withRaider(REVENANT,               0, 0, 0, 1, 1, 0, 1, 0)
                 .withRaider(AMPI,                   0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(UPGRADER,               0, 1, 0, 1, 1, 0, 1, 1)
+                .withRaider(UPGRADER_GOLD,          0, 0, 0, 0, 1, 0, 1, 1)
+                .withRaider(UPGRADER_DIAMOND,       0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(SHADOW_GOAT,            0, 0, 1, 0, 1, 1, 1, 1)
+                .withRaider(PRINZOLOGER,            0, 1, 0, 1, 1, 0, 1, 1)
+                .withRaider(CALLOLOGER,             0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(PILLAGER_BOSS_MOD,      0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(VIRTUOSO_OF_VARIETY,    0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(MISCHIEVER,             0, 0, 1, 1, 0, 1, 1, 1)
+                .withRaider(WITHERMANCER,           0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(DOODLER,                0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(FANGCLAW,               0, 1, 1, 0, 1, 1, 0, 1)
+                .withRaider(SPARKOLOGER,            0, 1, 0, 1, 1, 0, 1, 1)
+                .withRaider(LIBRAVOKER,             0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(BUBBLEOLOGER,           0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(BASS_BLASTER,           0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(IMPRECATOR,             0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(MAGNETIZER,             0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(PHOTOGRAPHER,           0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(PARTYGER,               0, 0, 1, 0, 0, 1, 1, 1)
+                .withRaider(MICROMANCER,            0, 0, 1, 1, 1, 0, 1, 0)
+                .withRaider(DISVOKER,               0, 0, 0, 1, 1, 1, 0, 1)
+                .withRaider(GHARZUL,                0, 0, 1, 0, 1, 1, 0, 0)
+                .withRaider(RAVAMAGE,               0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(SWORD_PILLAGER,         0, 0, 1, 1, 0, 1, 1, 0)
+                .withRaider(SPEAR_PILLAGER,         0, 1, 0, 1, 1, 1, 1, 1)
+                .withRaider(HOG_RIDER,              0, 0, 0, 1, 1, 1, 1, 1)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -767,6 +834,33 @@ public class RaidEnemyRegistry
                 .withRaider(TOXICIST,               0, 2, 3, 3, 2, 2, 2, 3)
                 .withRaider(REVENANT,               0, 0, 1, 1, 1, 0, 1, 1)
                 .withRaider(AMPI,                   0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(UPGRADER,               0, 0, 1, 2, 1, 1, 2, 1)
+                .withRaider(UPGRADER_GOLD,          0, 0, 0, 1, 1, 0, 1, 1)
+                .withRaider(UPGRADER_DIAMOND,       0, 0, 0, 0, 1, 1, 1, 1)
+                .withRaider(SHADOW_GOAT,            0, 1, 1, 2, 1, 2, 2, 1)
+                .withRaider(PRINZOLOGER,            0, 1, 1, 2, 2, 1, 1, 1)
+                .withRaider(CALLOLOGER,             0, 0, 1, 2, 2, 1, 1, 1)
+                .withRaider(PILLAGER_BOSS_MOD,      0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(VIRTUOSO_OF_VARIETY,    0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(MISCHIEVER,             0, 1, 1, 2, 1, 1, 2, 1)
+                .withRaider(WITHERMANCER,           0, 0, 1, 1, 2, 1, 1, 2)
+                .withRaider(DOODLER,                0, 0, 0, 1, 1, 0, 1, 1)
+                .withRaider(FANGCLAW,               0, 1, 2, 1, 1, 2, 1, 1)
+                .withRaider(SPARKOLOGER,            0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(LIBRAVOKER,             0, 1, 2, 1, 1, 1, 0, 1)
+                .withRaider(BUBBLEOLOGER,           0, 0, 0, 0, 1, 1, 1, 1)
+                .withRaider(BASS_BLASTER,           0, 0, 1, 2, 1, 1, 2, 1)
+                .withRaider(IMPRECATOR,             0, 1, 1, 2, 1, 2, 0, 1)
+                .withRaider(MAGNETIZER,             0, 0, 0, 1, 1, 1, 1, 0)
+                .withRaider(PHOTOGRAPHER,           0, 1, 0, 2, 2, 0, 1, 0)
+                .withRaider(PARTYGER,               0, 0, 1, 0, 1, 2, 1, 1)
+                .withRaider(MICROMANCER,            0, 1, 1, 2, 1, 0, 1, 0)
+                .withRaider(DISVOKER,               0, 1, 0, 1, 1, 2, 1, 1)
+                .withRaider(GHARZUL,                0, 0, 1, 1, 2, 1, 0, 1)
+                .withRaider(RAVAMAGE,               0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(SWORD_PILLAGER,         0, 1, 2, 2, 1, 2, 2, 1)
+                .withRaider(SPEAR_PILLAGER,         0, 2, 1, 2, 2, 2, 2, 1)
+                .withRaider(HOG_RIDER,              0, 0, 1, 2, 1, 2, 2, 1)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -945,6 +1039,33 @@ public class RaidEnemyRegistry
                 .withRaider(TOXICIST,               0, 3, 3, 4, 3, 3, 3, 3)
                 .withRaider(REVENANT,               0, 0, 2, 1, 2, 1, 1, 1)
                 .withRaider(AMPI,                   0, 0, 0, 1, 0, 0, 1, 0)
+                .withRaider(UPGRADER,               0, 1, 2, 2, 2, 1, 2, 2)
+                .withRaider(UPGRADER_GOLD,          0, 0, 1, 1, 2, 2, 1, 1)
+                .withRaider(UPGRADER_DIAMOND,       0, 0, 0, 1, 1, 1, 2, 1)
+                .withRaider(SHADOW_GOAT,            0, 2, 2, 3, 2, 2, 3, 1)
+                .withRaider(PRINZOLOGER,            0, 1, 2, 3, 2, 2, 2, 2)
+                .withRaider(CALLOLOGER,             0, 0, 2, 2, 3, 1, 2, 1)
+                .withRaider(PILLAGER_BOSS_MOD,      0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(VIRTUOSO_OF_VARIETY,    0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(MISCHIEVER,             0, 1, 2, 2, 3, 1, 2, 2)
+                .withRaider(WITHERMANCER,           0, 1, 3, 2, 2, 2, 1, 2)
+                .withRaider(DOODLER,                0, 0, 0, 1, 1, 1, 1, 1)
+                .withRaider(FANGCLAW,               0, 1, 2, 2, 1, 3, 1, 1)
+                .withRaider(SPARKOLOGER,            0, 2, 1, 2, 1, 2, 1, 1)
+                .withRaider(LIBRAVOKER,             0, 1, 2, 1, 1, 1, 1, 1)
+                .withRaider(BUBBLEOLOGER,           0, 0, 0, 1, 1, 1, 2, 1)
+                .withRaider(BASS_BLASTER,           0, 1, 1, 3, 1, 2, 2, 1)
+                .withRaider(IMPRECATOR,             0, 1, 2, 2, 1, 3, 1, 2)
+                .withRaider(MAGNETIZER,             0, 0, 1, 2, 2, 1, 1, 1)
+                .withRaider(PHOTOGRAPHER,           0, 1, 1, 2, 3, 1, 1, 0)
+                .withRaider(PARTYGER,               0, 0, 2, 1, 2, 3, 2, 2)
+                .withRaider(MICROMANCER,            0, 1, 2, 2, 2, 1, 1, 1)
+                .withRaider(DISVOKER,               0, 1, 1, 2, 1, 2, 2, 1)
+                .withRaider(GHARZUL,                0, 1, 2, 1, 2, 1, 1, 2)
+                .withRaider(RAVAMAGE,               0, 0, 0, 0, 1, 1, 1, 1)
+                .withRaider(SWORD_PILLAGER,         0, 2, 3, 3, 2, 3, 3, 2)
+                .withRaider(SPEAR_PILLAGER,         0, 3, 2, 3, 3, 3, 3, 2)
+                .withRaider(HOG_RIDER,              0, 1, 2, 2, 2, 3, 2, 2)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1125,6 +1246,33 @@ public class RaidEnemyRegistry
                 .withRaider(TOXICIST,               0, 3, 4, 5, 3, 4, 3, 4)
                 .withRaider(REVENANT,               0, 1, 2, 2, 3, 1, 2, 3)
                 .withRaider(AMPI,                   0, 0, 1, 1, 0, 1, 1, 1)
+                .withRaider(UPGRADER,               0, 2, 3, 3, 3, 2, 3, 4)
+                .withRaider(UPGRADER_GOLD,          0, 1, 1, 2, 2, 3, 2, 3)
+                .withRaider(UPGRADER_DIAMOND,       0, 1, 1, 1, 2, 2, 3, 2)
+                .withRaider(SHADOW_GOAT,            0, 3, 3, 4, 3, 3, 4, 2)
+                .withRaider(PRINZOLOGER,            0, 2, 2, 3, 2, 3, 3, 2)
+                .withRaider(CALLOLOGER,             0, 1, 2, 2, 3, 2, 3, 1)
+                .withRaider(PILLAGER_BOSS_MOD,      0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(VIRTUOSO_OF_VARIETY,    0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(MISCHIEVER,             0, 2, 2, 3, 3, 2, 2, 2)
+                .withRaider(WITHERMANCER,           0, 1, 3, 2, 3, 2, 2, 2)
+                .withRaider(DOODLER,                0, 0, 1, 1, 2, 1, 2, 1)
+                .withRaider(FANGCLAW,               0, 1, 3, 3, 1, 3, 2, 2)
+                .withRaider(SPARKOLOGER,            0, 3, 2, 2, 2, 2, 2, 2)
+                .withRaider(LIBRAVOKER,             0, 2, 2, 2, 2, 2, 2, 2)
+                .withRaider(BUBBLEOLOGER,           0, 0, 1, 1, 2, 2, 2, 2)
+                .withRaider(BASS_BLASTER,           0, 2, 2, 3, 2, 3, 2, 2)
+                .withRaider(IMPRECATOR,             0, 1, 2, 2, 1, 3, 1, 2)
+                .withRaider(MAGNETIZER,             0, 1, 2, 3, 2, 2, 1, 1)
+                .withRaider(PHOTOGRAPHER,           0, 1, 2, 2, 3, 2, 2, 1)
+                .withRaider(PARTYGER,               0, 1, 2, 2, 3, 3, 2, 3)
+                .withRaider(MICROMANCER,            0, 2, 2, 2, 3, 2, 2, 2)
+                .withRaider(DISVOKER,               0, 2, 2, 3, 2, 3, 3, 2)
+                .withRaider(GHARZUL,                0, 2, 3, 2, 2, 2, 2, 2)
+                .withRaider(RAVAMAGE,               0, 0, 1, 0, 1, 2, 1, 2)
+                .withRaider(SWORD_PILLAGER,         0, 3, 4, 4, 3, 4, 4, 3)
+                .withRaider(SPEAR_PILLAGER,         0, 4, 3, 4, 4, 4, 4, 3)
+                .withRaider(HOG_RIDER,              0, 2, 3, 2, 3, 4, 3, 3)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
