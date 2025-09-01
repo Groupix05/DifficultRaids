@@ -17,6 +17,7 @@ import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
 import net.mcreator.francisillagers.init.FrancisillagersModEntities;
+import net.mcreator.justillagers.init.JustillagersModEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
@@ -278,6 +279,29 @@ public class RaidEnemyRegistry
     public static final String CREAKOLOGER = "creakologer";
     public static final String JURGOLOGER = "jurgologer";
     public static final String BLACK_MASTER = "blackmaster";
+
+    //Earth Mobs
+    public static final String VILER_WITCH = "viler_witch";
+
+    //Illager World War
+    public static final String PILLAGER_CAR = "pillager_car";
+    public static final String PILLAGER_SOLDIER = "pillager_soldier_armed";
+    public static final String VINDICATOR_FLAMETHROWER = "pillager_soldier_with_flamethrower";
+    public static final String ASSAULT_PILLAGER = "assault_pillager_soldier";
+    public static final String PILLAGER_PLANE = "plane_avec_pillager_soldier";
+    public static final String PILLAGER_CANNON = "cannon_with_soldier_pillager";
+
+    //Colds: Wandering Traidor
+    public static final String WANDERING_TRAITOR = "wandering_traitor";
+
+    //Just Illagers
+    public static final String DRUSKI = "druski";
+    public static final String LACHER = "guard";
+    public static final String CRISKO = "crisko";
+    public static final String BLAKER = "blaker";
+    public static final String TOXICIST = "toxicist";
+    public static final String REVENANT = "reverant";
+    public static final String AMPI = "ampi";
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -551,6 +575,21 @@ public class RaidEnemyRegistry
                 .withRaider(CREAKOLOGER,            0, 0, 1, 0, 0, 1, 0, 1)
                 .withRaider(JURGOLOGER,             0, 1, 1, 1, 0, 1, 1, 1)
                 .withRaider(BLACK_MASTER,           0, 0, 1, 0, 1, 0, 0, 1)
+                .withRaider(VILER_WITCH,            0, 0, 1, 1, 0, 1, 1, 1)
+                .withRaider(PILLAGER_CAR,           0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(PILLAGER_SOLDIER,       0, 0, 1, 1, 1, 0, 1, 1)
+                .withRaider(VINDICATOR_FLAMETHROWER,0, 0, 0, 0, 1, 1, 0, 1)
+                .withRaider(ASSAULT_PILLAGER,       0, 0, 1, 0, 1, 1, 1, 0)
+                .withRaider(PILLAGER_PLANE,         0, 0, 0, 0, 1, 1, 1, 1)
+                .withRaider(PILLAGER_CANNON,        0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(WANDERING_TRAITOR,      0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(DRUSKI,                 0, 1, 2, 2, 1, 1, 2, 2)
+                .withRaider(LACHER,                 0, 0, 1, 1, 0, 1, 0, 2)
+                .withRaider(CRISKO,                 0, 2, 2, 2, 1, 2, 2, 2)
+                .withRaider(BLAKER,                 0, 2, 2, 3, 2, 2, 2, 2)
+                .withRaider(TOXICIST,               0, 2, 2, 2, 2, 1, 2, 2)
+                .withRaider(REVENANT,               0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(AMPI,                   0, 0, 0, 0, 0, 0, 0, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -713,6 +752,21 @@ public class RaidEnemyRegistry
                 .withRaider(CREAKOLOGER,            0, 0, 1, 1, 0, 1, 1, 1)
                 .withRaider(JURGOLOGER,             0, 1, 2, 2, 1, 1, 2, 1)
                 .withRaider(BLACK_MASTER,           0, 0, 1, 0, 1, 1, 1, 1)
+                .withRaider(VILER_WITCH,            0, 1, 1, 2, 1, 2, 2, 1)
+                .withRaider(PILLAGER_CAR,           0, 0, 1, 1, 0, 1, 1, 0)
+                .withRaider(PILLAGER_SOLDIER,       0, 1, 1, 2, 1, 2, 2, 1)
+                .withRaider(VINDICATOR_FLAMETHROWER,0, 0, 1, 1, 1, 2, 0, 1)
+                .withRaider(ASSAULT_PILLAGER,       0, 1, 2, 1, 2, 1, 1, 0)
+                .withRaider(PILLAGER_PLANE,         0, 0, 1, 0, 1, 2, 2, 1)
+                .withRaider(PILLAGER_CANNON,        0, 0, 0, 1, 2, 1, 1, 1)
+                .withRaider(WANDERING_TRAITOR,      0, 1, 1, 2, 2, 1, 1, 1)
+                .withRaider(DRUSKI,                 0, 2, 2, 3, 2, 1, 3, 2)
+                .withRaider(LACHER,                 0, 1, 1, 2, 1, 1, 1, 2)
+                .withRaider(CRISKO,                 0, 3, 3, 2, 2, 2, 3, 2)
+                .withRaider(BLAKER,                 0, 3, 3, 3, 2, 3, 2, 3)
+                .withRaider(TOXICIST,               0, 2, 3, 3, 2, 2, 2, 3)
+                .withRaider(REVENANT,               0, 0, 1, 1, 1, 0, 1, 1)
+                .withRaider(AMPI,                   0, 0, 0, 0, 0, 0, 1, 0)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -876,6 +930,21 @@ public class RaidEnemyRegistry
                 .withRaider(CREAKOLOGER,            0, 1, 1, 2, 1, 1, 1, 2)
                 .withRaider(JURGOLOGER,             0, 1, 2, 2, 1, 1, 2, 1)
                 .withRaider(BLACK_MASTER,           0, 0, 1, 1, 2, 1, 2, 2)
+                .withRaider(VILER_WITCH,            0, 2, 2, 2, 2, 3, 2, 1)
+                .withRaider(PILLAGER_CAR,           0, 1, 1, 1, 1, 2, 2, 1)
+                .withRaider(PILLAGER_SOLDIER,       0, 2, 2, 3, 2, 3, 2, 2)
+                .withRaider(VINDICATOR_FLAMETHROWER,0, 1, 1, 2, 1, 2, 1, 1)
+                .withRaider(ASSAULT_PILLAGER,       0, 2, 3, 2, 2, 2, 2, 2)
+                .withRaider(PILLAGER_PLANE,         0, 1, 1, 1, 2, 2, 2, 1)
+                .withRaider(PILLAGER_CANNON,        0, 1, 1, 1, 2, 1, 2, 2)
+                .withRaider(WANDERING_TRAITOR,      0, 1, 2, 2, 3, 2, 2, 1)
+                .withRaider(DRUSKI,                 0, 2, 3, 4, 3, 2, 3, 3)
+                .withRaider(LACHER,                 0, 1, 2, 2, 2, 1, 2, 3)
+                .withRaider(CRISKO,                 0, 3, 4, 3, 3, 3, 4, 3)
+                .withRaider(BLAKER,                 0, 4, 4, 4, 3, 3, 3, 3)
+                .withRaider(TOXICIST,               0, 3, 3, 4, 3, 3, 3, 3)
+                .withRaider(REVENANT,               0, 0, 2, 1, 2, 1, 1, 1)
+                .withRaider(AMPI,                   0, 0, 0, 1, 0, 0, 1, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1041,6 +1110,21 @@ public class RaidEnemyRegistry
                 .withRaider(CREAKOLOGER,            0, 1, 2, 2, 2, 1, 2, 3)
                 .withRaider(JURGOLOGER,             0, 1, 2, 3, 1, 2, 2, 2)
                 .withRaider(BLACK_MASTER,           0, 1, 1, 2, 3, 2, 2, 3)
+                .withRaider(VILER_WITCH,            0, 2, 3, 2, 3, 4, 2, 2)
+                .withRaider(PILLAGER_CAR,           0, 1, 2, 2, 1, 2, 2, 1)
+                .withRaider(PILLAGER_SOLDIER,       0, 2, 3, 3, 3, 4, 3, 3)
+                .withRaider(VINDICATOR_FLAMETHROWER,0, 1, 2, 3, 2, 2, 2, 1)
+                .withRaider(ASSAULT_PILLAGER,       0, 3, 4, 3, 3, 3, 4, 4)
+                .withRaider(PILLAGER_PLANE,         0, 1, 2, 3, 3, 4, 2, 2)
+                .withRaider(PILLAGER_CANNON,        0, 1, 2, 2, 2, 3, 2, 2)
+                .withRaider(WANDERING_TRAITOR,      0, 1, 2, 3, 4, 3, 2, 2)
+                .withRaider(DRUSKI,                 0, 2, 4, 5, 3, 3, 3, 3)
+                .withRaider(LACHER,                 0, 1, 3, 3, 2, 2, 3, 3)
+                .withRaider(CRISKO,                 0, 4, 4, 3, 4, 4, 4, 3)
+                .withRaider(BLAKER,                 0, 4, 5, 4, 4, 4, 3, 5)
+                .withRaider(TOXICIST,               0, 3, 4, 5, 3, 4, 3, 4)
+                .withRaider(REVENANT,               0, 1, 2, 2, 3, 1, 2, 3)
+                .withRaider(AMPI,                   0, 0, 1, 1, 0, 1, 1, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

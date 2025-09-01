@@ -8,6 +8,7 @@ import codyhuh.ravagecabbage.registry.RCEntities;
 import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.belgieyt.morefeatures.core.registry.MFEntity;
 import com.calculusmaster.difficultraids.DifficultRaids;
+import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
 import com.infamous.all_bark_all_bite.common.registry.ABABEntityTypes;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
@@ -26,6 +27,8 @@ import net.mcreator.crimson_steves_mobs.init.CrimsonStevesMobsModEntities;
 import net.mcreator.expadosillagers.init.ExpadosIllagersModEntities;
 import net.mcreator.francisillagers.init.FrancisillagersModEntities;
 import net.mcreator.illagerbrute.init.IllagerBruteModEntities;
+import net.mcreator.illagerworldwar.init.IllagerWorldWarModEntities;
+import net.mcreator.justillagers.init.JustillagersModEntities;
 import net.mcreator.moreillagers.init.MoreIllagersModEntities;
 import net.mcreator.sorcererillager.init.SorcererIllagerModEntities;
 import net.mobz.init.MobZEntities;
@@ -288,5 +291,31 @@ public class DifficultRaidsUtil
             BASIC_MAGIC_RAIDERS.add(FrancisillagersModEntities.JURGOLOGER.get());
             ADVANCED_RAIDERS.add(FrancisillagersModEntities.OMNILLAGER.get());
         }
+
+        if(Compat.EARTH_MOBS.isLoaded()) BASIC_MAGIC_RAIDERS.add(baguchan.earthmobsmod.registry.ModEntities.VILER_WITCH.get());
+
+        if(Compat.ILLAGER_WORLD_WAR.isLoaded()) //Skipping Illager Car, Plane & Cannon
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    IllagerWorldWarModEntities.ASSAULT_PILLAGER_SOLDIER.get(),
+                    IllagerWorldWarModEntities.PILLAGER_SOLDIER_WITH_FLAMETHROWER.get(),
+                    IllagerWorldWarModEntities.PILLAGER_SOLDIER.get(),
+                    IllagerWorldWarModEntities.PILLAGER_SOLDIER_ARMED.get()
+            ));
+        }
+
+        if(Compat.JUST_ILLAGERS.isLoaded()) //Skipping Enderfant because it doesnt extend Raider, Skipping Ampi
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    JustillagersModEntities.REVERANT.get(),
+                    JustillagersModEntities.TOXICIST.get(),
+                    JustillagersModEntities.BLAKER.get(),
+                    JustillagersModEntities.CRISKO.get(),
+                    JustillagersModEntities.GUARD.get(),
+                    JustillagersModEntities.DRUSKI.get()
+            ));
+        }
+
+        if(Compat.COLDS_WANDERING_TRADER.isLoaded()) BASIC_MAGIC_RAIDERS.add(ColdstraderModEntities.WANDERING_TRAITOR.get());
     }
 }

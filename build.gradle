@@ -298,6 +298,18 @@ dependencies {
     //Expado's Illagers 1.0.4
     implementation fg.deobf("curse.maven:expados-illagers-1313064:6863477")
 
+    //Just Illagers 1.0.0
+    implementation fg.deobf("curse.maven:just-illagers-1088403:5721200")
+
+    //Illager World War 1.1.2
+    implementation fg.deobf("curse.maven:illager-world-war-1083239:5808688")
+
+    //Colds: Wandering Trader Port 1.0.0
+    implementation fg.deobf("curse.maven:colds-wandering-trader-port-1238387:6535387")
+
+    //Earth Mobs 10.5.0
+    implementation fg.deobf("curse.maven:earth-mobs-913527:5497489")
+
 
 
 
@@ -355,6 +367,9 @@ dependencies {
     //Illager Rebels 1.0.0 (no third party)
 //    implementation fg.deobf("curse.maven:illager-rebels-994298:5270196")
 
+    //Virtuso's Grand Battle 1.1.0 (no third party)
+//    implementation fg.deobf("curse.maven:virtusos-grand-battle-1328536:6921334")
+
     //Sensei Illager 1.0.1
     //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:sensei-illager-1240874:6444802")
@@ -379,23 +394,18 @@ dependencies {
     //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:homeless-illager-1214650:6763733")
 
-    //Illager World War 1.1.2
-//    implementation fg.deobf("curse.maven:illager-world-war-1083239:5808688")
-
-    //Colds: Wandering Trader Port 1.0.0
-//    implementation fg.deobf("curse.maven:colds-wandering-trader-port-1238387:6535387")
-
-    //Earth Mobs 10.5.0
-//    implementation fg.deobf("curse.maven:earth-mobs-913527:5497489")
-
-    //Virtuso's Grand Battle 1.1.0
-//    implementation fg.deobf("curse.maven:virtusos-grand-battle-1328536:6921334")
-
-    //The Mutant Mobs Mod 1.0.7
+    //The Mutant Mobs Mod 1.0.7 (Illagers from this mods are very glitched)
 //    implementation fg.deobf("curse.maven:mutant-mobs-mod-907562:6944438")
 
     //Mutant Iceologer 2.0.2
+    //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:mutant-iceologer-947258:5945048")
+
+    //Spies 1.0.3 (not stable enough)
+//    implementation fg.deobf("curse.maven:spies-984638:5629671")
+
+    //Viking Ages Craft 1.7
+//    implementation fg.deobf("curse.maven:viking-ages-craft-895600:6886945")
 }
 
 mixin {

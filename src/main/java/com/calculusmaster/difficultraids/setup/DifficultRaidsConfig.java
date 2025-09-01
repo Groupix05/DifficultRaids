@@ -352,6 +352,25 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.CREAKOLOGER, GENERAL.define("enableCreakologer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.JURGOLOGER, GENERAL.define("enableJurgologer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BLACK_MASTER, GENERAL.define("enableBlackMaster", true));
+        GENERAL.pop().push("Requires Earth Mobs");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.VILER_WITCH, GENERAL.define("enableVilerWitch", true));
+        GENERAL.pop().push("Requires Illager World War");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PILLAGER_CAR, GENERAL.define("enablePillagerCar", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PILLAGER_SOLDIER, GENERAL.define("enableArmedSoldier", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.VINDICATOR_FLAMETHROWER, GENERAL.define("enableVindicatorFlameThrower", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ASSAULT_PILLAGER, GENERAL.define("enableAssaultPillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PILLAGER_PLANE, GENERAL.define("enablePlanePillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PILLAGER_CANNON, GENERAL.define("enableCannonPillager", true));
+        GENERAL.pop().push("Requires Colds: Wandering Trader");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.WANDERING_TRAITOR, GENERAL.define("enableWanderingTraitor", true));
+        GENERAL.pop().push("Requires Just Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.DRUSKI, GENERAL.define("enableDruski", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.LACHER, GENERAL.define("enableLacher", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRISKO, GENERAL.define("enableCrisko", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLAKER, GENERAL.define("enableBlaker", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.TOXICIST, GENERAL.define("enableToxicist", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.REVENANT, GENERAL.define("enableRevenant", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.AMPI, GENERAL.define("enableAmpi", true));
 
         GENERAL.pop();
 

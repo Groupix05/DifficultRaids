@@ -45,7 +45,11 @@ public enum Compat
     EXPADOS_ILLAGERS("expados_illagers"),
     KARATE_ILLAGER("karateillagerfinallyported"),
     ILLAGER_BRUTE("illager_brute"),
-    SORCERER_ILLAGER("sorcerer_illager")
+    SORCERER_ILLAGER("sorcerer_illager"),
+    EARTH_MOBS("earthmobsmod"),
+    ILLAGER_WORLD_WAR("illager_world_war"),
+    JUST_ILLAGERS("justillagers"),
+    COLDS_WANDERING_TRADER("coldstrader")
     ;
 
     private final String modid;
