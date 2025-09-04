@@ -27,7 +27,7 @@ public class DifficultRaids
     public static RaidWaveReloadListener RAID_DATA_LOADER = new RaidWaveReloadListener();
 
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public DifficultRaids()
     {

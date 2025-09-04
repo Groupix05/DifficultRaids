@@ -9,29 +9,30 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 
-import java.util.function.Supplier;
-
 public class DumpRaidWavesCommand
 {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher)
     {
         LiteralArgumentBuilder<CommandSourceStack> literalArgumentBuilder = Commands
-                .literal("difficultraids_dumpwaves")
-                .requires(css -> {
-                        try { return css.getPlayerOrException().hasPermissions(2); }
-                        catch (CommandSyntaxException e)
-                        {
-                            e.printStackTrace();
-                            return false;
-                        }
-                })
-                .executes(css -> {
+                .literal("difficultraids")
+                .then(
+                        Commands.literal("dumpwaves")
+                                .requires(css -> {
+                                    try { return css.getPlayerOrException().hasPermissions(2); }
+                                    catch (CommandSyntaxException e) {
+                                        e.printStackTrace();
+                                        return false;
+                                    }
+                                })
+                                .executes(css -> {
+                                    RaidEnemyRegistry.printWaveData(LogUtils.getLogger());
 
-                    RaidEnemyRegistry.printWaveData(LogUtils.getLogger());
-
-                    css.getSource().sendSuccess(() -> Component.literal("Dumped Raid Wave Data into the console!"), true);
-                    return 1;
-        });
+                                    css.getSource().sendSuccess(
+                                            () -> Component.literal("Dumped Raid Wave Data into the console!"), true
+                                    );
+                                    return 1;
+                                })
+                );
 
         dispatcher.register(literalArgumentBuilder);
     }

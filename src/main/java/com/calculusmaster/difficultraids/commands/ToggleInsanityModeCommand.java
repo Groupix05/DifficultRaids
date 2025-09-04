@@ -17,33 +17,40 @@ public class ToggleInsanityModeCommand
 {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher)
     {
-        LiteralArgumentBuilder<CommandSourceStack> literalArgumentBuilder = Commands
-                .literal("difficultraids_insanitymode")
-                .requires(css -> {
-                        try { return css.getPlayerOrException().hasPermissions(2); }
-                        catch (CommandSyntaxException e)
-                        {
-                            e.printStackTrace();
-                            return false;
-                        }
-                })
-                .executes(css -> {
-                    ServerPlayer player = css.getSource().getPlayerOrException();
-                    ServerLevel level = player.serverLevel();
-                    Raid raid = level.getRaidAt(player.blockPosition());
+        LiteralArgumentBuilder<CommandSourceStack> root = Commands.literal("difficultraids");
 
-                    boolean current = DifficultRaidsConfig.INSANITY_MODE.get();
-                    DifficultRaidsConfig.INSANITY_MODE.set(!current);
-                    boolean after = DifficultRaidsConfig.INSANITY_MODE.get();
+        root.then(Commands.literal("insanitymode")
+            .requires(css -> {
+                try { return css.getPlayerOrException().hasPermissions(2); }
+                catch (CommandSyntaxException e)
+                {
+                    e.printStackTrace();
+                    return false;
+                }
+            })
+            .executes(css -> {
+                ServerPlayer player = css.getSource().getPlayerOrException();
+                ServerLevel level = player.serverLevel();
+                Raid raid = level.getRaidAt(player.blockPosition());
 
-                    MutableComponent result = Component.literal(after ? "Insanity Mode is now activated. What have you done?" : "Insanity Mode is now deactivated. Good.").withStyle(ChatFormatting.DARK_RED);
+                boolean current = DifficultRaidsConfig.INSANITY_MODE.get();
+                DifficultRaidsConfig.INSANITY_MODE.set(!current);
+                boolean after = DifficultRaidsConfig.INSANITY_MODE.get();
 
-                    if(raid != null) result.append(Component.literal(" (This change will apply on the next wave of the current Raid.)"));
+                MutableComponent result = Component.literal(
+                    after
+                        ? "Insanity Mode is now activated. What have you done?"
+                        : "Insanity Mode is now deactivated. Good."
+                ).withStyle(ChatFormatting.DARK_RED);
 
-                    css.getSource().sendSuccess(() -> result, true);
-                    return 1;
-        });
+                if(raid != null)
+                    result.append(Component.literal(" (This change will apply on the next wave of the current Raid.)"));
 
-        dispatcher.register(literalArgumentBuilder);
+                css.getSource().sendSuccess(() -> result, true);
+                return 1;
+            })
+        );
+
+        dispatcher.register(root);
     }
 }

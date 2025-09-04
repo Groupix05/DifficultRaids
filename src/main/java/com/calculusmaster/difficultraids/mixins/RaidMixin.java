@@ -179,8 +179,17 @@ public abstract class RaidMixin
             //Disable GuardVillagers Illusioner spawns
             if(raiderType.toString().equalsIgnoreCase("thebluemengroup"))
                 callbackInfoReturnable.setReturnValue(0);
-            //Disable the regular Dungeons Mobs Illusioner spawns (replaced by a custom re-registration of the RaiderType)
-            else if(raiderType.toString().equals("illusioner"))
+            //Disable the regular Dungeons Mobs Illusioner spawns (replaced by a custom re-registration of the RaiderType) (and Mo' Features and Friends&Foes)
+            else if(raiderType.toString().equals("illusioner") || raiderType.toString().equals("ILLUSIONER"))
+                callbackInfoReturnable.setReturnValue(0);
+            //Disable "necromancer" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("necromancer") || raiderType.toString().equals("NECROMANCER"))
+                callbackInfoReturnable.setReturnValue(0);
+            //Disable "iceologer" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("iceologer") || raiderType.toString().equals("ICEOLOGER"))
+                callbackInfoReturnable.setReturnValue(0);
+            //Disable "cowboy" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("cowboy") || raiderType.toString().equals("COWBOY"))
                 callbackInfoReturnable.setReturnValue(0);
 
             //Check if the Raider Type is enabled

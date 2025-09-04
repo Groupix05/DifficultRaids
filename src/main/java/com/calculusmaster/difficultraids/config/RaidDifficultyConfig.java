@@ -69,8 +69,8 @@ public class RaidDifficultyConfig
         this.skirmisher.initialize();
         this.legioner.initialize();
         this.executioner.initialize();
-//        this.mountaineer.initialize();
-//        this.royalguard.initialize();
-//        this.vindicatorWithShield.initialize();
+        this.mountaineer.initialize();
+        this.royalguard.initialize();
+        this.vindicatorWithShield.initialize();
     }
 }

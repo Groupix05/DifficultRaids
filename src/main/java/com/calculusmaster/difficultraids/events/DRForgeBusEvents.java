@@ -67,6 +67,7 @@ public class DRForgeBusEvents
         ToggleInsanityModeCommand.register(event.getDispatcher());
         DumpRaidWavesCommand.register(event.getDispatcher());
         FreezeRaidersCommand.register(event.getDispatcher());
+        DumpRaidersListCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent

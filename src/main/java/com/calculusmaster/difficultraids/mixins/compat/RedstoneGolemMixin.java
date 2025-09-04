@@ -1,7 +1,7 @@
 package com.calculusmaster.difficultraids.mixins.compat;
 
 import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
-import com.infamous.dungeons_mobs.entities.redstone.RedstoneGolemEntity;
+import net.firefoxsalesman.dungeonsmobs.entity.redstone.RedstoneGolemEntity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerPlayer;

@@ -20,36 +20,36 @@ public class FreezeRaidersCommand
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher)
     {
         LiteralArgumentBuilder<CommandSourceStack> literalArgumentBuilder = Commands
-                .literal("difficultraids_freezeraiders")
-                .requires(css -> {
-                    try { return css.getPlayerOrException().hasPermissions(2); }
-                    catch (CommandSyntaxException e)
-                    {
-                        e.printStackTrace();
-                        return false;
-                    }
-                })
-                .executes(css -> {
-                    ServerPlayer player = css.getSource().getPlayerOrException();
-                    ServerLevel level = player.serverLevel();
-                    Raid raid = level.getRaidAt(player.blockPosition());
+                .literal("difficultraids")
+                .then(Commands.literal("freezeraiders")
+                    .requires(css -> {
+                        try { return css.getPlayerOrException().hasPermissions(2); }
+                        catch (CommandSyntaxException e) {
+                            return false;
+                        }
+                    })
+                    .executes(css -> {
+                        ServerPlayer player = css.getSource().getPlayerOrException();
+                        ServerLevel level = player.serverLevel();
+                        Raid raid = level.getRaidAt(player.blockPosition());
 
-                    if(raid == null) css.getSource().sendFailure(Component.literal("You must be near a Raid to use this command!"));
-                    else
-                    {
-                        List<Raider> alive = raid.getAllRaiders().stream().filter(LivingEntity::isAlive).toList();
-                        alive.forEach(r ->
-                        {
-                            if(r.isNoAi()) r.setNoAi(false);
-                            r.lookAt(css.getSource().getAnchor(), new Vec3(player.getX() - r.getX(), player.getY() - r.getY(), player.getZ() - r.getZ()));
-                            r.setNoAi(true);
-                        });
-                        css.getSource().sendSuccess(() -> Component.literal(alive.size() + " raiders frozen!"), true);
-                    }
+                        if (raid == null) {
+                            css.getSource().sendFailure(Component.literal("You must be near a Raid to use this command!"));
+                        } else {
+                            List<Raider> alive = raid.getAllRaiders().stream().filter(LivingEntity::isAlive).toList();
+                            alive.forEach(r -> {
+                                if (r.isNoAi()) r.setNoAi(false);
+                                r.lookAt(css.getSource().getAnchor(), new Vec3(player.getX() - r.getX(), player.getY() - r.getY(), player.getZ() - r.getZ()));
+                                r.setNoAi(true);
+                            });
+                            css.getSource().sendSuccess(() -> Component.literal(alive.size() + " raiders frozen!"), true);
+                        }
 
-                    return 1;
-                });
+                        return 1;
+                    })
+                );
 
         dispatcher.register(literalArgumentBuilder);
     }
+
 }

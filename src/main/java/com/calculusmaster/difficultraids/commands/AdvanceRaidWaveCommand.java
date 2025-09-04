@@ -19,31 +19,34 @@ public class AdvanceRaidWaveCommand
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher)
     {
         LiteralArgumentBuilder<CommandSourceStack> literalArgumentBuilder = Commands
-                .literal("difficultraids_nextwave")
-                .requires(css -> {
-                        try { return css.getPlayerOrException().hasPermissions(2); }
-                        catch (CommandSyntaxException e)
-                        {
-                            e.printStackTrace();
-                            return false;
-                        }
-                })
-                .executes(css -> {
-                        ServerPlayer player = css.getSource().getPlayerOrException();
-                        ServerLevel level = player.serverLevel();
-                        Raid raid = level.getRaidAt(player.blockPosition());
+                .literal("difficultraids")
+                .then(
+                        Commands.literal("nextwave")
+                                .requires(css -> {
+                                    try { return css.getPlayerOrException().hasPermissions(2); }
+                                    catch (CommandSyntaxException e) {
+                                        e.printStackTrace();
+                                        return false;
+                                    }
+                                })
+                                .executes(css -> {
+                                    ServerPlayer player = css.getSource().getPlayerOrException();
+                                    ServerLevel level = player.serverLevel();
+                                    Raid raid = level.getRaidAt(player.blockPosition());
 
-                        if(raid == null) css.getSource().sendFailure(Component.literal("You must be near a Raid to use this command!"));
-                        else
-                        {
-                            List<Raider> alive = raid.getAllRaiders().stream().filter(LivingEntity::isAlive).toList();
+                                    if (raid == null) {
+                                        css.getSource().sendFailure(Component.literal("You must be near a Raid to use this command!"));
+                                    }
+                                    else {
+                                        List<Raider> alive = raid.getAllRaiders().stream().filter(LivingEntity::isAlive).toList();
 
-                            alive.forEach(LivingEntity::kill);
-                            css.getSource().sendSuccess(() -> Component.literal("Wave successfully cleared!"), true);
-                        }
+                                        alive.forEach(LivingEntity::kill);
+                                        css.getSource().sendSuccess(() -> Component.literal("Wave successfully cleared!"), true);
+                                    }
 
-                        return 1;
-        });
+                                    return 1;
+                                })
+                );
 
         dispatcher.register(literalArgumentBuilder);
     }

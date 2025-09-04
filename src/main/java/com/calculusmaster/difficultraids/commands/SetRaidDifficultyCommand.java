@@ -16,10 +16,10 @@ public class SetRaidDifficultyCommand
 {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher)
     {
-        LiteralArgumentBuilder<CommandSourceStack> literalArgumentBuilder = Commands.literal("difficultraids_raiddifficulty");
+        LiteralArgumentBuilder<CommandSourceStack> raidDifficultyCommand = Commands.literal("raiddifficulty");
 
-        // dr_raiddifficulty get
-        literalArgumentBuilder.then(Commands.literal("get").executes(css -> {
+        // raiddifficulty get
+        raidDifficultyCommand.then(Commands.literal("get").executes(css -> {
             ServerPlayer player = css.getSource().getPlayerOrException();
             Raid raid = player.serverLevel().getRaidAt(player.blockPosition());
 
@@ -39,10 +39,10 @@ public class SetRaidDifficultyCommand
             return 1;
         }));
 
-        // dr_raiddifficulty set <difficulty>
+        // raiddifficulty set <difficulty>
         for(RaidDifficulty difficulty : RaidDifficulty.values())
         {
-            literalArgumentBuilder.then(Commands.literal("set").then(Commands.literal(difficulty.toString().toLowerCase()).requires(css -> {
+            raidDifficultyCommand.then(Commands.literal("set").then(Commands.literal(difficulty.toString().toLowerCase()).requires(css -> {
                 try { return css.getPlayerOrException().hasPermissions(2); }
                 catch(CommandSyntaxException e) { e.printStackTrace(); return false; }
             }).executes(css -> {
@@ -61,12 +61,15 @@ public class SetRaidDifficultyCommand
             })));
         }
 
-        // dr_raiddifficulty info
-        literalArgumentBuilder.then(Commands.literal("info").executes(css -> {
+        // raiddifficulty info
+        raidDifficultyCommand.then(Commands.literal("info").executes(css -> {
             css.getSource().sendSuccess(() -> Component.literal("To select a Raid Difficulty, obtain higher levels of Bad Omen. Level 1 spawns a Default Vanilla Raid, and higher levels spawn tougher Raids added by DifficultRaids (2: Hero, 3: Legend, 4: Master, 5: Grandmaster)."), false);
             return 1;
         }));
 
-        dispatcher.register(literalArgumentBuilder);
+        LiteralArgumentBuilder<CommandSourceStack> mainCommand = Commands.literal("difficultraids")
+                .then(raidDifficultyCommand);
+
+        dispatcher.register(mainCommand);
     }
 }
