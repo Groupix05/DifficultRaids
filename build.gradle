@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
         maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://maven.parchmentmc.org' }
         mavenCentral()
@@ -17,7 +16,7 @@ buildscript {
         
     }
 }
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+
 plugins {
     id 'eclipse'
     id 'maven-publish'
@@ -30,7 +29,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '2.0-beta15'
+version = '2.0-beta16'
 group = 'com.calculusmaster.difficultraids'
 archivesBaseName = 'difficultraids-1.20.1'
 
@@ -38,30 +37,14 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
-    //mappings channel: 'official', version: '1.20.1'
     mappings channel: 'parchment', version: '2023.09.03-1.20.1'
 
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
-
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
-            // The markers can be added/remove as needed separated by commas.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
-
-            // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
-
-            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'difficultraids'
 
             mods {
@@ -75,10 +58,7 @@ minecraft {
             workingDirectory project.file('run')
 
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
-
-            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'difficultraids'
 
             mods {
@@ -88,25 +68,11 @@ minecraft {
             }
         }
 
-        // This run config launches GameTestServer and runs all registered gametests, then exits.
-        // By default, the server will crash when no gametests are provided.
-        // The gametest system is also enabled by default for other run configs under the /test command.
         gameTestServer {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
-            // The markers can be added/remove as needed separated by commas.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
-
-            // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
-
-            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'difficultraids'
 
             mods {
@@ -123,7 +89,6 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', 'difficultraids', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
@@ -142,59 +107,63 @@ repositories {
     maven {
         url "https://cursemaven.com"
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        forRepositories(fg.repository)
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
     //Minecraft
     minecraft 'net.minecraftforge:forge:1.20.1-47.4.0'
 
+    //Sinytra Connector beta46 + FFAPI 0.92.6+1.11.14+1.20.1
+//    minecraftLibrary fg.deobf("curse.maven:sinytra-connector-890127:5761411")
+//    runtimeOnly fg.deobf("curse.maven:forgified-fabric-api-889079:6885853")
+
     // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-
-    // Real mod deobf dependency examples - these get remapped to your current mappings
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
-    // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
-
-    // Examples using mod jars from ./libs
-    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
-
-    // For more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     //Guard Villagers 1.6.7
     implementation fg.deobf("curse.maven:guardvillagers-360203:5619709")
 
     //Villager Recruits 1.13.5
-    implementation fg.deobf("curse.maven:recruits-523860:6646247")
+    compileOnly fg.deobf("curse.maven:recruits-523860:6646247")
 
     //Villager Workers 1.7.9.1
-    implementation fg.deobf("curse.maven:workers-567450:6339807")
+    compileOnly fg.deobf("curse.maven:workers-567450:6339807")
 
     //Hunter'sReturn 11.7.0 + Bagus Lib 5.4.0
-    implementation fg.deobf("curse.maven:huntersreturn-318857:6142107")
+    compileOnly fg.deobf("curse.maven:huntersreturn-318857:6142107")
     implementation fg.deobf("curse.maven:baguslib-866533:6711183")
 
     //Enchant with Mob 11.17.0
-    implementation fg.deobf("curse.maven:enchantwithmob-913523:6593792")
+    compileOnly fg.deobf("curse.maven:enchantwithmob-913523:6593792")
 
     //Illage & Spillage: Respillaged 1.2.8
-    implementation fg.deobf("curse.maven:illage-and-spillage-finally-ported-1079714:6156035")
+    compileOnly fg.deobf("curse.maven:illage-and-spillage-finally-ported-1079714:6156035")
 
     //It Takes a Pillage 1.0.3
-    implementation fg.deobf("curse.maven:it-takes-a-pillage-635843:4981343")
+    compileOnly fg.deobf("curse.maven:it-takes-a-pillage-635843:4981343")
 
     //Savage and Ravage 6.0.0
-    implementation fg.deobf("curse.maven:savage-and-ravage-381736:6040963")
+    compileOnly fg.deobf("curse.maven:savage-and-ravage-381736:6040963")
     implementation fg.deobf("curse.maven:blueprint-382216:5292242")
 
     //Dungeons Mobs port 1.9.2 + GeckoLib 4.7.4
-    implementation fg.deobf("curse.maven:dungeons-mobs-port-1214518:6785377")
+    compileOnly fg.deobf("curse.maven:dungeons-mobs-port-1214518:6785377")
     implementation fg.deobf("curse.maven:geckolib-388172:6920925")
 
     //Leo's Illagers
-    implementation fg.deobf("curse.maven:leos-illagers-812954:6206843")
+    compileOnly fg.deobf("curse.maven:leos-illagers-812954:6206843")
 
     //Pyrologer & Friends
 //    implementation fg.deobf("curse.maven:pyrologer-and-friends-573099:4433602")
@@ -205,134 +174,166 @@ dependencies {
     implementation fg.deobf("curse.maven:curios-api-309927:6418456")
 
     //The Conjurer 1.1.6 + StructureGel 2.16.2
-    implementation fg.deobf("curse.maven:the-conjurer-377798:4733239")
+    compileOnly fg.deobf("curse.maven:the-conjurer-377798:4733239")
     implementation fg.deobf("curse.maven:structure-gel-api-378802:5278429")
 
     //Necromancer Mod Port, Continuation 1.0.0
-    implementation fg.deobf("curse.maven:necromancer-mod-port-continuation-1221478:6557928")
+    compileOnly fg.deobf("curse.maven:necromancer-mod-port-continuation-1221478:6557928")
 
     //Werden's Illagers + 1.1.0
-    implementation fg.deobf("curse.maven:werdens-illagers-1247652:6564785")
+    compileOnly fg.deobf("curse.maven:werdens-illagers-1247652:6564785")
 
     //Guard Illagers 1.0.2
-    implementation fg.deobf("curse.maven:guard-illagers-311899:6502154")
+    compileOnly fg.deobf("curse.maven:guard-illagers-311899:6502154")
 
     //Illager Invasion 8.0.7 + Puzzles Lib 8.1.33
-    implementation fg.deobf("curse.maven:illager-invasion-891324:6192869")
+    compileOnly fg.deobf("curse.maven:illager-invasion-891324:6192869")
     implementation fg.deobf("curse.maven:puzzles-lib-495476:6918565")
 
     //MobZ 4.2.1 + Cloth Config API 11.1.136
-    implementation fg.deobf("curse.maven:mobz-336554:6495914")
+    compileOnly fg.deobf("curse.maven:mobz-336554:6495914")
     implementation fg.deobf("curse.maven:cloth-config-348521:5729105")
 
     //Illager Additions 0.1.0
-    implementation fg.deobf("curse.maven:illager-additions-682835:5643823")
+    compileOnly fg.deobf("curse.maven:illager-additions-682835:5643823")
 
     //The Summoner Illager Port 1.0.0
-    implementation fg.deobf("curse.maven:the-summoner-port-1220635:6557663")
+    compileOnly fg.deobf("curse.maven:the-summoner-port-1220635:6557663")
 
     //Bones Update 1.2.0-1
-    implementation fg.deobf("curse.maven:bones-update-958749:5803104")
+    compileOnly fg.deobf("curse.maven:bones-update-958749:5803104")
 
     //Goety - The Dark Arts 2.5.36.1
-    implementation fg.deobf("curse.maven:goety-586095:6778940")
+    compileOnly fg.deobf("curse.maven:goety-586095:6778940")
 
     //The Modifiger 1.0.0
-    implementation fg.deobf("curse.maven:the-modifiger-1115268:5784152")
+    compileOnly fg.deobf("curse.maven:the-modifiger-1115268:5784152")
 
     //The Masquerade (Illager Boss) 1.2.2
-    implementation fg.deobf("curse.maven:the-masquerade-illager-boss-1074613:5726614")
+    compileOnly fg.deobf("curse.maven:the-masquerade-illager-boss-1074613:5726614")
 
     //Musketeer Illager Port 1.0.1
-    implementation fg.deobf("curse.maven:musketeer-illager-port-1247152:6531882")
+    compileOnly fg.deobf("curse.maven:musketeer-illager-port-1247152:6531882")
 
     //Bagus Mob 4.0.2
-    implementation fg.deobf("curse.maven:bagus-mob-885655:5545460")
+    compileOnly fg.deobf("curse.maven:bagus-mob-885655:5545460")
 
     //Illager Revolution 1.4
-    implementation fg.deobf("curse.maven:illager-revolution-841586:5185405")
+    compileOnly fg.deobf("curse.maven:illager-revolution-841586:5185405")
 
     //Raided 0.1.4
-    implementation fg.deobf("curse.maven:raided-580942:5128249")
+    compileOnly fg.deobf("curse.maven:raided-580942:5128249")
 
     //More Illagers 1.0.7
-    implementation fg.deobf("curse.maven:more-illagers-501714:5620839")
+    compileOnly fg.deobf("curse.maven:more-illagers-501714:5620839")
 
     //Slash Illager 2.0.1 + SlashBlade: Resharped 1.5.49
-    implementation fg.deobf("curse.maven:slash-illager-1024478:5466149")
-    implementation fg.deobf("curse.maven:slashblade-resharped-1022428:6927996")
+    compileOnly fg.deobf("curse.maven:slash-illager-1024478:5466149")
+    compileOnly fg.deobf("curse.maven:slashblade-resharped-1022428:6927996")
 
     //Ravage & Cabbage 1.2.4
-    implementation fg.deobf("curse.maven:ravage-and-cabbage-440594:4787340")
+    compileOnly fg.deobf("curse.maven:ravage-and-cabbage-440594:4787340")
 
     //Brazier 6.1.1
-    implementation fg.deobf("curse.maven:brazier-402616:4702302")
+    compileOnly fg.deobf("curse.maven:brazier-402616:4702302")
 
     //Friends&Foes 3.0.9
-    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:6354624")
+    compileOnly fg.deobf("curse.maven:friends-and-foes-forge-602059:6354624")
 
     //CrimsonSteve's more mobs 1.1.2
-    implementation fg.deobf("curse.maven:crimsonsteves-more-mobs-735413:4718160")
+    compileOnly fg.deobf("curse.maven:crimsonsteves-more-mobs-735413:4718160")
 
     //Mo' Features 1.1
-    implementation fg.deobf("curse.maven:mo-features-416140:4858710")
+    compileOnly fg.deobf("curse.maven:mo-features-416140:4858710")
 
     //All Bark, All Bite 1.0.2
-    implementation fg.deobf("curse.maven:all-bark-all-bite-833755:4817227")
+    compileOnly fg.deobf("curse.maven:all-bark-all-bite-833755:4817227")
 
     //Karate Illager Java Port 1.0.0
-    implementation fg.deobf("curse.maven:karate-illager-finally-ported-1234733:6550373")
+    compileOnly fg.deobf("curse.maven:karate-illager-finally-ported-1234733:6550373")
 
     //Francis's Illagers 1.0.9
-    implementation fg.deobf("curse.maven:francis-illagers-1273063:6681058")
+    compileOnly fg.deobf("curse.maven:francis-illagers-1273063:6681058")
 
     //Sorcerer illager 1.0.1
-    implementation fg.deobf("curse.maven:sorcerer-illager-1314339:6832744")
+    compileOnly fg.deobf("curse.maven:sorcerer-illager-1314339:6832744")
 
     //Illager brute 1.0.0
-    implementation fg.deobf("curse.maven:illager-brute-1250110:6459251")
+    compileOnly fg.deobf("curse.maven:illager-brute-1250110:6459251")
 
     //The Wandering Illagers 1.2
-    implementation fg.deobf("curse.maven:the-wandering-illagers-1245267:6757425")
+    compileOnly fg.deobf("curse.maven:the-wandering-illagers-1245267:6757425")
 
     //Expado's Illagers 1.0.4
-    implementation fg.deobf("curse.maven:expados-illagers-1313064:6863477")
+    compileOnly fg.deobf("curse.maven:expados-illagers-1313064:6863477")
 
     //Just Illagers 1.0.0
-    implementation fg.deobf("curse.maven:just-illagers-1088403:5721200")
+    compileOnly fg.deobf("curse.maven:just-illagers-1088403:5721200")
 
     //Illager World War 1.1.2
-    implementation fg.deobf("curse.maven:illager-world-war-1083239:5808688")
+    compileOnly fg.deobf("curse.maven:illager-world-war-1083239:5808688")
 
     //Colds: Wandering Trader Port 1.0.0
-    implementation fg.deobf("curse.maven:colds-wandering-trader-port-1238387:6535387")
+    compileOnly fg.deobf("curse.maven:colds-wandering-trader-port-1238387:6535387")
 
     //Earth Mobs 10.5.0
-    implementation fg.deobf("curse.maven:earth-mobs-913527:5497489")
+    compileOnly fg.deobf("curse.maven:earth-mobs-913527:5497489")
 
     //PillagersPlus 5.0.7 (no third party)
 //    implementation fg.deobf("curse.maven:pillagersplus-1252604:6864819")
     compileOnly files('libs/pillagersplus-5.0.7-forge-1.20.1.jar')
 
-    //Pillager Boss 1.0.0 (no third party)
-//    implementation fg.deobf("curse.maven:pillager-boss-1181395:6583995")
-    compileOnly files('libs/pillager_boss-1.0.0-forge-1.20.1_after.jar')
+    //Pillager Boss 1.0.0
+    compileOnly fg.deobf("curse.maven:pillager-boss-1181395:6583995")
+//    compileOnly files('libs/pillager_boss-1.0.0-forge-1.20.1_after.jar')
 
     //Mischief Illagers 1.2 (no third party)
 //    implementation fg.deobf("curse.maven:mischief-illagers-1242852:6508234")
     compileOnly files('libs/mischief_illagers-1.2-forge-1.20.1.jar')
 
     //Burning Illagers 1.3.1 (no third party)
-//    implementation fg.deobf("curse.maven:burning-illagers-1227507:6473130")
-    compileOnly files('libs/burning_illagers-1.3.1-forge-1.20.1.jar')
+    compileOnly fg.deobf("curse.maven:burning-illagers-1227507:6473130")
+//    compileOnly files('libs/burning_illagers-1.3.1-forge-1.20.1.jar')
 
     //Illager Universe 1.0.5 (no third party)
 //    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
     compileOnly files('libs/illager_universe-1.0.5-forge-1.20.1.jar')
 
-    //Virtuso's Grand Battle 1.1.0 (no third party)
-//    implementation fg.deobf("curse.maven:virtusos-grand-battle-1328536:6921334")
-    compileOnly files('libs/virtusosgrandbattle-1.1.0-forge-1.20.1.jar')
+    //Virtuso's Grand Battle 1.1.0
+    compileOnly fg.deobf("curse.maven:virtusos-grand-battle-1328536:6964631")
+
+    //Born in Chaos 1.7.2
+    compileOnly fg.deobf("curse.maven:born-in-chaos-686437:6833957")
+
+    //From The Shadows Reborn 2.81
+    compileOnly fg.deobf("curse.maven:from-the-shadow-reborn-986907:6869933")
+
+    //Jerotes Village - Second Round World 1.1.5.7.1 + Jerotes Warehouse 1.1.1
+    compileOnly fg.deobf("curse.maven:jerotes-village-1004844:6947991")
+    compileOnly fg.deobf("curse.maven:jerotes-warehouse-1249728:6951451")
+
+    //Rats 8.1.3 + Citadel 2.6.2
+    compileOnly fg.deobf("curse.maven:rats-323596:5904296")
+    compileOnly fg.deobf("curse.maven:citadel-331936:6702068")
+
+    //WildDelight 1.0.2 + Farmer's Delight 1.2.9
+    compileOnly fg.deobf("curse.maven:wilddelight-1104421:5731548")
+    compileOnly fg.deobf("curse.maven:farmers-delight-398521:6917255")
+
+    //Companions! 1.1.1 + Knight Lib 1.3.1
+    compileOnly fg.deobf("curse.maven:companions-mod-1300341:6930503")
+    compileOnly fg.deobf("curse.maven:knight-lib-1105855:6821911")
+
+    //Kamilskis Additions 1.5.2 + AAA Particles 1.4.11
+    compileOnly fg.deobf("maven.modrinth:kamilskis-additions:1.5.2")
+    compileOnly fg.deobf("curse.maven:aaa-particles-979809:6616719")
+
+    //Eidolon : Repraised 0.3.9.0-alpha.1
+    compileOnly fg.deobf("curse.maven:eidolon-repraised-870250:6907030")
+
+    //Immersive Engineering 10.2.0-183
+    compileOnly fg.deobf("curse.maven:immersive-engineering-231951:6206989")
+
 
 
 
@@ -359,6 +360,10 @@ dependencies {
     implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
     implementation fg.deobf("curse.maven:patchouli-306770:6164575")
 
+    //Ferrite 6.0.1 + Embeddium 0.3.31
+    runtimeOnly fg.deobf("curse.maven:ferritecore-429235:4810975")
+    runtimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
+
 
 
 
@@ -367,10 +372,10 @@ dependencies {
 
     //Iron's Spells 'n Spellbooks 3.4.0.10 + Player Animator 1.0.2-rc1 + Caelus API 3.2.0 + Gambler Illager 1.0.0
     //Doesnt extend Raider, so we cant add them in raids
-    implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6833927")
+    compileOnly fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6833927")
     implementation fg.deobf("curse.maven:playeranimator-658587:4587214")
     implementation fg.deobf("curse.maven:caelus-308989:5281700")
-    implementation fg.deobf("curse.maven:gambler-illager-irons-spells-and-spellbooks-addon-1253824:6908084")
+    compileOnly fg.deobf("curse.maven:gambler-illager-irons-spells-and-spellbooks-addon-1253824:6908084")
 
     //Sensei Illager 1.0.1
     //Doesnt extend Raider, so we cant add them in raids
@@ -398,6 +403,15 @@ dependencies {
     //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:mutant-iceologer-947258:5945048")
 
+    //Illusion Onslaught 1.1.0
+    //Doesnt extend Raider, so we cant add them in raids
+//    implementation fg.deobf("curse.maven:illusion-onslaught-1004933:5681201")
+
+    //Big Bads 1.0.0 (no third party)
+    //Doesnt extend Raider, so we cant add them in raids
+//    implementation fg.deobf("curse.maven:big-bads-1290429:6673976")
+//    compileOnly files('libs/bigbads-1.0.0-forge-1.20.1.jar')
+
     //Spies 1.0.3 (not stable enough)
 //    implementation fg.deobf("curse.maven:spies-984638:5629671")
 
@@ -410,6 +424,17 @@ dependencies {
     //Village and Villagers 1.0.0 + Tickrate API 4.0.0 (doesnt add any illager rn)
 //    implementation fg.deobf("curse.maven:village-and-villagers-1275176:6908041")
 //    implementation fg.deobf("curse.maven:tickrate-api-969702:6830640")
+
+    //Dice Rebuild 1.0.2 (Passive Illager)
+//    implementation fg.deobf("curse.maven:dice-rebuild-1186181:6690515")
+
+    //Frostiful 1.0.11 + Thermoo 2.3.3 + Cardinal Components API 5.2.3 (Not made for raids, and too hard with fabric + forge)
+//    implementation fg.deobf("curse.maven:frostiful-715248:5697270")
+//    implementation fg.deobf("curse.maven:thermoo-846544:5832380")
+//    implementation fg.deobf("curse.maven:cardinal-components-api-318449:6064429")
+
+    //Invade 1.7 (doesnt add any illagers in 1.20.1)
+//    implementation fg.deobf("curse.maven:invade-850484:6637057")
 }
 
 mixin {
@@ -417,7 +442,6 @@ mixin {
     config "difficultraids.mixin.json"
 }
 
-// Example for how to get properties into the manifest for reading at runtime.
 jar {
     manifest {
         attributes([
@@ -432,11 +456,7 @@ jar {
     }
 }
 
-// Example configuration to allow publishing using the maven-publish plugin
-// This is the preferred method to reobfuscate your jar file
 jar.finalizedBy('reobfJar')
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-// publish.dependsOn('reobfJar')
 
 publishing {
     publications {
@@ -453,4 +473,11 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+afterEvaluate {
+    def cleanArtifactJar = Objects.requireNonNull(net.minecraftforge.gradle.common.util.MavenArtifactDownloader.generate(project, "net.minecraft:joined:${project.MCP_VERSION}:srg", true), "Cannot find clean minecraft artifact")
+    minecraft.runs.configureEach {
+        property("connector.clean.path", cleanArtifactJar)
+    }
 }

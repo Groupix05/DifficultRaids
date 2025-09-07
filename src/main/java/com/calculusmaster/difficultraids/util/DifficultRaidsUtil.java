@@ -3,14 +3,16 @@ package com.calculusmaster.difficultraids.util;
 import baguchan.enchantwithmob.registry.ModEntities;
 import baguchan.hunters_return.init.HunterEntityRegistry;
 import baguchan.the_modifiger.registry.ModEntityRegistry;
+import blusunrize.immersiveengineering.common.register.IEEntityTypes;
 import cn.leolezury.leosillagers.init.EntityInit;
 import codyhuh.ravagecabbage.registry.RCEntities;
 import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.belgieyt.morefeatures.core.registry.MFEntity;
-import com.calculusmaster.difficultraids.DifficultRaids;
 import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.github.alexthe666.rats.registry.RatsEntityRegistry;
 import com.infamous.all_bark_all_bite.common.registry.ABABEntityTypes;
+import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
@@ -21,6 +23,7 @@ import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import com.vpillagersgood.burningillagers.init.BurningIllagersModEntities;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
+import elucent.eidolon.registries.EidolonEntities;
 import francisplayz446.karateillagerfinallyported.init.KarateillagerfinallyportedModEntities;
 import fuzs.illagerinvasion.init.ModRegistry;
 import net.francisplayz446.summoner.init.ThesummonerModEntities;
@@ -34,6 +37,7 @@ import net.mcreator.justillagers.init.JustillagersModEntities;
 import net.mcreator.moreillagers.init.MoreIllagersModEntities;
 import net.mcreator.pillagerboss.init.PillagerBossModEntities;
 import net.mcreator.pillagersplus.init.PillagersplusModEntities;
+import net.mcreator.rpg.init.RpgModEntities;
 import net.mcreator.sorcererillager.init.SorcererIllagerModEntities;
 import net.mcreator.virtusosgrandbattle.init.VirtusosgrandbattleModEntities;
 import net.mobz.init.MobZEntities;
@@ -383,6 +387,68 @@ public class DifficultRaidsUtil
                     PillagersplusModEntities.SWORD_PILLAGER.get(),
                     PillagersplusModEntities.SPEAR_PILLAGER.get(),
                     PillagersplusModEntities.HOG_RIDER.get()
+            ));
+        }
+
+        if(Compat.IMMERSIVE_ENGINEERING.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    IEEntityTypes.COMMANDO.get(),
+                    IEEntityTypes.FUSILIER.get(),
+                    IEEntityTypes.BULWARK.get()
+            ));
+        }
+
+        if(Compat.KAMILSKIS_ADDITIONS.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    RpgModEntities.BALLOON_PILLAGER.get(),
+                    RpgModEntities.SILVERFISH_WRANGLER.get()
+            ));
+        }
+
+        if(Compat.EIDOLON_REPRAISED.isLoaded()) BASIC_MAGIC_RAIDERS.add(EidolonEntities.NECROMANCER.get());
+
+        if(Compat.FROM_THE_SHADOWS.isLoaded()) ADVANCED_RAIDERS.add(net.sonmok14.fromtheshadows.server.utils.registry.EntityRegistry.CLERIC.get());
+
+        if(Compat.RATS.isLoaded()) BASIC_MAGIC_RAIDERS.add(RatsEntityRegistry.PIED_PIPER.get());
+
+        if(Compat.WILD_DELIGHT.isLoaded()) STANDARD_RAIDERS.add(bagu_chan.wild_delight.registry.ModEntityTypes.WILD_CHEF.get());
+
+        if(Compat.JEROTES_VILLAGES.isLoaded()) //sipping firepower pourer, Ominous Banner Projection
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    JerotesVillageEntityType.TRUMPETER.get(),
+                    JerotesVillageEntityType.BLASTER.get(),
+                    JerotesVillageEntityType.DEFECTOR.get(),
+                    JerotesVillageEntityType.MAPMAKER.get(),
+                    JerotesVillageEntityType.BANNER_BEARER.get(),
+                    JerotesVillageEntityType.EXECUTIONER.get(),
+                    JerotesVillageEntityType.EXPLORER.get(),
+                    JerotesVillageEntityType.SLAVERY_SUPERVISOR.get(),
+                    JerotesVillageEntityType.CYCLONER.get(),
+                    JerotesVillageEntityType.JAVELIN_THROWER.get(),
+                    JerotesVillageEntityType.ZOMBIE_KEEPER.get(),
+                    JerotesVillageEntityType.WILD_FINDER.get(),
+                    JerotesVillageEntityType.SUBMARINER.get(),
+                    JerotesVillageEntityType.SPIRVE.get()
+            ));
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    JerotesVillageEntityType.TELEPORTER.get(),
+                    JerotesVillageEntityType.LAMP_WIZARD.get(),
+                    JerotesVillageEntityType.BITTER_COLD_SORCERER.get(),
+                    JerotesVillageEntityType.FIRE_SPITTER.get(),
+                    JerotesVillageEntityType.PURPLE_SAND_WITCH.get(),
+                    JerotesVillageEntityType.WITCH_SCHOLAR.get()
+            ));
+            ADVANCED_RAIDERS.addAll(List.of(
+                    JerotesVillageEntityType.AX_CRAZY.get(),
+                    JerotesVillageEntityType.PURPLE_SAND_HAG.get()
+            ));
+            ADVANCED_MAGIC_RAIDERS.addAll(List.of(
+                    JerotesVillageEntityType.NECROMANCY_WARLOCK.get(),
+                    JerotesVillageEntityType.GAVILER.get(),
+                    JerotesVillageEntityType.BIG_WITCH.get()
             ));
         }
     }

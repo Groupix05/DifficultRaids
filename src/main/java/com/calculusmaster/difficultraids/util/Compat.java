@@ -55,7 +55,17 @@ public enum Compat
     MISCHIEF_ILLAGERS("mischief_illagers"),
     VIRTUSOS_GRAND_BATTLE("virtusosgrandbattle"),
     BURNING_ILLAGERS("burning_illagers"),
-    PILLAGERS_PLUS("pillagersplus")
+    PILLAGERS_PLUS("pillagersplus"),
+    IMMERSIVE_ENGINEERING("immersiveengineering"),
+    KAMILSKIS_ADDITIONS("rpg"),
+    EIDOLON_REPRAISED("eidolon"),
+    INVADE("invade"),
+    WILD_DELIGHT("wild_delight"),
+    RATS("rats"),
+    JEROTES_VILLAGES("jerotesvillage"),
+    FROM_THE_SHADOWS("fromtheshadows"),
+    BORN_IN_CHAOS("born_in_chaos_v1"),
+    COMPANIONS("companions")
     ;
 
     private final String modid;

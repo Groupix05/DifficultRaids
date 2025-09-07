@@ -191,6 +191,9 @@ public abstract class RaidMixin
             //Disable "cowboy" spawns (because of conflicts between mods)
             else if(raiderType.toString().equals("cowboy") || raiderType.toString().equals("COWBOY"))
                 callbackInfoReturnable.setReturnValue(0);
+            //Disable "executionner" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("executioner") || raiderType.toString().equals("EXECUTIONER"))
+                callbackInfoReturnable.setReturnValue(0);
 
             //Check if the Raider Type is enabled
             else if(isRegistered && !isEnabled) callbackInfoReturnable.setReturnValue(0);

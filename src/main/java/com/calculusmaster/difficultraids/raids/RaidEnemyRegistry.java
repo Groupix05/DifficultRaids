@@ -1,5 +1,6 @@
 package com.calculusmaster.difficultraids.raids;
 
+import blusunrize.immersiveengineering.common.register.IEEntityTypes;
 import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.belgieyt.morefeatures.core.registry.MFEntity;
 import com.calculusmaster.difficultraids.DifficultRaids;
@@ -8,6 +9,7 @@ import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.util.Compat;
 //import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.mojang.logging.LogUtils;
 import com.pikachu.mod.illager_more.init.ModEntityTypes;
@@ -17,8 +19,6 @@ import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
 import net.mcreator.francisillagers.init.FrancisillagersModEntities;
-import net.mcreator.justillagers.init.JustillagersModEntities;
-import net.mcreator.pillagersplus.init.PillagersplusModEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
@@ -86,7 +86,7 @@ public class RaidEnemyRegistry
 
     //Savage and Ravage
     public static final String GRIEFER = "GRIEFER";
-    public static final String EXECUTIONER = "EXECUTIONER";
+    public static final String EXECUTIONER = "SR_EXECUTIONER";
     public static final String TRICKSTER = "TRICKSTER";
     public static final String ICEOLOGER_SR = "SR_ICEOLOGER";
 
@@ -343,6 +343,60 @@ public class RaidEnemyRegistry
     public static final String SPEAR_PILLAGER = "spear_pillager";
     public static final String HOG_RIDER = "hog_rider";
 
+    //Immersive engineering
+    public static final String BULWARK = "bulwark";
+    public static final String FUSILIER = "fusilier";
+    public static final String COMMANDO = "commando";
+
+    //Kamilskis Additions
+    public static final String BALLOON_PILLAGER = "balloon_pillager";
+    public static final String SILVERFISH_WRANGLER = "silverfish_wrangler";
+
+    //Born in Chaos
+    public static final String MISSIONARY = "missionary_raider";
+
+    //Eidolon: Repraised
+    public static final String NECROMANCER_EIDOLON = "eidolon:necromancer";
+
+    //From the Shadows
+    public static final String CLERIC = "fromtheshadows";
+
+    //Rats
+    public static final String PIED_PIPER = "RATS_PIPER";
+
+    //Wild Delight
+    public static final String WILD_CHEF = "wild_chef";
+
+    //Jerotes Villages
+    public static final String TRUMPETER = "TRUMPETER";
+    public static final String BLASTER = "BLASTER";
+    public static final String DEFECTOR = "DEFECTOR";
+    public static final String MAPMAKER = "MAPMAKER";
+    public static final String BANNER_BEARER = "BANNER_BEARER";
+    public static final String EXECUTIONER_JEROTES = "EXECUTIONER_JEROTES";
+    public static final String EXPLORER = "EXPLORER";
+    public static final String SLAVERY_SUPERVISOR = "SLAVERY_SUPERVISOR";
+    public static final String CYCLONER = "CYCLONER";
+    public static final String JAVELIN_THROWER = "JAVELIN_THROWER";
+    public static final String ZOMBIE_KEEPER = "ZOMBIE_KEEPER";
+    public static final String WILD_FINDER = "WILD_FINDER";
+    public static final String SUBMARINER = "SUBMARINER";
+    public static final String SPIRVE = "SPIRVE";
+    public static final String TELEPORTER = "TELEPORTER";
+    public static final String LAMP_WIZARD = "LAMP_WIZARD";
+    public static final String BITTER_COLD_SORCERER = "BITTER_COLD_SORCERER";
+    public static final String FIRE_SPITTER = "FIRE_SPITTER";
+    public static final String PURPLE_SAND_WITCH = "PURPLE_SAND_WITCH";
+    public static final String WITCH_SCHOLAR = "WITCH_SCHOLAR";
+    public static final String AX_CRAZY = "AX_CRAZY";
+    public static final String PURPLE_SAND_HAG = "PURPLE_SAND_HAG";
+    public static final String NECROMANCY_WARLOCK = "NECROMANCY_WARLOCK";
+    public static final String GAVILER = "GAVILER";
+    public static final String BIG_WITCH = "BIG_WITCH";
+    public static final String FIREPOWER_POURER = "FIREPOWER_POURER";
+    public static final String OMINOUS_BANNER_PROJ = "OMINOUS_BANNER_PROJECTION";
+    public static final String COHORT_HAG = "HAG";
+
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
     public static boolean isRaiderTypeEnabled(String raiderType)
@@ -374,7 +428,11 @@ public class RaidEnemyRegistry
         RaidEnemyRegistry.createRaiderType(VOLDON, VOLDON_ELITE.get());
 
         //Compatibility
-        if(Compat.SAVAGE_AND_RAVAGE.isLoaded()) RaidEnemyRegistry.createRaiderType(ICEOLOGER_SR, SREntityTypes.ICEOLOGER.get());
+        if(Compat.SAVAGE_AND_RAVAGE.isLoaded())
+        {
+            RaidEnemyRegistry.createRaiderType(ICEOLOGER_SR, SREntityTypes.ICEOLOGER.get());
+            RaidEnemyRegistry.createRaiderType(EXECUTIONER, SREntityTypes.EXECUTIONER.get());
+        }
         if(Compat.DUNGEONS_MOBS.isLoaded())
         {
             //RaidEnemyRegistry.createRaiderType(ILLUSIONER_DM, ModEntities.ILLUSIONER.get());
@@ -407,6 +465,13 @@ public class RaidEnemyRegistry
         if(Compat.WANDERING_ILLAGER.isLoaded()) RaidEnemyRegistry.createRaiderType(WANDERING_ILLAGER, de.achtii.wandering_illager.entity.ModEntities.WANDERINGILLAGER.get());
         if(Compat.ILLAGER_ADDITIONS.isLoaded()) RaidEnemyRegistry.createRaiderType(COWBOY, ModEntityTypes.COWBOY.get());
         if(Compat.FRANCIS_ILLAGERS.isLoaded()) RaidEnemyRegistry.createRaiderType(COWBOY_FRANCIS, FrancisillagersModEntities.COWBOY.get());
+        if(Compat.IMMERSIVE_ENGINEERING.isLoaded())
+        {
+            RaidEnemyRegistry.createRaiderType(COMMANDO, IEEntityTypes.COMMANDO.get());
+            RaidEnemyRegistry.createRaiderType(FUSILIER, IEEntityTypes.FUSILIER.get());
+            RaidEnemyRegistry.createRaiderType(BULWARK, IEEntityTypes.BULWARK.get());
+        }
+        if(Compat.JEROTES_VILLAGES.isLoaded()) RaidEnemyRegistry.createRaiderType(EXECUTIONER_JEROTES, JerotesVillageEntityType.EXECUTIONER.get());
     }
 
     public static void compileWaveData(final Map<ResourceLocation, RaiderEntriesHolder> data)
@@ -657,6 +722,44 @@ public class RaidEnemyRegistry
                 .withRaider(SWORD_PILLAGER,         0, 0, 1, 1, 0, 1, 1, 0)
                 .withRaider(SPEAR_PILLAGER,         0, 1, 0, 1, 1, 1, 1, 1)
                 .withRaider(HOG_RIDER,              0, 0, 0, 1, 1, 1, 1, 1)
+                .withRaider(COMMANDO,               0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(FUSILIER,               0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(BULWARK,                0, 0, 0, 1, 0, 0, 0, 0)
+                .withRaider(BALLOON_PILLAGER,       0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(SILVERFISH_WRANGLER,    0, 1, 0, 1, 1, 0, 1, 0)
+                .withRaider(MISSIONARY,             0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(NECROMANCER_EIDOLON,    0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(CLERIC,                 0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(PIED_PIPER,             0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(WILD_CHEF,              0, 0, 1, 0, 1, 0, 1, 0)
+                .withRaider(TRUMPETER,              0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(BLASTER,                0, 1, 0, 0, 1, 0, 0, 1)
+                .withRaider(DEFECTOR,               0, 0, 1, 1, 0, 1, 1, 1)
+                .withRaider(MAPMAKER,               0, 0, 0, 0, 1, 1, 0, 0)
+                .withRaider(BANNER_BEARER,          0, 1, 0, 1, 1, 0, 1, 0)
+                .withRaider(EXECUTIONER_JEROTES,    0, 0, 1, 0, 0, 1, 0, 1)
+                .withRaider(EXPLORER,               0, 1, 0, 1, 1, 0, 1, 0)
+                .withRaider(SLAVERY_SUPERVISOR,     0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(CYCLONER,               0, 0, 1, 0, 1, 0, 1, 0)
+                .withRaider(JAVELIN_THROWER,        0, 1, 0, 1, 1, 0, 1, 1)
+                .withRaider(ZOMBIE_KEEPER,          0, 0, 1, 1, 0, 1, 0, 0)
+                .withRaider(WILD_FINDER,            0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(SUBMARINER,             0, 0, 1, 0, 1, 1, 0, 0)
+                .withRaider(SPIRVE,                 0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(TELEPORTER,             0, 0, 1, 0, 1, 0, 0, 1)
+                .withRaider(LAMP_WIZARD,            0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(BITTER_COLD_SORCERER,   0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(FIRE_SPITTER,           0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(PURPLE_SAND_WITCH,      0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(WITCH_SCHOLAR,          0, 0, 1, 0, 1, 1, 0, 0)
+                .withRaider(AX_CRAZY,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PURPLE_SAND_HAG,        0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NECROMANCY_WARLOCK,     0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(GAVILER,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(BIG_WITCH,              0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(FIREPOWER_POURER,       0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(OMINOUS_BANNER_PROJ,    0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(COHORT_HAG,             0, 0, 0, 0, 0, 0, 0, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -861,6 +964,44 @@ public class RaidEnemyRegistry
                 .withRaider(SWORD_PILLAGER,         0, 1, 2, 2, 1, 2, 2, 1)
                 .withRaider(SPEAR_PILLAGER,         0, 2, 1, 2, 2, 2, 2, 1)
                 .withRaider(HOG_RIDER,              0, 0, 1, 2, 1, 2, 2, 1)
+                .withRaider(COMMANDO,               0, 0, 0, 0, 1, 1, 0, 0)
+                .withRaider(FUSILIER,               0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(BULWARK,                0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(BALLOON_PILLAGER,       0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(SILVERFISH_WRANGLER,    0, 1, 0, 1, 2, 0, 1, 1)
+                .withRaider(MISSIONARY,             0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(NECROMANCER_EIDOLON,    0, 0, 0, 1, 1, 1, 0, 0)
+                .withRaider(CLERIC,                 0, 0, 0, 0, 1, 1, 1, 0)
+                .withRaider(PIED_PIPER,             0, 0, 0, 1, 1, 1, 0, 1)
+                .withRaider(WILD_CHEF,              0, 0, 1, 1, 1, 0, 1, 0)
+                .withRaider(TRUMPETER,              0, 0, 1, 1, 1, 1, 1, 0)
+                .withRaider(BLASTER,                0, 1, 1, 0, 1, 1, 0, 1)
+                .withRaider(DEFECTOR,               0, 1, 1, 1, 1, 2, 1, 1)
+                .withRaider(MAPMAKER,               0, 1, 1, 0, 1, 1, 0, 0)
+                .withRaider(BANNER_BEARER,          0, 1, 0, 1, 1, 1, 1, 0)
+                .withRaider(EXECUTIONER_JEROTES,    0, 0, 1, 1, 0, 1, 0, 1)
+                .withRaider(EXPLORER,               0, 1, 0, 1, 1, 1, 1, 0)
+                .withRaider(SLAVERY_SUPERVISOR,     0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(CYCLONER,               0, 0, 1, 0, 1, 1, 1, 0)
+                .withRaider(JAVELIN_THROWER,        0, 1, 0, 1, 1, 1, 1, 1)
+                .withRaider(ZOMBIE_KEEPER,          0, 0, 1, 1, 1, 1, 0, 0)
+                .withRaider(WILD_FINDER,            0, 1, 0, 1, 1, 0, 1, 0)
+                .withRaider(SUBMARINER,             0, 1, 1, 0, 1, 1, 0, 1)
+                .withRaider(SPIRVE,                 0, 0, 1, 1, 1, 0, 1, 0)
+                .withRaider(TELEPORTER,             0, 0, 1, 1, 1, 0, 1, 1)
+                .withRaider(LAMP_WIZARD,            0, 0, 0, 1, 1, 1, 1, 0)
+                .withRaider(BITTER_COLD_SORCERER,   0, 0, 1, 0, 1, 0, 0, 1)
+                .withRaider(FIRE_SPITTER,           0, 1, 0, 0, 0, 1, 1, 0)
+                .withRaider(PURPLE_SAND_WITCH,      0, 0, 0, 1, 0, 0, 1, 0)
+                .withRaider(WITCH_SCHOLAR,          0, 0, 1, 1, 1, 1, 0, 0)
+                .withRaider(AX_CRAZY,               0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(PURPLE_SAND_HAG,        0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NECROMANCY_WARLOCK,     0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(GAVILER,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(BIG_WITCH,              0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(FIREPOWER_POURER,       0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(OMINOUS_BANNER_PROJ,    0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(COHORT_HAG,             0, 0, 0, 0, 0, 0, 1, 0)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1066,6 +1207,44 @@ public class RaidEnemyRegistry
                 .withRaider(SWORD_PILLAGER,         0, 2, 3, 3, 2, 3, 3, 2)
                 .withRaider(SPEAR_PILLAGER,         0, 3, 2, 3, 3, 3, 3, 2)
                 .withRaider(HOG_RIDER,              0, 1, 2, 2, 2, 3, 2, 2)
+                .withRaider(COMMANDO,               0, 0, 0, 1, 1, 1, 0, 0)
+                .withRaider(FUSILIER,               0, 0, 1, 1, 0, 1, 0, 0)
+                .withRaider(BULWARK,                0, 0, 0, 1, 2, 0, 1, 0)
+                .withRaider(BALLOON_PILLAGER,       0, 1, 2, 1, 2, 1, 1, 1)
+                .withRaider(SILVERFISH_WRANGLER,    0, 1, 0, 1, 2, 0, 1, 1)
+                .withRaider(MISSIONARY,             0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(NECROMANCER_EIDOLON,    0, 0, 1, 1, 2, 1, 0, 1)
+                .withRaider(CLERIC,                 0, 0, 0, 1, 1, 1, 1, 0)
+                .withRaider(PIED_PIPER,             0, 1, 0, 1, 1, 1, 0, 1)
+                .withRaider(WILD_CHEF,              0, 0, 1, 1, 1, 0, 1, 0)
+                .withRaider(TRUMPETER,              0, 0, 1, 1, 1, 1, 1, 0)
+                .withRaider(BLASTER,                0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(DEFECTOR,               0, 1, 1, 1, 1, 2, 1, 1)
+                .withRaider(MAPMAKER,               0, 1, 1, 1, 1, 1, 0, 1)
+                .withRaider(BANNER_BEARER,          0, 1, 1, 1, 1, 1, 1, 0)
+                .withRaider(EXECUTIONER_JEROTES,    0, 0, 1, 1, 1, 1, 0, 1)
+                .withRaider(EXPLORER,               0, 1, 1, 1, 1, 1, 1, 0)
+                .withRaider(SLAVERY_SUPERVISOR,     0, 0, 1, 1, 0, 1, 0, 1)
+                .withRaider(CYCLONER,               0, 1, 1, 0, 1, 1, 1, 0)
+                .withRaider(JAVELIN_THROWER,        0, 1, 1, 1, 2, 1, 1, 1)
+                .withRaider(ZOMBIE_KEEPER,          0, 1, 1, 1, 1, 1, 0, 1)
+                .withRaider(WILD_FINDER,            0, 1, 1, 2, 1, 0, 1, 0)
+                .withRaider(SUBMARINER,             0, 1, 1, 1, 1, 1, 0, 1)
+                .withRaider(SPIRVE,                 0, 0, 1, 1, 1, 1, 1, 0)
+                .withRaider(TELEPORTER,             0, 0, 1, 1, 1, 0, 1, 1)
+                .withRaider(LAMP_WIZARD,            0, 1, 0, 1, 1, 1, 1, 0)
+                .withRaider(BITTER_COLD_SORCERER,   0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(FIRE_SPITTER,           0, 1, 1, 0, 0, 1, 1, 0)
+                .withRaider(PURPLE_SAND_WITCH,      0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(WITCH_SCHOLAR,          0, 0, 1, 1, 2, 1, 1, 1)
+                .withRaider(AX_CRAZY,               0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(PURPLE_SAND_HAG,        0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(NECROMANCY_WARLOCK,     0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(GAVILER,                0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(BIG_WITCH,              0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(FIREPOWER_POURER,       0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(OMINOUS_BANNER_PROJ,    0, 0, 0, 0, 1, 1, 0, 0)
+                .withRaider(COHORT_HAG,             0, 0, 0, 0, 0, 0, 1, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1273,6 +1452,44 @@ public class RaidEnemyRegistry
                 .withRaider(SWORD_PILLAGER,         0, 3, 4, 4, 3, 4, 4, 3)
                 .withRaider(SPEAR_PILLAGER,         0, 4, 3, 4, 4, 4, 4, 3)
                 .withRaider(HOG_RIDER,              0, 2, 3, 2, 3, 4, 3, 3)
+                .withRaider(COMMANDO,               0, 1, 1, 1, 1, 1, 0, 1)
+                .withRaider(FUSILIER,               0, 0, 1, 2, 1, 1, 0, 0)
+                .withRaider(BULWARK,                0, 1, 0, 1, 2, 0, 1, 0)
+                .withRaider(BALLOON_PILLAGER,       0, 2, 2, 2, 2, 1, 2, 1)
+                .withRaider(SILVERFISH_WRANGLER,    0, 1, 1, 2, 2, 0, 1, 1)
+                .withRaider(MISSIONARY,             0, 0, 1, 1, 1, 0, 1, 2)
+                .withRaider(NECROMANCER_EIDOLON,    0, 0, 1, 1, 2, 1, 0, 1)
+                .withRaider(CLERIC,                 0, 1, 0, 1, 1, 2, 1, 1)
+                .withRaider(PIED_PIPER,             0, 1, 1, 2, 1, 1, 1, 1)
+                .withRaider(WILD_CHEF,              0, 1, 1, 1, 2, 1, 1, 1)
+                .withRaider(TRUMPETER,              0, 1, 2, 1, 1, 1, 1, 0)
+                .withRaider(BLASTER,                0, 1, 1, 1, 2, 1, 1, 1)
+                .withRaider(DEFECTOR,               0, 1, 1, 2, 1, 2, 1, 1)
+                .withRaider(MAPMAKER,               0, 1, 2, 1, 1, 1, 1, 1)
+                .withRaider(BANNER_BEARER,          0, 2, 1, 2, 1, 2, 1, 0)
+                .withRaider(EXECUTIONER_JEROTES,    0, 1, 2, 1, 1, 1, 0, 1)
+                .withRaider(EXPLORER,               0, 1, 1, 2, 1, 1, 1, 2)
+                .withRaider(SLAVERY_SUPERVISOR,     0, 0, 1, 1, 1, 1, 0, 1)
+                .withRaider(CYCLONER,               0, 1, 2, 1, 1, 1, 1, 2)
+                .withRaider(JAVELIN_THROWER,        0, 1, 1, 1, 2, 1, 2, 1)
+                .withRaider(ZOMBIE_KEEPER,          0, 1, 2, 1, 1, 2, 1, 1)
+                .withRaider(WILD_FINDER,            0, 2, 1, 2, 1, 0, 1, 0)
+                .withRaider(SUBMARINER,             0, 1, 2, 1, 1, 1, 0, 1)
+                .withRaider(SPIRVE,                 0, 1, 1, 1, 1, 2, 1, 0)
+                .withRaider(TELEPORTER,             0, 1, 1, 2, 1, 0, 1, 1)
+                .withRaider(LAMP_WIZARD,            0, 1, 1, 1, 1, 2, 1, 0)
+                .withRaider(BITTER_COLD_SORCERER,   0, 0, 2, 1, 1, 1, 0, 1)
+                .withRaider(FIRE_SPITTER,           0, 1, 1, 1, 0, 1, 1, 0)
+                .withRaider(PURPLE_SAND_WITCH,      0, 0, 0, 1, 2, 0, 1, 0)
+                .withRaider(WITCH_SCHOLAR,          0, 0, 1, 1, 2, 1, 1, 1)
+                .withRaider(AX_CRAZY,               0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(PURPLE_SAND_HAG,        0, 0, 0, 1, 0, 0, 0, 1)
+                .withRaider(NECROMANCY_WARLOCK,     0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(GAVILER,                0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(BIG_WITCH,              0, 0, 0, 1, 0, 0, 0, 1)
+                .withRaider(FIREPOWER_POURER,       0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(OMINOUS_BANNER_PROJ,    0, 0, 0, 1, 1, 1, 1, 0)
+                .withRaider(COHORT_HAG,             0, 0, 1, 0, 0, 0, 1, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
