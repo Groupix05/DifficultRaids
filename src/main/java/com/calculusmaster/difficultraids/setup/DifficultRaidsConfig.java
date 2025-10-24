@@ -452,6 +452,23 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.FIREPOWER_POURER, GENERAL.define("enableFirepowerPourer", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.OMINOUS_BANNER_PROJ, GENERAL.define("enableOminousBannerProjection", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.COHORT_HAG, GENERAL.define("enableCohortHag", false));
+        GENERAL.pop().push("Requires NO IXAPI");
+        GENERAL.comment("Those settings can be overwritten by NO.IXAPI");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BUGLER, GENERAL.define("enableBugler", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ARMORER, GENERAL.define("enableArmorer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BIOLOGIST, GENERAL.define("enableBiologist", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HUNTER_API, GENERAL.define("enableAPIHunter", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MOURNER, GENERAL.define("enableMourner", true));
+        GENERAL.comment("If you enable the following mobs, make sure to enable them in NO.IXAPI config");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ABOMINATION, GENERAL.define("enableAbomination", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.DRUNKENNESS, GENERAL.define("enableDrunkenness", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.FLAGMAN, GENERAL.define("enableFlagman", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.INTRUDER, GENERAL.define("enableIntruder", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GRAVE_KEEPER, GENERAL.define("enableGraveKeeper", false));
+        GENERAL.pop().push("Requires Roost2");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ROOST_RIDER, GENERAL.define("enableRoostRider", true));
+        GENERAL.pop().push("Requires Snow's Bosses: Mechasent");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MECHASENT, GENERAL.define("enableMechasent", true));
 
         GENERAL.pop();
 

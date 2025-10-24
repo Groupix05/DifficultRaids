@@ -8,6 +8,7 @@ import cn.leolezury.leosillagers.init.EntityInit;
 import codyhuh.ravagecabbage.registry.RCEntities;
 import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.belgieyt.morefeatures.core.registry.MFEntity;
+import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
 import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
 import com.github.alexthe666.rats.registry.RatsEntityRegistry;
@@ -37,6 +38,7 @@ import net.mcreator.justillagers.init.JustillagersModEntities;
 import net.mcreator.moreillagers.init.MoreIllagersModEntities;
 import net.mcreator.pillagerboss.init.PillagerBossModEntities;
 import net.mcreator.pillagersplus.init.PillagersplusModEntities;
+import net.mcreator.roost.init.Roost2ModEntities;
 import net.mcreator.rpg.init.RpgModEntities;
 import net.mcreator.sorcererillager.init.SorcererIllagerModEntities;
 import net.mcreator.virtusosgrandbattle.init.VirtusosgrandbattleModEntities;
@@ -415,7 +417,7 @@ public class DifficultRaidsUtil
 
         if(Compat.WILD_DELIGHT.isLoaded()) STANDARD_RAIDERS.add(bagu_chan.wild_delight.registry.ModEntityTypes.WILD_CHEF.get());
 
-        if(Compat.JEROTES_VILLAGES.isLoaded()) //sipping firepower pourer, Ominous Banner Projection
+        if(Compat.JEROTES_VILLAGES.isLoaded()) //skipping firepower pourer, Ominous Banner Projection
         {
             STANDARD_RAIDERS.addAll(List.of(
                     JerotesVillageEntityType.TRUMPETER.get(),
@@ -450,6 +452,27 @@ public class DifficultRaidsUtil
                     JerotesVillageEntityType.GAVILER.get(),
                     JerotesVillageEntityType.BIG_WITCH.get()
             ));
+        }
+
+        if(Compat.NOXIAPI.isLoaded()) //Other Illagers cannot be added because they dont extend Raider
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    NoixmodAPIEntities.BUGLER.get(),
+                    NoixmodAPIEntities.ARMORER.get(),
+                    NoixmodAPIEntities.HUNTER.get(),
+                    NoixmodAPIEntities.DRUNKENNESS.get(),
+                    NoixmodAPIEntities.FLAGMAN.get()
+            ));
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    NoixmodAPIEntities.MOURNER.get(),
+                    NoixmodAPIEntities.ABOMINATION.get()
+            ));
+            ADVANCED_MAGIC_RAIDERS.add(NoixmodAPIEntities.BIOLOGIST.get());
+        }
+
+        if(Compat.ROOST2.isLoaded())
+        {
+            STANDARD_RAIDERS.add(Roost2ModEntities.ROOST_RIDER.get());
         }
     }
 }

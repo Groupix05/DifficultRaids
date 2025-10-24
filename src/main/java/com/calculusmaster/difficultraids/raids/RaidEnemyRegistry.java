@@ -3,6 +3,7 @@ package com.calculusmaster.difficultraids.raids;
 import blusunrize.immersiveengineering.common.register.IEEntityTypes;
 import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.belgieyt.morefeatures.core.registry.MFEntity;
+import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
 import com.calculusmaster.difficultraids.DifficultRaids;
 import com.calculusmaster.difficultraids.data.raiderentries.RaiderEntriesHolder;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
@@ -397,6 +398,27 @@ public class RaidEnemyRegistry
     public static final String OMINOUS_BANNER_PROJ = "OMINOUS_BANNER_PROJECTION";
     public static final String COHORT_HAG = "HAG";
 
+    //No.IXAPI
+    public static final String BUGLER = "bugler";
+    public static final String ARMORER = "armorer";
+    public static final String BIOLOGIST = "APIBiologist";
+    public static final String HUNTER_API = "APIHunter";
+    public static final String MOURNER = "mourner";
+
+    public static final String ABOMINATION = "abomination";
+    public static final String DRUNKENNESS = "drunkenness";
+    public static final String FLAGMAN = "flagman";
+
+    public static final String INTRUDER = "intruder";
+    public static final String GRAVE_KEEPER = "grave_keeper";
+
+    //Roost2
+    public static final String ROOST_RIDER = "roost_rider";
+
+    //Snows Bosses Mechasent
+    public static final String MECHASENT = "mechasent";
+
+
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
     public static boolean isRaiderTypeEnabled(String raiderType)
@@ -472,6 +494,14 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(BULWARK, IEEntityTypes.BULWARK.get());
         }
         if(Compat.JEROTES_VILLAGES.isLoaded()) RaidEnemyRegistry.createRaiderType(EXECUTIONER_JEROTES, JerotesVillageEntityType.EXECUTIONER.get());
+        if(Compat.NOXIAPI.isLoaded())
+        {
+            RaidEnemyRegistry.createRaiderType(ABOMINATION, NoixmodAPIEntities.ABOMINATION.get());
+            RaidEnemyRegistry.createRaiderType(DRUNKENNESS, NoixmodAPIEntities.DRUNKENNESS.get());
+            RaidEnemyRegistry.createRaiderType(FLAGMAN, NoixmodAPIEntities.FLAGMAN.get());
+            RaidEnemyRegistry.createRaiderType(INTRUDER, NoixmodAPIEntities.INTRUDER.get());
+            RaidEnemyRegistry.createRaiderType(GRAVE_KEEPER, NoixmodAPIEntities.GRAVE_KEEPER.get());
+        }
     }
 
     public static void compileWaveData(final Map<ResourceLocation, RaiderEntriesHolder> data)
@@ -760,6 +790,18 @@ public class RaidEnemyRegistry
                 .withRaider(FIREPOWER_POURER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(OMINOUS_BANNER_PROJ,    0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(COHORT_HAG,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(BUGLER,                 0, 0, 1, 0, 1, 1, 1, 0)
+                .withRaider(ARMORER,                0, 1, 0, 1, 1, 0, 1, 1)
+                .withRaider(BIOLOGIST,              0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(HUNTER_API,             0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(MOURNER,                0, 0, 0, 1, 0, 0, 0, 0)
+                .withRaider(ABOMINATION,            0, 0, 1, 0, 0, 1, 0, 0)
+                .withRaider(DRUNKENNESS,            0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(FLAGMAN,                0, 0, 1, 0, 0, 1, 0, 1)
+                .withRaider(INTRUDER,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(GRAVE_KEEPER,           0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(ROOST_RIDER,            0, 0, 1, 0, 0, 0, 1, 0)
+                .withRaider(MECHASENT,              0, 0, 0, 0, 0, 0, 0, 1)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1002,6 +1044,18 @@ public class RaidEnemyRegistry
                 .withRaider(FIREPOWER_POURER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(OMINOUS_BANNER_PROJ,    0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(COHORT_HAG,             0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(BUGLER,                 0, 0, 1, 0, 2, 1, 1, 0)
+                .withRaider(ARMORER,                0, 1, 1, 2, 1, 0, 1, 1)
+                .withRaider(BIOLOGIST,              0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(HUNTER_API,             0, 0, 0, 0, 1, 1, 1, 0)
+                .withRaider(MOURNER,                0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(ABOMINATION,            0, 0, 1, 1, 0, 1, 1, 0)
+                .withRaider(DRUNKENNESS,            0, 1, 0, 1, 1, 0, 1, 1)
+                .withRaider(FLAGMAN,                0, 0, 1, 1, 0, 1, 0, 1)
+                .withRaider(INTRUDER,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(GRAVE_KEEPER,           0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(ROOST_RIDER,            0, 0, 1, 1, 0, 0, 1, 0)
+                .withRaider(MECHASENT,              0, 0, 0, 0, 0, 1, 1, 0)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1245,6 +1299,18 @@ public class RaidEnemyRegistry
                 .withRaider(FIREPOWER_POURER,       0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(OMINOUS_BANNER_PROJ,    0, 0, 0, 0, 1, 1, 0, 0)
                 .withRaider(COHORT_HAG,             0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(BUGLER,                 0, 0, 1, 1, 2, 1, 1, 1)
+                .withRaider(ARMORER,                0, 1, 1, 2, 1, 1, 1, 1)
+                .withRaider(BIOLOGIST,              0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(HUNTER_API,             0, 0, 1, 0, 1, 2, 1, 0)
+                .withRaider(MOURNER,                0, 1, 0, 1, 0, 1, 0, 1)
+                .withRaider(ABOMINATION,            0, 0, 1, 2, 1, 1, 2, 0)
+                .withRaider(DRUNKENNESS,            0, 1, 0, 1, 2, 0, 1, 1)
+                .withRaider(FLAGMAN,                0, 0, 1, 2, 1, 1, 0, 1)
+                .withRaider(INTRUDER,               0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(GRAVE_KEEPER,           0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(ROOST_RIDER,            0, 0, 1, 1, 1, 1, 1, 0)
+                .withRaider(MECHASENT,              0, 0, 0, 0, 1, 1, 0, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1490,6 +1556,18 @@ public class RaidEnemyRegistry
                 .withRaider(FIREPOWER_POURER,       0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(OMINOUS_BANNER_PROJ,    0, 0, 0, 1, 1, 1, 1, 0)
                 .withRaider(COHORT_HAG,             0, 0, 1, 0, 0, 0, 1, 0)
+                .withRaider(BUGLER,                 0, 1, 2, 1, 2, 1, 1, 1)
+                .withRaider(ARMORER,                0, 1, 1, 2, 2, 1, 2, 1)
+                .withRaider(BIOLOGIST,              0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(HUNTER_API,             0, 0, 1, 1, 1, 2, 1, 0)
+                .withRaider(MOURNER,                0, 1, 1, 1, 0, 1, 0, 1)
+                .withRaider(ABOMINATION,            0, 0, 2, 2, 1, 1, 2, 0)
+                .withRaider(DRUNKENNESS,            0, 1, 1, 1, 2, 1, 1, 1)
+                .withRaider(FLAGMAN,                0, 0, 1, 2, 2, 1, 0, 1)
+                .withRaider(INTRUDER,               0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(GRAVE_KEEPER,           0, 0, 0, 1, 0, 1, 1, 1)
+                .withRaider(ROOST_RIDER,            0, 1, 1, 2, 1, 1, 1, 0)
+                .withRaider(MECHASENT,              0, 0, 0, 0, 1, 2, 0, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

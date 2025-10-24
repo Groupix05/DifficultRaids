@@ -3,6 +3,9 @@ buildscript {
         maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://maven.parchmentmc.org' }
         mavenCentral()
+        flatDir {
+            dir 'libs'
+        }
     }
     dependencies {
         classpath (group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true) { exclude group: 'org.apache.logging.log4j' }
@@ -29,7 +32,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '2.0-beta16'
+version = '2.0-beta17'
 group = 'com.calculusmaster.difficultraids'
 archivesBaseName = 'difficultraids-1.20.1'
 
@@ -118,6 +121,9 @@ repositories {
         filter {
             includeGroup "maven.modrinth"
         }
+    }
+    flatDir {
+        dir 'libs'
     }
 }
 
@@ -281,7 +287,7 @@ dependencies {
 
     //PillagersPlus 5.0.7 (no third party)
 //    implementation fg.deobf("curse.maven:pillagersplus-1252604:6864819")
-    compileOnly files('libs/pillagersplus-5.0.7-forge-1.20.1.jar')
+    compileOnly fg.deobf('libs:pillagersplus:5.0.7-forge-1.20.1')
 
     //Pillager Boss 1.0.0
     compileOnly fg.deobf("curse.maven:pillager-boss-1181395:6583995")
@@ -289,7 +295,7 @@ dependencies {
 
     //Mischief Illagers 1.2 (no third party)
 //    implementation fg.deobf("curse.maven:mischief-illagers-1242852:6508234")
-    compileOnly files('libs/mischief_illagers-1.2-forge-1.20.1.jar')
+    compileOnly fg.deobf('libs:mischief_illagers:1.2-forge-1.20.1')
 
     //Burning Illagers 1.3.1 (no third party)
     compileOnly fg.deobf("curse.maven:burning-illagers-1227507:6473130")
@@ -297,7 +303,7 @@ dependencies {
 
     //Illager Universe 1.0.5 (no third party)
 //    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
-    compileOnly files('libs/illager_universe-1.0.5-forge-1.20.1.jar')
+    compileOnly fg.deobf('libs:illager_universe:1.0.5-forge-1.20.1')
 
     //Virtuso's Grand Battle 1.1.0
     compileOnly fg.deobf("curse.maven:virtusos-grand-battle-1328536:6964631")
@@ -333,6 +339,15 @@ dependencies {
 
     //Immersive Engineering 10.2.0-183
     compileOnly fg.deobf("curse.maven:immersive-engineering-231951:6206989")
+
+    //Snow's Bosses: Mechasent 1.3.2
+    compileOnly fg.deobf("curse.maven:snows-bosses-mechasent-1360069:7090352")
+
+    //No.IXAPI 1.3.7
+    compileOnly fg.deobf("curse.maven:no-ixapi-1300345:7064611")
+
+    //Roost 2 1.0.0
+    compileOnly fg.deobf("curse.maven:roost-2-flying-higher-1126435:5902147")
 
 
 
@@ -412,6 +427,20 @@ dependencies {
 //    implementation fg.deobf("curse.maven:big-bads-1290429:6673976")
 //    compileOnly files('libs/bigbads-1.0.0-forge-1.20.1.jar')
 
+    //Call Of Drowner 0.1.2
+    //Doesnt extend Raider, so we cant add them in raids
+//    implementation fg.deobf("curse.maven:call-of-drowner-1096149:5881336")
+
+    //Goety Revelation 2.2.7
+    //Doesnt extend Raider, so we cant add them in raids
+//    implementation fg.deobf("curse.maven:goety-revelation-1236817:6892481")
+
+    //Golem Dungeons 1.0.3 + L2 Library 2.5.3 + Modular Golems 2.6.12
+    //need to create custom golem with modular golems
+//    implementation fg.deobf("curse.maven:golem-dungeons-1328313:6987539")
+//    implementation fg.deobf("curse.maven:l2library-620203:6806000")
+//    implementation fg.deobf("curse.maven:modulargolems-690937:7047324")
+
     //Spies 1.0.3 (not stable enough)
 //    implementation fg.deobf("curse.maven:spies-984638:5629671")
 
@@ -435,6 +464,8 @@ dependencies {
 
     //Invade 1.7 (doesnt add any illagers in 1.20.1)
 //    implementation fg.deobf("curse.maven:invade-850484:6637057")
+
+
 }
 
 mixin {

@@ -65,7 +65,9 @@ public enum Compat
     JEROTES_VILLAGES("jerotesvillage"),
     FROM_THE_SHADOWS("fromtheshadows"),
     BORN_IN_CHAOS("born_in_chaos_v1"),
-    COMPANIONS("companions")
+    COMPANIONS("companions"),
+    NOXIAPI("noixmodapi"),
+    ROOST2("roost2")
     ;
 
     private final String modid;
