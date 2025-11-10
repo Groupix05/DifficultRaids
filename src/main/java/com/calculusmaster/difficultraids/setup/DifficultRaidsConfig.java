@@ -342,16 +342,16 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.PIKELOGER, GENERAL.define("enablePikeloger", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.GRINDICATOR, GENERAL.define("enableGrindicator", true));
         GENERAL.pop().push("Requires Francis Illagers");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.OMNILLAGER, GENERAL.define("enableOmnillager", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.COWBOY_FRANCIS, GENERAL.define("enableFrancisCowboy", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.THROWER, GENERAL.define("enableThrower", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLADE_GUARD, GENERAL.define("enableBladeGuard", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.RUNNER, GENERAL.define("enableRunner", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.DESERT_ILLAGER, GENERAL.define("enableDesertIllager", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRINDICATOR, GENERAL.define("enableCrindicator", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.CREAKOLOGER, GENERAL.define("enableCreakologer", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.JURGOLOGER, GENERAL.define("enableJurgologer", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLACK_MASTER, GENERAL.define("enableBlackMaster", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PATROLOGER, GENERAL.define("enablePatrologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CHEFAGER, GENERAL.define("enableChefager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GRINDICATOR_FRANCIS, GENERAL.define("enableFrancisGrindicator", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MAGE_FRANCIS, GENERAL.define("enableFrancisMage", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CHEFOLOGER, GENERAL.define("enableChefologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PYROBANDIT, GENERAL.define("enablePyrobandit", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.FIREOLOGER, GENERAL.define("enableFireologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.VRINCITADOR, GENERAL.define("enableVrincitador", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SANDOLOGER, GENERAL.define("enableSandologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GRUMMICATOR, GENERAL.define("enableGrummicator", true));
         GENERAL.pop().push("Requires Earth Mobs");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.VILER_WITCH, GENERAL.define("enableVilerWitch", true));
         GENERAL.pop().push("Requires Illager World War");
@@ -469,6 +469,8 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ROOST_RIDER, GENERAL.define("enableRoostRider", true));
         GENERAL.pop().push("Requires Snow's Bosses: Mechasent");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.MECHASENT, GENERAL.define("enableMechasent", true));
+        GENERAL.pop().push("Requires Ben's Sharks");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.THALASSOGER, GENERAL.define("enableThalassoger", true));
 
         GENERAL.pop();
 

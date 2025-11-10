@@ -32,7 +32,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '2.0-beta17'
+version = '2.0-beta18'
 group = 'com.calculusmaster.difficultraids'
 archivesBaseName = 'difficultraids-1.20.1'
 
@@ -258,8 +258,8 @@ dependencies {
     //Karate Illager Java Port 1.0.0
     compileOnly fg.deobf("curse.maven:karate-illager-finally-ported-1234733:6550373")
 
-    //Francis's Illagers 1.0.9
-    compileOnly fg.deobf("curse.maven:francis-illagers-1273063:6681058")
+    //Francis's Expanded Illagers 1.0.3
+    compileOnly fg.deobf("curse.maven:francis-illagers-1273063:7073764")
 
     //Sorcerer illager 1.0.1
     compileOnly fg.deobf("curse.maven:sorcerer-illager-1314339:6832744")
@@ -349,7 +349,8 @@ dependencies {
     //Roost 2 1.0.0
     compileOnly fg.deobf("curse.maven:roost-2-flying-higher-1126435:5902147")
 
-
+    //Ben's Sharks 1.2.7.1
+    implementation fg.deobf("curse.maven:bens-sharks-987388:6614273")
 
 
 

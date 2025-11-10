@@ -11,6 +11,7 @@ import com.belgieyt.morefeatures.core.registry.MFEntity;
 import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
 import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.github.alexthe666.rats.registry.RatsEntityRegistry;
 import com.infamous.all_bark_all_bite.common.registry.ABABEntityTypes;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
@@ -30,7 +31,6 @@ import fuzs.illagerinvasion.init.ModRegistry;
 import net.francisplayz446.summoner.init.ThesummonerModEntities;
 import net.mcreator.crimson_steves_mobs.init.CrimsonStevesMobsModEntities;
 import net.mcreator.expadosillagers.init.ExpadosIllagersModEntities;
-import net.mcreator.francisillagers.init.FrancisillagersModEntities;
 import net.mcreator.illagerbrute.init.IllagerBruteModEntities;
 import net.mcreator.illageruniverse.init.IllagerUniverseModEntities;
 import net.mcreator.illagerworldwar.init.IllagerWorldWarModEntities;
@@ -40,6 +40,7 @@ import net.mcreator.pillagerboss.init.PillagerBossModEntities;
 import net.mcreator.pillagersplus.init.PillagersplusModEntities;
 import net.mcreator.roost.init.Roost2ModEntities;
 import net.mcreator.rpg.init.RpgModEntities;
+import net.mcreator.sharks.init.BenssharksModEntities;
 import net.mcreator.sorcererillager.init.SorcererIllagerModEntities;
 import net.mcreator.virtusosgrandbattle.init.VirtusosgrandbattleModEntities;
 import net.mobz.init.MobZEntities;
@@ -288,20 +289,22 @@ public class DifficultRaidsUtil
             ));
         }
 
-        if(Compat.FRANCIS_ILLAGERS.isLoaded())
+        if(Compat.FRANCIS_ILLAGERS.isLoaded()) //skipping Grummicator
         {
             STANDARD_RAIDERS.addAll(List.of(
-                    FrancisillagersModEntities.COWBOY.get(),
-                    FrancisillagersModEntities.THROWER.get(),
-                    FrancisillagersModEntities.BLADE_GUARD.get(),
-                    FrancisillagersModEntities.RUNNER.get(),
-                    FrancisillagersModEntities.CRINDICATOR.get(),
-                    FrancisillagersModEntities.LIGHTNING_CALLER.get(),
-                    FrancisillagersModEntities.BLACKMASTER.get(),
-                    FrancisillagersModEntities.CREAKOLOGER.get()
+                    ExpansionModEntities.PATROLOGER.get(),
+                    ExpansionModEntities.CHEFAGER.get(),
+                    ExpansionModEntities.GRINDICATOR.get(),
+                    ExpansionModEntities.MAGE.get(),
+                    ExpansionModEntities.CHEFOLOGER.get(),
+                    ExpansionModEntities.PYROBANDIT.get()
             ));
-            BASIC_MAGIC_RAIDERS.add(FrancisillagersModEntities.JURGOLOGER.get());
-            ADVANCED_RAIDERS.add(FrancisillagersModEntities.OMNILLAGER.get());
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    ExpansionModEntities.SANDOLOGER.get(),
+                    ExpansionModEntities.VRINCITADOR.get(),
+                    ExpansionModEntities.FIREOLOGER.get()
+
+            ));
         }
 
         if(Compat.EARTH_MOBS.isLoaded()) BASIC_MAGIC_RAIDERS.add(baguchan.earthmobsmod.registry.ModEntities.VILER_WITCH.get());
@@ -474,5 +477,7 @@ public class DifficultRaidsUtil
         {
             STANDARD_RAIDERS.add(Roost2ModEntities.ROOST_RIDER.get());
         }
+
+        if(Compat.BENS_SHARKS.isLoaded()) BASIC_MAGIC_RAIDERS.add(BenssharksModEntities.THALASSOGER.get());
     }
 }

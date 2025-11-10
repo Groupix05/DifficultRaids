@@ -10,6 +10,7 @@ import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.util.Compat;
 //import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.mojang.logging.LogUtils;
@@ -19,7 +20,7 @@ import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
-import net.mcreator.francisillagers.init.FrancisillagersModEntities;
+import net.mcreator.expadosillagers.init.ExpadosIllagersModEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
@@ -96,7 +97,7 @@ public class RaidEnemyRegistry
     public static final String ROYAL_GUARD = "royal_guard";
     public static final String GEOMANCER = "geomancer";
     public static final String ILLUSIONER_DM = "DM_ILLUSIONER";
-    public static final String MAGE = "mage";
+    public static final String MAGE = "dungeon_mage";
     public static final String ICEOLOGER_DM = "DM_ICEOLOGER";
     public static final String WINDCALLER = "windcaller";
     public static final String SQUALL_GOLEM = "squall_golem";
@@ -268,19 +269,19 @@ public class RaidEnemyRegistry
     public static final String JUGGERNAUT = "juggernaut";
     public static final String BLUDGEONER = "bludgeoner";
     public static final String PIKELOGER = "pikeloger";
-    public static final String GRINDICATOR = "grindicator";
+    public static final String GRINDICATOR = "expado_grindicator";
 
     //Francis Illagers
-    public static final String OMNILLAGER = "omnillager";
-    public static final String COWBOY_FRANCIS = "cowboy_francis";
-    public static final String THROWER = "thrower";
-    public static final String BLADE_GUARD = "blade_guard";
-    public static final String RUNNER = "runner";
-    public static final String DESERT_ILLAGER = "lightning_caller";
-    public static final String CRINDICATOR = "crindicator";
-    public static final String CREAKOLOGER = "creakologer";
-    public static final String JURGOLOGER = "jurgologer";
-    public static final String BLACK_MASTER = "blackmaster";
+    public static final String PATROLOGER = "patrologer";
+    public static final String CHEFAGER = "chefager";
+    public static final String GRINDICATOR_FRANCIS = "francis_grindicator";
+    public static final String MAGE_FRANCIS = "francis_mage";
+    public static final String CHEFOLOGER = "chefologer";
+    public static final String PYROBANDIT = "pyrobandit";
+    public static final String FIREOLOGER = "fireologer";
+    public static final String VRINCITADOR = "vrincitador";
+    public static final String SANDOLOGER = "sandologer";
+    public static final String GRUMMICATOR = "grummicator";
 
     //Earth Mobs
     public static final String VILER_WITCH = "viler_witch";
@@ -404,11 +405,9 @@ public class RaidEnemyRegistry
     public static final String BIOLOGIST = "APIBiologist";
     public static final String HUNTER_API = "APIHunter";
     public static final String MOURNER = "mourner";
-
     public static final String ABOMINATION = "abomination";
     public static final String DRUNKENNESS = "drunkenness";
     public static final String FLAGMAN = "flagman";
-
     public static final String INTRUDER = "intruder";
     public static final String GRAVE_KEEPER = "grave_keeper";
 
@@ -417,6 +416,9 @@ public class RaidEnemyRegistry
 
     //Snows Bosses Mechasent
     public static final String MECHASENT = "mechasent";
+
+    //Ben's Sharks
+    public static final String THALASSOGER = "thalassoger";
 
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
@@ -459,6 +461,7 @@ public class RaidEnemyRegistry
         {
             //RaidEnemyRegistry.createRaiderType(ILLUSIONER_DM, ModEntities.ILLUSIONER.get());
             RaidEnemyRegistry.createRaiderType(ICEOLOGER_DM, ModEntities.ICEOLOGER.get());
+            RaidEnemyRegistry.createRaiderType(MAGE, ModEntities.MAGE.get());
         }
         if(Compat.CONJURER.isLoaded()) RaidEnemyRegistry.createRaiderType(CONJURER, IllagerEntityTypes.CONJURER);
         //Archevoker and Gambler doesn't extend EntityType Raider, so we cant add them in raids
@@ -486,7 +489,6 @@ public class RaidEnemyRegistry
         if(Compat.MO_FEATURES.isLoaded()) RaidEnemyRegistry.createRaiderType(PILLAGER_BRUTE, MFEntity.PILLAGER_BRUTE.get());
         if(Compat.WANDERING_ILLAGER.isLoaded()) RaidEnemyRegistry.createRaiderType(WANDERING_ILLAGER, de.achtii.wandering_illager.entity.ModEntities.WANDERINGILLAGER.get());
         if(Compat.ILLAGER_ADDITIONS.isLoaded()) RaidEnemyRegistry.createRaiderType(COWBOY, ModEntityTypes.COWBOY.get());
-        if(Compat.FRANCIS_ILLAGERS.isLoaded()) RaidEnemyRegistry.createRaiderType(COWBOY_FRANCIS, FrancisillagersModEntities.COWBOY.get());
         if(Compat.IMMERSIVE_ENGINEERING.isLoaded())
         {
             RaidEnemyRegistry.createRaiderType(COMMANDO, IEEntityTypes.COMMANDO.get());
@@ -501,6 +503,12 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(FLAGMAN, NoixmodAPIEntities.FLAGMAN.get());
             RaidEnemyRegistry.createRaiderType(INTRUDER, NoixmodAPIEntities.INTRUDER.get());
             RaidEnemyRegistry.createRaiderType(GRAVE_KEEPER, NoixmodAPIEntities.GRAVE_KEEPER.get());
+        }
+        if(Compat.EXPADOS_ILLAGERS.isLoaded()) RaidEnemyRegistry.createRaiderType(GRINDICATOR, ExpadosIllagersModEntities.GRINDICATOR.get());
+        if(Compat.FRANCIS_ILLAGERS.isLoaded())
+        {
+            RaidEnemyRegistry.createRaiderType(GRINDICATOR_FRANCIS, ExpansionModEntities.GRINDICATOR.get());
+            RaidEnemyRegistry.createRaiderType(MAGE_FRANCIS, ExpansionModEntities.MAGE.get());
         }
     }
 
@@ -700,16 +708,16 @@ public class RaidEnemyRegistry
                 .withRaider(BLUDGEONER,             0, 1, 0, 1, 0, 1, 1, 1)
                 .withRaider(PIKELOGER,              0, 0, 1, 1, 1, 1, 1, 1)
                 .withRaider(GRINDICATOR,            0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(OMNILLAGER,             0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(COWBOY_FRANCIS,         0, 2, 2, 2, 1, 3, 2, 2)
-                .withRaider(THROWER,                0, 0, 1, 1, 0, 1, 2, 0)
-                .withRaider(BLADE_GUARD,            0, 0, 1, 1, 0, 1, 0, 0)
-                .withRaider(RUNNER,                 0, 1, 1, 0, 1, 1, 1, 0)
-                .withRaider(DESERT_ILLAGER,         0, 1, 1, 2, 1, 2, 2, 1)
-                .withRaider(CRINDICATOR,            0, 0, 0, 1, 1, 0, 0, 0)
-                .withRaider(CREAKOLOGER,            0, 0, 1, 0, 0, 1, 0, 1)
-                .withRaider(JURGOLOGER,             0, 1, 1, 1, 0, 1, 1, 1)
-                .withRaider(BLACK_MASTER,           0, 0, 1, 0, 1, 0, 0, 1)
+                .withRaider(PATROLOGER,             0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(CHEFAGER,               0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(GRINDICATOR_FRANCIS,    0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(MAGE_FRANCIS,           0, 0, 0, 1, 1, 0, 1, 1)
+                .withRaider(CHEFOLOGER,             0, 0, 0, 0, 1, 1, 0, 0)
+                .withRaider(PYROBANDIT,             0, 0, 0, 1, 0, 0, 1, 0)
+                .withRaider(FIREOLOGER,             0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(VRINCITADOR,            0, 0, 0, 1, 0, 0, 1, 0)
+                .withRaider(SANDOLOGER,             0, 0, 1, 0, 0, 1, 0, 1)
+                .withRaider(GRUMMICATOR,            0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(VILER_WITCH,            0, 0, 1, 1, 0, 1, 1, 1)
                 .withRaider(PILLAGER_CAR,           0, 0, 0, 1, 0, 1, 0, 0)
                 .withRaider(PILLAGER_SOLDIER,       0, 0, 1, 1, 1, 0, 1, 1)
@@ -802,6 +810,7 @@ public class RaidEnemyRegistry
                 .withRaider(GRAVE_KEEPER,           0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(ROOST_RIDER,            0, 0, 1, 0, 0, 0, 1, 0)
                 .withRaider(MECHASENT,              0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(THALASSOGER,            0, 0, 1, 0, 1, 0, 0, 1)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -954,16 +963,16 @@ public class RaidEnemyRegistry
                 .withRaider(BLUDGEONER,             0, 1, 0, 1, 0, 1, 1, 1)
                 .withRaider(PIKELOGER,              0, 0, 1, 1, 1, 1, 1, 1)
                 .withRaider(GRINDICATOR,            0, 0, 0, 0, 0, 0, 0, 1)
-                .withRaider(OMNILLAGER,             0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(COWBOY_FRANCIS,         0, 2, 3, 3, 2, 4, 3, 3)
-                .withRaider(THROWER,                0, 1, 2, 2, 1, 1, 2, 2)
-                .withRaider(BLADE_GUARD,            0, 0, 1, 2, 1, 1, 0, 1)
-                .withRaider(RUNNER,                 0, 2, 2, 1, 2, 2, 1, 0)
-                .withRaider(DESERT_ILLAGER,         0, 1, 2, 3, 2, 3, 3, 2)
-                .withRaider(CRINDICATOR,            0, 0, 0, 1, 2, 0, 1, 1)
-                .withRaider(CREAKOLOGER,            0, 0, 1, 1, 0, 1, 1, 1)
-                .withRaider(JURGOLOGER,             0, 1, 2, 2, 1, 1, 2, 1)
-                .withRaider(BLACK_MASTER,           0, 0, 1, 0, 1, 1, 1, 1)
+                .withRaider(PATROLOGER,             0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(CHEFAGER,               0, 0, 1, 1, 1, 1, 0, 1)
+                .withRaider(GRINDICATOR_FRANCIS,    0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(MAGE_FRANCIS,           0, 0, 1, 1, 1, 0, 2, 1)
+                .withRaider(CHEFOLOGER,             0, 0, 0, 1, 1, 2, 0, 0)
+                .withRaider(PYROBANDIT,             0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(FIREOLOGER,             0, 0, 1, 1, 1, 2, 1, 1)
+                .withRaider(VRINCITADOR,            0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(SANDOLOGER,             0, 1, 1, 0, 1, 1, 0, 1)
+                .withRaider(GRUMMICATOR,            0, 0, 0, 0, 1, 0, 1, 0)
                 .withRaider(VILER_WITCH,            0, 1, 1, 2, 1, 2, 2, 1)
                 .withRaider(PILLAGER_CAR,           0, 0, 1, 1, 0, 1, 1, 0)
                 .withRaider(PILLAGER_SOLDIER,       0, 1, 1, 2, 1, 2, 2, 1)
@@ -1056,6 +1065,7 @@ public class RaidEnemyRegistry
                 .withRaider(GRAVE_KEEPER,           0, 0, 0, 0, 0, 1, 1, 0)
                 .withRaider(ROOST_RIDER,            0, 0, 1, 1, 0, 0, 1, 0)
                 .withRaider(MECHASENT,              0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(THALASSOGER,            0, 0, 1, 0, 1, 1, 1, 1)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1209,16 +1219,16 @@ public class RaidEnemyRegistry
                 .withRaider(BLUDGEONER,             0, 1, 0, 2, 1, 1, 2, 1)
                 .withRaider(PIKELOGER,              0, 1, 2, 2, 2, 2, 2, 2)
                 .withRaider(GRINDICATOR,            0, 0, 0, 0, 0, 1, 0, 1)
-                .withRaider(OMNILLAGER,             0, 0, 0, 0, 1, 0, 0, 1)
-                .withRaider(COWBOY_FRANCIS,         0, 3, 4, 4, 3, 5, 4, 4)
-                .withRaider(THROWER,                0, 2, 3, 3, 3, 2, 3, 2)
-                .withRaider(BLADE_GUARD,            0, 1, 2, 2, 2, 1, 1, 1)
-                .withRaider(RUNNER,                 0, 3, 3, 2, 2, 2, 2, 1)
-                .withRaider(DESERT_ILLAGER,         0, 2, 3, 4, 2, 4, 4, 3)
-                .withRaider(CRINDICATOR,            0, 1, 2, 1, 2, 0, 1, 1)
-                .withRaider(CREAKOLOGER,            0, 1, 1, 2, 1, 1, 1, 2)
-                .withRaider(JURGOLOGER,             0, 1, 2, 2, 1, 1, 2, 1)
-                .withRaider(BLACK_MASTER,           0, 0, 1, 1, 2, 1, 2, 2)
+                .withRaider(PATROLOGER,             0, 0, 1, 1, 0, 1, 1, 1)
+                .withRaider(CHEFAGER,               0, 0, 1, 1, 2, 1, 0, 1)
+                .withRaider(GRINDICATOR_FRANCIS,    0, 0, 0, 0, 0, 1, 1, 1)
+                .withRaider(MAGE_FRANCIS,           0, 1, 1, 2, 1, 1, 2, 1)
+                .withRaider(CHEFOLOGER,             0, 0, 1, 1, 1, 2, 0, 0)
+                .withRaider(PYROBANDIT,             0, 0, 0, 1, 1, 1, 1, 0)
+                .withRaider(FIREOLOGER,             0, 0, 1, 2, 2, 2, 1, 1)
+                .withRaider(VRINCITADOR,            0, 0, 0, 1, 1, 1, 1, 0)
+                .withRaider(SANDOLOGER,             0, 1, 1, 1, 2, 1, 1, 1)
+                .withRaider(GRUMMICATOR,            0, 0, 0, 0, 1, 1, 1, 0)
                 .withRaider(VILER_WITCH,            0, 2, 2, 2, 2, 3, 2, 1)
                 .withRaider(PILLAGER_CAR,           0, 1, 1, 1, 1, 2, 2, 1)
                 .withRaider(PILLAGER_SOLDIER,       0, 2, 2, 3, 2, 3, 2, 2)
@@ -1311,6 +1321,7 @@ public class RaidEnemyRegistry
                 .withRaider(GRAVE_KEEPER,           0, 0, 0, 1, 0, 1, 1, 0)
                 .withRaider(ROOST_RIDER,            0, 0, 1, 1, 1, 1, 1, 0)
                 .withRaider(MECHASENT,              0, 0, 0, 0, 1, 1, 0, 1)
+                .withRaider(THALASSOGER,            0, 1, 1, 1, 1, 1, 1, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1466,16 +1477,16 @@ public class RaidEnemyRegistry
                 .withRaider(BLUDGEONER,             0, 1, 1, 2, 2, 2, 2, 1)
                 .withRaider(PIKELOGER,              0, 2, 2, 3, 3, 3, 2, 2)
                 .withRaider(GRINDICATOR,            0, 0, 0, 1, 0, 1, 0, 1)
-                .withRaider(OMNILLAGER,             0, 0, 0, 1, 1, 0, 0, 1)
-                .withRaider(COWBOY_FRANCIS,         0, 4, 5, 5, 4, 6, 5, 5)
-                .withRaider(THROWER,                0, 3, 3, 4, 4, 3, 3, 2)
-                .withRaider(BLADE_GUARD,            0, 2, 2, 3, 3, 2, 3, 3)
-                .withRaider(RUNNER,                 0, 3, 4, 3, 3, 3, 2, 3)
-                .withRaider(DESERT_ILLAGER,         0, 3, 4, 5, 3, 5, 4, 3)
-                .withRaider(CRINDICATOR,            0, 1, 2, 2, 2, 1, 1, 1)
-                .withRaider(CREAKOLOGER,            0, 1, 2, 2, 2, 1, 2, 3)
-                .withRaider(JURGOLOGER,             0, 1, 2, 3, 1, 2, 2, 2)
-                .withRaider(BLACK_MASTER,           0, 1, 1, 2, 3, 2, 2, 3)
+                .withRaider(PATROLOGER,             0, 1, 1, 1, 1, 2, 1, 1)
+                .withRaider(CHEFAGER,               0, 1, 1, 2, 2, 1, 1, 2)
+                .withRaider(GRINDICATOR_FRANCIS,    0, 0, 0, 1, 0, 1, 1, 1)
+                .withRaider(MAGE_FRANCIS,           0, 1, 2, 2, 1, 2, 3, 1)
+                .withRaider(CHEFOLOGER,             0, 0, 1, 1, 2, 2, 0, 1)
+                .withRaider(PYROBANDIT,             0, 1, 0, 1, 1, 2, 1, 0)
+                .withRaider(FIREOLOGER,             0, 1, 2, 2, 2, 3, 1, 1)
+                .withRaider(VRINCITADOR,            0, 0, 1, 2, 1, 1, 1, 1)
+                .withRaider(SANDOLOGER,             0, 1, 2, 1, 2, 2, 1, 2)
+                .withRaider(GRUMMICATOR,            0, 0, 1, 0, 1, 1, 1, 1)
                 .withRaider(VILER_WITCH,            0, 2, 3, 2, 3, 4, 2, 2)
                 .withRaider(PILLAGER_CAR,           0, 1, 2, 2, 1, 2, 2, 1)
                 .withRaider(PILLAGER_SOLDIER,       0, 2, 3, 3, 3, 4, 3, 3)
@@ -1568,6 +1579,7 @@ public class RaidEnemyRegistry
                 .withRaider(GRAVE_KEEPER,           0, 0, 0, 1, 0, 1, 1, 1)
                 .withRaider(ROOST_RIDER,            0, 1, 1, 2, 1, 1, 1, 0)
                 .withRaider(MECHASENT,              0, 0, 0, 0, 1, 2, 0, 1)
+                .withRaider(THALASSOGER,            0, 1, 1, 2, 1, 1, 2, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

@@ -194,6 +194,12 @@ public abstract class RaidMixin
             //Disable "executionner" spawns (because of conflicts between mods)
             else if(raiderType.toString().equals("executioner") || raiderType.toString().equals("EXECUTIONER"))
                 callbackInfoReturnable.setReturnValue(0);
+            //Disable "grindicator" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("grindicator") || raiderType.toString().equals("GRINDICATOR"))
+                callbackInfoReturnable.setReturnValue(0);
+            //Disable "mage" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("mage") || raiderType.toString().equals("MAGE"))
+                callbackInfoReturnable.setReturnValue(0);
 
             //Check if the Raider Type is enabled
             else if(isRegistered && !isEnabled) callbackInfoReturnable.setReturnValue(0);
