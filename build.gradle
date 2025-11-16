@@ -32,7 +32,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '2.0-beta18'
+version = '2.0-beta19'
 group = 'com.calculusmaster.difficultraids'
 archivesBaseName = 'difficultraids-1.20.1'
 
@@ -186,8 +186,8 @@ dependencies {
     //Necromancer Mod Port, Continuation 1.0.0
     compileOnly fg.deobf("curse.maven:necromancer-mod-port-continuation-1221478:6557928")
 
-    //Werden's Illagers + 1.1.0
-    compileOnly fg.deobf("curse.maven:werdens-illagers-1247652:6564785")
+    //Werden's Illagers + 1.2.1
+    compileOnly fg.deobf("curse.maven:werdens-illagers-1247652:7224667")
 
     //Guard Illagers 1.0.2
     compileOnly fg.deobf("curse.maven:guard-illagers-311899:6502154")
@@ -291,15 +291,13 @@ dependencies {
 
     //Pillager Boss 1.0.0
     compileOnly fg.deobf("curse.maven:pillager-boss-1181395:6583995")
-//    compileOnly files('libs/pillager_boss-1.0.0-forge-1.20.1_after.jar')
 
     //Mischief Illagers 1.2 (no third party)
 //    implementation fg.deobf("curse.maven:mischief-illagers-1242852:6508234")
     compileOnly fg.deobf('libs:mischief_illagers:1.2-forge-1.20.1')
 
-    //Burning Illagers 1.3.1 (no third party)
+    //Burning Illagers 1.3.1
     compileOnly fg.deobf("curse.maven:burning-illagers-1227507:6473130")
-//    compileOnly files('libs/burning_illagers-1.3.1-forge-1.20.1.jar')
 
     //Illager Universe 1.0.5 (no third party)
 //    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
@@ -350,7 +348,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:roost-2-flying-higher-1126435:5902147")
 
     //Ben's Sharks 1.2.7.1
-    implementation fg.deobf("curse.maven:bens-sharks-987388:6614273")
+    compileOnly fg.deobf("curse.maven:bens-sharks-987388:6614273")
 
 
 

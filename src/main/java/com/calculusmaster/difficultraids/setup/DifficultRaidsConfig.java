@@ -217,6 +217,7 @@ public class DifficultRaidsConfig
         GENERAL.pop().push("Requires Werden's Illagers +");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SINISTER, GENERAL.define("enableSinister", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SHADOMANCER, GENERAL.define("enableShadomancer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RHINAGER, GENERAL.define("enableRhinager", true));
         //GENERAL.pop().push("Requires Iron's Spells and Spellbooks");
         //ENABLED_RAIDERS.put(RaidEnemyRegistry.ARCHEVOKER, GENERAL.define("enableArchevoker", true));
         //GENERAL.pop().push("Requires Gambler Illager");

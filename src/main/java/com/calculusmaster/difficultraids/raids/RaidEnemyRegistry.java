@@ -129,6 +129,7 @@ public class RaidEnemyRegistry
     //Werden's Illagers +
     public static final String SINISTER = "sinister";
     public static final String SHADOMANCER = "shadomancer";
+    public static final String RHINAGER = "rhino";
 
     //Iron's Spells and Spellbooks
     public static final String ARCHEVOKER = "archevoker";
@@ -621,6 +622,7 @@ public class RaidEnemyRegistry
                 .withRaider(NECROMANCER_MOD,        0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(SINISTER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SHADOMANCER,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(RHINAGER,               0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(ARCHEVOKER,             0, 0, 0, 1, 0, 0, 0, 0)
                 .withRaider(GAMBLER,                0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(GUARD_ILLAGER,          0, 1, 1, 2, 1, 2, 1, 1)
@@ -876,6 +878,7 @@ public class RaidEnemyRegistry
                 .withRaider(NECROMANCER_MOD,        0, 0, 1, 0, 0, 0, 1, 1)
                 .withRaider(SINISTER,               0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(SHADOMANCER,            0, 0, 0, 1, 0, 0, 0, 0)
+                .withRaider(RHINAGER,               0, 0, 0, 0, 0, 1, 1, 1)
                 .withRaider(ARCHEVOKER,             0, 0, 0, 1, 1, 0, 0, 0)
                 .withRaider(GAMBLER,                0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(GUARD_ILLAGER,          0, 2, 2, 2, 2, 3, 2, 2)
@@ -1132,6 +1135,7 @@ public class RaidEnemyRegistry
                 .withRaider(NECROMANCER_MOD,        0, 1, 1, 0, 0, 1, 1, 2)
                 .withRaider(SINISTER,               0, 0, 0, 1, 1, 0, 0, 0)
                 .withRaider(SHADOMANCER,            0, 0, 1, 1, 0, 0, 0, 1)
+                .withRaider(RHINAGER,               0, 0, 1, 1, 0, 1, 1, 1)
                 .withRaider(ARCHEVOKER,             0, 0, 1, 1, 1, 1, 0, 0)
                 .withRaider(GAMBLER,                0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(GUARD_ILLAGER,          0, 2, 5, 4, 2, 3, 3, 4)
@@ -1390,6 +1394,7 @@ public class RaidEnemyRegistry
                 .withRaider(NECROMANCER_MOD,        0, 1, 2, 1, 0, 1, 2, 2)
                 .withRaider(SINISTER,               0, 0, 0, 1, 1, 0, 1, 2)
                 .withRaider(SHADOMANCER,            0, 0, 1, 1, 0, 0, 1, 0)
+                .withRaider(RHINAGER,               0, 0, 1, 2, 0, 2, 1, 2)
                 .withRaider(ARCHEVOKER,             0, 0, 1, 2, 1, 1, 0, 0)
                 .withRaider(GAMBLER,                0, 0, 1, 0, 1, 2, 0, 0)
                 .withRaider(GUARD_ILLAGER,          0, 3, 6, 4, 3, 5, 4, 4)
