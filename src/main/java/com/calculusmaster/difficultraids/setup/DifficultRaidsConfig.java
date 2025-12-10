@@ -396,11 +396,6 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.MAGNETIZER, GENERAL.define("enableMagnetizer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.PHOTOGRAPHER, GENERAL.define("enablePhotographer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.PARTYGER, GENERAL.define("enablePartyger", true));
-        GENERAL.pop().push("Requires Burning Illagers");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.MICROMANCER, GENERAL.define("enableMicromancer", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.DISVOKER, GENERAL.define("enableDisvoker", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.GHARZUL, GENERAL.define("enableGharzul", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.RAVAMAGE, GENERAL.define("enableRavamage", true));
         GENERAL.pop().push("Requires Pillagers Plus");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SWORD_PILLAGER, GENERAL.define("enableSwordPillager", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SPEAR_PILLAGER, GENERAL.define("enableSpearIllager", true));

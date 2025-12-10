@@ -335,12 +335,6 @@ public class RaidEnemyRegistry
     public static final String PHOTOGRAPHER = "photographer";
     public static final String PARTYGER = "partyger";
 
-    //Burning Illagers
-    public static final String MICROMANCER = "micromancer";
-    public static final String DISVOKER = "disvoker";
-    public static final String GHARZUL = "gharzul";
-    public static final String RAVAMAGE = "ravamage";
-
     //Pillagers Plus
     public static final String SWORD_PILLAGER = "sword_pillager";
     public static final String SPEAR_PILLAGER = "spear_pillager";
@@ -755,10 +749,6 @@ public class RaidEnemyRegistry
                 .withRaider(MAGNETIZER,             0, 0, 0, 1, 1, 0, 1, 0)
                 .withRaider(PHOTOGRAPHER,           0, 0, 0, 1, 1, 0, 1, 0)
                 .withRaider(PARTYGER,               0, 0, 1, 0, 0, 1, 1, 1)
-                .withRaider(MICROMANCER,            0, 0, 1, 1, 1, 0, 1, 0)
-                .withRaider(DISVOKER,               0, 0, 0, 1, 1, 1, 0, 1)
-                .withRaider(GHARZUL,                0, 0, 1, 0, 1, 1, 0, 0)
-                .withRaider(RAVAMAGE,               0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(SWORD_PILLAGER,         0, 0, 1, 1, 0, 1, 1, 0)
                 .withRaider(SPEAR_PILLAGER,         0, 1, 0, 1, 1, 1, 1, 1)
                 .withRaider(HOG_RIDER,              0, 0, 0, 1, 1, 1, 1, 1)
@@ -1011,10 +1001,6 @@ public class RaidEnemyRegistry
                 .withRaider(MAGNETIZER,             0, 0, 0, 1, 1, 1, 1, 0)
                 .withRaider(PHOTOGRAPHER,           0, 1, 0, 2, 2, 0, 1, 0)
                 .withRaider(PARTYGER,               0, 0, 1, 0, 1, 2, 1, 1)
-                .withRaider(MICROMANCER,            0, 1, 1, 2, 1, 0, 1, 0)
-                .withRaider(DISVOKER,               0, 1, 0, 1, 1, 2, 1, 1)
-                .withRaider(GHARZUL,                0, 0, 1, 1, 2, 1, 0, 1)
-                .withRaider(RAVAMAGE,               0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(SWORD_PILLAGER,         0, 1, 2, 2, 1, 2, 2, 1)
                 .withRaider(SPEAR_PILLAGER,         0, 2, 1, 2, 2, 2, 2, 1)
                 .withRaider(HOG_RIDER,              0, 0, 1, 2, 1, 2, 2, 1)
@@ -1268,10 +1254,6 @@ public class RaidEnemyRegistry
                 .withRaider(MAGNETIZER,             0, 0, 1, 2, 2, 1, 1, 1)
                 .withRaider(PHOTOGRAPHER,           0, 1, 1, 2, 3, 1, 1, 0)
                 .withRaider(PARTYGER,               0, 0, 2, 1, 2, 3, 2, 2)
-                .withRaider(MICROMANCER,            0, 1, 2, 2, 2, 1, 1, 1)
-                .withRaider(DISVOKER,               0, 1, 1, 2, 1, 2, 2, 1)
-                .withRaider(GHARZUL,                0, 1, 2, 1, 2, 1, 1, 2)
-                .withRaider(RAVAMAGE,               0, 0, 0, 0, 1, 1, 1, 1)
                 .withRaider(SWORD_PILLAGER,         0, 2, 3, 3, 2, 3, 3, 2)
                 .withRaider(SPEAR_PILLAGER,         0, 3, 2, 3, 3, 3, 3, 2)
                 .withRaider(HOG_RIDER,              0, 1, 2, 2, 2, 3, 2, 2)
@@ -1527,10 +1509,6 @@ public class RaidEnemyRegistry
                 .withRaider(MAGNETIZER,             0, 1, 2, 3, 2, 2, 1, 1)
                 .withRaider(PHOTOGRAPHER,           0, 1, 2, 2, 3, 2, 2, 1)
                 .withRaider(PARTYGER,               0, 1, 2, 2, 3, 3, 2, 3)
-                .withRaider(MICROMANCER,            0, 2, 2, 2, 3, 2, 2, 2)
-                .withRaider(DISVOKER,               0, 2, 2, 3, 2, 3, 3, 2)
-                .withRaider(GHARZUL,                0, 2, 3, 2, 2, 2, 2, 2)
-                .withRaider(RAVAMAGE,               0, 0, 1, 0, 1, 2, 1, 2)
                 .withRaider(SWORD_PILLAGER,         0, 3, 4, 4, 3, 4, 4, 3)
                 .withRaider(SPEAR_PILLAGER,         0, 4, 3, 4, 4, 4, 4, 3)
                 .withRaider(HOG_RIDER,              0, 2, 3, 2, 3, 4, 3, 3)

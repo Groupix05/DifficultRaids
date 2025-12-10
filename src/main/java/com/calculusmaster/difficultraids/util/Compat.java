@@ -54,7 +54,6 @@ public enum Compat
     PILLAGER_BOSS("pillager_boss"),
     MISCHIEF_ILLAGERS("mischief_illagers"),
     VIRTUSOS_GRAND_BATTLE("virtusosgrandbattle"),
-    BURNING_ILLAGERS("burning_illagers"),
     PILLAGERS_PLUS("pillagersplus"),
     IMMERSIVE_ENGINEERING("immersiveengineering"),
     KAMILSKIS_ADDITIONS("rpg"),

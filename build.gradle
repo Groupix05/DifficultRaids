@@ -296,9 +296,6 @@ dependencies {
 //    implementation fg.deobf("curse.maven:mischief-illagers-1242852:6508234")
     compileOnly fg.deobf('libs:mischief_illagers:1.2-forge-1.20.1')
 
-    //Burning Illagers 1.3.1
-    compileOnly fg.deobf("curse.maven:burning-illagers-1227507:6473130")
-
     //Illager Universe 1.0.5 (no third party)
 //    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
     compileOnly fg.deobf('libs:illager_universe:1.0.5-forge-1.20.1')
@@ -349,7 +346,6 @@ dependencies {
 
     //Ben's Sharks 1.2.7.1
     compileOnly fg.deobf("curse.maven:bens-sharks-987388:6614273")
-
 
 
 
@@ -464,6 +460,14 @@ dependencies {
     //Invade 1.7 (doesnt add any illagers in 1.20.1)
 //    implementation fg.deobf("curse.maven:invade-850484:6637057")
 
+    //Invasion Code Red 0.0.1 (no third party) (stolen mod)
+//    implementation fg.deobf("curse.maven:invasion-code-red-reborn-1385297:7225374")
+
+    //Burning Illagers 1.3.1 (removed by the demand of the author)
+//    compileOnly fg.deobf("curse.maven:burning-illagers-1227507:6473130")
+
+    //Traders in Disguise 1.7 (mixins issues)
+//    implementation fg.deobf("maven.modrinth:traders-in-disguise-the-illager-assassin-project:1.7")
 
 }
 

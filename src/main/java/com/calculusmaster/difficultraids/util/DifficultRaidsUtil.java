@@ -23,7 +23,6 @@ import com.mysticmage.musketeer_illager.init.MusketeerIllagerModEntities;
 import com.possible_triangle.brazier.Content;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
-import com.vpillagersgood.burningillagers.init.BurningIllagersModEntities;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import elucent.eidolon.registries.EidolonEntities;
 import francisplayz446.karateillagerfinallyported.init.KarateillagerfinallyportedModEntities;
@@ -374,16 +373,6 @@ public class DifficultRaidsUtil
                     MischiefIllagersModEntities.BASS_BLASTER.get(),
                     MischiefIllagersModEntities.WITHERMANCER.get()
             ));
-        }
-
-        if(Compat.BURNING_ILLAGERS.isLoaded())
-        {
-            BASIC_MAGIC_RAIDERS.addAll(List.of(
-                    BurningIllagersModEntities.MICROMANCER.get(),
-                    BurningIllagersModEntities.DISVOKER.get()
-            ));
-            STANDARD_RAIDERS.add(BurningIllagersModEntities.GHARZUL.get());
-            ADVANCED_MAGIC_RAIDERS.add(BurningIllagersModEntities.RAVAMAGE.get());
         }
 
         if(Compat.PILLAGERS_PLUS.isLoaded()) //Other Illagers cannot be added because they dont extend Raider
