@@ -30,6 +30,7 @@ import fuzs.illagerinvasion.init.ModRegistry;
 import net.francisplayz446.summoner.init.ThesummonerModEntities;
 import net.mcreator.crimson_steves_mobs.init.CrimsonStevesMobsModEntities;
 import net.mcreator.expadosillagerss.init.ExpadosIllagerssModEntities;
+import net.mcreator.gloom_raiders.init.GloomRaidersModEntities;
 import net.mcreator.illagerbrute.init.IllagerBruteModEntities;
 import net.mcreator.illagerexpansions.init.IllagerExpansionsModEntities;
 import net.mcreator.illageruniverse.init.IllagerUniverseModEntities;
@@ -472,12 +473,23 @@ public class DifficultRaidsUtil
 
         if(Compat.BENS_SHARKS.isLoaded()) BASIC_MAGIC_RAIDERS.add(BenssharksModEntities.THALASSOGER.get());
 
-        if(Compat.ILLAGER_EXANSIONS.isLoaded()) {
+        if(Compat.ILLAGER_EXANSIONS.isLoaded())
+        {
             STANDARD_RAIDERS.addAll(List.of(
                     IllagerExpansionsModEntities.ELITE_VINDICATOR.get(),
                     IllagerExpansionsModEntities.RETALIATOR.get(),
                     IllagerExpansionsModEntities.CRINDICATOR.get(),
                     IllagerExpansionsModEntities.ELITE_PILLAGER.get()
+            ));
+        }
+
+        if(Compat.GLOOM_RAIDERS.isLoaded()) //Skipping Spell Sword, Psychc_w, Psychic_m, Headsman, New Big Nun, earl, fly earl, awaken earl
+        {
+            STANDARD_RAIDERS.add(GloomRaidersModEntities.SHYLOCK.get());
+            ADVANCED_RAIDERS.add(GloomRaidersModEntities.NUN.get());
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    GloomRaidersModEntities.NEW_DRAMATIST.get(),
+                    GloomRaidersModEntities.DRAMATIST.get()
             ));
         }
     }

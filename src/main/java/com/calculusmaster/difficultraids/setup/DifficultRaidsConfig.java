@@ -474,6 +474,19 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.CRINDICATOR, GENERAL.define("enableCrindicator", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ELITE_PILLAGER, GENERAL.define("enableElitePillager", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.RAVAGER_RIDER, GENERAL.define("enableRavagerRider", true));
+        GENERAL.pop().push("Requires Gloom Raiders");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NUN, GENERAL.define("enableNun", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SHYLOCK, GENERAL.define("enableShylock", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NEW_DRAMATIST, GENERAL.define("enableNewDramatist", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SPELL_SWORD, GENERAL.define("enableSpellSword", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PSYCHC_W, GENERAL.define("enablePsychcW", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PSYCHIC_M, GENERAL.define("enablePsychicM", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HEADSMAN, GENERAL.define("enableHeadsman", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NEW_BIG_NUN, GENERAL.define("enableNewBigNun", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.AWAKEN_EARL, GENERAL.define("enableAwakenEarl", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.DRAMATIST, GENERAL.define("enableDramatist", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.EARL, GENERAL.define("enableEarl", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.FLY_EARL, GENERAL.define("enableFlyEarl", false));
 
         GENERAL.pop();
 

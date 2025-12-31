@@ -68,7 +68,8 @@ public enum Compat
     NOXIAPI("noixmodapi"),
     ROOST2("roost2"),
     BENS_SHARKS("benssharks"),
-    ILLAGER_EXANSIONS("illager_expansions")
+    ILLAGER_EXANSIONS("illager_expansions"),
+    GLOOM_RAIDERS("gloom_raiders")
     ;
 
     private final String modid;

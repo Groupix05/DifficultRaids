@@ -423,6 +423,20 @@ public class RaidEnemyRegistry
     public static final String ELITE_PILLAGER = "elite_pillager";
     public static final String RAVAGER_RIDER = "ravager_rider";
 
+    //Gloom Raiders
+    public static final String NUN = "nun";
+    public static final String SHYLOCK = "shylock";
+    public static final String NEW_DRAMATIST = "new_dramatist";
+    public static final String SPELL_SWORD = "spell_sword";
+    public static final String PSYCHC_W = "psychc_w";
+    public static final String PSYCHIC_M = "psychic_m";
+    public static final String HEADSMAN = "headsman";
+    public static final String NEW_BIG_NUN = "new_big_nun";
+    public static final String AWAKEN_EARL = "awaken_earl";
+    public static final String DRAMATIST = "dramatist";
+    public static final String EARL = "earl";
+    public static final String FLY_EARL = "fly_earl";
+
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -822,6 +836,18 @@ public class RaidEnemyRegistry
                 .withRaider(CRINDICATOR,            0, 0, 0, 1, 0, 1, 0, 0)
                 .withRaider(ELITE_PILLAGER,         0, 0, 0, 1, 1, 0, 0, 0)
                 .withRaider(RAVAGER_RIDER,          0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(NUN,                    0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(SHYLOCK,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NEW_DRAMATIST,          0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(SPELL_SWORD,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PSYCHC_W,               0, 0, 0, 1, 0, 0, 0, 0)
+                .withRaider(PSYCHIC_M,              0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(HEADSMAN,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NEW_BIG_NUN,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(AWAKEN_EARL,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(DRAMATIST,              0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(EARL,                   0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(FLY_EARL,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1080,6 +1106,18 @@ public class RaidEnemyRegistry
                 .withRaider(CRINDICATOR,            0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(ELITE_PILLAGER,         0, 0, 1, 1, 1, 0, 0, 0)
                 .withRaider(RAVAGER_RIDER,          0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(NUN,                    0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(SHYLOCK,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NEW_DRAMATIST,          0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(SPELL_SWORD,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PSYCHC_W,               0, 0, 1, 1, 0, 0, 0, 0)
+                .withRaider(PSYCHIC_M,              0, 0, 0, 0, 1, 1, 0, 0)
+                .withRaider(HEADSMAN,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NEW_BIG_NUN,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(AWAKEN_EARL,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(DRAMATIST,              0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(EARL,                   0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(FLY_EARL,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1339,6 +1377,18 @@ public class RaidEnemyRegistry
                 .withRaider(CRINDICATOR,            0, 0, 1, 1, 0, 1, 0, 1)
                 .withRaider(ELITE_PILLAGER,         0, 1, 1, 1, 1, 1, 1, 0)
                 .withRaider(RAVAGER_RIDER,          0, 0, 1, 0, 1, 0, 1, 0)
+                .withRaider(NUN,                    0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(SHYLOCK,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NEW_DRAMATIST,          0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(SPELL_SWORD,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PSYCHC_W,               0, 0, 0, 1, 1, 0, 0, 0)
+                .withRaider(PSYCHIC_M,              0, 0, 1, 0, 1, 0, 0, 0)
+                .withRaider(HEADSMAN,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NEW_BIG_NUN,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(AWAKEN_EARL,            0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(DRAMATIST,              0, 0, 0, 1, 0, 0, 0, 0)
+                .withRaider(EARL,                   0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(FLY_EARL,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1600,6 +1650,18 @@ public class RaidEnemyRegistry
                 .withRaider(CRINDICATOR,            0, 0, 1, 1, 1, 1, 0, 1)
                 .withRaider(ELITE_PILLAGER,         0, 1, 1, 2, 1, 1, 1, 0)
                 .withRaider(RAVAGER_RIDER,          0, 0, 1, 0, 1, 1, 1, 1)
+                .withRaider(NUN,                    0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(SHYLOCK,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NEW_DRAMATIST,          0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(SPELL_SWORD,            0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(PSYCHC_W,               0, 1, 0, 1, 1, 0, 1, 0)
+                .withRaider(PSYCHIC_M,              0, 0, 1, 0, 1, 1, 0, 0)
+                .withRaider(HEADSMAN,               0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(NEW_BIG_NUN,            0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(AWAKEN_EARL,            0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(DRAMATIST,              0, 0, 1, 1, 0, 0, 0, 0)
+                .withRaider(EARL,                   0, 0, 0, 1, 0, 0, 0, 1)
+                .withRaider(FLY_EARL,               0, 0, 0, 0, 1, 0, 0, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

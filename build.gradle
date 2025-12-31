@@ -381,7 +381,7 @@ dependencies {
 //    implementation fg.deobf("curse.maven:multiverse-561392:6320534")
 
     //Gloom Raiders 1.1.6
-//    implementation fg.deobf("maven.modrinth:gloom-raiders:1.1.6")
+    compileOnly fg.deobf("maven.modrinth:gloom-raiders:1.1.6")
 
 
 
