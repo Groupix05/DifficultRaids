@@ -42,7 +42,7 @@ public enum Compat
     CRIMSON_STEVES_MOBS("crimson_steves_mobs"),
     WANDERING_ILLAGER("wandering_illager"),
     FRANCIS_ILLAGERS("expansion"),
-    EXPADOS_ILLAGERS("expados_illagers"),
+    EXPADOS_ILLAGERS("expados_illagerss"),
     KARATE_ILLAGER("karateillagerfinallyported"),
     ILLAGER_BRUTE("illager_brute"),
     SORCERER_ILLAGER("sorcerer_illager"),
@@ -67,7 +67,8 @@ public enum Compat
     COMPANIONS("companions"),
     NOXIAPI("noixmodapi"),
     ROOST2("roost2"),
-    BENS_SHARKS("benssharks")
+    BENS_SHARKS("benssharks"),
+    ILLAGER_EXANSIONS("illager_expansions")
     ;
 
     private final String modid;

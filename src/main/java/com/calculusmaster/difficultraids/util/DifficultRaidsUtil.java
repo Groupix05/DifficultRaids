@@ -29,8 +29,9 @@ import francisplayz446.karateillagerfinallyported.init.Karateillagerfinallyporte
 import fuzs.illagerinvasion.init.ModRegistry;
 import net.francisplayz446.summoner.init.ThesummonerModEntities;
 import net.mcreator.crimson_steves_mobs.init.CrimsonStevesMobsModEntities;
-import net.mcreator.expadosillagers.init.ExpadosIllagersModEntities;
+import net.mcreator.expadosillagerss.init.ExpadosIllagerssModEntities;
 import net.mcreator.illagerbrute.init.IllagerBruteModEntities;
+import net.mcreator.illagerexpansions.init.IllagerExpansionsModEntities;
 import net.mcreator.illageruniverse.init.IllagerUniverseModEntities;
 import net.mcreator.illagerworldwar.init.IllagerWorldWarModEntities;
 import net.mcreator.justillagers.init.JustillagersModEntities;
@@ -117,7 +118,10 @@ public class DifficultRaidsUtil
 
         if(Compat.ILLAGER_REVOLUTION.isLoaded())
         {
-            STANDARD_RAIDERS.add(net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.ILLAGER_SCAVENGER.get());
+            STANDARD_RAIDERS.addAll(List.of(
+                    net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.ILLAGER_SCAVENGER.get(),
+                    net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.ACOLYTE.get()
+            ));
             BASIC_MAGIC_RAIDERS.add(net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.ILLAGER_BEAST_TAMER.get());
             ADVANCED_RAIDERS.add(net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.BLADE_KNIGHT.get());
             ADVANCED_MAGIC_RAIDERS.add(net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.SOUL_SAGE.get());
@@ -277,14 +281,13 @@ public class DifficultRaidsUtil
 
         if(Compat.EXPADOS_ILLAGERS.isLoaded()) //Skipping Juggernaut
         {
-            ADVANCED_MAGIC_RAIDERS.add(ExpadosIllagersModEntities.GRINDICATOR.get());
+            ADVANCED_MAGIC_RAIDERS.add(ExpadosIllagerssModEntities.GRINDICATOR.get());
             STANDARD_RAIDERS.addAll(List.of(
-                    ExpadosIllagersModEntities.PIKELOGER.get(),
-                    ExpadosIllagersModEntities.KNOCKER.get(),
-                    ExpadosIllagersModEntities.HACKLE.get(),
-                    ExpadosIllagersModEntities.BLUDGEONER.get(),
-                    ExpadosIllagersModEntities.BRASHER.get(),
-                    ExpadosIllagersModEntities.WRECKER.get()
+                    ExpadosIllagerssModEntities.BLUNTOLOGER.get(),
+                    ExpadosIllagerssModEntities.CLEAVAGER.get(),
+                    ExpadosIllagerssModEntities.SPEAROLOGER.get(),
+                    ExpadosIllagerssModEntities.BLUDGEONER.get(),
+                    ExpadosIllagerssModEntities.BRASHER.get()
             ));
         }
 
@@ -468,5 +471,14 @@ public class DifficultRaidsUtil
         }
 
         if(Compat.BENS_SHARKS.isLoaded()) BASIC_MAGIC_RAIDERS.add(BenssharksModEntities.THALASSOGER.get());
+
+        if(Compat.ILLAGER_EXANSIONS.isLoaded()) {
+            STANDARD_RAIDERS.addAll(List.of(
+                    IllagerExpansionsModEntities.ELITE_VINDICATOR.get(),
+                    IllagerExpansionsModEntities.RETALIATOR.get(),
+                    IllagerExpansionsModEntities.CRINDICATOR.get(),
+                    IllagerExpansionsModEntities.ELITE_PILLAGER.get()
+            ));
+        }
     }
 }

@@ -270,8 +270,8 @@ dependencies {
     //The Wandering Illagers 1.2
     compileOnly fg.deobf("curse.maven:the-wandering-illagers-1245267:6757425")
 
-    //Expado's Illagers 1.0.4
-    compileOnly fg.deobf("curse.maven:expados-illagers-1313064:6863477")
+    //Expado's Illagers 1.0.5
+    compileOnly fg.deobf("curse.maven:expados-illagers-1313064:7174538")
 
     //Just Illagers 1.0.0
     compileOnly fg.deobf("curse.maven:just-illagers-1088403:5721200")
@@ -346,6 +346,42 @@ dependencies {
 
     //Ben's Sharks 1.2.7.1
     compileOnly fg.deobf("curse.maven:bens-sharks-987388:6614273")
+
+    //~SCORCHED GUNS 2 0.5.5
+//    implementation fg.deobf("curse.maven:scorched-guns-802940:7232063")
+
+    //The Resistance of the Raiders 1.0.0
+//    implementation fg.deobf("curse.maven:the-resistance-of-the-raiders-1372576:7151216")
+
+    //Porchers 1.0.0
+//    implementation fg.deobf("curse.maven:porchers-1381293:7200955")
+
+    //Illager Expansions 1.0.0
+    compileOnly fg.deobf("curse.maven:illager-expansions-1355754:7214505")
+
+    //Mecha Pillager Boss 1.0.1
+//    implementation fg.deobf("curse.maven:mecha-pillager-boss-1116274:5888062")
+
+    //The Resiliance Of Illagers 1.0.0
+//    implementation fg.deobf("curse.maven:the-resiliance-of-illagers-1415026:7387826")
+
+    //The Vindication Of Illagers 1.0.3
+//    implementation fg.deobf("curse.maven:the-vindication-of-illagers-1390160:7368583")
+
+    //The Resistance of the Raiders 1.0.0
+//    implementation fg.deobf("curse.maven:the-resistance-of-the-raiders-1372576:7151216")
+
+    //The Resiliance Of Illagers 1.0.0
+//    implementation fg.deobf("curse.maven:the-resiliance-of-illagers-1415026:7387826")
+
+    //Ocean World 7.0.0
+//    implementation fg.deobf("curse.maven:ocean-world-640359:5046840")
+
+    //Multiverse 4.3.1
+//    implementation fg.deobf("curse.maven:multiverse-561392:6320534")
+
+    //Gloom Raiders 1.1.6
+//    implementation fg.deobf("maven.modrinth:gloom-raiders:1.1.6")
 
 
 

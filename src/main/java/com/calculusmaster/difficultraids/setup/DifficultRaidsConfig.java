@@ -292,6 +292,8 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BLADE_KNIGHT, GENERAL.define("enableBladeKnight", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SCAVENGER, GENERAL.define("enableScavenger", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SOUL_SAGE, GENERAL.define("enableSoulSage", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ACOLYTE, GENERAL.define("enableAcolyte", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BULKWARK, GENERAL.define("enableBulkwark", false));
         GENERAL.pop().push("Requires Raided");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.NECROMANCER_RAIDED, GENERAL.define("enableRaidedNecromancer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ELECTROMANCER_RAIDED, GENERAL.define("enableRaidedElectromancer", true));
@@ -335,12 +337,11 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.WANDERING_ILLAGER, GENERAL.define("enableWanderingIllager", true));
         GENERAL.pop().push("Requires Expado's Illagers");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BRASHER, GENERAL.define("enableBrasher", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.KNOCKER, GENERAL.define("enableKnocker", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.WRECKER, GENERAL.define("enableWrecker", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.HACKLE, GENERAL.define("enableHackle", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLUNTOLOGER, GENERAL.define("enableBluntologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CLEAVAGER, GENERAL.define("enableCleavager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SPEAROLOGER, GENERAL.define("enableSpearologer", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.JUGGERNAUT, GENERAL.define("enableJuggernaut", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BLUDGEONER, GENERAL.define("enableBludgeoner", true));
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.PIKELOGER, GENERAL.define("enablePikeloger", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.GRINDICATOR, GENERAL.define("enableGrindicator", true));
         GENERAL.pop().push("Requires Francis Illagers");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.PATROLOGER, GENERAL.define("enablePatrologer", true));
@@ -467,6 +468,12 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.MECHASENT, GENERAL.define("enableMechasent", true));
         GENERAL.pop().push("Requires Ben's Sharks");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.THALASSOGER, GENERAL.define("enableThalassoger", true));
+        GENERAL.pop().push("Requires Illager Expansions");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ELITE_VINDICATOR, GENERAL.define("enableEliteVindicator", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RETALIATOR, GENERAL.define("enableRetaliator", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRINDICATOR, GENERAL.define("enableCrindicator", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ELITE_PILLAGER, GENERAL.define("enableElitePillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RAVAGER_RIDER, GENERAL.define("enableRavagerRider", true));
 
         GENERAL.pop();
 
