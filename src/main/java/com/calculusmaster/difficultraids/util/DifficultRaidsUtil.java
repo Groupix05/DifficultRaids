@@ -12,6 +12,7 @@ import com.beta.theresilianceofraiders.init.TheresilianceofraidersModEntities;
 import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
 import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.francisplay446.raiderv.init.RaidervModEntities;
 import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.github.alexthe666.rats.registry.RatsEntityRegistry;
 import com.hexagram2021.oceanworld.common.register.OWEntities;
@@ -532,6 +533,23 @@ public class DifficultRaidsUtil
                     TheResistanceOfTheRaidersModEntities.GUARDIAN.get(),
                     TheResistanceOfTheRaidersModEntities.ASSAILANT.get(),
                     TheResistanceOfTheRaidersModEntities.HARRIER.get()
+            ));
+        }
+
+        if(Compat.VINDICATION_OF_ILLAGERS.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    RaidervModEntities.BLACKMASTER.get(),
+                    RaidervModEntities.PLANNER.get(),
+                    RaidervModEntities.VISOLOGER.get(),
+                    RaidervModEntities.INTRUDER.get(),
+                    RaidervModEntities.VOLTOLOGER.get(),
+                    RaidervModEntities.SMITHER.get(),
+                    RaidervModEntities.RAGER.get()
+            ));
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    RaidervModEntities.PREACHER.get(),
+                    RaidervModEntities.PATROL_CAPTAIN.get()
             ));
         }
     }

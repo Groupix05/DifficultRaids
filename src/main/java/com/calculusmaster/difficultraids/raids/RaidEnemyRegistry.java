@@ -10,6 +10,7 @@ import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.util.Compat;
 //import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.francisplay446.raiderv.init.RaidervModEntities;
 import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
@@ -22,6 +23,7 @@ import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import multiverse.registration.EntityRegistry;
 import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
 import net.mcreator.expadosillagerss.init.ExpadosIllagerssModEntities;
+import net.mcreator.theresistanceoftheraiders.init.TheResistanceOfTheRaidersModEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
@@ -405,7 +407,7 @@ public class RaidEnemyRegistry
     public static final String ABOMINATION = "abomination";
     public static final String DRUNKENNESS = "drunkenness";
     public static final String FLAGMAN = "flagman";
-    public static final String INTRUDER = "intruder";
+    public static final String INTRUDER = "IXAPI_intruder";
     public static final String GRAVE_KEEPER = "grave_keeper";
 
     //Roost2
@@ -463,6 +465,18 @@ public class RaidEnemyRegistry
     public static final String GUARDIAN = "guardian";
     public static final String ASSAILANT = "assailant";
     public static final String HARRIER = "harrier";
+
+    //The Vindication Of Illagers
+    public static final String PREACHER_VINDICATION = "preacher";
+    public static final String BLACKMASTER = "blackmaster";
+    public static final String PLANNER = "planner";
+    public static final String VISOLOGER = "visologer";
+    public static final String INTRUDER_VINDICATION = "intruder";
+    public static final String VOLTOLOGER = "voltologer";
+    public static final String SMITHER = "smither";
+    public static final String RAGER = "rager";
+    public static final String PATROL_CAPTAIN = "patrol_captain";
+    public static final String RAIDER_RANDOMIZER = "raider_randomizer";
 
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
@@ -894,6 +908,16 @@ public class RaidEnemyRegistry
                 .withRaider(GUARDIAN,               0, 0, 0, 0, 0, 0, 1, 0)
                 .withRaider(ASSAILANT,              0, 0, 1, 0, 0, 1, 0, 1)
                 .withRaider(HARRIER,                0, 1, 0, 1, 0, 1, 1, 0)
+                .withRaider(PREACHER_VINDICATION,   0, 0, 1, 0, 1, 0, 1, 0)
+                .withRaider(BLACKMASTER,            0, 1, 0, 0, 0, 1, 0, 0)
+                .withRaider(PLANNER,                0, 0, 0, 1, 1, 0, 1, 1)
+                .withRaider(VISOLOGER,              0, 0, 1, 0, 0, 1, 0, 1)
+                .withRaider(INTRUDER_VINDICATION,   0, 1, 0, 0, 1, 0, 1, 0)
+                .withRaider(VOLTOLOGER,             0, 0, 1, 0, 0, 1, 0, 1)
+                .withRaider(SMITHER,                0, 0, 1, 1, 1, 0, 0, 1)
+                .withRaider(RAGER,                  0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(PATROL_CAPTAIN,         0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(RAIDER_RANDOMIZER,      0, 0, 0, 1, 0, 1, 0, 1)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1178,6 +1202,16 @@ public class RaidEnemyRegistry
                 .withRaider(GUARDIAN,               0, 0, 0, 0, 0, 1, 1, 0)
                 .withRaider(ASSAILANT,              0, 0, 1, 1, 1, 1, 0, 1)
                 .withRaider(HARRIER,                0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(PREACHER_VINDICATION,   0, 0, 1, 1, 1, 1, 1, 0)
+                .withRaider(BLACKMASTER,            0, 1, 0, 0, 1, 1, 0, 1)
+                .withRaider(PLANNER,                0, 0, 1, 1, 1, 0, 1, 1)
+                .withRaider(VISOLOGER,              0, 1, 1, 0, 0, 1, 1, 1)
+                .withRaider(INTRUDER_VINDICATION,   0, 1, 0, 1, 1, 1, 1, 0)
+                .withRaider(VOLTOLOGER,             0, 1, 1, 0, 0, 1, 0, 1)
+                .withRaider(SMITHER,                0, 1, 1, 1, 1, 0, 1, 1)
+                .withRaider(RAGER,                  0, 0, 0, 1, 1, 1, 1, 1)
+                .withRaider(PATROL_CAPTAIN,         0, 0, 0, 0, 1, 1, 0, 1)
+                .withRaider(RAIDER_RANDOMIZER,      0, 1, 1, 1, 0, 1, 0, 1)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1463,6 +1497,16 @@ public class RaidEnemyRegistry
                 .withRaider(GUARDIAN,               0, 0, 0, 0, 1, 1, 1, 1)
                 .withRaider(ASSAILANT,              0, 0, 1, 1, 2, 1, 1, 1)
                 .withRaider(HARRIER,                0, 1, 1, 2, 1, 1, 2, 1)
+                .withRaider(PREACHER_VINDICATION,   0, 1, 1, 1, 2, 2, 1, 1)
+                .withRaider(BLACKMASTER,            0, 1, 0, 1, 1, 1, 0, 1)
+                .withRaider(PLANNER,                0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(VISOLOGER,              0, 1, 1, 0, 1, 1, 1, 1)
+                .withRaider(INTRUDER_VINDICATION,   0, 1, 1, 1, 2, 1, 1, 0)
+                .withRaider(VOLTOLOGER,             0, 1, 1, 1, 0, 1, 0, 1)
+                .withRaider(SMITHER,                0, 1, 2, 1, 1, 1, 1, 1)
+                .withRaider(RAGER,                  0, 0, 1, 1, 1, 2, 2, 1)
+                .withRaider(PATROL_CAPTAIN,         0, 1, 0, 0, 1, 1, 1, 1)
+                .withRaider(RAIDER_RANDOMIZER,      0, 1, 2, 1, 1, 2, 1, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1750,6 +1794,16 @@ public class RaidEnemyRegistry
                 .withRaider(GUARDIAN,               0, 0, 1, 0, 1, 1, 1, 2)
                 .withRaider(ASSAILANT,              0, 1, 1, 1, 2, 1, 2, 1)
                 .withRaider(HARRIER,                0, 1, 2, 2, 1, 1, 2, 1)
+                .withRaider(PREACHER_VINDICATION,   0, 1, 1, 2, 2, 3, 1, 1)
+                .withRaider(BLACKMASTER,            0, 1, 1, 2, 1, 1, 0, 1)
+                .withRaider(PLANNER,                0, 1, 2, 1, 1, 2, 1, 1)
+                .withRaider(VISOLOGER,              0, 1, 1, 1, 2, 1, 1, 1)
+                .withRaider(INTRUDER_VINDICATION,   0, 1, 1, 1, 2, 2, 1, 1)
+                .withRaider(VOLTOLOGER,             0, 1, 1, 2, 1, 1, 0, 1)
+                .withRaider(SMITHER,                0, 1, 2, 1, 1, 1, 1, 1)
+                .withRaider(RAGER,                  0, 1, 1, 1, 2, 3, 2, 3)
+                .withRaider(PATROL_CAPTAIN,         0, 1, 1, 0, 2, 1, 1, 1)
+                .withRaider(RAIDER_RANDOMIZER,      0, 2, 3, 2, 1, 2, 3, 2)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

@@ -503,10 +503,21 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.CRUSHER_RESILIANCE, GENERAL.define("enableResilianceCrusher", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.CLASHAGER, GENERAL.define("enableClashager", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.SHIVERGER, GENERAL.define("enableShiverger", true));
-        GENERAL.pop().push("Requires Resistance Of Illagers");
+        GENERAL.pop().push("Requires The Resistance Of Illagers");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.GUARDIAN, GENERAL.define("enableGuardian", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.ASSAILANT, GENERAL.define("enableAssailant", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.HARRIER, GENERAL.define("enableHarrier", true));
+        GENERAL.pop().push("Requires The Vindication Of Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PREACHER_VINDICATION, GENERAL.define("enableVindicationPreacher", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLACKMASTER, GENERAL.define("enableBlackmaster", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PLANNER, GENERAL.define("enablePlanner", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.VISOLOGER, GENERAL.define("enableVisologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.INTRUDER_VINDICATION, GENERAL.define("enableVindicationIntruder", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.VOLTOLOGER, GENERAL.define("enableVoltologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SMITHER, GENERAL.define("enableSmither", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RAGER, GENERAL.define("enableRager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PATROL_CAPTAIN, GENERAL.define("enablePatrolCaptain", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RAIDER_RANDOMIZER, GENERAL.define("enableRaiderRandomizer", true));
 
         GENERAL.pop();
 
