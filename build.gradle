@@ -375,10 +375,10 @@ dependencies {
 //    implementation fg.deobf("curse.maven:the-resiliance-of-illagers-1415026:7387826")
 
     //Ocean World 7.0.0
-//    implementation fg.deobf("curse.maven:ocean-world-640359:5046840")
+    compileOnly fg.deobf("curse.maven:ocean-world-640359:5046840")
 
     //Multiverse 4.3.1
-//    implementation fg.deobf("curse.maven:multiverse-561392:6320534")
+    compileOnly fg.deobf("curse.maven:multiverse-561392:6320534")
 
     //Gloom Raiders 1.1.6
     compileOnly fg.deobf("maven.modrinth:gloom-raiders:1.1.6")

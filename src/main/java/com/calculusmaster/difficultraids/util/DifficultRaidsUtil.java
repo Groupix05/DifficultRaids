@@ -13,6 +13,7 @@ import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
 import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.github.alexthe666.rats.registry.RatsEntityRegistry;
+import com.hexagram2021.oceanworld.common.register.OWEntities;
 import com.infamous.all_bark_all_bite.common.registry.ABABEntityTypes;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
@@ -492,5 +493,7 @@ public class DifficultRaidsUtil
                     GloomRaidersModEntities.DRAMATIST.get()
             ));
         }
+
+        if(Compat.OCEANWORLD.isLoaded()) BASIC_MAGIC_RAIDERS.add(OWEntities.OCEANOLOGER);
     }
 }

@@ -19,6 +19,7 @@ import com.possible_triangle.brazier.Content;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
+import multiverse.registration.EntityRegistry;
 import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
 import net.mcreator.expadosillagerss.init.ExpadosIllagerssModEntities;
 import net.minecraft.resources.ResourceLocation;
@@ -437,6 +438,13 @@ public class RaidEnemyRegistry
     public static final String EARL = "earl";
     public static final String FLY_EARL = "fly_earl";
 
+    //OceanWorld
+    public static final String OCEANOLOGER = "OCEANOLOGER";
+
+    //Multiverse
+    public static final String CONQUEROR = "conqueror";
+    public static final String TRAVELER = "traveler";
+
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -531,6 +539,11 @@ public class RaidEnemyRegistry
         {
             RaidEnemyRegistry.createRaiderType(ACOLYTE, net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.ACOLYTE.get());
             RaidEnemyRegistry.createRaiderType(BULWARK, net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.BULKWARK.get());
+        }
+        if(Compat.MULTIVERSE.isLoaded())
+        {
+            RaidEnemyRegistry.createRaiderType(CONQUEROR,EntityRegistry.CONQUEROR.get());
+            RaidEnemyRegistry.createRaiderType(TRAVELER,EntityRegistry.TRAVELER.get());
         }
     }
 
@@ -848,6 +861,9 @@ public class RaidEnemyRegistry
                 .withRaider(DRAMATIST,              0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(EARL,                   0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FLY_EARL,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(OCEANOLOGER,            0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(TRAVELER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1118,6 +1134,9 @@ public class RaidEnemyRegistry
                 .withRaider(DRAMATIST,              0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(EARL,                   0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FLY_EARL,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(OCEANOLOGER,            0, 0, 1, 1, 1, 1, 1, 1)
+                .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(TRAVELER,               0, 0, 0, 0, 0, 0, 0, 1)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1389,6 +1408,9 @@ public class RaidEnemyRegistry
                 .withRaider(DRAMATIST,              0, 0, 0, 1, 0, 0, 0, 0)
                 .withRaider(EARL,                   0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(FLY_EARL,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(OCEANOLOGER,            0, 1, 1, 2, 1, 1, 2, 1)
+                .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(TRAVELER,               0, 0, 0, 0, 0, 0, 0, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1662,6 +1684,9 @@ public class RaidEnemyRegistry
                 .withRaider(DRAMATIST,              0, 0, 1, 1, 0, 0, 0, 0)
                 .withRaider(EARL,                   0, 0, 0, 1, 0, 0, 0, 1)
                 .withRaider(FLY_EARL,               0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(OCEANOLOGER,            0, 1, 2, 2, 2, 2, 2, 2)
+                .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(TRAVELER,               0, 0, 0, 0, 1, 0, 0, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

@@ -69,7 +69,9 @@ public enum Compat
     ROOST2("roost2"),
     BENS_SHARKS("benssharks"),
     ILLAGER_EXANSIONS("illager_expansions"),
-    GLOOM_RAIDERS("gloom_raiders")
+    GLOOM_RAIDERS("gloom_raiders"),
+    OCEANWORLD("oceanworld"),
+    MULTIVERSE("multiverse")
     ;
 
     private final String modid;

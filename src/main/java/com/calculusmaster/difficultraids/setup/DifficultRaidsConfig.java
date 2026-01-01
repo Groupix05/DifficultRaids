@@ -487,6 +487,11 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.DRAMATIST, GENERAL.define("enableDramatist", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.EARL, GENERAL.define("enableEarl", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.FLY_EARL, GENERAL.define("enableFlyEarl", false));
+        GENERAL.pop().push("Requires Ocean World");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.OCEANOLOGER, GENERAL.define("enableOceanologer", true));
+        GENERAL.pop().push("Requires Multiverse");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CONQUEROR, GENERAL.define("enableConqueror", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.TRAVELER, GENERAL.define("enableTraveler", false));
 
         GENERAL.pop();
 
