@@ -492,6 +492,21 @@ public class DifficultRaidsConfig
         GENERAL.pop().push("Requires Multiverse");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.CONQUEROR, GENERAL.define("enableConqueror", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.TRAVELER, GENERAL.define("enableTraveler", false));
+        GENERAL.pop().push("Requires Porchers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BLOWER, GENERAL.define("enableBlower", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.STABBER, GENERAL.define("enableStabber", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HARVESTER, GENERAL.define("enableHarvester", true));
+        GENERAL.pop().push("Requires Mecha Pillager Boss");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MECHA_PILLAGER, GENERAL.define("enableMechaPillager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MECHA_VINDICATOR, GENERAL.define("enableMechaVindicator", true));
+        GENERAL.pop().push("Requires The Resiliance of the Raiders");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRUSHER_RESILIANCE, GENERAL.define("enableResilianceCrusher", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CLASHAGER, GENERAL.define("enableClashager", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SHIVERGER, GENERAL.define("enableShiverger", true));
+        GENERAL.pop().push("Requires Resistance Of Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GUARDIAN, GENERAL.define("enableGuardian", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ASSAILANT, GENERAL.define("enableAssailant", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HARRIER, GENERAL.define("enableHarrier", true));
 
         GENERAL.pop();
 

@@ -347,32 +347,23 @@ dependencies {
     //Ben's Sharks 1.2.7.1
     compileOnly fg.deobf("curse.maven:bens-sharks-987388:6614273")
 
-    //~SCORCHED GUNS 2 0.5.5
-//    implementation fg.deobf("curse.maven:scorched-guns-802940:7232063")
-
-    //The Resistance of the Raiders 1.0.0
-//    implementation fg.deobf("curse.maven:the-resistance-of-the-raiders-1372576:7151216")
-
     //Porchers 1.0.0
-//    implementation fg.deobf("curse.maven:porchers-1381293:7200955")
+    compileOnly fg.deobf("curse.maven:porchers-1381293:7200955")
 
     //Illager Expansions 1.0.0
     compileOnly fg.deobf("curse.maven:illager-expansions-1355754:7214505")
 
     //Mecha Pillager Boss 1.0.1
-//    implementation fg.deobf("curse.maven:mecha-pillager-boss-1116274:5888062")
+    compileOnly fg.deobf("curse.maven:mecha-pillager-boss-1116274:5888062")
 
     //The Resiliance Of Illagers 1.0.0
-//    implementation fg.deobf("curse.maven:the-resiliance-of-illagers-1415026:7387826")
+    implementation fg.deobf("curse.maven:the-resiliance-of-illagers-1415026:7387826")
 
     //The Vindication Of Illagers 1.0.3
-//    implementation fg.deobf("curse.maven:the-vindication-of-illagers-1390160:7368583")
+    implementation fg.deobf("curse.maven:the-vindication-of-illagers-1390160:7368583")
 
     //The Resistance of the Raiders 1.0.0
-//    implementation fg.deobf("curse.maven:the-resistance-of-the-raiders-1372576:7151216")
-
-    //The Resiliance Of Illagers 1.0.0
-//    implementation fg.deobf("curse.maven:the-resiliance-of-illagers-1415026:7387826")
+    implementation fg.deobf("curse.maven:the-resistance-of-the-raiders-1372576:7151216")
 
     //Ocean World 7.0.0
     compileOnly fg.deobf("curse.maven:ocean-world-640359:5046840")
@@ -504,6 +495,10 @@ dependencies {
 
     //Traders in Disguise 1.7 (mixins issues)
 //    implementation fg.deobf("maven.modrinth:traders-in-disguise-the-illager-assassin-project:1.7")
+
+    //~SCORCHED GUNS 2 0.5.5 (has it's own way to spawn raiders)
+//    implementation fg.deobf("curse.maven:scorched-guns-802940:7232063")
+//    implementation fg.deobf("curse.maven:framework-549225:6531428")
 
 }
 

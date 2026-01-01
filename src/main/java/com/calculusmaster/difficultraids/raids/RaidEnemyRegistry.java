@@ -445,6 +445,25 @@ public class RaidEnemyRegistry
     public static final String CONQUEROR = "conqueror";
     public static final String TRAVELER = "traveler";
 
+    //Poarchers/Porchers
+    public static final String BLOWER = "blower";
+    public static final String STABBER = "stabber";
+    public static final String HARVESTER = "harvester";
+
+    //MechaPillager
+    public static final String MECHA_PILLAGER = "mecha_pillager";
+    public static final String MECHA_VINDICATOR = "mecha_vindicator";
+
+    //The Resiliance of the Raiders
+    public static final String CRUSHER_RESILIANCE = "crusher";
+    public static final String CLASHAGER = "clashager";
+    public static final String SHIVERGER = "shiverger";
+
+    //The Resistance Of Illagers
+    public static final String GUARDIAN = "guardian";
+    public static final String ASSAILANT = "assailant";
+    public static final String HARRIER = "harrier";
+
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -864,6 +883,17 @@ public class RaidEnemyRegistry
                 .withRaider(OCEANOLOGER,            0, 0, 0, 1, 0, 1, 1, 0)
                 .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(TRAVELER,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(BLOWER,                 0, 1, 0, 0, 1, 0, 0, 1)
+                .withRaider(STABBER,                0, 0, 1, 0, 0, 0, 1, 0)
+                .withRaider(HARVESTER,              0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(MECHA_PILLAGER,         0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(MECHA_VINDICATOR,       0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CRUSHER_RESILIANCE,     0, 0, 0, 1, 1, 0, 0, 1)
+                .withRaider(CLASHAGER,              0, 0, 1, 0, 1, 0, 1, 0)
+                .withRaider(SHIVERGER,              0, 0, 0, 1, 0, 0, 0, 0)
+                .withRaider(GUARDIAN,               0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(ASSAILANT,              0, 0, 1, 0, 0, 1, 0, 1)
+                .withRaider(HARRIER,                0, 1, 0, 1, 0, 1, 1, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1137,6 +1167,17 @@ public class RaidEnemyRegistry
                 .withRaider(OCEANOLOGER,            0, 0, 1, 1, 1, 1, 1, 1)
                 .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(TRAVELER,               0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(BLOWER,                 0, 1, 0, 1, 1, 0, 0, 1)
+                .withRaider(STABBER,                0, 1, 1, 0, 0, 0, 1, 0)
+                .withRaider(HARVESTER,              0, 0, 0, 1, 1, 1, 0, 1)
+                .withRaider(MECHA_PILLAGER,         0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(MECHA_VINDICATOR,       0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CRUSHER_RESILIANCE,     0, 1, 0, 1, 1, 0, 1, 1)
+                .withRaider(CLASHAGER,              0, 0, 1, 1, 1, 0, 1, 1)
+                .withRaider(SHIVERGER,              0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(GUARDIAN,               0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(ASSAILANT,              0, 0, 1, 1, 1, 1, 0, 1)
+                .withRaider(HARRIER,                0, 1, 1, 1, 1, 1, 1, 1)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1411,6 +1452,17 @@ public class RaidEnemyRegistry
                 .withRaider(OCEANOLOGER,            0, 1, 1, 2, 1, 1, 2, 1)
                 .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(TRAVELER,               0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(BLOWER,                 0, 1, 1, 1, 1, 0, 1, 1)
+                .withRaider(STABBER,                0, 1, 1, 1, 0, 1, 1, 1)
+                .withRaider(HARVESTER,              0, 1, 0, 1, 1, 1, 0, 1)
+                .withRaider(MECHA_PILLAGER,         0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(MECHA_VINDICATOR,       0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(CRUSHER_RESILIANCE,     0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(CLASHAGER,              0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(SHIVERGER,              0, 0, 0, 1, 1, 1, 0, 1)
+                .withRaider(GUARDIAN,               0, 0, 0, 0, 1, 1, 1, 1)
+                .withRaider(ASSAILANT,              0, 0, 1, 1, 2, 1, 1, 1)
+                .withRaider(HARRIER,                0, 1, 1, 2, 1, 1, 2, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1687,6 +1739,17 @@ public class RaidEnemyRegistry
                 .withRaider(OCEANOLOGER,            0, 1, 2, 2, 2, 2, 2, 2)
                 .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(TRAVELER,               0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(BLOWER,                 0, 1, 2, 1, 1, 2, 1, 1)
+                .withRaider(STABBER,                0, 1, 1, 2, 1, 1, 2, 1)
+                .withRaider(HARVESTER,              0, 1, 1, 1, 2, 1, 1, 2)
+                .withRaider(MECHA_PILLAGER,         0, 0, 0, 0, 1, 0, 1, 1)
+                .withRaider(MECHA_VINDICATOR,       0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(CRUSHER_RESILIANCE,     0, 1, 1, 2, 2, 1, 1, 2)
+                .withRaider(CLASHAGER,              0, 1, 2, 1, 1, 2, 1, 1)
+                .withRaider(SHIVERGER,              0, 1, 0, 1, 1, 1, 0, 2)
+                .withRaider(GUARDIAN,               0, 0, 1, 0, 1, 1, 1, 2)
+                .withRaider(ASSAILANT,              0, 1, 1, 1, 2, 1, 2, 1)
+                .withRaider(HARRIER,                0, 1, 2, 2, 1, 1, 2, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

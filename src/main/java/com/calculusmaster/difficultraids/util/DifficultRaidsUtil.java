@@ -8,6 +8,7 @@ import cn.leolezury.leosillagers.init.EntityInit;
 import codyhuh.ravagecabbage.registry.RCEntities;
 import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.belgieyt.morefeatures.core.registry.MFEntity;
+import com.beta.theresilianceofraiders.init.TheresilianceofraidersModEntities;
 import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
 import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
@@ -37,13 +38,16 @@ import net.mcreator.illagerexpansions.init.IllagerExpansionsModEntities;
 import net.mcreator.illageruniverse.init.IllagerUniverseModEntities;
 import net.mcreator.illagerworldwar.init.IllagerWorldWarModEntities;
 import net.mcreator.justillagers.init.JustillagersModEntities;
+import net.mcreator.mechapillagerboss.init.MechapillagerbossModEntities;
 import net.mcreator.moreillagers.init.MoreIllagersModEntities;
 import net.mcreator.pillagerboss.init.PillagerBossModEntities;
 import net.mcreator.pillagersplus.init.PillagersplusModEntities;
+import net.mcreator.poachers.init.PoachersModEntities;
 import net.mcreator.roost.init.Roost2ModEntities;
 import net.mcreator.rpg.init.RpgModEntities;
 import net.mcreator.sharks.init.BenssharksModEntities;
 import net.mcreator.sorcererillager.init.SorcererIllagerModEntities;
+import net.mcreator.theresistanceoftheraiders.init.TheResistanceOfTheRaidersModEntities;
 import net.mcreator.virtusosgrandbattle.init.VirtusosgrandbattleModEntities;
 import net.mobz.init.MobZEntities;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
@@ -495,5 +499,40 @@ public class DifficultRaidsUtil
         }
 
         if(Compat.OCEANWORLD.isLoaded()) BASIC_MAGIC_RAIDERS.add(OWEntities.OCEANOLOGER);
+
+        if(Compat.POACHERS.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    PoachersModEntities.BLOWER.get(),
+                    PoachersModEntities.STABBER.get(),
+                    PoachersModEntities.HARVESTER.get()
+            ));
+        }
+
+        if(Compat.MECHA_PILLAGER.isLoaded())
+        {
+            ADVANCED_RAIDERS.addAll(List.of(
+                    MechapillagerbossModEntities.MECHA_PILLAGER.get(),
+                    MechapillagerbossModEntities.MECHA_VINDICATOR.get()
+            ));
+        }
+
+        if(Compat.RESILIANCE_OF_RAIDERS.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    TheresilianceofraidersModEntities.CRUSHER.get(),
+                    TheresilianceofraidersModEntities.CLASHAGER.get(),
+                    TheresilianceofraidersModEntities.SHIVERGER.get()
+            ));
+        }
+
+        if(Compat.RESISTANCE_OF_ILLAGERS.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    TheResistanceOfTheRaidersModEntities.GUARDIAN.get(),
+                    TheResistanceOfTheRaidersModEntities.ASSAILANT.get(),
+                    TheResistanceOfTheRaidersModEntities.HARRIER.get()
+            ));
+        }
     }
 }

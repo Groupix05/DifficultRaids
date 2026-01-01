@@ -71,7 +71,13 @@ public enum Compat
     ILLAGER_EXANSIONS("illager_expansions"),
     GLOOM_RAIDERS("gloom_raiders"),
     OCEANWORLD("oceanworld"),
-    MULTIVERSE("multiverse")
+    MULTIVERSE("multiverse"),
+    POACHERS("poachers"),
+    MECHA_PILLAGER("mechapillagerboss"),
+    SCORCHED_GUNS("scguns"),
+    RESILIANCE_OF_RAIDERS("theresilianceofraiders"),
+    RESISTANCE_OF_ILLAGERS("the_resistance_of_the_raiders"),
+    VINDICATION_OF_ILLAGERS("raiderv")
     ;
 
     private final String modid;
