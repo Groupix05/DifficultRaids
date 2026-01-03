@@ -552,5 +552,13 @@ public class DifficultRaidsUtil
                     RaidervModEntities.PATROL_CAPTAIN.get()
             ));
         }
+
+        if(Compat.GOETY_AWAKEN.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    com.k1sak1.goetyawaken.common.entities.ModEntityType.VINDICATOR_CHEF.get(),
+                    com.k1sak1.goetyawaken.common.entities.ModEntityType.HOSTILE_ROYALGUARD.get()
+            ));
+        }
     }
 }

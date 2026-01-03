@@ -210,7 +210,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:bones-update-958749:5803104")
 
     //Goety - The Dark Arts 2.5.36.1
-    compileOnly fg.deobf("curse.maven:goety-586095:6778940")
+    compileOnly fg.deobf("curse.maven:goety-586095:7400639")
 
     //The Modifiger 1.0.0
     compileOnly fg.deobf("curse.maven:the-modifiger-1115268:5784152")
@@ -373,6 +373,9 @@ dependencies {
 
     //Gloom Raiders 1.1.6
     compileOnly fg.deobf("maven.modrinth:gloom-raiders:1.1.6")
+
+    //Goety Awaken 1.1.0
+    compileOnly fg.deobf("curse.maven:goety-awaken-1412569:7391839")
 
 
 

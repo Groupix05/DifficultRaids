@@ -77,7 +77,8 @@ public enum Compat
     SCORCHED_GUNS("scguns"),
     RESILIANCE_OF_RAIDERS("theresilianceofraiders"),
     RESISTANCE_OF_ILLAGERS("the_resistance_of_the_raiders"),
-    VINDICATION_OF_ILLAGERS("raiderv")
+    VINDICATION_OF_ILLAGERS("raiderv"),
+    GOETY_AWAKEN("goetyawaken")
     ;
 
     private final String modid;

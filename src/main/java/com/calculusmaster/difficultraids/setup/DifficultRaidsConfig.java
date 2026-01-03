@@ -518,6 +518,9 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.RAGER, GENERAL.define("enableRager", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.PATROL_CAPTAIN, GENERAL.define("enablePatrolCaptain", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.RAIDER_RANDOMIZER, GENERAL.define("enableRaiderRandomizer", true));
+        GENERAL.pop().push("Requires Goety Awaken");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.VINDICATOR_CHEF, GENERAL.define("enableVindicatorChef", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HOSTILE_ROYAL_GUARD, GENERAL.define("enableHostileRoyalGuard", false));
 
         GENERAL.pop();
 

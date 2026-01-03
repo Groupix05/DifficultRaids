@@ -10,7 +10,6 @@ import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.util.Compat;
 //import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
-import com.francisplay446.raiderv.init.RaidervModEntities;
 import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
@@ -23,7 +22,6 @@ import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import multiverse.registration.EntityRegistry;
 import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
 import net.mcreator.expadosillagerss.init.ExpadosIllagerssModEntities;
-import net.mcreator.theresistanceoftheraiders.init.TheResistanceOfTheRaidersModEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
@@ -478,6 +476,10 @@ public class RaidEnemyRegistry
     public static final String PATROL_CAPTAIN = "patrol_captain";
     public static final String RAIDER_RANDOMIZER = "raider_randomizer";
 
+    //Goety Awaken
+    public static final String VINDICATOR_CHEF = "vindicator_chef";
+    public static final String HOSTILE_ROYAL_GUARD = "hostile_royal_guard";
+
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -577,6 +579,11 @@ public class RaidEnemyRegistry
         {
             RaidEnemyRegistry.createRaiderType(CONQUEROR,EntityRegistry.CONQUEROR.get());
             RaidEnemyRegistry.createRaiderType(TRAVELER,EntityRegistry.TRAVELER.get());
+        }
+        if(Compat.GOETY_AWAKEN.isLoaded())
+        {
+            RaidEnemyRegistry.createRaiderType(VINDICATOR_CHEF,com.k1sak1.goetyawaken.common.entities.ModEntityType.VINDICATOR_CHEF.get());
+            RaidEnemyRegistry.createRaiderType(HOSTILE_ROYAL_GUARD,com.k1sak1.goetyawaken.common.entities.ModEntityType.HOSTILE_ROYALGUARD.get());
         }
     }
 
@@ -918,6 +925,8 @@ public class RaidEnemyRegistry
                 .withRaider(RAGER,                  0, 0, 0, 1, 0, 1, 1, 0)
                 .withRaider(PATROL_CAPTAIN,         0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(RAIDER_RANDOMIZER,      0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(VINDICATOR_CHEF,        0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 0, 0, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1212,6 +1221,8 @@ public class RaidEnemyRegistry
                 .withRaider(RAGER,                  0, 0, 0, 1, 1, 1, 1, 1)
                 .withRaider(PATROL_CAPTAIN,         0, 0, 0, 0, 1, 1, 0, 1)
                 .withRaider(RAIDER_RANDOMIZER,      0, 1, 1, 1, 0, 1, 0, 1)
+                .withRaider(VINDICATOR_CHEF,        0, 0, 1, 1, 1, 1, 1, 1)
+                .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 1, 0, 0)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1507,6 +1518,8 @@ public class RaidEnemyRegistry
                 .withRaider(RAGER,                  0, 0, 1, 1, 1, 2, 2, 1)
                 .withRaider(PATROL_CAPTAIN,         0, 1, 0, 0, 1, 1, 1, 1)
                 .withRaider(RAIDER_RANDOMIZER,      0, 1, 2, 1, 1, 2, 1, 1)
+                .withRaider(VINDICATOR_CHEF,        0, 1, 1, 2, 2, 1, 2, 1)
+                .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 1, 1, 1, 2, 1, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1804,6 +1817,8 @@ public class RaidEnemyRegistry
                 .withRaider(RAGER,                  0, 1, 1, 1, 2, 3, 2, 3)
                 .withRaider(PATROL_CAPTAIN,         0, 1, 1, 0, 2, 1, 1, 1)
                 .withRaider(RAIDER_RANDOMIZER,      0, 2, 3, 2, 1, 2, 3, 2)
+                .withRaider(VINDICATOR_CHEF,        0, 2, 2, 2, 3, 1, 3, 2)
+                .withRaider(HOSTILE_ROYAL_GUARD,    0, 1, 1, 2, 1, 3, 2, 2)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
