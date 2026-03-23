@@ -260,6 +260,7 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.TRAMPLER, GENERAL.define("enableTrampler", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.VIZIER, GENERAL.define("enableVizier", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.APOSTLE, GENERAL.define("enableApostle", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRONE, GENERAL.define("enableCrone", false));
         GENERAL.comment("If you enable Redstone Golem and Redstone Monstrosity, make sure to enable them in Goety config");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.HOSTILE_RED_GOLEM, GENERAL.define("enableRedstoneGolemGoety", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.HOSTILE_RED_MONSTER, GENERAL.define("enableRedstoneMonstrosity", false));
@@ -521,6 +522,23 @@ public class DifficultRaidsConfig
         GENERAL.pop().push("Requires Goety Awaken");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.VINDICATOR_CHEF, GENERAL.define("enableVindicatorChef", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.HOSTILE_ROYAL_GUARD, GENERAL.define("enableHostileRoyalGuard", false));
+        GENERAL.pop().push("Requires Simple Musket");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MUSKET_PILLAGER, GENERAL.define("enableMusketPillager", true));
+        GENERAL.pop().push("Requires Leos Bosses");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ANCIENT_SORCERER, GENERAL.define("enableAncientSorcerer", false));
+        GENERAL.pop().push("Requires Flame Forge");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CHRIMSONVEIL, GENERAL.define("enableChrimsonveil", true));
+        GENERAL.pop().push("Requires Sieging of the Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.WARLORD, GENERAL.define("enableWarlord", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.WIZARD, GENERAL.define("enableWizard", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PILEDRIVER, GENERAL.define("enablePileDriver", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.WARLORD_RAVAGER, GENERAL.define("enableWarlordRavager", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.DESTRUCTOR, GENERAL.define("enableDestructor", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GIANTSAGER, GENERAL.define("enableGiantsager", true));
+        GENERAL.pop().push("Requires L_Enders Cataclysm");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.NAMELESS_SORCERER, GENERAL.define("enableNamelessSorcerer", false));
+        GENERAL.pop().push("Requires Invade");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.FOLLOWER, GENERAL.define("enableFollower", false));
 
         GENERAL.pop();
 

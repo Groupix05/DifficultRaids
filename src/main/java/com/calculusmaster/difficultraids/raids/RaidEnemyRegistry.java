@@ -1,6 +1,7 @@
 package com.calculusmaster.difficultraids.raids;
 
 import blusunrize.immersiveengineering.common.register.IEEntityTypes;
+import cn.leolezury.leosbosses.init.EntityInit;
 import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.belgieyt.morefeatures.core.registry.MFEntity;
 import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
@@ -190,6 +191,7 @@ public class RaidEnemyRegistry
     public static final String TRAMPLER = "GOETY_TRAMPLER";
     public static final String VIZIER = "GOETY_VIZIER";
     public static final String APOSTLE = "GOETY_APOSTLE";
+    public static final String CRONE = "GOETY_CRONE";
 
     //The Summoner Illager
     public static final String THE_SUMMONER = "summoner";
@@ -480,6 +482,28 @@ public class RaidEnemyRegistry
     public static final String VINDICATOR_CHEF = "vindicator_chef";
     public static final String HOSTILE_ROYAL_GUARD = "hostile_royal_guard";
 
+    //Simple Musket
+    public static final String MUSKET_PILLAGER = "entity.simplemusket.musket_pillager";
+
+    //Leos Bosses
+    public static final String ANCIENT_SORCERER = "ancient_sorcerer";
+
+    //Flame Forge
+    public static final String CHRIMSONVEIL = "raider_chrimsonveil";
+
+    //Sieging of the Illagers
+    public static final String WARLORD = "warlord";
+    public static final String WIZARD = "wizard";
+    public static final String PILEDRIVER = "piledriver";
+    public static final String WARLORD_RAVAGER = "warlords_ravager";
+    public static final String DESTRUCTOR = "destructor";
+    public static final String GIANTSAGER = "giantsager";
+
+    //L_Enders Cataclysm
+    public static final String NAMELESS_SORCERER = "nameless_sorcerer";
+
+    //Invade
+    public static final String FOLLOWER = "follower";
 
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -542,6 +566,7 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(TRAMPLER, ModEntityType.TRAMPLER.get());
             RaidEnemyRegistry.createRaiderType(VIZIER, ModEntityType.VIZIER.get());
             RaidEnemyRegistry.createRaiderType(APOSTLE, ModEntityType.APOSTLE.get());
+            RaidEnemyRegistry.createRaiderType(CRONE, ModEntityType.CRONE.get());
         }
         if(Compat.FRIENDS_AND_FOES.isLoaded()) RaidEnemyRegistry.createRaiderType(ICEOLOGER_FF, FriendsAndFoesEntityTypes.ICEOLOGER.get());
         if(Compat.BRAZIER.isLoaded()) RaidEnemyRegistry.createRaiderType(CRAZED, Content.CRAZED.get());
@@ -585,6 +610,9 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(VINDICATOR_CHEF,com.k1sak1.goetyawaken.common.entities.ModEntityType.VINDICATOR_CHEF.get());
             RaidEnemyRegistry.createRaiderType(HOSTILE_ROYAL_GUARD,com.k1sak1.goetyawaken.common.entities.ModEntityType.HOSTILE_ROYALGUARD.get());
         }
+        if(Compat.LEOSBOSSES.isLoaded()) RaidEnemyRegistry.createRaiderType(ANCIENT_SORCERER, EntityInit.ANCIENT_SORCERER.get());
+        if(Compat.L_ENDERS_CATACLYSM.isLoaded()) RaidEnemyRegistry.createRaiderType(NAMELESS_SORCERER, com.github.L_Ender.cataclysm.init.ModEntities.NAMELESS_SORCERER.get());
+        if(Compat.INVADE.isLoaded()) RaidEnemyRegistry.createRaiderType(FOLLOWER, mc.z1gned.invade.entity.ModEntityType.FOLLOWER.get());
     }
 
     public static void compileWaveData(final Map<ResourceLocation, RaiderEntriesHolder> data)
@@ -742,6 +770,7 @@ public class RaidEnemyRegistry
                 .withRaider(TRAMPLER,               0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(VIZIER,                 0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(APOSTLE,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CRONE,                  0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(THE_SUMMONER,           0, 0, 1, 0, 0, 1, 0, 0)
                 .withRaider(THE_SUMMONER_BOSS,      0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(NECROMANCER_BONES,      0, 0, 0, 0, 1, 0, 0, 1)
@@ -927,6 +956,17 @@ public class RaidEnemyRegistry
                 .withRaider(RAIDER_RANDOMIZER,      0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(VINDICATOR_CHEF,        0, 0, 1, 0, 1, 1, 0, 1)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 0, 0, 0)
+                .withRaider(MUSKET_PILLAGER,        0, 0, 1, 1, 0, 1, 1, 0)
+                .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CHRIMSONVEIL,           0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(WARLORD,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(WIZARD,                 0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PILEDRIVER,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NAMELESS_SORCERER,      0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1038,6 +1078,7 @@ public class RaidEnemyRegistry
                 .withRaider(TRAMPLER,               0, 1, 0, 2, 1, 1, 0, 2)
                 .withRaider(VIZIER,                 0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(APOSTLE,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CRONE,                  0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(THE_SUMMONER,           0, 1, 1, 0, 1, 1, 0, 1)
                 .withRaider(THE_SUMMONER_BOSS,      0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(NECROMANCER_BONES,      0, 0, 1, 1, 1, 0, 0, 1)
@@ -1223,6 +1264,17 @@ public class RaidEnemyRegistry
                 .withRaider(RAIDER_RANDOMIZER,      0, 1, 1, 1, 0, 1, 0, 1)
                 .withRaider(VINDICATOR_CHEF,        0, 0, 1, 1, 1, 1, 1, 1)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 1, 0, 0)
+                .withRaider(MUSKET_PILLAGER,        0, 0, 1, 2, 1, 1, 2, 1)
+                .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CHRIMSONVEIL,           0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(WARLORD,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(WIZARD,                 0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PILEDRIVER,             0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(NAMELESS_SORCERER,      0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1335,6 +1387,7 @@ public class RaidEnemyRegistry
                 .withRaider(TRAMPLER,               0, 1, 1, 2, 3, 1, 1, 2)
                 .withRaider(VIZIER,                 0, 0, 0, 0, 0, 0, 1, 0)
                 .withRaider(APOSTLE,                0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(CRONE,                  0, 0, 0, 0, 0, 0, 1, 0)
                 .withRaider(THE_SUMMONER,           0, 2, 1, 0, 1, 2, 0, 1)
                 .withRaider(THE_SUMMONER_BOSS,      0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(NECROMANCER_BONES,      0, 1, 1, 1, 1, 1, 1, 1)
@@ -1520,6 +1573,18 @@ public class RaidEnemyRegistry
                 .withRaider(RAIDER_RANDOMIZER,      0, 1, 2, 1, 1, 2, 1, 1)
                 .withRaider(VINDICATOR_CHEF,        0, 1, 1, 2, 2, 1, 2, 1)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 1, 1, 1, 2, 1, 0)
+                .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 1, 0, 0)
+                .withRaider(MUSKET_PILLAGER,        0, 1, 1, 2, 2, 1, 2, 2)
+                .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CHRIMSONVEIL,           0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(WARLORD,                0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(WIZARD,                 0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PILEDRIVER,             0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(NAMELESS_SORCERER,      0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1633,7 +1698,8 @@ public class RaidEnemyRegistry
                 .withRaider(MINISTER,               0, 1, 3, 2, 1, 2, 2, 1)
                 .withRaider(TRAMPLER,               0, 1, 2, 3, 4, 2, 2, 3)
                 .withRaider(VIZIER,                 0, 0, 0, 1, 0, 1, 1, 2)
-                .withRaider(APOSTLE,                0, 0, 0, 0, 1, 1, 0, 2)
+                .withRaider(APOSTLE,                0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(CRONE,                  0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(THE_SUMMONER,           0, 2, 2, 1, 2, 3, 1, 2)
                 .withRaider(THE_SUMMONER_BOSS,      0, 0, 0, 1, 1, 1, 0, 2)
                 .withRaider(NECROMANCER_BONES,      0, 1, 2, 2, 1, 2, 1, 2)
@@ -1819,6 +1885,17 @@ public class RaidEnemyRegistry
                 .withRaider(RAIDER_RANDOMIZER,      0, 2, 3, 2, 1, 2, 3, 2)
                 .withRaider(VINDICATOR_CHEF,        0, 2, 2, 2, 3, 1, 3, 2)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 1, 1, 2, 1, 3, 2, 2)
+                .withRaider(MUSKET_PILLAGER,        0, 1, 2, 3, 2, 2, 3, 2)
+                .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(CHRIMSONVEIL,           0, 0, 1, 1, 0, 1, 0, 1)
+                .withRaider(WARLORD,                0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(WIZARD,                 0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(PILEDRIVER,             0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(GIANTSAGER,             0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(NAMELESS_SORCERER,      0, 0, 0, 1, 1, 1, 1, 1)
+                .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 1, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

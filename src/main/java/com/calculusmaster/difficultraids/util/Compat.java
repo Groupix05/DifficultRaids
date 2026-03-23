@@ -78,7 +78,12 @@ public enum Compat
     RESILIANCE_OF_RAIDERS("theresilianceofraiders"),
     RESISTANCE_OF_ILLAGERS("the_resistance_of_the_raiders"),
     VINDICATION_OF_ILLAGERS("raiderv"),
-    GOETY_AWAKEN("goetyawaken")
+    GOETY_AWAKEN("goetyawaken"),
+    LEOSBOSSES("leosbosses"),
+    SIEGE_ILLAGERS("siege_illagers"),
+    SIMPLE_MUSKET("simplemusket"),
+    FLAME_FORGE("flame_forge"),
+    L_ENDERS_CATACLYSM("cataclysm")
     ;
 
     private final String modid;

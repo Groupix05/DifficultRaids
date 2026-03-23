@@ -339,7 +339,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:snows-bosses-mechasent-1360069:7090352")
 
     //No.IXAPI 1.3.7
-    compileOnly fg.deobf("curse.maven:no-ixapi-1300345:7064611")
+    compileOnly fg.deobf("maven.modrinth:no.ixmodapi:1.3.9-fixed")
 
     //Roost 2 1.0.0
     compileOnly fg.deobf("curse.maven:roost-2-flying-higher-1126435:5902147")
@@ -376,6 +376,74 @@ dependencies {
 
     //Goety Awaken 1.1.0
     compileOnly fg.deobf("curse.maven:goety-awaken-1412569:7391839")
+
+    //Leo's Bosses 1.0.0
+    compileOnly fg.deobf("curse.maven:leos-bosses-766910:7224404")
+
+    //Sieging of the Illagers 1.0.3
+    compileOnly fg.deobf("curse.maven:sieging-of-the-illagers-1462069:7794093")
+
+    //Flame Forged Horrors 1.0.0
+    compileOnly fg.deobf("curse.maven:flame-forged-horrors-1097909:5720457")
+
+    //Simple Musket 1.9.2
+    compileOnly fg.deobf("curse.maven:simple-musket-704141:6842331")
+
+    //Invade 1.7
+    compileOnly fg.deobf("curse.maven:invade-850484:6637057")
+
+
+
+
+
+
+
+    //Fathomless Crimson 1.1.6
+    //implementation fg.deobf("curse.maven:fathomless-crimson-1370939:7604491")
+
+    //Cannibal Conundrum 1.0.5 (should not work)
+    //implementation fg.deobf("curse.maven:cannibal-conundrum-920504:4845238")
+
+    //Illage Art 1.1.1
+    //implementation fg.deobf("maven.modrinth:illage-art:1.1.1")
+
+    //Wan's Ancient Beasts 1.4.1
+    //implementation fg.deobf("curse.maven:wans-ancient-beasts-1108604:7552366")
+
+    //Raider Revolution Discontinued 1.0.1
+    //implementation fg.deobf("curse.maven:raider-revolution-1448894:7558542")
+
+    //Chill Thrill 1.2
+    //implementation fg.deobf("curse.maven:chill-thrill-1027994:5593093")
+
+    //Better raiders 1.0.0 (adds raiders ??)
+    //implementation fg.deobf("curse.maven:better-raiders-1236925:6391891")
+
+    //Raids:Enhanced 1.0.2
+    //implementation fg.deobf("curse.maven:raids-enhanced-1467121:7676060")
+
+    //Goety Hostility 1.4.0
+    //implementation fg.deobf("curse.maven:goety-hostility-1458529:7786542")
+
+    //HuaCheng's More Illagers 1.1.0
+    //implementation fg.deobf("curse.maven:more-illagers-hc-1443746:7522624")
+
+    //Monster Plus 1.1.6.1
+    //implementation fg.deobf("curse.maven:monster-plus-676418:4612195")
+
+    //Spicy Species 6.4.2
+    //implementation fg.deobf("curse.maven:spicy-species-1231518:7182134")
+
+    //Crabe's cannibalism  1.4
+    //implementation fg.deobf("curse.maven:crabes-cannibalism-mod-1072836:5716227")
+
+    //Armored Redstone 1.0.1
+    //implementation fg.deobf("curse.maven:armored-redstone-684450:5724271")
+
+
+
+
+
 
 
 
@@ -487,9 +555,6 @@ dependencies {
 //    implementation fg.deobf("curse.maven:thermoo-846544:5832380")
 //    implementation fg.deobf("curse.maven:cardinal-components-api-318449:6064429")
 
-    //Invade 1.7 (doesnt add any illagers in 1.20.1)
-//    implementation fg.deobf("curse.maven:invade-850484:6637057")
-
     //Invasion Code Red 0.0.1 (no third party) (stolen mod)
 //    implementation fg.deobf("curse.maven:invasion-code-red-reborn-1385297:7225374")
 
@@ -502,6 +567,9 @@ dependencies {
     //~SCORCHED GUNS 2 0.5.5 (has it's own way to spawn raiders)
 //    implementation fg.deobf("curse.maven:scorched-guns-802940:7232063")
 //    implementation fg.deobf("curse.maven:framework-549225:6531428")
+
+    //Blue Skies 1.3.31 (doesnt add illagers)
+    //implementation fg.deobf("curse.maven:blue-skies-312918:5010316")
 
 }
 
