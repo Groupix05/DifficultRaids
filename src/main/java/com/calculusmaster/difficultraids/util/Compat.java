@@ -83,7 +83,9 @@ public enum Compat
     SIEGE_ILLAGERS("siege_illagers"),
     SIMPLE_MUSKET("simplemusket"),
     FLAME_FORGE("flame_forge"),
-    L_ENDERS_CATACLYSM("cataclysm")
+    L_ENDERS_CATACLYSM("cataclysm"),
+    ILLAGE_ART("illageart"),
+    FATHOMLESS("fathomless")
     ;
 
     private final String modid;

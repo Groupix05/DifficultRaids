@@ -285,20 +285,17 @@ dependencies {
     //Earth Mobs 10.5.0
     compileOnly fg.deobf("curse.maven:earth-mobs-913527:5497489")
 
-    //PillagersPlus 5.0.7 (no third party)
-//    implementation fg.deobf("curse.maven:pillagersplus-1252604:6864819")
-    compileOnly fg.deobf('libs:pillagersplus:5.0.7-forge-1.20.1')
+    //PillagersPlus 6.0.2
+    compileOnly fg.deobf('maven.modrinth:pillagersplus:6.0.2')
 
     //Pillager Boss 1.0.0
     compileOnly fg.deobf("curse.maven:pillager-boss-1181395:6583995")
 
-    //Mischief Illagers 1.2 (no third party)
-//    implementation fg.deobf("curse.maven:mischief-illagers-1242852:6508234")
-    compileOnly fg.deobf('libs:mischief_illagers:1.2-forge-1.20.1')
+    //Mischief Illagers 1.2
+    compileOnly fg.deobf('maven.modrinth:mischief-illagers:1.2')
 
-    //Illager Universe 1.0.5 (no third party)
-//    implementation fg.deobf("curse.maven:illager-universe-1071881:6126944")
-    compileOnly fg.deobf('libs:illager_universe:1.0.5-forge-1.20.1')
+    //Illager Universe 1.0.5
+    compileOnly fg.deobf('maven.modrinth:illageruniverse:1.0.5')
 
     //Virtuso's Grand Battle 1.1.0
     compileOnly fg.deobf("curse.maven:virtusos-grand-battle-1328536:6964631")
@@ -392,20 +389,21 @@ dependencies {
     //Invade 1.7
     compileOnly fg.deobf("curse.maven:invade-850484:6637057")
 
+    //Illage Art 1.1.1
+    compileOnly fg.deobf("maven.modrinth:illage-art:1.1.1")
+
+    //Fathomless Crimson 1.1.6 + Nexus Layer 1.1.2
+    compileOnly fg.deobf("curse.maven:fathomless-crimson-1370939:7604491")
+    compileOnly fg.deobf("curse.maven:nexus-layer-1305942:7603094")
 
 
 
 
 
 
-    //Fathomless Crimson 1.1.6
-    //implementation fg.deobf("curse.maven:fathomless-crimson-1370939:7604491")
 
     //Cannibal Conundrum 1.0.5 (should not work)
     //implementation fg.deobf("curse.maven:cannibal-conundrum-920504:4845238")
-
-    //Illage Art 1.1.1
-    //implementation fg.deobf("maven.modrinth:illage-art:1.1.1")
 
     //Wan's Ancient Beasts 1.4.1
     //implementation fg.deobf("curse.maven:wans-ancient-beasts-1108604:7552366")
@@ -413,7 +411,7 @@ dependencies {
     //Raider Revolution Discontinued 1.0.1
     //implementation fg.deobf("curse.maven:raider-revolution-1448894:7558542")
 
-    //Chill Thrill 1.2
+    //Chill Thrill 1.2 (no third party)
     //implementation fg.deobf("curse.maven:chill-thrill-1027994:5593093")
 
     //Better raiders 1.0.0 (adds raiders ??)

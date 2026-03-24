@@ -539,6 +539,19 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.NAMELESS_SORCERER, GENERAL.define("enableNamelessSorcerer", false));
         GENERAL.pop().push("Requires Invade");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.FOLLOWER, GENERAL.define("enableFollower", false));
+        GENERAL.pop().push("Requires Illage Art");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PIONEER, GENERAL.define("enablePioneer", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SPITTER, GENERAL.define("enableSpitter", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ILLAGER_TACTICIAN, GENERAL.define("enableIllagerTactician", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.KEY_HOLDER, GENERAL.define("enableKeyHolder", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.THE_FIRE_KING, GENERAL.define("enableTheFireKing", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SPIDER_SUMMONER, GENERAL.define("enableSpiderSummoner", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.FLOATING_ELDER, GENERAL.define("enableFloatingElder", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CALAMITY_NURSE, GENERAL.define("enableCalamityNurse", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GRAND_ARCHMAGE, GENERAL.define("enableGrandArchmage", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CHURCH_WIZARD, GENERAL.define("enableChurchWizard", true));
+        GENERAL.pop().push("Requires Fathomless Crimson");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BISHOP, GENERAL.define("enableBishop", true));
 
         GENERAL.pop();
 

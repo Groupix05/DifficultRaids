@@ -7,6 +7,7 @@ import com.belgieyt.morefeatures.core.registry.MFEntity;
 import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
 import com.calculusmaster.difficultraids.DifficultRaids;
 import com.calculusmaster.difficultraids.data.raiderentries.RaiderEntriesHolder;
+import com.calculusmaster.difficultraids.events.compat.IllageArtSpawnBlocker;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.util.Compat;
 //import io.redspace.ironsspellbooks.registries.EntityRegistry;
@@ -27,6 +28,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
 import net.minecraft.world.entity.raid.Raider;
+import net.minecraftforge.common.MinecraftForge;
 import net.mobz.init.MobZEntities;
 import org.slf4j.Logger;
 
@@ -343,6 +345,17 @@ public class RaidEnemyRegistry
     public static final String SWORD_PILLAGER = "sword_pillager";
     public static final String SPEAR_PILLAGER = "spear_pillager";
     public static final String HOG_RIDER = "hog_rider";
+    // Those mobs dont extend raider
+    //public static final String BAD_VILLAGER = "bad_villager";
+    //public static final String FLAG_WITH_PIRATE = "flag_with_pirate";
+    //public static final String MAGE_PILLAGER = "mage_pillager";
+    //public static final String MINER_PILLAGER = "miner_pillager";
+    //public static final String SUMMONER_PILLAGER = "summoner_pillager";
+    //public static final String PIRATE_WITH_SWORD = "pirate_with_sword";
+    //public static final String ROYAL_GUARDS = "royal_guards";
+    //public static final String SWORD_PILLAGER_DIAMOND_SWORD = "sword_pillager_with_diamond_sword";
+    //public static final String TNT_PILLAGER = "tnt_pillager";
+    //public static final String WITCH_PP = "witch";
 
     //Immersive engineering
     public static final String BULWARK = "bulwark";
@@ -505,6 +518,21 @@ public class RaidEnemyRegistry
     //Invade
     public static final String FOLLOWER = "follower";
 
+    //Illage Art
+    public static final String PIONEER = "pioneer";
+    public static final String SPITTER = "spitter";
+    public static final String KEY_HOLDER = "key_holder";
+    public static final String THE_FIRE_KING = "thefireking";
+    public static final String SPIDER_SUMMONER = "spider_summoner";
+    public static final String FLOATING_ELDER = "floating_elder";
+    public static final String CALAMITY_NURSE = "calamity_nurse";
+    public static final String GRAND_ARCHMAGE = "grand_archmage";
+    public static final String ILLAGER_TACTICIAN = "illager_tactician";
+    public static final String CHURCH_WIZARD = "church_wizard";
+
+    //Fathomless
+    public static final String BISHOP = "bishop";
+
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
     public static boolean isRaiderTypeEnabled(String raiderType)
@@ -613,6 +641,20 @@ public class RaidEnemyRegistry
         if(Compat.LEOSBOSSES.isLoaded()) RaidEnemyRegistry.createRaiderType(ANCIENT_SORCERER, EntityInit.ANCIENT_SORCERER.get());
         if(Compat.L_ENDERS_CATACLYSM.isLoaded()) RaidEnemyRegistry.createRaiderType(NAMELESS_SORCERER, com.github.L_Ender.cataclysm.init.ModEntities.NAMELESS_SORCERER.get());
         if(Compat.INVADE.isLoaded()) RaidEnemyRegistry.createRaiderType(FOLLOWER, mc.z1gned.invade.entity.ModEntityType.FOLLOWER.get());
+        if(Compat.ILLAGE_ART.isLoaded())
+        {
+            MinecraftForge.EVENT_BUS.register(IllageArtSpawnBlocker.class);
+            RaidEnemyRegistry.createRaiderType(PIONEER, com.goldword.illageart.entity.ModEntities.PIONEER.get());
+            RaidEnemyRegistry.createRaiderType(SPITTER, com.goldword.illageart.entity.ModEntities.SPITTER.get());
+            RaidEnemyRegistry.createRaiderType(KEY_HOLDER, com.goldword.illageart.entity.ModEntities.KEY_HOLDER.get());
+            RaidEnemyRegistry.createRaiderType(THE_FIRE_KING, com.goldword.illageart.entity.ModEntities.THE_FIRE_KING.get());
+            RaidEnemyRegistry.createRaiderType(SPIDER_SUMMONER, com.goldword.illageart.entity.ModEntities.SPIDER_SUMMONER.get());
+            RaidEnemyRegistry.createRaiderType(FLOATING_ELDER, com.goldword.illageart.entity.ModEntities.FLOATING_ELDER.get());
+            RaidEnemyRegistry.createRaiderType(CALAMITY_NURSE, com.goldword.illageart.entity.ModEntities.CALAMITY_NURSE.get());
+            RaidEnemyRegistry.createRaiderType(GRAND_ARCHMAGE, com.goldword.illageart.entity.ModEntities.GRAND_ARCHMAGE.get());
+            RaidEnemyRegistry.createRaiderType(ILLAGER_TACTICIAN, com.goldword.illageart.entity.ModEntities.ILLAGER_TACTICIAN.get());
+            RaidEnemyRegistry.createRaiderType(CHURCH_WIZARD, com.goldword.illageart.entity.ModEntities.CHURCH_WIZARD.get());
+        }
     }
 
     public static void compileWaveData(final Map<ResourceLocation, RaiderEntriesHolder> data)
@@ -967,6 +1009,17 @@ public class RaidEnemyRegistry
                 .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(NAMELESS_SORCERER,      0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PIONEER,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(SPITTER,                0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(ILLAGER_TACTICIAN,      0, 0, 1, 1, 0, 1, 0, 1)
+                .withRaider(KEY_HOLDER,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(THE_FIRE_KING,          0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(SPIDER_SUMMONER,        0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(FLOATING_ELDER,         0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CALAMITY_NURSE,         0, 0, 0, 1, 1, 0, 1, 1)
+                .withRaider(GRAND_ARCHMAGE,         0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(CHURCH_WIZARD,          0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(BISHOP,                 0, 0, 0, 0, 0, 1, 0, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1275,6 +1328,17 @@ public class RaidEnemyRegistry
                 .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(NAMELESS_SORCERER,      0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PIONEER,                0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(SPITTER,                0, 0, 0, 1, 1, 0, 1, 1)
+                .withRaider(ILLAGER_TACTICIAN,      0, 0, 1, 2, 1, 1, 1, 1)
+                .withRaider(KEY_HOLDER,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(THE_FIRE_KING,          0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(SPIDER_SUMMONER,        0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(FLOATING_ELDER,         0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CALAMITY_NURSE,         0, 1, 0, 1, 1, 0, 2, 1)
+                .withRaider(GRAND_ARCHMAGE,         0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(CHURCH_WIZARD,          0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(BISHOP,                 0, 0, 0, 1, 0, 1, 0, 0)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1585,6 +1649,17 @@ public class RaidEnemyRegistry
                 .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(NAMELESS_SORCERER,      0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(PIONEER,                0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(SPITTER,                0, 0, 1, 1, 2, 1, 1, 1)
+                .withRaider(ILLAGER_TACTICIAN,      0, 1, 1, 2, 1, 1, 1, 2)
+                .withRaider(KEY_HOLDER,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(THE_FIRE_KING,          0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(SPIDER_SUMMONER,        0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(FLOATING_ELDER,         0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CALAMITY_NURSE,         0, 1, 1, 1, 1, 0, 2, 2)
+                .withRaider(GRAND_ARCHMAGE,         0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(CHURCH_WIZARD,          0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(BISHOP,                 0, 0, 0, 1, 0, 1, 1, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1896,6 +1971,17 @@ public class RaidEnemyRegistry
                 .withRaider(GIANTSAGER,             0, 0, 0, 0, 1, 0, 0, 1)
                 .withRaider(NAMELESS_SORCERER,      0, 0, 0, 1, 1, 1, 1, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(PIONEER,                0, 0, 0, 1, 1, 0, 1, 0)
+                .withRaider(SPITTER,                0, 1, 1, 1, 2, 2, 1, 1)
+                .withRaider(ILLAGER_TACTICIAN,      0, 2, 1, 2, 1, 1, 1, 2)
+                .withRaider(KEY_HOLDER,             0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(THE_FIRE_KING,          0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(SPIDER_SUMMONER,        0, 0, 1, 0, 0, 0, 0, 0)
+                .withRaider(FLOATING_ELDER,         0, 0, 0, 1, 0, 0, 0, 0)
+                .withRaider(CALAMITY_NURSE,         0, 1, 1, 2, 1, 1, 2, 2)
+                .withRaider(GRAND_ARCHMAGE,         0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(CHURCH_WIZARD,          0, 0, 1, 0, 1, 0, 0, 0)
+                .withRaider(BISHOP,                 0, 0, 1, 1, 0, 1, 1, 0)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

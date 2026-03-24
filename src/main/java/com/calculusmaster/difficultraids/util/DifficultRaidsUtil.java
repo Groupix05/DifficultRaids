@@ -10,6 +10,7 @@ import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.belgieyt.morefeatures.core.registry.MFEntity;
 import com.beta.theresilianceofraiders.init.TheresilianceofraidersModEntities;
 import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
+import com.briknex.fathomless.init.FathomlessModEntities;
 import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
 import com.francisplay446.raiderv.init.RaidervModEntities;
@@ -564,5 +565,25 @@ public class DifficultRaidsUtil
         if(Compat.SIMPLE_MUSKET.isLoaded()) STANDARD_RAIDERS.add(com.brokenkeyboard.simplemusket.ModRegistry.GUNSLINGER);
 
         if(Compat.L_ENDERS_CATACLYSM.isLoaded()) BASIC_MAGIC_RAIDERS.add(com.github.L_Ender.cataclysm.init.ModEntities.NAMELESS_SORCERER.get());
+
+        if(Compat.ILLAGE_ART.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    com.goldword.illageart.entity.ModEntities.CALAMITY_NURSE.get(),
+                    com.goldword.illageart.entity.ModEntities.ILLAGER_TACTICIAN.get(),
+                    com.goldword.illageart.entity.ModEntities.SPITTER.get()
+            ));
+            BASIC_MAGIC_RAIDERS.add(com.goldword.illageart.entity.ModEntities.CHURCH_WIZARD.get());
+            ADVANCED_MAGIC_RAIDERS.addAll(List.of(
+                    com.goldword.illageart.entity.ModEntities.GRAND_ARCHMAGE.get(),
+                    com.goldword.illageart.entity.ModEntities.FLOATING_ELDER.get(),
+                    com.goldword.illageart.entity.ModEntities.SPIDER_SUMMONER.get(),
+                    com.goldword.illageart.entity.ModEntities.THE_FIRE_KING.get(),
+                    com.goldword.illageart.entity.ModEntities.KEY_HOLDER.get()
+            ));
+            ADVANCED_RAIDERS.add(com.goldword.illageart.entity.ModEntities.PIONEER.get());
+        }
+
+        if(Compat.FATHOMLESS.isLoaded()) BASIC_MAGIC_RAIDERS.add(FathomlessModEntities.BISHOP.get());
     }
 }
