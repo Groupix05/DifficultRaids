@@ -53,12 +53,12 @@ public class DifficultRaidsEntityTypes
     public static final RegistryObject<EntityType<FrostSnowballEntity>> FROST_SNOWBALL = ENTITY_TYPES.register("frost_snowball",
             () -> EntityType.Builder.of(FrostSnowballEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10)
-                    .build(new ResourceLocation(DifficultRaids.MODID, "frost_snowball").toString()));
+                    .build(DifficultRaids.location("frost_snowball").toString()));
 
     public static final RegistryObject<EntityType<ShamanDebuffBulletEntity>> SHAMAN_DEBUFF_BULLET = ENTITY_TYPES.register("shaman_debuff_bullet",
             () -> EntityType.Builder.of(ShamanDebuffBulletEntity::new, MobCategory.MISC)
                     .sized(0.3125F, 0.3125F).clientTrackingRange(8)
-                    .build(new ResourceLocation(DifficultRaids.MODID, "shaman_debuff_bullet").toString()));
+                    .build(DifficultRaids.location("shaman_debuff_bullet").toString()));
 
     public static final RegistryObject<EntityType<VoldonFamiliarEntity>> VOLDON_FAMILIAR =
             registerIllager("voldon_familiar", VoldonFamiliarEntity::new);
@@ -81,7 +81,7 @@ public class DifficultRaidsEntityTypes
         return ENTITY_TYPES.register(registryName,
                 () -> EntityType.Builder.of(entityFactory, MobCategory.MONSTER)
                         .sized(0.6F, 1.95F).clientTrackingRange(8)
-                        .build(new ResourceLocation(DifficultRaids.MODID, registryName).toString())
+                        .build(DifficultRaids.location(registryName).toString())
         );
     }
 

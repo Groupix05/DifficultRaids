@@ -85,7 +85,8 @@ public enum Compat
     FLAME_FORGE("flame_forge"),
     L_ENDERS_CATACLYSM("cataclysm"),
     ILLAGE_ART("illageart"),
-    FATHOMLESS("fathomless")
+    FATHOMLESS("fathomless"),
+    WAN_ANCIENT_BEASTS("wan_ancient_beasts")
     ;
 
     private final String modid;

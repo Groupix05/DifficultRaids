@@ -11,7 +11,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class ElectroIllagerRenderer extends AbstractEvokerVariantRenderer<ElectroIllagerEntity>
 {
-    private static final ResourceLocation ELECTRIFIED = new ResourceLocation(DifficultRaids.MODID, "textures/entity/electro_illager_electrified.png");
+    private static final ResourceLocation ELECTRIFIED = DifficultRaids.location("textures/entity/electro_illager_electrified.png");
 
     public ElectroIllagerRenderer(EntityRendererProvider.Context entityRenderProvider)
     {

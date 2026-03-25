@@ -406,7 +406,7 @@ dependencies {
     //implementation fg.deobf("curse.maven:cannibal-conundrum-920504:4845238")
 
     //Wan's Ancient Beasts 1.4.1
-    //implementation fg.deobf("curse.maven:wans-ancient-beasts-1108604:7552366")
+    implementation fg.deobf("curse.maven:wans-ancient-beasts-1108604:7552366")
 
     //Raider Revolution Discontinued 1.0.1
     //implementation fg.deobf("curse.maven:raider-revolution-1448894:7558542")

@@ -9,8 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 
 public class VoldonFamiliarRenderer extends AbstractIllagerVariantRenderer<VoldonFamiliarEntity>
 {
-    private static final ResourceLocation VOLDON_FAMILIAR_BASE = new ResourceLocation(DifficultRaids.MODID, "textures/entity/voldon_familiar.png");
-    private static final ResourceLocation VOLDON_FAMILIAR_HIDE = new ResourceLocation(DifficultRaids.MODID, "textures/entity/voldon_familiar_hide.png");
+    private static final ResourceLocation VOLDON_FAMILIAR_BASE = DifficultRaids.location("textures/entity/voldon_familiar.png");
+    private static final ResourceLocation VOLDON_FAMILIAR_HIDE = DifficultRaids.location("textures/entity/voldon_familiar_hide.png");
 
     public VoldonFamiliarRenderer(EntityRendererProvider.Context entityRenderProvider)
     {

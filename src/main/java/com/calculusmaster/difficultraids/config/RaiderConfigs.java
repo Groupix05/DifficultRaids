@@ -1,5 +1,6 @@
 package com.calculusmaster.difficultraids.config;
 
+import com.calculusmaster.difficultraids.DifficultRaids;
 import com.calculusmaster.difficultraids.raids.RaidDifficulty;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -21,10 +22,10 @@ public class RaiderConfigs
 {
     public static class Vindicator extends RaiderConfig
     {
-        public static final TagKey<Item> TAG_AXES_HERO = ItemTags.create(new ResourceLocation("difficultraids:vindicator/axes_hero"));
-        public static final TagKey<Item> TAG_AXES_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:vindicator/axes_legend"));
-        public static final TagKey<Item> TAG_AXES_MASTER = ItemTags.create(new ResourceLocation("difficultraids:vindicator/axes_master"));
-        public static final TagKey<Item> TAG_AXES_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:vindicator/axes_grandmaster"));
+        public static final TagKey<Item> TAG_AXES_HERO = ItemTags.create(DifficultRaids.location("vindicator/axes_hero"));
+        public static final TagKey<Item> TAG_AXES_LEGEND = ItemTags.create(DifficultRaids.location("vindicator/axes_legend"));
+        public static final TagKey<Item> TAG_AXES_MASTER = ItemTags.create(DifficultRaids.location("vindicator/axes_master"));
+        public static final TagKey<Item> TAG_AXES_GRANDMASTER = ItemTags.create(DifficultRaids.location("vindicator/axes_grandmaster"));
 
         private final ForgeConfigSpec.IntValue sharpnessLevel_config;
         public int sharpnessLevel;
@@ -232,10 +233,10 @@ public class RaiderConfigs
 
     public static class Warrior extends RaiderConfig
     {
-        public static final TagKey<Item> TAG_SWORDS_HERO = ItemTags.create(new ResourceLocation("difficultraids:warrior/swords_hero"));
-        public static final TagKey<Item> TAG_SWORDS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:warrior/swords_legend"));
-        public static final TagKey<Item> TAG_SWORDS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:warrior/swords_master"));
-        public static final TagKey<Item> TAG_SWORDS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:warrior/swords_grandmaster"));
+        public static final TagKey<Item> TAG_SWORDS_HERO = ItemTags.create(DifficultRaids.location("warrior/swords_hero"));
+        public static final TagKey<Item> TAG_SWORDS_LEGEND = ItemTags.create(DifficultRaids.location("warrior/swords_legend"));
+        public static final TagKey<Item> TAG_SWORDS_MASTER = ItemTags.create(DifficultRaids.location("warrior/swords_master"));
+        public static final TagKey<Item> TAG_SWORDS_GRANDMASTER = ItemTags.create(DifficultRaids.location("warrior/swords_grandmaster"));
 
         private final ForgeConfigSpec.IntValue sharpnessLevel_config;
         public int sharpnessLevel;
@@ -477,30 +478,30 @@ public class RaiderConfigs
 
     public static class Necromancer extends RaiderConfig
     {
-        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_HERO = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:necromancer/minion_types_hero"));
-        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_LEGEND = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:necromancer/minion_types_legend"));
-        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_MASTER = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:necromancer/minion_types_master"));
-        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_GRANDMASTER = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:necromancer/minion_types_grandmaster"));
+        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_HERO = TagKey.create(Registries.ENTITY_TYPE, DifficultRaids.location("necromancer/minion_types_hero"));
+        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_LEGEND = TagKey.create(Registries.ENTITY_TYPE, DifficultRaids.location("necromancer/minion_types_legend"));
+        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_MASTER = TagKey.create(Registries.ENTITY_TYPE, DifficultRaids.location("necromancer/minion_types_master"));
+        public static final TagKey<EntityType<?>> TAG_MINION_TYPES_GRANDMASTER = TagKey.create(Registries.ENTITY_TYPE, DifficultRaids.location("necromancer/minion_types_grandmaster"));
 
-        public static final TagKey<Item> TAG_HELMETS_HERO = ItemTags.create(new ResourceLocation("difficultraids:necromancer/helmets_hero"));
-        public static final TagKey<Item> TAG_HELMETS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:necromancer/helmets_legend"));
-        public static final TagKey<Item> TAG_HELMETS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:necromancer/helmets_master"));
-        public static final TagKey<Item> TAG_HELMETS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:necromancer/helmets_grandmaster"));
+        public static final TagKey<Item> TAG_HELMETS_HERO = ItemTags.create(DifficultRaids.location("necromancer/helmets_hero"));
+        public static final TagKey<Item> TAG_HELMETS_LEGEND = ItemTags.create(DifficultRaids.location("necromancer/helmets_legend"));
+        public static final TagKey<Item> TAG_HELMETS_MASTER = ItemTags.create(DifficultRaids.location("necromancer/helmets_master"));
+        public static final TagKey<Item> TAG_HELMETS_GRANDMASTER = ItemTags.create(DifficultRaids.location("necromancer/helmets_grandmaster"));
 
-        public static final TagKey<Item> TAG_CHESTPLATES_HERO = ItemTags.create(new ResourceLocation("difficultraids:necromancer/chestplates_hero"));
-        public static final TagKey<Item> TAG_CHESTPLATES_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:necromancer/chestplates_legend"));
-        public static final TagKey<Item> TAG_CHESTPLATES_MASTER = ItemTags.create(new ResourceLocation("difficultraids:necromancer/chestplates_master"));
-        public static final TagKey<Item> TAG_CHESTPLATES_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:necromancer/chestplates_grandmaster"));
+        public static final TagKey<Item> TAG_CHESTPLATES_HERO = ItemTags.create(DifficultRaids.location("necromancer/chestplates_hero"));
+        public static final TagKey<Item> TAG_CHESTPLATES_LEGEND = ItemTags.create(DifficultRaids.location("necromancer/chestplates_legend"));
+        public static final TagKey<Item> TAG_CHESTPLATES_MASTER = ItemTags.create(DifficultRaids.location("necromancer/chestplates_master"));
+        public static final TagKey<Item> TAG_CHESTPLATES_GRANDMASTER = ItemTags.create(DifficultRaids.location("necromancer/chestplates_grandmaster"));
 
-        public static final TagKey<Item> TAG_LEGGINGS_HERO = ItemTags.create(new ResourceLocation("difficultraids:necromancer/leggings_hero"));
-        public static final TagKey<Item> TAG_LEGGINGS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:necromancer/leggings_legend"));
-        public static final TagKey<Item> TAG_LEGGINGS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:necromancer/leggings_master"));
-        public static final TagKey<Item> TAG_LEGGINGS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:necromancer/leggings_grandmaster"));
+        public static final TagKey<Item> TAG_LEGGINGS_HERO = ItemTags.create(DifficultRaids.location("necromancer/leggings_hero"));
+        public static final TagKey<Item> TAG_LEGGINGS_LEGEND = ItemTags.create(DifficultRaids.location("necromancer/leggings_legend"));
+        public static final TagKey<Item> TAG_LEGGINGS_MASTER = ItemTags.create(DifficultRaids.location("necromancer/leggings_master"));
+        public static final TagKey<Item> TAG_LEGGINGS_GRANDMASTER = ItemTags.create(DifficultRaids.location("necromancer/leggings_grandmaster"));
 
-        public static final TagKey<Item> TAG_BOOTS_HERO = ItemTags.create(new ResourceLocation("difficultraids:necromancer/boots_hero"));
-        public static final TagKey<Item> TAG_BOOTS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:necromancer/boots_legend"));
-        public static final TagKey<Item> TAG_BOOTS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:necromancer/boots_master"));
-        public static final TagKey<Item> TAG_BOOTS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:necromancer/boots_grandmaster"));
+        public static final TagKey<Item> TAG_BOOTS_HERO = ItemTags.create(DifficultRaids.location("necromancer/boots_hero"));
+        public static final TagKey<Item> TAG_BOOTS_LEGEND = ItemTags.create(DifficultRaids.location("necromancer/boots_legend"));
+        public static final TagKey<Item> TAG_BOOTS_MASTER = ItemTags.create(DifficultRaids.location("necromancer/boots_master"));
+        public static final TagKey<Item> TAG_BOOTS_GRANDMASTER = ItemTags.create(DifficultRaids.location("necromancer/boots_grandmaster"));
 
         private final ForgeConfigSpec.DoubleValue reflectedDamagePercentage_config;
         public float reflectedDamagePercentage;
@@ -638,10 +639,10 @@ public class RaiderConfigs
 
     public static class Shaman extends RaiderConfig
     {
-        public static final TagKey<MobEffect> TAG_EFFECTS_HERO = ForgeRegistries.MOB_EFFECTS.tags().createTagKey(new ResourceLocation("difficultraids:shaman/effects_hero"));
-        public static final TagKey<MobEffect> TAG_EFFECTS_LEGEND = ForgeRegistries.MOB_EFFECTS.tags().createTagKey(new ResourceLocation("difficultraids:shaman/effects_legend"));
-        public static final TagKey<MobEffect> TAG_EFFECTS_MASTER = ForgeRegistries.MOB_EFFECTS.tags().createTagKey(new ResourceLocation("difficultraids:shaman/effects_master"));
-        public static final TagKey<MobEffect> TAG_EFFECTS_GRANDMASTER = ForgeRegistries.MOB_EFFECTS.tags().createTagKey(new ResourceLocation("difficultraids:shaman/effects_grandmaster"));
+        public static final TagKey<MobEffect> TAG_EFFECTS_HERO = ForgeRegistries.MOB_EFFECTS.tags().createTagKey(DifficultRaids.location("shaman/effects_hero"));
+        public static final TagKey<MobEffect> TAG_EFFECTS_LEGEND = ForgeRegistries.MOB_EFFECTS.tags().createTagKey(DifficultRaids.location("shaman/effects_legend"));
+        public static final TagKey<MobEffect> TAG_EFFECTS_MASTER = ForgeRegistries.MOB_EFFECTS.tags().createTagKey(DifficultRaids.location("shaman/effects_master"));
+        public static final TagKey<MobEffect> TAG_EFFECTS_GRANDMASTER = ForgeRegistries.MOB_EFFECTS.tags().createTagKey(DifficultRaids.location("shaman/effects_grandmaster"));
 
         private final ForgeConfigSpec.IntValue invisibilityDuration_config;
         public int invisibilityDuration;
@@ -979,30 +980,30 @@ public class RaiderConfigs
 
     public static class Ashenmancer extends RaiderConfig
     {
-        public static final TagKey<Item> TAG_SWORDS_HERO = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/swords_hero"));
-        public static final TagKey<Item> TAG_SWORDS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/swords_legend"));
-        public static final TagKey<Item> TAG_SWORDS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/swords_master"));
-        public static final TagKey<Item> TAG_SWORDS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/swords_grandmaster"));
+        public static final TagKey<Item> TAG_SWORDS_HERO = ItemTags.create(DifficultRaids.location("ashenmancer/swords_hero"));
+        public static final TagKey<Item> TAG_SWORDS_LEGEND = ItemTags.create(DifficultRaids.location("ashenmancer/swords_legend"));
+        public static final TagKey<Item> TAG_SWORDS_MASTER = ItemTags.create(DifficultRaids.location("ashenmancer/swords_master"));
+        public static final TagKey<Item> TAG_SWORDS_GRANDMASTER = ItemTags.create(DifficultRaids.location("ashenmancer/swords_grandmaster"));
 
-        public static final TagKey<Item> TAG_HELMETS_HERO = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/helmets_hero"));
-        public static final TagKey<Item> TAG_HELMETS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/helmets_legend"));
-        public static final TagKey<Item> TAG_HELMETS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/helmets_master"));
-        public static final TagKey<Item> TAG_HELMETS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/helmets_grandmaster"));
+        public static final TagKey<Item> TAG_HELMETS_HERO = ItemTags.create(DifficultRaids.location("ashenmancer/helmets_hero"));
+        public static final TagKey<Item> TAG_HELMETS_LEGEND = ItemTags.create(DifficultRaids.location("ashenmancer/helmets_legend"));
+        public static final TagKey<Item> TAG_HELMETS_MASTER = ItemTags.create(DifficultRaids.location("ashenmancer/helmets_master"));
+        public static final TagKey<Item> TAG_HELMETS_GRANDMASTER = ItemTags.create(DifficultRaids.location("ashenmancer/helmets_grandmaster"));
 
-        public static final TagKey<Item> TAG_CHESTPLATES_HERO = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/chestplates_hero"));
-        public static final TagKey<Item> TAG_CHESTPLATES_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/chestplates_legend"));
-        public static final TagKey<Item> TAG_CHESTPLATES_MASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/chestplates_master"));
-        public static final TagKey<Item> TAG_CHESTPLATES_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/chestplates_grandmaster"));
+        public static final TagKey<Item> TAG_CHESTPLATES_HERO = ItemTags.create(DifficultRaids.location("ashenmancer/chestplates_hero"));
+        public static final TagKey<Item> TAG_CHESTPLATES_LEGEND = ItemTags.create(DifficultRaids.location("ashenmancer/chestplates_legend"));
+        public static final TagKey<Item> TAG_CHESTPLATES_MASTER = ItemTags.create(DifficultRaids.location("ashenmancer/chestplates_master"));
+        public static final TagKey<Item> TAG_CHESTPLATES_GRANDMASTER = ItemTags.create(DifficultRaids.location("ashenmancer/chestplates_grandmaster"));
 
-        public static final TagKey<Item> TAG_LEGGINGS_HERO = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/leggings_hero"));
-        public static final TagKey<Item> TAG_LEGGINGS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/leggings_legend"));
-        public static final TagKey<Item> TAG_LEGGINGS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/leggings_master"));
-        public static final TagKey<Item> TAG_LEGGINGS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/leggings_grandmaster"));
+        public static final TagKey<Item> TAG_LEGGINGS_HERO = ItemTags.create(DifficultRaids.location("ashenmancer/leggings_hero"));
+        public static final TagKey<Item> TAG_LEGGINGS_LEGEND = ItemTags.create(DifficultRaids.location("ashenmancer/leggings_legend"));
+        public static final TagKey<Item> TAG_LEGGINGS_MASTER = ItemTags.create(DifficultRaids.location("ashenmancer/leggings_master"));
+        public static final TagKey<Item> TAG_LEGGINGS_GRANDMASTER = ItemTags.create(DifficultRaids.location("ashenmancer/leggings_grandmaster"));
 
-        public static final TagKey<Item> TAG_BOOTS_HERO = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/boots_hero"));
-        public static final TagKey<Item> TAG_BOOTS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/boots_legend"));
-        public static final TagKey<Item> TAG_BOOTS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/boots_master"));
-        public static final TagKey<Item> TAG_BOOTS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:ashenmancer/boots_grandmaster"));
+        public static final TagKey<Item> TAG_BOOTS_HERO = ItemTags.create(DifficultRaids.location("ashenmancer/boots_hero"));
+        public static final TagKey<Item> TAG_BOOTS_LEGEND = ItemTags.create(DifficultRaids.location("ashenmancer/boots_legend"));
+        public static final TagKey<Item> TAG_BOOTS_MASTER = ItemTags.create(DifficultRaids.location("ashenmancer/boots_master"));
+        public static final TagKey<Item> TAG_BOOTS_GRANDMASTER = ItemTags.create(DifficultRaids.location("ashenmancer/boots_grandmaster"));
 
         private final ForgeConfigSpec.IntValue maxMinionCount_config;
         public int maxMinionCount;
@@ -1793,10 +1794,10 @@ public class RaiderConfigs
 
     public static class Hunter extends RaiderConfig
     {
-        public static final TagKey<Item> TAG_SWORDS_HERO = ItemTags.create(new ResourceLocation("difficultraids:hunter/swords_hero"));
-        public static final TagKey<Item> TAG_SWORDS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:hunter/swords_legend"));
-        public static final TagKey<Item> TAG_SWORDS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:hunter/swords_master"));
-        public static final TagKey<Item> TAG_SWORDS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:hunter/swords_grandmaster"));
+        public static final TagKey<Item> TAG_SWORDS_HERO = ItemTags.create(DifficultRaids.location("hunter/swords_hero"));
+        public static final TagKey<Item> TAG_SWORDS_LEGEND = ItemTags.create(DifficultRaids.location("hunter/swords_legend"));
+        public static final TagKey<Item> TAG_SWORDS_MASTER = ItemTags.create(DifficultRaids.location("hunter/swords_master"));
+        public static final TagKey<Item> TAG_SWORDS_GRANDMASTER = ItemTags.create(DifficultRaids.location("hunter/swords_grandmaster"));
 
         private final ForgeConfigSpec.IntValue bowPowerLevel_config;
         public int bowPowerLevel;
@@ -2024,10 +2025,10 @@ public class RaiderConfigs
 
     public static class Skirmisher extends RaiderConfig
     {
-        public static final TagKey<Item> TAG_AXES_HERO = ItemTags.create(new ResourceLocation("difficultraids:skirmisher/axes_hero"));
-        public static final TagKey<Item> TAG_AXES_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:skirmisher/axes_legend"));
-        public static final TagKey<Item> TAG_AXES_MASTER = ItemTags.create(new ResourceLocation("difficultraids:skirmisher/axes_master"));
-        public static final TagKey<Item> TAG_AXES_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:skirmisher/axes_grandmaster"));
+        public static final TagKey<Item> TAG_AXES_HERO = ItemTags.create(DifficultRaids.location("skirmisher/axes_hero"));
+        public static final TagKey<Item> TAG_AXES_LEGEND = ItemTags.create(DifficultRaids.location("skirmisher/axes_legend"));
+        public static final TagKey<Item> TAG_AXES_MASTER = ItemTags.create(DifficultRaids.location("skirmisher/axes_master"));
+        public static final TagKey<Item> TAG_AXES_GRANDMASTER = ItemTags.create(DifficultRaids.location("skirmisher/axes_grandmaster"));
 
         private final ForgeConfigSpec.IntValue axeSharpnessLevel_config;
         public int axeSharpnessLevel;
@@ -2101,10 +2102,10 @@ public class RaiderConfigs
 
     public static class Legioner extends RaiderConfig
     {
-        public static final TagKey<Item> TAG_SWORDS_HERO = ItemTags.create(new ResourceLocation("difficultraids:legioner/swords_hero"));
-        public static final TagKey<Item> TAG_SWORDS_LEGEND = ItemTags.create(new ResourceLocation("difficultraids:legioner/swords_legend"));
-        public static final TagKey<Item> TAG_SWORDS_MASTER = ItemTags.create(new ResourceLocation("difficultraids:legioner/swords_master"));
-        public static final TagKey<Item> TAG_SWORDS_GRANDMASTER = ItemTags.create(new ResourceLocation("difficultraids:legioner/swords_grandmaster"));
+        public static final TagKey<Item> TAG_SWORDS_HERO = ItemTags.create(DifficultRaids.location("legioner/swords_hero"));
+        public static final TagKey<Item> TAG_SWORDS_LEGEND = ItemTags.create(DifficultRaids.location("legioner/swords_legend"));
+        public static final TagKey<Item> TAG_SWORDS_MASTER = ItemTags.create(DifficultRaids.location("legioner/swords_master"));
+        public static final TagKey<Item> TAG_SWORDS_GRANDMASTER = ItemTags.create(DifficultRaids.location("legioner/swords_grandmaster"));
 
         private final ForgeConfigSpec.IntValue swordSharpnessLevel_config;
         public int swordSharpnessLevel;

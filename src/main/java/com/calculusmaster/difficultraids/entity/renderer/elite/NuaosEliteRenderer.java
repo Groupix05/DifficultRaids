@@ -9,10 +9,10 @@ import net.minecraft.resources.ResourceLocation;
 
 public class NuaosEliteRenderer extends AbstractIllagerVariantRenderer<NuaosEliteEntity>
 {
-    private static final ResourceLocation NUAOS_DEFAULT = new ResourceLocation(DifficultRaids.MODID, "textures/entity/nuaos_elite_default.png");
-    private static final ResourceLocation NUAOS_LOW = new ResourceLocation(DifficultRaids.MODID, "textures/entity/nuaos_elite_low.png");
-    private static final ResourceLocation NUAOS_HIGH = new ResourceLocation(DifficultRaids.MODID, "textures/entity/nuaos_elite_high.png");
-    private static final ResourceLocation NUAOS_MAX = new ResourceLocation(DifficultRaids.MODID, "textures/entity/nuaos_elite_max.png");
+    private static final ResourceLocation NUAOS_DEFAULT = DifficultRaids.location("textures/entity/nuaos_elite_default.png");
+    private static final ResourceLocation NUAOS_LOW = DifficultRaids.location("textures/entity/nuaos_elite_low.png");
+    private static final ResourceLocation NUAOS_HIGH = DifficultRaids.location("textures/entity/nuaos_elite_high.png");
+    private static final ResourceLocation NUAOS_MAX = DifficultRaids.location("textures/entity/nuaos_elite_max.png");
 
     public NuaosEliteRenderer(EntityRendererProvider.Context entityRenderProvider)
     {

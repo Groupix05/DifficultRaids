@@ -533,6 +533,9 @@ public class RaidEnemyRegistry
     //Fathomless
     public static final String BISHOP = "bishop";
 
+    //Wan Ancient Beasts
+    public static final String TAMER = "wan_ancient_beasts:tamer";
+
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
     public static boolean isRaiderTypeEnabled(String raiderType)
@@ -1020,6 +1023,7 @@ public class RaidEnemyRegistry
                 .withRaider(GRAND_ARCHMAGE,         0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(CHURCH_WIZARD,          0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(BISHOP,                 0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(TAMER,                  0, 0, 0, 0, 1, 0, 0, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1339,6 +1343,7 @@ public class RaidEnemyRegistry
                 .withRaider(GRAND_ARCHMAGE,         0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(CHURCH_WIZARD,          0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(BISHOP,                 0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(TAMER,                  0, 0, 0, 0, 1, 0, 0, 1)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1660,6 +1665,7 @@ public class RaidEnemyRegistry
                 .withRaider(GRAND_ARCHMAGE,         0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(CHURCH_WIZARD,          0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(BISHOP,                 0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(TAMER,                  0, 0, 1, 0, 1, 0, 0, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1982,6 +1988,7 @@ public class RaidEnemyRegistry
                 .withRaider(GRAND_ARCHMAGE,         0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(CHURCH_WIZARD,          0, 0, 1, 0, 1, 0, 0, 0)
                 .withRaider(BISHOP,                 0, 0, 1, 1, 0, 1, 1, 0)
+                .withRaider(TAMER,                  0, 1, 1, 0, 1, 0, 0, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

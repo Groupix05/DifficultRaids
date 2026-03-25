@@ -16,7 +16,7 @@ public abstract class BaseIllagerRenderer<T extends AbstractIllagerVariant> exte
     {
         super(entityRenderProvider, new IllagerModel<>(entityRenderProvider.bakeLayer(bakeLayer)), 0.5F);
 
-        this.resourceLocation = new ResourceLocation(DifficultRaids.MODID, "textures/entity/" + path);
+        this.resourceLocation = DifficultRaids.location("textures/entity/" + path);
     }
 
     @Override

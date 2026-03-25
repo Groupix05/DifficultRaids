@@ -68,6 +68,7 @@ public class DRForgeBusEvents
         DumpRaidWavesCommand.register(event.getDispatcher());
         FreezeRaidersCommand.register(event.getDispatcher());
         DumpRaidersListCommand.register(event.getDispatcher());
+        GetRaiderTypeCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent

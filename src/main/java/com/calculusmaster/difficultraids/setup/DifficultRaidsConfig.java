@@ -552,6 +552,8 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.CHURCH_WIZARD, GENERAL.define("enableChurchWizard", true));
         GENERAL.pop().push("Requires Fathomless Crimson");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BISHOP, GENERAL.define("enableBishop", true));
+        GENERAL.pop().push("Requires Wan Ancient Beasts");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.TAMER, GENERAL.define("enableTamer", true));
 
         GENERAL.pop();
 

@@ -9,6 +9,7 @@ import com.calculusmaster.difficultraids.setup.DifficultRaidsEnchantments;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsItems;
 import com.calculusmaster.difficultraids.util.DifficultRaidsUtil;
 import com.mojang.logging.LogUtils;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.eventbus.EventBus;
@@ -76,5 +77,9 @@ public class DifficultRaids
     private void onAddReloadListener(AddReloadListenerEvent event)
     {
         event.addListener(DifficultRaids.RAID_DATA_LOADER);
+    }
+
+    public static ResourceLocation location(final String path) {
+        return new ResourceLocation(MODID, path);
     }
 }

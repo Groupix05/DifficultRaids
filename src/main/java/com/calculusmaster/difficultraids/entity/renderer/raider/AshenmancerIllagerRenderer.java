@@ -11,7 +11,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class AshenmancerIllagerRenderer extends AbstractEvokerVariantRenderer<AshenmancerIllagerEntity>
 {
-    private static final ResourceLocation WITHERED = new ResourceLocation(DifficultRaids.MODID, "textures/entity/ashenmancer_illager_withered.png");
+    private static final ResourceLocation WITHERED = DifficultRaids.location("textures/entity/ashenmancer_illager_withered.png");
 
     public AshenmancerIllagerRenderer(EntityRendererProvider.Context entityRenderProvider)
     {

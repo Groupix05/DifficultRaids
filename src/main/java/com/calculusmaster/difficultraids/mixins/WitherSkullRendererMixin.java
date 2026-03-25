@@ -1,5 +1,6 @@
 package com.calculusmaster.difficultraids.mixins;
 
+import com.calculusmaster.difficultraids.DifficultRaids;
 import com.calculusmaster.difficultraids.entity.entities.raider.AshenmancerIllagerEntity;
 import net.minecraft.client.renderer.entity.WitherSkullRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +20,7 @@ public class WitherSkullRendererMixin
         {
             String filename = "wither_skull_" + ashenmancer.getLastSkullType().toString().toLowerCase() + ".png";
 
-            cir.setReturnValue(new ResourceLocation("difficultraids:textures/entity/ashenmancer/" + filename));
+            cir.setReturnValue(DifficultRaids.location("textures/entity/ashenmancer/" + filename));
         }
     }
 }
