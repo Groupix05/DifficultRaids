@@ -499,6 +499,7 @@ public class RaidEnemyRegistry
     //Goety Awaken
     public static final String VINDICATOR_CHEF = "GA_VINDICATOR_CHEF";
     public static final String HOSTILE_ROYAL_GUARD = "hostile_royal_guard";
+    public static final String TOWER_WITCH = "TOWER_WITCH";
 
     //Simple Musket
     public static final String MUSKET_PILLAGER = "entity.simplemusket.musket_pillager";
@@ -687,6 +688,7 @@ public class RaidEnemyRegistry
         {
             RaidEnemyRegistry.createRaiderType(VINDICATOR_CHEF,com.k1sak1.goetyawaken.common.entities.ModEntityType.VINDICATOR_CHEF.get());
             RaidEnemyRegistry.createRaiderType(HOSTILE_ROYAL_GUARD,com.k1sak1.goetyawaken.common.entities.ModEntityType.HOSTILE_ROYALGUARD.get());
+            RaidEnemyRegistry.createRaiderType(TOWER_WITCH,com.k1sak1.goetyawaken.common.entities.ModEntityType.TOWER_WITCH.get());
         }
         if(Compat.LEOSBOSSES.isLoaded()) RaidEnemyRegistry.createRaiderType(ANCIENT_SORCERER, EntityInit.ANCIENT_SORCERER.get());
         if(Compat.L_ENDERS_CATACLYSM.isLoaded()) RaidEnemyRegistry.createRaiderType(NAMELESS_SORCERER, com.github.L_Ender.cataclysm.init.ModEntities.NAMELESS_SORCERER.get());
@@ -1067,6 +1069,7 @@ public class RaidEnemyRegistry
                 .withRaider(RAIDER_RANDOMIZER,      0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(VINDICATOR_CHEF,        0, 0, 1, 0, 1, 1, 0, 1)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 0, 0, 0)
+                .withRaider(TOWER_WITCH,            0, 1, 0, 1, 0, 1, 1, 0)
                 .withRaider(MUSKET_PILLAGER,        0, 0, 1, 1, 0, 1, 1, 0)
                 .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(CHRIMSONVEIL,           0, 0, 0, 0, 0, 0, 0, 1)
@@ -1411,6 +1414,7 @@ public class RaidEnemyRegistry
                 .withRaider(RAIDER_RANDOMIZER,      0, 1, 1, 1, 0, 1, 0, 1)
                 .withRaider(VINDICATOR_CHEF,        0, 0, 1, 1, 1, 1, 1, 1)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 1, 0, 0)
+                .withRaider(TOWER_WITCH,            0, 1, 1, 1, 0, 1, 1, 0)
                 .withRaider(MUSKET_PILLAGER,        0, 0, 1, 2, 1, 1, 2, 1)
                 .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(CHRIMSONVEIL,           0, 0, 0, 0, 0, 1, 0, 1)
@@ -1756,7 +1760,7 @@ public class RaidEnemyRegistry
                 .withRaider(RAIDER_RANDOMIZER,      0, 1, 2, 1, 1, 2, 1, 1)
                 .withRaider(VINDICATOR_CHEF,        0, 1, 1, 2, 2, 1, 2, 1)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 1, 1, 1, 2, 1, 0)
-                .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 1, 0, 0)
+                .withRaider(TOWER_WITCH,            0, 1, 1, 1, 1, 1, 1, 1)
                 .withRaider(MUSKET_PILLAGER,        0, 1, 1, 2, 2, 1, 2, 2)
                 .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(CHRIMSONVEIL,           0, 0, 0, 1, 0, 1, 0, 1)
@@ -2104,6 +2108,7 @@ public class RaidEnemyRegistry
                 .withRaider(RAIDER_RANDOMIZER,      0, 2, 3, 2, 1, 2, 3, 2)
                 .withRaider(VINDICATOR_CHEF,        0, 2, 2, 2, 3, 1, 3, 2)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 1, 1, 2, 1, 3, 2, 2)
+                .withRaider(TOWER_WITCH,            0, 1, 2, 1, 2, 1, 1, 2)
                 .withRaider(MUSKET_PILLAGER,        0, 1, 2, 3, 2, 2, 3, 2)
                 .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(CHRIMSONVEIL,           0, 0, 1, 1, 0, 1, 0, 1)

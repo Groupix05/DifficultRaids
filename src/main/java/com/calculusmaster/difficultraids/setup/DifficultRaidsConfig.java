@@ -573,6 +573,7 @@ public class DifficultRaidsConfig
         GENERAL.pop().push("Requires Goety Awaken");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.VINDICATOR_CHEF, GENERAL.define("enableVindicatorChef", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.HOSTILE_ROYAL_GUARD, GENERAL.define("enableHostileRoyalGuard", false));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.TOWER_WITCH, GENERAL.define("enableTowerWitch", false));
         GENERAL.pop().push("Requires Simple Musket");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.MUSKET_PILLAGER, GENERAL.define("enableMusketPillager", true));
         GENERAL.pop().push("Requires Leos Bosses");

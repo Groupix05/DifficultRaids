@@ -566,6 +566,7 @@ public class DifficultRaidsUtil
                     com.k1sak1.goetyawaken.common.entities.ModEntityType.VINDICATOR_CHEF.get(),
                     com.k1sak1.goetyawaken.common.entities.ModEntityType.HOSTILE_ROYALGUARD.get()
             ));
+            BASIC_MAGIC_RAIDERS.add(com.k1sak1.goetyawaken.common.entities.ModEntityType.TOWER_WITCH.get());
         }
 
         if(Compat.SIMPLE_MUSKET.isLoaded()) STANDARD_RAIDERS.add(com.brokenkeyboard.simplemusket.ModRegistry.GUNSLINGER);
