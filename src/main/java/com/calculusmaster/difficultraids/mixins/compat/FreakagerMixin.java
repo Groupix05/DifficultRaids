@@ -34,7 +34,7 @@ public abstract class FreakagerMixin extends AbstractIllager
     public void startSeenByPlayer(ServerPlayer pPlayer)
     {
         super.startSeenByPlayer(pPlayer);
-        if(DifficultRaidsConfig.BOSS_BARS.get()) this.ELITE_EVENT.addPlayer(pPlayer);
+        if(DifficultRaidsConfig.BOSS_BARS.get() && DifficultRaidsConfig.CLOWNAGER_BOSS_BARS.get()) this.ELITE_EVENT.addPlayer(pPlayer);
     }
 
     @Override

@@ -35,7 +35,7 @@ public abstract class MagispellerMixin extends AbstractIllager
     public void startSeenByPlayer(ServerPlayer pPlayer)
     {
         super.startSeenByPlayer(pPlayer);
-        if(DifficultRaidsConfig.BOSS_BARS.get()) this.ELITE_EVENT.addPlayer(pPlayer);
+        if(DifficultRaidsConfig.BOSS_BARS.get() && DifficultRaidsConfig.MAGISPELLER_BOSS_BARS.get()) this.ELITE_EVENT.addPlayer(pPlayer);
     }
 
     @Override

@@ -49,8 +49,21 @@ public class DifficultRaidsConfig
 
     public static RaidDifficultyConfig DEFAULT, HERO, LEGEND, MASTER, GRANDMASTER;
 
+    //Boss Bars
+    public static ForgeConfigSpec.BooleanValue MODUR_BOSS_BARS;
+    public static ForgeConfigSpec.BooleanValue NUAOS_BOSS_BARS;
+    public static ForgeConfigSpec.BooleanValue VOLDON_BOSS_BARS;
+    public static ForgeConfigSpec.BooleanValue XYDRAX_BOSS_BARS;
+
+    public static ForgeConfigSpec.BooleanValue SPIRITCALLER_BOSS_BARS;
+    public static ForgeConfigSpec.BooleanValue DM_REDSTONE_GOLEM_BOSS_BARS;
+    public static ForgeConfigSpec.BooleanValue MAGISPELLER_BOSS_BARS;
+    public static ForgeConfigSpec.BooleanValue LIGHTNINGCALLER_BOSS_BARS;
+    public static ForgeConfigSpec.BooleanValue FREAKAGER_BOSS_BARS;
+    public static ForgeConfigSpec.BooleanValue CLOWNAGER_BOSS_BARS;
+
     //Misc Tags
-    public static TagKey<EntityType<?>> WINDS_CURSE_IMMUNE = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("difficultraids:winds_curse_immune"));
+    public static TagKey<EntityType<?>> WINDS_CURSE_IMMUNE = TagKey.create(Registries.ENTITY_TYPE, DifficultRaids.location("winds_curse_immune"));
 
     public static void initializeConfigs()
     {
@@ -69,6 +82,7 @@ public class DifficultRaidsConfig
         GENERAL.push("Wave Amounts");
 
         WAVE_COUNT_EASY = GENERAL
+                .comment("Going higher than 7 without adding raiders via a datapack will result in a crash. This is a known issue.")
                 .comment("Number of waves in a Raid on Easy difficulty.")
                 .defineInRange("waveCountEasy", 3, 1, Integer.MAX_VALUE);
 
@@ -117,12 +131,49 @@ public class DifficultRaidsConfig
 
         BOSS_BARS = GENERAL
                 .comment("Toggles whether Boss Bars for Elite Raiders/Bosses will show up during Raids.")
+                .comment("Disabling this will disable every boss bars added by Difficult Raids.")
                 .comment("Enabling this will create Boss Event Bars for:", "DifficultRaids: Nuaos, Xydrax, Voldon, Modur", "Illage & Spillage: Freakager, Magispeller, Spiritcaller", "Dungeons Mobs: Redstone Golem", "Leo's Illagers: Lightningcaller, Clownager")
+                .comment("You can customize each boss bars below.")
                 .define("bossBarsEnabled", true);
 
         SHOW_WAVE_INFORMATION = GENERAL
                 .comment("Determines if wave information will show up in the Raid Event title.")
                 .define("showWaveInformation", true);
+
+        GENERAL.pop();
+
+        GENERAL.push("BOSS BARS");
+
+        MODUR_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Modur")
+                .define("ModurBossBars", true);
+        NUAOS_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Nuaos")
+                .define("NuaosBossBar", true);
+        VOLDON_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Voldon")
+                .define("VoldonBossBar", true);
+        XYDRAX_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Xydrax")
+                .define("XydraxBossBar", true);
+        CLOWNAGER_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Clownager")
+                .define("ClownagerBossBar", true);
+        FREAKAGER_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Freakager")
+                .define("FreakagerBossBar", true);
+        LIGHTNINGCALLER_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Lightning Caller")
+                .define("LightningCallerBossBar", true);
+        MAGISPELLER_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Magispeller")
+                .define("MagispellerBossBar", true);
+        DM_REDSTONE_GOLEM_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Dungeon Mobs Redstone Golem")
+                .define("DMRedstoneGolemBossBar", true);
+        SPIRITCALLER_BOSS_BARS = GENERAL
+                .comment("Enabling this will create Boss Event Bars for Spiritcaller")
+                .define("SpiritcallerBossBar", true);
 
         GENERAL.pop();
 

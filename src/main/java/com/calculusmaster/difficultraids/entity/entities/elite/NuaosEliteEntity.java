@@ -297,7 +297,7 @@ public class NuaosEliteEntity extends AbstractIllagerVariant
     public void startSeenByPlayer(ServerPlayer pPlayer)
     {
         super.startSeenByPlayer(pPlayer);
-        if(DifficultRaidsConfig.BOSS_BARS.get()) this.ELITE_EVENT.addPlayer(pPlayer);
+        if(DifficultRaidsConfig.BOSS_BARS.get() && DifficultRaidsConfig.NUAOS_BOSS_BARS.get()) this.ELITE_EVENT.addPlayer(pPlayer);
     }
 
     @Override
