@@ -200,6 +200,18 @@ public abstract class RaidMixin
             //Disable "mage" spawns (because of conflicts between mods)
             else if(raiderType.toString().equals("mage") || raiderType.toString().equals("MAGE"))
                 callbackInfoReturnable.setReturnValue(0);
+            //Disable "redstone_golem" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("redstone_golem") || raiderType.toString().equals("REDSTONE_GOLEM"))
+                callbackInfoReturnable.setReturnValue(0);
+            //Disable "geomancer" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("geomancer") || raiderType.toString().equals("GEOMANCER"))
+                callbackInfoReturnable.setReturnValue(0);
+            //Disable "squall_golem" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("squall_golem") || raiderType.toString().equals("SQUALL_GOLEM"))
+                callbackInfoReturnable.setReturnValue(0);
+            //Disable "mountaineer" spawns (because of conflicts between mods)
+            else if(raiderType.toString().equals("mountaineer") || raiderType.toString().equals("MOUNTAINEER"))
+                callbackInfoReturnable.setReturnValue(0);
 
             //Check if the Raider Type is enabled
             else if(isRegistered && !isEnabled) callbackInfoReturnable.setReturnValue(0);

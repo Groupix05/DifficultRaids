@@ -86,7 +86,14 @@ public enum Compat
     L_ENDERS_CATACLYSM("cataclysm"),
     ILLAGE_ART("illageart"),
     FATHOMLESS("fathomless"),
-    WAN_ANCIENT_BEASTS("wan_ancient_beasts")
+    WAN_ANCIENT_BEASTS("wan_ancient_beasts"),
+    BETTER_RAIDERS("vanillaraiders"),
+    CANIBALISM("canibalism"),
+    MORE_ILLAGERS_HC("more_illagers_hc"),
+    MONSTER_PLUS("monsterplus"),
+    GOETY_HOSTILITY("goetyhostility"),
+    RAIDS_ENHANCED("raidsenhanced"),
+    CHILL_THRILL("chill_thrill")
     ;
 
     private final String modid;

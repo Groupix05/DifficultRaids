@@ -13,6 +13,7 @@ import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
 import com.briknex.fathomless.init.FathomlessModEntities;
 import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.finderfeed.raids_enhanced.init.REEntities;
 import com.francisplay446.raiderv.init.RaidervModEntities;
 import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.github.alexthe666.rats.registry.RatsEntityRegistry;
@@ -25,6 +26,7 @@ import com.izofar.takesapillage.init.ModEntityTypes;
 import com.mrbysco.raided.registry.RaidedRegistry;
 import com.mysticmage.musketeer_illager.init.MusketeerIllagerModEntities;
 import com.possible_triangle.brazier.Content;
+import com.ratrod.goetyhostility.common.registry.GHEntityTypes;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
@@ -32,6 +34,7 @@ import elucent.eidolon.registries.EidolonEntities;
 import francisplayz446.karateillagerfinallyported.init.KarateillagerfinallyportedModEntities;
 import fuzs.illagerinvasion.init.ModRegistry;
 import net.francisplayz446.summoner.init.ThesummonerModEntities;
+import net.mcreator.canibalism.init.CanibalismModEntities;
 import net.mcreator.crimson_steves_mobs.init.CrimsonStevesMobsModEntities;
 import net.mcreator.expadosillagerss.init.ExpadosIllagerssModEntities;
 import net.mcreator.gloom_raiders.init.GloomRaidersModEntities;
@@ -41,6 +44,7 @@ import net.mcreator.illageruniverse.init.IllagerUniverseModEntities;
 import net.mcreator.illagerworldwar.init.IllagerWorldWarModEntities;
 import net.mcreator.justillagers.init.JustillagersModEntities;
 import net.mcreator.mechapillagerboss.init.MechapillagerbossModEntities;
+import net.mcreator.moreillagers.init.MoreIllagersHcModEntities;
 import net.mcreator.moreillagers.init.MoreIllagersModEntities;
 import net.mcreator.pillagerboss.init.PillagerBossModEntities;
 import net.mcreator.pillagersplus.init.PillagersplusModEntities;
@@ -49,8 +53,10 @@ import net.mcreator.roost.init.Roost2ModEntities;
 import net.mcreator.rpg.init.RpgModEntities;
 import net.mcreator.sharks.init.BenssharksModEntities;
 import net.mcreator.sorcererillager.init.SorcererIllagerModEntities;
+import net.mcreator.taskulk.init.VanillaraidersModEntities;
 import net.mcreator.theresistanceoftheraiders.init.TheResistanceOfTheRaidersModEntities;
 import net.mcreator.virtusosgrandbattle.init.VirtusosgrandbattleModEntities;
+import net.mcreator.chillthrill.init.ChillThrillModEntities;
 import net.mobz.init.MobZEntities;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import net.minecraft.world.entity.EntityType;
@@ -585,5 +591,39 @@ public class DifficultRaidsUtil
         }
 
         if(Compat.FATHOMLESS.isLoaded()) BASIC_MAGIC_RAIDERS.add(FathomlessModEntities.BISHOP.get());
+
+        if(Compat.BETTER_RAIDERS.isLoaded())
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    VanillaraidersModEntities.RAIDER.get(),
+                    VanillaraidersModEntities.PHANTOM.get(),
+                    VanillaraidersModEntities.DOGGER.get(),
+                    VanillaraidersModEntities.BOWER.get(),
+                    VanillaraidersModEntities.SUPPORT.get()
+            ));
+        }
+
+        if(Compat.CANIBALISM.isLoaded()) STANDARD_RAIDERS.add(CanibalismModEntities.BUTCHER.get());
+
+        if(Compat.MORE_ILLAGERS_HC.isLoaded()) BASIC_MAGIC_RAIDERS.add(MoreIllagersHcModEntities.CAPITALIST.get());
+
+        if(Compat.MONSTER_PLUS.isLoaded()) BASIC_MAGIC_RAIDERS.add(com.nitespring.monsterplus.core.init.EntityInit.ABYSSOLOGER.get());
+
+        if(Compat.GOETY_HOSTILITY.isLoaded()) //Skipping Squall Golem
+        {
+            STANDARD_RAIDERS.addAll(List.of(
+                    GHEntityTypes.VINDICATOR_CHEF.get(),
+                    GHEntityTypes.MOUNTAINEER.get()
+            ));
+            BASIC_MAGIC_RAIDERS.addAll(List.of(
+                    GHEntityTypes.GEOMANCER.get(),
+                    GHEntityTypes.ICEOLOGER.get(),
+                    GHEntityTypes.WIND_CALLER.get()
+            ));
+        }
+
+        if(Compat.RAIDS_ENHANCED.isLoaded()) ADVANCED_RAIDERS.add(REEntities.ZAPPER_ILLAGER.get());
+
+        if(Compat.CHILL_THRILL.isLoaded()) BASIC_MAGIC_RAIDERS.add(ChillThrillModEntities.ICEOLOGER.get());
     }
 }

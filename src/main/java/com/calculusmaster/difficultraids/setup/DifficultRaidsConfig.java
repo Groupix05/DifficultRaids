@@ -554,6 +554,37 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.BISHOP, GENERAL.define("enableBishop", true));
         GENERAL.pop().push("Requires Wan Ancient Beasts");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.TAMER, GENERAL.define("enableTamer", true));
+        GENERAL.pop().push("Requires Better Raiders");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BOWER, GENERAL.define("enableBower", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.DOGGER, GENERAL.define("enableDogger", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RAIDER, GENERAL.define("enableRaider", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SUPPORT, GENERAL.define("enableSupport", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.PHANTOM, GENERAL.define("enablePhantom", true));
+        GENERAL.pop().push("Requires Canibalism");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.BUTCHER, GENERAL.define("enableButcher", true));
+        GENERAL.pop().push("Requires HuaCheng's More Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CAPITALIST, GENERAL.define("enableCapitalist", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CRASHER, GENERAL.define("enableCrasher", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.HUGE_CRASHER, GENERAL.define("enableHugeCrasher", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MINI_ORGAN_GUARD, GENERAL.define("enableMiniOrganGuard", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ORGAN_GUARD, GENERAL.define("enableOrganGuard", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.REDSTONE_GOLEM_HC, GENERAL.define("enableHcRedstoneGolem", true));
+        GENERAL.pop().push("Requires HuaCheng's More Illagers");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ABYSSOLOGER, GENERAL.define("enableAbyssologer", false));
+        GENERAL.pop().push("Requires Goety Hostility");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.VINDICATOR_CHEF_GH, GENERAL.define("enableGHVindicatorChef", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GEOMANCER_GH, GENERAL.define("enableGHGeomancer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ICEOLOGER_GH, GENERAL.define("enableGHIceologer", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.SQUALL_GOLEM_GH, GENERAL.define("enableGHSquallGolem", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.WIND_CALLER_GH, GENERAL.define("enableGHWindCaller", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.MOUNTAINEER_GH, GENERAL.define("enableGH_Mountaineer", true));
+        GENERAL.pop().push("Requires Raids:Enhanced");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RAIDER_BLIMP, GENERAL.define("enableRaiderBlimp", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.GOLEM_OF_LAST_RESORT, GENERAL.define("enableGolemOfLastResort", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.RAIDER_DRILL, GENERAL.define("enableRaiderDrill", true));
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.ZAPPER, GENERAL.define("enableZapper", true));
+        GENERAL.pop().push("Requires Chill Thrill");
+        ENABLED_RAIDERS.put(RaidEnemyRegistry.CT_ICEOLOGER, GENERAL.define("enableCTIceologer", true));
 
         GENERAL.pop();
 

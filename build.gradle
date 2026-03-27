@@ -32,7 +32,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '2.0-beta20'
+version = '2.0-beta21'
 group = 'com.calculusmaster.difficultraids'
 archivesBaseName = 'difficultraids-1.20.1'
 
@@ -210,7 +210,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:bones-update-958749:5803104")
 
     //Goety - The Dark Arts 2.5.36.1
-    compileOnly fg.deobf("curse.maven:goety-586095:7400639")
+    compileOnly fg.deobf("curse.maven:goety-586095:7799190")
 
     //The Modifiger 1.0.0
     compileOnly fg.deobf("curse.maven:the-modifiger-1115268:5784152")
@@ -396,54 +396,30 @@ dependencies {
     compileOnly fg.deobf("curse.maven:fathomless-crimson-1370939:7604491")
     compileOnly fg.deobf("curse.maven:nexus-layer-1305942:7603094")
 
-
-
-
-
-
-
-    //Cannibal Conundrum 1.0.5 (should not work)
-    //implementation fg.deobf("curse.maven:cannibal-conundrum-920504:4845238")
-
     //Wan's Ancient Beasts 1.4.1
-    implementation fg.deobf("curse.maven:wans-ancient-beasts-1108604:7552366")
+    compileOnly fg.deobf("curse.maven:wans-ancient-beasts-1108604:7552366")
 
-    //Raider Revolution Discontinued 1.0.1
-    //implementation fg.deobf("curse.maven:raider-revolution-1448894:7558542")
+    //Better raiders 1.0.0 (called vanilla raiders internally)
+    compileOnly fg.deobf("curse.maven:better-raiders-1236925:6391891")
+
+    //Crabe's cannibalism  1.4
+    compileOnly fg.deobf("curse.maven:crabes-cannibalism-mod-1072836:5716227")
+
+    //HuaCheng's More Illagers 1.1.0
+    compileOnly fg.deobf("curse.maven:more-illagers-hc-1443746:7522624")
+
+    //Monster Plus 1.1.6.1
+    compileOnly fg.deobf("curse.maven:monster-plus-676418:4612195")
+
+    //Goety Hostility 1.4.0
+    compileOnly fg.deobf("curse.maven:goety-hostility-1458529:7819608")
+
+    //Raids:Enhanced 1.0.2
+    compileOnly fg.deobf("curse.maven:raids-enhanced-1467121:7676060")
 
     //Chill Thrill 1.2 (no third party)
     //implementation fg.deobf("curse.maven:chill-thrill-1027994:5593093")
-
-    //Better raiders 1.0.0 (adds raiders ??)
-    //implementation fg.deobf("curse.maven:better-raiders-1236925:6391891")
-
-    //Raids:Enhanced 1.0.2
-    //implementation fg.deobf("curse.maven:raids-enhanced-1467121:7676060")
-
-    //Goety Hostility 1.4.0
-    //implementation fg.deobf("curse.maven:goety-hostility-1458529:7786542")
-
-    //HuaCheng's More Illagers 1.1.0
-    //implementation fg.deobf("curse.maven:more-illagers-hc-1443746:7522624")
-
-    //Monster Plus 1.1.6.1
-    //implementation fg.deobf("curse.maven:monster-plus-676418:4612195")
-
-    //Spicy Species 6.4.2
-    //implementation fg.deobf("curse.maven:spicy-species-1231518:7182134")
-
-    //Crabe's cannibalism  1.4
-    //implementation fg.deobf("curse.maven:crabes-cannibalism-mod-1072836:5716227")
-
-    //Armored Redstone 1.0.1
-    //implementation fg.deobf("curse.maven:armored-redstone-684450:5724271")
-
-
-
-
-
-
-
+    compileOnly fg.deobf('libs:chill_thrill:1.2-[forge-1.20.1]')
 
 
 
@@ -526,6 +502,14 @@ dependencies {
     //Doesnt extend Raider, so we cant add them in raids
 //    implementation fg.deobf("curse.maven:goety-revelation-1236817:6892481")
 
+    //Cannibal Conundrum 1.0.5
+    //Doesnt extend Raider, so we cant add them in raids
+//    implementation fg.deobf("curse.maven:cannibal-conundrum-920504:4845238")
+
+    //Armored Redstone 1.0.1
+    //Doesnt extend Raider, so we cant add them in raids
+//    implementation fg.deobf("curse.maven:armored-redstone-684450:5724271")
+
     //Golem Dungeons 1.0.3 + L2 Library 2.5.3 + Modular Golems 2.6.12
     //need to create custom golem with modular golems
 //    implementation fg.deobf("curse.maven:golem-dungeons-1328313:6987539")
@@ -567,7 +551,10 @@ dependencies {
 //    implementation fg.deobf("curse.maven:framework-549225:6531428")
 
     //Blue Skies 1.3.31 (doesnt add illagers)
-    //implementation fg.deobf("curse.maven:blue-skies-312918:5010316")
+//    implementation fg.deobf("curse.maven:blue-skies-312918:5010316")
+
+    //Spicy Species 6.4.2 (cant test every mobs)
+//    implementation fg.deobf("curse.maven:spicy-species-1231518:7182134")
 
 }
 

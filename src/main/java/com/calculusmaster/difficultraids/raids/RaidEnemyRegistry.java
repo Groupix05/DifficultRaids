@@ -8,22 +8,27 @@ import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
 import com.calculusmaster.difficultraids.DifficultRaids;
 import com.calculusmaster.difficultraids.data.raiderentries.RaiderEntriesHolder;
 import com.calculusmaster.difficultraids.events.compat.IllageArtSpawnBlocker;
+import com.calculusmaster.difficultraids.events.compat.RaidsEnhancedSpawnBlocker;
 import com.calculusmaster.difficultraids.setup.DifficultRaidsConfig;
 import com.calculusmaster.difficultraids.util.Compat;
 //import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
+import com.finderfeed.raids_enhanced.init.REEntities;
 import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.mojang.logging.LogUtils;
 import com.pikachu.mod.illager_more.init.ModEntityTypes;
 import com.possible_triangle.brazier.Content;
+import com.ratrod.goetyhostility.common.registry.GHEntityTypes;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
 import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import multiverse.registration.EntityRegistry;
 import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
+import net.mcreator.chillthrill.init.ChillThrillModEntities;
 import net.mcreator.expadosillagerss.init.ExpadosIllagerssModEntities;
+import net.mcreator.moreillagers.init.MoreIllagersHcModEntities;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.raid.Raid;
@@ -97,15 +102,15 @@ public class RaidEnemyRegistry
     public static final String ICEOLOGER_SR = "SR_ICEOLOGER";
 
     //Dungeons Mobs
-    public static final String MOUNTAINEER = "mountaineer";
+    public static final String MOUNTAINEER = "DM_MOUNTAINEER";
     public static final String ROYAL_GUARD = "royal_guard";
-    public static final String GEOMANCER = "geomancer";
+    public static final String GEOMANCER = "DM_GEOMANCER";
     public static final String ILLUSIONER_DM = "DM_ILLUSIONER";
     public static final String MAGE = "dungeon_mage";
     public static final String ICEOLOGER_DM = "DM_ICEOLOGER";
     public static final String WINDCALLER = "windcaller";
-    public static final String SQUALL_GOLEM = "squall_golem";
-    public static final String REDSTONE_GOLEM = "redstone_golem";
+    public static final String SQUALL_GOLEM = "DM_SQUALL_GOLEM";
+    public static final String REDSTONE_GOLEM = "DM_REDSTONE_GOLEM";
 
     //Illager Revolution
     public static final String BLADE_KNIGHT = "blade_knight";
@@ -492,7 +497,7 @@ public class RaidEnemyRegistry
     public static final String RAIDER_RANDOMIZER = "raider_randomizer";
 
     //Goety Awaken
-    public static final String VINDICATOR_CHEF = "vindicator_chef";
+    public static final String VINDICATOR_CHEF = "GA_VINDICATOR_CHEF";
     public static final String HOSTILE_ROYAL_GUARD = "hostile_royal_guard";
 
     //Simple Musket
@@ -536,6 +541,44 @@ public class RaidEnemyRegistry
     //Wan Ancient Beasts
     public static final String TAMER = "wan_ancient_beasts:tamer";
 
+    //Better Raiders
+    public static final String BOWER = "bower";
+    public static final String DOGGER = "dogger";
+    public static final String RAIDER = "raider";
+    public static final String SUPPORT = "support";
+    public static final String PHANTOM = "phantom";
+
+    //Canibalism
+    public static final String BUTCHER = "butcher";
+
+    //HuaCheng's More Illagers
+    public static final String CAPITALIST = "capitalist";
+    public static final String CRASHER = "crasher";
+    public static final String HUGE_CRASHER = "huge_crasher";
+    public static final String MINI_ORGAN_GUARD = "mini_organ_guard";
+    public static final String ORGAN_GUARD = "organ_guard";
+    public static final String REDSTONE_GOLEM_HC = "HC_REDSTONE_GOLEM";
+
+    //HuaCheng's More Illagers
+    public static final String ABYSSOLOGER = "ABYSSOLOGER";
+
+    //Goety Hostility
+    public static final String VINDICATOR_CHEF_GH = "GH_VINDICATOR_CHEF";
+    public static final String GEOMANCER_GH = "GH_GEOMANCER";
+    public static final String ICEOLOGER_GH = "GH_ICEOLOGER";
+    public static final String SQUALL_GOLEM_GH = "GH_SQUALL_GOLEM";
+    public static final String WIND_CALLER_GH = "WIND_CALLER";
+    public static final String MOUNTAINEER_GH = "GH_MOUNTAINEER";
+
+    //Raids:Enhanced
+    public static final String RAIDER_BLIMP = "RAIDER_BLIMP";
+    public static final String GOLEM_OF_LAST_RESORT = "GOLEM_OF_LAST_RESORT";
+    public static final String RAIDER_DRILL = "RAIDER_DRILL";
+    public static final String ZAPPER = "ZAPPER";
+
+    //Chill Thrill
+    public static final String CT_ICEOLOGER = "CT_ICEOLOGER";
+
     private static final int[] BLANK = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 
     public static boolean isRaiderTypeEnabled(String raiderType)
@@ -577,6 +620,10 @@ public class RaidEnemyRegistry
             //RaidEnemyRegistry.createRaiderType(ILLUSIONER_DM, ModEntities.ILLUSIONER.get());
             RaidEnemyRegistry.createRaiderType(ICEOLOGER_DM, ModEntities.ICEOLOGER.get());
             RaidEnemyRegistry.createRaiderType(MAGE, ModEntities.MAGE.get());
+            RaidEnemyRegistry.createRaiderType(REDSTONE_GOLEM, ModEntities.REDSTONE_GOLEM.get());
+            RaidEnemyRegistry.createRaiderType(GEOMANCER, ModEntities.GEOMANCER.get());
+            RaidEnemyRegistry.createRaiderType(SQUALL_GOLEM, ModEntities.SQUALL_GOLEM.get());
+            RaidEnemyRegistry.createRaiderType(MOUNTAINEER, ModEntities.MOUNTAINEER.get());
         }
         if(Compat.CONJURER.isLoaded()) RaidEnemyRegistry.createRaiderType(CONJURER, IllagerEntityTypes.CONJURER);
         //Archevoker and Gambler doesn't extend EntityType Raider, so we cant add them in raids
@@ -658,6 +705,25 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(ILLAGER_TACTICIAN, com.goldword.illageart.entity.ModEntities.ILLAGER_TACTICIAN.get());
             RaidEnemyRegistry.createRaiderType(CHURCH_WIZARD, com.goldword.illageart.entity.ModEntities.CHURCH_WIZARD.get());
         }
+        if(Compat.MORE_ILLAGERS_HC.isLoaded()) RaidEnemyRegistry.createRaiderType(REDSTONE_GOLEM_HC, MoreIllagersHcModEntities.REDSTONE_GOLEM.get());
+        if(Compat.MONSTER_PLUS.isLoaded()) RaidEnemyRegistry.createRaiderType(ABYSSOLOGER, com.nitespring.monsterplus.core.init.EntityInit.ABYSSOLOGER.get());
+        if(Compat.GOETY_HOSTILITY.isLoaded())
+        {
+            RaidEnemyRegistry.createRaiderType(MOUNTAINEER_GH,GHEntityTypes.MOUNTAINEER.get());
+            RaidEnemyRegistry.createRaiderType(VINDICATOR_CHEF_GH,GHEntityTypes.VINDICATOR_CHEF.get());
+            RaidEnemyRegistry.createRaiderType(GEOMANCER_GH,GHEntityTypes.GEOMANCER.get());
+            RaidEnemyRegistry.createRaiderType(ICEOLOGER_GH,GHEntityTypes.ICEOLOGER.get());
+            RaidEnemyRegistry.createRaiderType(SQUALL_GOLEM_GH,GHEntityTypes.SQUALL_GOLEM.get());
+        }
+        if(Compat.RAIDS_ENHANCED.isLoaded())
+        {
+            MinecraftForge.EVENT_BUS.register(RaidsEnhancedSpawnBlocker.class);
+            RaidEnemyRegistry.createRaiderType(RAIDER_BLIMP, REEntities.RAID_BLIMP.get());
+            RaidEnemyRegistry.createRaiderType(GOLEM_OF_LAST_RESORT, REEntities.GOLEM_OF_LAST_RESORT.get());
+            RaidEnemyRegistry.createRaiderType(RAIDER_DRILL, REEntities.RAID_DRILL.get());
+            RaidEnemyRegistry.createRaiderType(ZAPPER, REEntities.ZAPPER_ILLAGER.get());
+        }
+        if(Compat.CHILL_THRILL.isLoaded()) RaidEnemyRegistry.createRaiderType(CT_ICEOLOGER, ChillThrillModEntities.ICEOLOGER.get());
     }
 
     public static void compileWaveData(final Map<ResourceLocation, RaiderEntriesHolder> data)
@@ -1024,6 +1090,30 @@ public class RaidEnemyRegistry
                 .withRaider(CHURCH_WIZARD,          0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(BISHOP,                 0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(TAMER,                  0, 0, 0, 0, 1, 0, 0, 0)
+                .withRaider(BOWER,                  0, 0, 1, 1, 0, 1, 1, 0)
+                .withRaider(DOGGER,                 0, 0, 0, 1, 1, 0, 0, 0)
+                .withRaider(RAIDER,                 0, 1, 0, 1, 0, 1, 1, 0)
+                .withRaider(SUPPORT,                0, 0, 1, 1, 0, 1, 0, 1)
+                .withRaider(PHANTOM,                0, 0, 0, 1, 0, 0, 1, 0)
+                .withRaider(BUTCHER,                0, 0, 1, 1, 0, 0, 1, 0)
+                .withRaider(CAPITALIST,             0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(CRASHER,                0, 0, 0, 1, 0, 1, 0, 0)
+                .withRaider(HUGE_CRASHER,           0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(MINI_ORGAN_GUARD,       0, 0, 1, 0, 1, 0, 0, 0)
+                .withRaider(ORGAN_GUARD,            0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(REDSTONE_GOLEM_HC,      0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(ABYSSOLOGER,            0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(VINDICATOR_CHEF_GH,     0, 0, 1, 0, 1, 1, 0, 0)
+                .withRaider(GEOMANCER_GH,           0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(ICEOLOGER_GH,           0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(SQUALL_GOLEM_GH,        0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(WIND_CALLER_GH,         0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(MOUNTAINEER_GH,         0, 0, 1, 1, 0, 1, 0, 0)
+                .withRaider(RAIDER_BLIMP,           0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(GOLEM_OF_LAST_RESORT,   0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(RAIDER_DRILL,           0, 0, 1, 0, 1, 0, 0, 0)
+                .withRaider(ZAPPER,                 0, 0, 0, 0, 0, 1, 0, 0)
+                .withRaider(CT_ICEOLOGER,           0, 0, 1, 0, 1, 0, 0, 0)
                 .withEliteWave(5, NUAOS_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .registerDefault();
@@ -1344,6 +1434,30 @@ public class RaidEnemyRegistry
                 .withRaider(CHURCH_WIZARD,          0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(BISHOP,                 0, 0, 0, 1, 0, 1, 0, 0)
                 .withRaider(TAMER,                  0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(BOWER,                  0, 0, 1, 1, 1, 2, 1, 0)
+                .withRaider(DOGGER,                 0, 1, 0, 1, 1, 0, 0, 1)
+                .withRaider(RAIDER,                 0, 1, 0, 2, 1, 1, 1, 0)
+                .withRaider(SUPPORT,                0, 0, 1, 1, 2, 1, 0, 1)
+                .withRaider(PHANTOM,                0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(BUTCHER,                0, 0, 1, 1, 1, 0, 1, 0)
+                .withRaider(CAPITALIST,             0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(CRASHER,                0, 0, 1, 1, 0, 1, 0, 0)
+                .withRaider(HUGE_CRASHER,           0, 0, 0, 0, 0, 0, 0, 1)
+                .withRaider(MINI_ORGAN_GUARD,       0, 1, 1, 0, 1, 0, 0, 0)
+                .withRaider(ORGAN_GUARD,            0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(REDSTONE_GOLEM_HC,      0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(ABYSSOLOGER,            0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(VINDICATOR_CHEF_GH,     0, 0, 1, 0, 1, 1, 1, 0)
+                .withRaider(GEOMANCER_GH,           0, 0, 0, 1, 1, 0, 0, 1)
+                .withRaider(ICEOLOGER_GH,           0, 0, 1, 1, 0, 1, 1, 0)
+                .withRaider(SQUALL_GOLEM_GH,        0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(WIND_CALLER_GH,         0, 1, 0, 0, 1, 0, 1, 0)
+                .withRaider(MOUNTAINEER_GH,         0, 0, 1, 1, 1, 1, 0, 1)
+                .withRaider(RAIDER_BLIMP,           0, 0, 0, 0, 1, 0, 1, 0)
+                .withRaider(GOLEM_OF_LAST_RESORT,   0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(RAIDER_DRILL,           0, 1, 1, 0, 1, 0, 0, 0)
+                .withRaider(ZAPPER,                 0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(CT_ICEOLOGER,           0, 1, 1, 0, 1, 0, 0, 1)
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(5, VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(7, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1666,6 +1780,30 @@ public class RaidEnemyRegistry
                 .withRaider(CHURCH_WIZARD,          0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(BISHOP,                 0, 0, 0, 1, 0, 1, 1, 0)
                 .withRaider(TAMER,                  0, 0, 1, 0, 1, 0, 0, 1)
+                .withRaider(BOWER,                  0, 1, 1, 2, 1, 2, 2, 1)
+                .withRaider(DOGGER,                 0, 1, 0, 1, 1, 1, 0, 1)
+                .withRaider(RAIDER,                 0, 1, 1, 2, 2, 1, 1, 0)
+                .withRaider(SUPPORT,                0, 0, 1, 1, 2, 2, 1, 1)
+                .withRaider(PHANTOM,                0, 0, 0, 1, 1, 1, 1, 0)
+                .withRaider(BUTCHER,                0, 1, 1, 2, 1, 0, 1, 1)
+                .withRaider(CAPITALIST,             0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(CRASHER,                0, 1, 1, 1, 0, 1, 1, 0)
+                .withRaider(HUGE_CRASHER,           0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(MINI_ORGAN_GUARD,       0, 1, 1, 1, 2, 0, 1, 1)
+                .withRaider(ORGAN_GUARD,            0, 0, 0, 0, 0, 1, 1, 0)
+                .withRaider(REDSTONE_GOLEM_HC,      0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(ABYSSOLOGER,            0, 0, 1, 0, 1, 0, 0, 1)
+                .withRaider(VINDICATOR_CHEF_GH,     0, 1, 1, 0, 1, 1, 1, 0)
+                .withRaider(GEOMANCER_GH,           0, 0, 0, 1, 1, 0, 1, 1)
+                .withRaider(ICEOLOGER_GH,           0, 1, 1, 1, 0, 2, 1, 0)
+                .withRaider(SQUALL_GOLEM_GH,        0, 0, 0, 0, 1, 1, 0, 1)
+                .withRaider(WIND_CALLER_GH,         0, 1, 0, 1, 1, 0, 1, 0)
+                .withRaider(MOUNTAINEER_GH,         0, 0, 2, 1, 1, 2, 0, 1)
+                .withRaider(RAIDER_BLIMP,           0, 0, 1, 0, 1, 0, 1, 1)
+                .withRaider(GOLEM_OF_LAST_RESORT,   0, 0, 0, 0, 0, 0, 1, 0)
+                .withRaider(RAIDER_DRILL,           0, 1, 1, 0, 1, 1, 0, 0)
+                .withRaider(ZAPPER,                 0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(CT_ICEOLOGER,           0, 1, 1, 0, 1, 0, 1, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(5, XYDRAX_ELITE.get(), MODUR_ELITE.get())
@@ -1989,6 +2127,30 @@ public class RaidEnemyRegistry
                 .withRaider(CHURCH_WIZARD,          0, 0, 1, 0, 1, 0, 0, 0)
                 .withRaider(BISHOP,                 0, 0, 1, 1, 0, 1, 1, 0)
                 .withRaider(TAMER,                  0, 1, 1, 0, 1, 0, 0, 1)
+                .withRaider(BOWER,                  0, 1, 2, 2, 1, 3, 2, 1)
+                .withRaider(DOGGER,                 0, 1, 1, 1, 2, 1, 0, 1)
+                .withRaider(RAIDER,                 0, 1, 2, 2, 3, 1, 1, 0)
+                .withRaider(SUPPORT,                0, 0, 2, 1, 2, 2, 1, 1)
+                .withRaider(PHANTOM,                0, 0, 0, 1, 1, 2, 1, 0)
+                .withRaider(BUTCHER,                0, 1, 1, 2, 2, 1, 2, 2)
+                .withRaider(CAPITALIST,             0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(CRASHER,                0, 1, 2, 1, 1, 1, 2, 1)
+                .withRaider(HUGE_CRASHER,           0, 0, 1, 0, 0, 1, 0, 1)
+                .withRaider(MINI_ORGAN_GUARD,       0, 1, 1, 1, 2, 1, 1, 1)
+                .withRaider(ORGAN_GUARD,            0, 0, 0, 0, 1, 1, 1, 0)
+                .withRaider(REDSTONE_GOLEM_HC,      0, 0, 0, 1, 0, 0, 1, 0)
+                .withRaider(ABYSSOLOGER,            0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(VINDICATOR_CHEF_GH,     0, 1, 1, 1, 2, 2, 1, 2)
+                .withRaider(GEOMANCER_GH,           0, 0, 0, 1, 1, 1, 1, 1)
+                .withRaider(ICEOLOGER_GH,           0, 1, 2, 1, 1, 2, 1, 0)
+                .withRaider(SQUALL_GOLEM_GH,        0, 0, 0, 0, 1, 1, 0, 1)
+                .withRaider(WIND_CALLER_GH,         0, 1, 0, 2, 1, 0, 1, 1)
+                .withRaider(MOUNTAINEER_GH,         0, 1, 2, 1, 2, 2, 1, 1)
+                .withRaider(RAIDER_BLIMP,           0, 0, 1, 0, 1, 1, 1, 2)
+                .withRaider(GOLEM_OF_LAST_RESORT,   0, 0, 0, 1, 0, 0, 1, 0)
+                .withRaider(RAIDER_DRILL,           0, 1, 1, 1, 2, 1, 0, 1)
+                .withRaider(ZAPPER,                 0, 0, 1, 1, 0, 1, 1, 0)
+                .withRaider(CT_ICEOLOGER,           0, 1, 2, 1, 1, 1, 2, 1)
                 .withEliteWave(1, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(2, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())
                 .withEliteWave(3, NUAOS_ELITE.get(), VOLDON_ELITE.get(), XYDRAX_ELITE.get(), MODUR_ELITE.get())

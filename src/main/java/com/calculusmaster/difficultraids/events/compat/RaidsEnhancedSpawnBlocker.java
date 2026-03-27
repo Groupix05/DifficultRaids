@@ -7,19 +7,15 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.Objects;
 import java.util.Set;
 
-public class IllageArtSpawnBlocker {
+public class RaidsEnhancedSpawnBlocker {
 
     private static final Set<String> BLOCKED_TYPES = Set.of(
-            "illageart:church_wizard",
-            "illageart:grand_archmage",
-            "illageart:calamity_nurse",
-            "illageart:spider_summoner",
-            "illageart:thefireking",
-            "illageart:floating_elder",
-            "illageart:key_holder"
+            "raidsenhanced:zapper",
+            "raidsenhanced:golem_of_last_resort",
+            "raidsenhanced:raid_blimp",
+            "raidsenhanced:raid_drill"
     );
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
