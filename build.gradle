@@ -32,7 +32,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '2.0-beta21'
+version = '2.0-beta22'
 group = 'com.calculusmaster.difficultraids'
 archivesBaseName = 'difficultraids-1.20.1'
 
@@ -174,8 +174,8 @@ dependencies {
     //Pyrologer & Friends
 //    implementation fg.deobf("curse.maven:pyrologer-and-friends-573099:4433602")
 
-    //L Ender's Cataclysm 3.16 + Lionfish API 2.4-Fix + Curios API 5.14.1
-    implementation fg.deobf("curse.maven:l_ender-s-cataclysm-551586:6906993")
+    //L Ender's Cataclysm 3.25 + Lionfish API 2.4-Fix + Curios API 5.14.1
+    implementation fg.deobf("curse.maven:l_ender-s-cataclysm-551586:7821746")
     implementation fg.deobf("curse.maven:lionfish-api-1001614:5922047")
     implementation fg.deobf("curse.maven:curios-api-309927:6418456")
 

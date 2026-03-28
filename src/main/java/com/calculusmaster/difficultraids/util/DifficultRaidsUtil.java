@@ -571,8 +571,6 @@ public class DifficultRaidsUtil
 
         if(Compat.SIMPLE_MUSKET.isLoaded()) STANDARD_RAIDERS.add(com.brokenkeyboard.simplemusket.ModRegistry.GUNSLINGER);
 
-        if(Compat.L_ENDERS_CATACLYSM.isLoaded()) BASIC_MAGIC_RAIDERS.add(com.github.L_Ender.cataclysm.init.ModEntities.NAMELESS_SORCERER.get());
-
         if(Compat.ILLAGE_ART.isLoaded())
         {
             STANDARD_RAIDERS.addAll(List.of(

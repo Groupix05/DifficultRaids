@@ -587,8 +587,6 @@ public class DifficultRaidsConfig
         ENABLED_RAIDERS.put(RaidEnemyRegistry.WARLORD_RAVAGER, GENERAL.define("enableWarlordRavager", false));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.DESTRUCTOR, GENERAL.define("enableDestructor", true));
         ENABLED_RAIDERS.put(RaidEnemyRegistry.GIANTSAGER, GENERAL.define("enableGiantsager", true));
-        GENERAL.pop().push("Requires L_Enders Cataclysm");
-        ENABLED_RAIDERS.put(RaidEnemyRegistry.NAMELESS_SORCERER, GENERAL.define("enableNamelessSorcerer", false));
         GENERAL.pop().push("Requires Invade");
         ENABLED_RAIDERS.put(RaidEnemyRegistry.FOLLOWER, GENERAL.define("enableFollower", false));
         GENERAL.pop().push("Requires Illage Art");

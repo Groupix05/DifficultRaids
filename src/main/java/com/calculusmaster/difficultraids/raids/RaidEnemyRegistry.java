@@ -518,9 +518,6 @@ public class RaidEnemyRegistry
     public static final String DESTRUCTOR = "destructor";
     public static final String GIANTSAGER = "giantsager";
 
-    //L_Enders Cataclysm
-    public static final String NAMELESS_SORCERER = "nameless_sorcerer";
-
     //Invade
     public static final String FOLLOWER = "follower";
 
@@ -691,7 +688,6 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(TOWER_WITCH,com.k1sak1.goetyawaken.common.entities.ModEntityType.TOWER_WITCH.get());
         }
         if(Compat.LEOSBOSSES.isLoaded()) RaidEnemyRegistry.createRaiderType(ANCIENT_SORCERER, EntityInit.ANCIENT_SORCERER.get());
-        if(Compat.L_ENDERS_CATACLYSM.isLoaded()) RaidEnemyRegistry.createRaiderType(NAMELESS_SORCERER, com.github.L_Ender.cataclysm.init.ModEntities.NAMELESS_SORCERER.get());
         if(Compat.INVADE.isLoaded()) RaidEnemyRegistry.createRaiderType(FOLLOWER, mc.z1gned.invade.entity.ModEntityType.FOLLOWER.get());
         if(Compat.ILLAGE_ART.isLoaded())
         {
@@ -1079,7 +1075,6 @@ public class RaidEnemyRegistry
                 .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(NAMELESS_SORCERER,      0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(PIONEER,                0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPITTER,                0, 0, 0, 0, 1, 0, 1, 0)
@@ -1424,7 +1419,6 @@ public class RaidEnemyRegistry
                 .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(NAMELESS_SORCERER,      0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(PIONEER,                0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPITTER,                0, 0, 0, 1, 1, 0, 1, 1)
@@ -1770,7 +1764,6 @@ public class RaidEnemyRegistry
                 .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 1)
-                .withRaider(NAMELESS_SORCERER,      0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(PIONEER,                0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(SPITTER,                0, 0, 1, 1, 2, 1, 1, 1)
@@ -2118,7 +2111,6 @@ public class RaidEnemyRegistry
                 .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(GIANTSAGER,             0, 0, 0, 0, 1, 0, 0, 1)
-                .withRaider(NAMELESS_SORCERER,      0, 0, 0, 1, 1, 1, 1, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 1, 0)
                 .withRaider(PIONEER,                0, 0, 0, 1, 1, 0, 1, 0)
                 .withRaider(SPITTER,                0, 1, 1, 1, 2, 2, 1, 1)
