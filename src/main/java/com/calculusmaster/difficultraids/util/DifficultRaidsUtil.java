@@ -8,14 +8,10 @@ import cn.leolezury.leosillagers.init.EntityInit;
 import codyhuh.ravagecabbage.registry.RCEntities;
 import com.Polarice3.Goety.common.entities.ModEntityType;
 import com.belgieyt.morefeatures.core.registry.MFEntity;
-import com.beta.theresilianceofraiders.init.TheresilianceofraidersModEntities;
 import com.bilibili.player_ix.noixmod_api.register.NoixmodAPIEntities;
 import com.briknex.fathomless.init.FathomlessModEntities;
-import com.coldspell.coldstrader.init.ColdstraderModEntities;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
 import com.finderfeed.raids_enhanced.init.REEntities;
-import com.francisplay446.raiderv.init.RaidervModEntities;
-import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.github.alexthe666.rats.registry.RatsEntityRegistry;
 import com.hexagram2021.oceanworld.common.register.OWEntities;
 import com.infamous.all_bark_all_bite.common.registry.ABABEntityTypes;
@@ -24,16 +20,14 @@ import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.calculusmaster.difficultraids.entity.DifficultRaidsEntityTypes;
 import com.izofar.takesapillage.init.ModEntityTypes;
 import com.mrbysco.raided.registry.RaidedRegistry;
-import com.mysticmage.musketeer_illager.init.MusketeerIllagerModEntities;
 import com.possible_triangle.brazier.Content;
 import com.ratrod.goetyhostility.common.registry.GHEntityTypes;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
-import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import elucent.eidolon.registries.EidolonEntities;
-import francisplayz446.karateillagerfinallyported.init.KarateillagerfinallyportedModEntities;
 import fuzs.illagerinvasion.init.ModRegistry;
-import net.francisplayz446.summoner.init.ThesummonerModEntities;
+import net.daveyx0.summoner.core.TheSummonerEntityRegistry;
+import net.endermanofdoom.necromancer.NEntity;
 import net.mcreator.canibalism.init.CanibalismModEntities;
 import net.mcreator.crimson_steves_mobs.init.CrimsonStevesMobsModEntities;
 import net.mcreator.expadosillagerss.init.ExpadosIllagerssModEntities;
@@ -48,7 +42,6 @@ import net.mcreator.moreillagers.init.MoreIllagersHcModEntities;
 import net.mcreator.moreillagers.init.MoreIllagersModEntities;
 import net.mcreator.pillagerboss.init.PillagerBossModEntities;
 import net.mcreator.pillagersplus.init.PillagersplusModEntities;
-import net.mcreator.poachers.init.PoachersModEntities;
 import net.mcreator.roost.init.Roost2ModEntities;
 import net.mcreator.rpg.init.RpgModEntities;
 import net.mcreator.sharks.init.BenssharksModEntities;
@@ -151,7 +144,7 @@ public class DifficultRaidsUtil
 
         if(Compat.CONJURER.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(IllagerEntityTypes.CONJURER);
 
-        if(Compat.NECROMANCER.isLoaded()) BASIC_MAGIC_RAIDERS.add(NecromancerModEntities.NECROMANCER.get());
+        if(Compat.NECROMANCER.isLoaded()) BASIC_MAGIC_RAIDERS.add(NEntity.NECROMANCER.get());
 
         if(Compat.WERDENS_ILLAGERS.isLoaded())
         {
@@ -159,7 +152,7 @@ public class DifficultRaidsUtil
             ADVANCED_MAGIC_RAIDERS.add(net.werdenrc5.wip.entity.ModEntities.SHADOMANCER.get());
         }
 
-        if(Compat.IRONS_SPELLBOOKS.isLoaded()) BASIC_MAGIC_RAIDERS.add(EntityRegistry.ARCHEVOKER.get());
+        //if(Compat.IRONS_SPELLBOOKS.isLoaded()) BASIC_MAGIC_RAIDERS.add(EntityRegistry.ARCHEVOKER.get());
 
         if(Compat.GAMBLER.isLoaded()) ADVANCED_MAGIC_RAIDERS.add(com.min01.gambler.entity.ModEntities.GAMBLER.get());
 
@@ -232,11 +225,9 @@ public class DifficultRaidsUtil
             ));
         }
 
-        if(Compat.SUMMONER.isLoaded()) BASIC_MAGIC_RAIDERS.addAll(List.of(ThesummonerModEntities.SUMMONER.get(),ThesummonerModEntities.SUMMONER_BOSS.get()));
+        if(Compat.SUMMONER.isLoaded()) BASIC_MAGIC_RAIDERS.add(TheSummonerEntityRegistry.SUMMONER.get());
 
         if(Compat.BONES_UPDATE.isLoaded()) BASIC_MAGIC_RAIDERS.add(BonesEntities.NECROMANCER.get());
-
-        if(Compat.MUSKETEER.isLoaded()) STANDARD_RAIDERS.add(MusketeerIllagerModEntities.MARKSMAN.get());
 
         if(Compat.MODIFIGER.isLoaded()) BASIC_MAGIC_RAIDERS.add(ModEntityRegistry.MODIFIGER.get());
 
@@ -291,8 +282,6 @@ public class DifficultRaidsUtil
 
         if(Compat.WANDERING_ILLAGER.isLoaded()) STANDARD_RAIDERS.add(de.achtii.wandering_illager.entity.ModEntities.WANDERINGILLAGER.get());
 
-        if(Compat.KARATE_ILLAGER.isLoaded()) STANDARD_RAIDERS.add(KarateillagerfinallyportedModEntities.KARATE_ILLAGER.get());
-
         if(Compat.EXPADOS_ILLAGERS.isLoaded()) //Skipping Juggernaut
         {
             ADVANCED_MAGIC_RAIDERS.add(ExpadosIllagerssModEntities.GRINDICATOR.get());
@@ -302,24 +291,6 @@ public class DifficultRaidsUtil
                     ExpadosIllagerssModEntities.SPEAROLOGER.get(),
                     ExpadosIllagerssModEntities.BLUDGEONER.get(),
                     ExpadosIllagerssModEntities.BRASHER.get()
-            ));
-        }
-
-        if(Compat.FRANCIS_ILLAGERS.isLoaded()) //skipping Grummicator
-        {
-            STANDARD_RAIDERS.addAll(List.of(
-                    ExpansionModEntities.PATROLOGER.get(),
-                    ExpansionModEntities.CHEFAGER.get(),
-                    ExpansionModEntities.GRINDICATOR.get(),
-                    ExpansionModEntities.MAGE.get(),
-                    ExpansionModEntities.CHEFOLOGER.get(),
-                    ExpansionModEntities.PYROBANDIT.get()
-            ));
-            BASIC_MAGIC_RAIDERS.addAll(List.of(
-                    ExpansionModEntities.SANDOLOGER.get(),
-                    ExpansionModEntities.VRINCITADOR.get(),
-                    ExpansionModEntities.FIREOLOGER.get()
-
             ));
         }
 
@@ -346,8 +317,6 @@ public class DifficultRaidsUtil
                     JustillagersModEntities.DRUSKI.get()
             ));
         }
-
-        if(Compat.COLDS_WANDERING_TRADER.isLoaded()) BASIC_MAGIC_RAIDERS.add(ColdstraderModEntities.WANDERING_TRAITOR.get());
 
         if(Compat.ILLAGER_UNIVERSE.isLoaded()) //Skipping Shadow Goat
         {
@@ -508,29 +477,11 @@ public class DifficultRaidsUtil
 
         if(Compat.OCEANWORLD.isLoaded()) BASIC_MAGIC_RAIDERS.add(OWEntities.OCEANOLOGER);
 
-        if(Compat.POACHERS.isLoaded())
-        {
-            STANDARD_RAIDERS.addAll(List.of(
-                    PoachersModEntities.BLOWER.get(),
-                    PoachersModEntities.STABBER.get(),
-                    PoachersModEntities.HARVESTER.get()
-            ));
-        }
-
         if(Compat.MECHA_PILLAGER.isLoaded())
         {
             ADVANCED_RAIDERS.addAll(List.of(
                     MechapillagerbossModEntities.MECHA_PILLAGER.get(),
                     MechapillagerbossModEntities.MECHA_VINDICATOR.get()
-            ));
-        }
-
-        if(Compat.RESILIANCE_OF_RAIDERS.isLoaded())
-        {
-            STANDARD_RAIDERS.addAll(List.of(
-                    TheresilianceofraidersModEntities.CRUSHER.get(),
-                    TheresilianceofraidersModEntities.CLASHAGER.get(),
-                    TheresilianceofraidersModEntities.SHIVERGER.get()
             ));
         }
 
@@ -540,23 +491,6 @@ public class DifficultRaidsUtil
                     TheResistanceOfTheRaidersModEntities.GUARDIAN.get(),
                     TheResistanceOfTheRaidersModEntities.ASSAILANT.get(),
                     TheResistanceOfTheRaidersModEntities.HARRIER.get()
-            ));
-        }
-
-        if(Compat.VINDICATION_OF_ILLAGERS.isLoaded())
-        {
-            STANDARD_RAIDERS.addAll(List.of(
-                    RaidervModEntities.BLACKMASTER.get(),
-                    RaidervModEntities.PLANNER.get(),
-                    RaidervModEntities.VISOLOGER.get(),
-                    RaidervModEntities.INTRUDER.get(),
-                    RaidervModEntities.VOLTOLOGER.get(),
-                    RaidervModEntities.SMITHER.get(),
-                    RaidervModEntities.RAGER.get()
-            ));
-            BASIC_MAGIC_RAIDERS.addAll(List.of(
-                    RaidervModEntities.PREACHER.get(),
-                    RaidervModEntities.PATROL_CAPTAIN.get()
             ));
         }
 

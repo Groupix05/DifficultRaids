@@ -14,7 +14,6 @@ import com.calculusmaster.difficultraids.util.Compat;
 //import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import com.faboslav.friendsandfoes.common.init.FriendsAndFoesEntityTypes;
 import com.finderfeed.raids_enhanced.init.REEntities;
-import com.francisplayz446.expansion.init.ExpansionModEntities;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.legacy.conjurer_illager.registry.IllagerEntityTypes;
 import com.mojang.logging.LogUtils;
@@ -23,8 +22,8 @@ import com.possible_triangle.brazier.Content;
 import com.ratrod.goetyhostility.common.registry.GHEntityTypes;
 import com.sh1nylabs.bonesupdate.init.BonesEntities;
 import com.teamabnormals.savage_and_ravage.core.registry.SREntityTypes;
-import comfrancisplayz446.necromancer.init.NecromancerModEntities;
 import multiverse.registration.EntityRegistry;
+import net.endermanofdoom.necromancer.NEntity;
 import net.firefoxsalesman.dungeonsmobs.entity.ModEntities;
 import net.mcreator.chillthrill.init.ChillThrillModEntities;
 import net.mcreator.expadosillagerss.init.ExpadosIllagerssModEntities;
@@ -111,6 +110,11 @@ public class RaidEnemyRegistry
     public static final String WINDCALLER = "windcaller";
     public static final String SQUALL_GOLEM = "DM_SQUALL_GOLEM";
     public static final String REDSTONE_GOLEM = "DM_REDSTONE_GOLEM";
+    public static final String REDSTONE_MONSTROSITY = "redstone_monstrosity";
+    public static final String MOOSH_RED_MONSTROSITY = "mooshroom_redstone_monstrosity";
+    public static final String VINDICATOR_CHEF_DM = "DM_VINDICATOR_CHEF";
+    public static final String ARMORED_PILLAGER = "armored_pillager";
+    public static final String ARMORED_VINDICATOR = "armored_vindicator";
 
     //Illager Revolution
     public static final String BLADE_KNIGHT = "blade_knight";
@@ -201,14 +205,10 @@ public class RaidEnemyRegistry
     public static final String CRONE = "GOETY_CRONE";
 
     //The Summoner Illager
-    public static final String THE_SUMMONER = "summoner";
-    public static final String THE_SUMMONER_BOSS = "summoner_boss";
+    public static final String THE_SUMMONER = "thesummoner:summoner";
 
     //Bones Update
     public static final String NECROMANCER_BONES = "NECROMANCER_BONES";
-
-    //Musketeer Illager
-    public static final String MARKSMAN = "marksman";
 
     //The Modifiger
     public static final String MODIFIGER = "modifiger";
@@ -262,9 +262,6 @@ public class RaidEnemyRegistry
     //All Bark All Bite
     public static final String HOUNDMASTER = "houndmaster";
 
-    //Karate Illager
-    public static final String KARATE = "karate_illager";
-
     //Illager Brute
     public static final String ILLAGER_BRUTE = "illagerbrute";
 
@@ -283,18 +280,6 @@ public class RaidEnemyRegistry
     public static final String BLUDGEONER = "bludgeoner";
     public static final String GRINDICATOR = "expado_grindicator";
 
-    //Francis Illagers
-    public static final String PATROLOGER = "patrologer";
-    public static final String CHEFAGER = "chefager";
-    public static final String GRINDICATOR_FRANCIS = "francis_grindicator";
-    public static final String MAGE_FRANCIS = "francis_mage";
-    public static final String CHEFOLOGER = "chefologer";
-    public static final String PYROBANDIT = "pyrobandit";
-    public static final String FIREOLOGER = "fireologer";
-    public static final String VRINCITADOR = "vrincitador";
-    public static final String SANDOLOGER = "sandologer";
-    public static final String GRUMMICATOR = "grummicator";
-
     //Earth Mobs
     public static final String VILER_WITCH = "viler_witch";
 
@@ -305,9 +290,6 @@ public class RaidEnemyRegistry
     public static final String ASSAULT_PILLAGER = "assault_pillager_soldier";
     public static final String PILLAGER_PLANE = "plane_avec_pillager_soldier";
     public static final String PILLAGER_CANNON = "cannon_with_soldier_pillager";
-
-    //Colds: Wandering Traidor
-    public static final String WANDERING_TRAITOR = "wandering_traitor";
 
     //Just Illagers
     public static final String DRUSKI = "druski";
@@ -465,36 +447,14 @@ public class RaidEnemyRegistry
     public static final String CONQUEROR = "conqueror";
     public static final String TRAVELER = "traveler";
 
-    //Poarchers/Porchers
-    public static final String BLOWER = "blower";
-    public static final String STABBER = "stabber";
-    public static final String HARVESTER = "harvester";
-
     //MechaPillager
     public static final String MECHA_PILLAGER = "mecha_pillager";
     public static final String MECHA_VINDICATOR = "mecha_vindicator";
-
-    //The Resiliance of the Raiders
-    public static final String CRUSHER_RESILIANCE = "crusher";
-    public static final String CLASHAGER = "clashager";
-    public static final String SHIVERGER = "shiverger";
 
     //The Resistance Of Illagers
     public static final String GUARDIAN = "guardian";
     public static final String ASSAILANT = "assailant";
     public static final String HARRIER = "harrier";
-
-    //The Vindication Of Illagers
-    public static final String PREACHER_VINDICATION = "preacher";
-    public static final String BLACKMASTER = "blackmaster";
-    public static final String PLANNER = "planner";
-    public static final String VISOLOGER = "visologer";
-    public static final String INTRUDER_VINDICATION = "intruder";
-    public static final String VOLTOLOGER = "voltologer";
-    public static final String SMITHER = "smither";
-    public static final String RAGER = "rager";
-    public static final String PATROL_CAPTAIN = "patrol_captain";
-    public static final String RAIDER_RANDOMIZER = "raider_randomizer";
 
     //Goety Awaken
     public static final String VINDICATOR_CHEF = "GA_VINDICATOR_CHEF";
@@ -509,14 +469,6 @@ public class RaidEnemyRegistry
 
     //Flame Forge
     public static final String CHRIMSONVEIL = "raider_chrimsonveil";
-
-    //Sieging of the Illagers
-    public static final String WARLORD = "warlord";
-    public static final String WIZARD = "wizard";
-    public static final String PILEDRIVER = "piledriver";
-    public static final String WARLORD_RAVAGER = "warlords_ravager";
-    public static final String DESTRUCTOR = "destructor";
-    public static final String GIANTSAGER = "giantsager";
 
     //Invade
     public static final String FOLLOWER = "follower";
@@ -622,6 +574,10 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(GEOMANCER, ModEntities.GEOMANCER.get());
             RaidEnemyRegistry.createRaiderType(SQUALL_GOLEM, ModEntities.SQUALL_GOLEM.get());
             RaidEnemyRegistry.createRaiderType(MOUNTAINEER, ModEntities.MOUNTAINEER.get());
+            RaidEnemyRegistry.createRaiderType(ROYAL_GUARD, ModEntities.ROYAL_GUARD.get());
+            RaidEnemyRegistry.createRaiderType(MOOSH_RED_MONSTROSITY, ModEntities.MOOSHROOM_MONSTROSITY.get());
+            RaidEnemyRegistry.createRaiderType(VINDICATOR_CHEF_DM, ModEntities.VINDICATOR_CHEF.get());
+            RaidEnemyRegistry.createRaiderType(WINDCALLER, ModEntities.WINDCALLER.get());
         }
         if(Compat.CONJURER.isLoaded()) RaidEnemyRegistry.createRaiderType(CONJURER, IllagerEntityTypes.CONJURER);
         //Archevoker and Gambler doesn't extend EntityType Raider, so we cant add them in raids
@@ -635,7 +591,7 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(ILLUSIONER_MOBZ, MobZEntities.ILLUSIONER.get());
             RaidEnemyRegistry.createRaiderType(BABY_RAVAGER, MobZEntities.BABY_RAVAGER.get());
         }
-        if(Compat.NECROMANCER.isLoaded()) RaidEnemyRegistry.createRaiderType(NECROMANCER_MOD, NecromancerModEntities.NECROMANCER.get());
+        if(Compat.NECROMANCER.isLoaded()) RaidEnemyRegistry.createRaiderType(NECROMANCER_MOD, NEntity.NECROMANCER.get());
         if(Compat.BONES_UPDATE.isLoaded()) RaidEnemyRegistry.createRaiderType(NECROMANCER_BONES, BonesEntities.NECROMANCER.get());
         if(Compat.GOETY.isLoaded())
         {
@@ -666,11 +622,6 @@ public class RaidEnemyRegistry
             RaidEnemyRegistry.createRaiderType(GRAVE_KEEPER, NoixmodAPIEntities.GRAVE_KEEPER.get());
         }
         if(Compat.EXPADOS_ILLAGERS.isLoaded()) RaidEnemyRegistry.createRaiderType(GRINDICATOR, ExpadosIllagerssModEntities.GRINDICATOR.get());
-        if(Compat.FRANCIS_ILLAGERS.isLoaded())
-        {
-            RaidEnemyRegistry.createRaiderType(GRINDICATOR_FRANCIS, ExpansionModEntities.GRINDICATOR.get());
-            RaidEnemyRegistry.createRaiderType(MAGE_FRANCIS, ExpansionModEntities.MAGE.get());
-        }
         if(Compat.ILLAGER_REVOLUTION.isLoaded())
         {
             RaidEnemyRegistry.createRaiderType(ACOLYTE, net.BKTeam.illagerrevolutionmod.entity.ModEntityTypes.ACOLYTE.get());
@@ -816,6 +767,11 @@ public class RaidEnemyRegistry
                 .withRaider(WINDCALLER,             0, 0, 1, 1, 0, 2, 1, 2)
                 .withRaider(SQUALL_GOLEM,           0, 0, 1, 1, 1, 1, 0, 2)
                 .withRaider(REDSTONE_GOLEM,         0, 0, 0, 1, 0, 1, 0, 1)
+                .withRaider(ARMORED_PILLAGER,       0, 0, 1, 0, 1, 1, 0, 1)
+                .withRaider(ARMORED_VINDICATOR,     0, 0, 0, 1, 0, 1, 1, 0)
+                .withRaider(REDSTONE_MONSTROSITY,   0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(MOOSH_RED_MONSTROSITY,  0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(VINDICATOR_CHEF_DM,     0, 1, 0, 0, 1, 1, 0, 1)
                 .withRaider(BLADE_KNIGHT,           0, 0, 1, 0, 1, 0, 0, 2)
                 .withRaider(BEAST_TAMER,            0, 0, 1, 0, 1, 0, 0, 1)
                 .withRaider(SCAVENGER,              0, 1, 1, 1, 0, 1, 2, 2)
@@ -881,10 +837,8 @@ public class RaidEnemyRegistry
                 .withRaider(APOSTLE,                0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(CRONE,                  0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(THE_SUMMONER,           0, 0, 1, 0, 0, 1, 0, 0)
-                .withRaider(THE_SUMMONER_BOSS,      0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(NECROMANCER_BONES,      0, 0, 0, 0, 1, 0, 0, 1)
                 .withRaider(MODIFIGER,              0, 0, 0, 0, 1, 0, 1, 1)
-                .withRaider(MARKSMAN,               0, 0, 1, 0, 1, 1, 0, 1)
                 .withRaider(MASQUERADER,            0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(TENGU,                  0, 0, 0, 1, 0, 0, 1, 0)
                 .withRaider(NINJAR,                 0, 1, 0, 0, 1, 2, 1, 1)
@@ -912,7 +866,6 @@ public class RaidEnemyRegistry
                 .withRaider(RED_MONSTROSITY_CSM,    0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(MINI_CRUDE_RED_GOLEM,   0, 1, 1, 0, 1, 0, 1, 1)
                 .withRaider(HOUNDMASTER,            0, 0, 0, 1, 0, 1, 0, 0)
-                .withRaider(KARATE,                 0, 1, 2, 1, 1, 1, 1, 1)
                 .withRaider(ILLAGER_BRUTE,          0, 0, 0, 0, 1, 0, 0, 1)
                 .withRaider(SORCERER_ILLAGER,       0, 0, 1, 1, 0, 1, 0, 0)
                 .withRaider(WANDERING_ILLAGER,      0, 0, 0, 0, 0, 1, 1, 0)
@@ -923,16 +876,6 @@ public class RaidEnemyRegistry
                 .withRaider(JUGGERNAUT,             0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(BLUDGEONER,             0, 1, 0, 1, 0, 1, 1, 1)
                 .withRaider(GRINDICATOR,            0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(PATROLOGER,             0, 0, 0, 1, 0, 1, 1, 0)
-                .withRaider(CHEFAGER,               0, 0, 1, 0, 1, 1, 0, 1)
-                .withRaider(GRINDICATOR_FRANCIS,    0, 0, 0, 0, 0, 0, 1, 0)
-                .withRaider(MAGE_FRANCIS,           0, 0, 0, 1, 1, 0, 1, 1)
-                .withRaider(CHEFOLOGER,             0, 0, 0, 0, 1, 1, 0, 0)
-                .withRaider(PYROBANDIT,             0, 0, 0, 1, 0, 0, 1, 0)
-                .withRaider(FIREOLOGER,             0, 0, 1, 0, 1, 1, 0, 1)
-                .withRaider(VRINCITADOR,            0, 0, 0, 1, 0, 0, 1, 0)
-                .withRaider(SANDOLOGER,             0, 0, 1, 0, 0, 1, 0, 1)
-                .withRaider(GRUMMICATOR,            0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(VILER_WITCH,            0, 0, 1, 1, 0, 1, 1, 1)
                 .withRaider(PILLAGER_CAR,           0, 0, 0, 1, 0, 1, 0, 0)
                 .withRaider(PILLAGER_SOLDIER,       0, 0, 1, 1, 1, 0, 1, 1)
@@ -940,7 +883,6 @@ public class RaidEnemyRegistry
                 .withRaider(ASSAULT_PILLAGER,       0, 0, 1, 0, 1, 1, 1, 0)
                 .withRaider(PILLAGER_PLANE,         0, 0, 0, 0, 1, 1, 1, 1)
                 .withRaider(PILLAGER_CANNON,        0, 0, 0, 1, 0, 1, 0, 1)
-                .withRaider(WANDERING_TRAITOR,      0, 0, 1, 0, 1, 1, 0, 1)
                 .withRaider(DRUSKI,                 0, 1, 2, 2, 1, 1, 2, 2)
                 .withRaider(LACHER,                 0, 0, 1, 1, 0, 1, 0, 2)
                 .withRaider(CRISKO,                 0, 2, 2, 2, 1, 2, 2, 2)
@@ -1042,39 +984,17 @@ public class RaidEnemyRegistry
                 .withRaider(OCEANOLOGER,            0, 0, 0, 1, 0, 1, 1, 0)
                 .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(TRAVELER,               0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(BLOWER,                 0, 1, 0, 0, 1, 0, 0, 1)
-                .withRaider(STABBER,                0, 0, 1, 0, 0, 0, 1, 0)
-                .withRaider(HARVESTER,              0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(MECHA_PILLAGER,         0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(MECHA_VINDICATOR,       0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(CRUSHER_RESILIANCE,     0, 0, 0, 1, 1, 0, 0, 1)
-                .withRaider(CLASHAGER,              0, 0, 1, 0, 1, 0, 1, 0)
-                .withRaider(SHIVERGER,              0, 0, 0, 1, 0, 0, 0, 0)
                 .withRaider(GUARDIAN,               0, 0, 0, 0, 0, 0, 1, 0)
                 .withRaider(ASSAILANT,              0, 0, 1, 0, 0, 1, 0, 1)
                 .withRaider(HARRIER,                0, 1, 0, 1, 0, 1, 1, 0)
-                .withRaider(PREACHER_VINDICATION,   0, 0, 1, 0, 1, 0, 1, 0)
-                .withRaider(BLACKMASTER,            0, 1, 0, 0, 0, 1, 0, 0)
-                .withRaider(PLANNER,                0, 0, 0, 1, 1, 0, 1, 1)
-                .withRaider(VISOLOGER,              0, 0, 1, 0, 0, 1, 0, 1)
-                .withRaider(INTRUDER_VINDICATION,   0, 1, 0, 0, 1, 0, 1, 0)
-                .withRaider(VOLTOLOGER,             0, 0, 1, 0, 0, 1, 0, 1)
-                .withRaider(SMITHER,                0, 0, 1, 1, 1, 0, 0, 1)
-                .withRaider(RAGER,                  0, 0, 0, 1, 0, 1, 1, 0)
-                .withRaider(PATROL_CAPTAIN,         0, 0, 0, 0, 1, 0, 0, 0)
-                .withRaider(RAIDER_RANDOMIZER,      0, 0, 0, 1, 0, 1, 0, 1)
                 .withRaider(VINDICATOR_CHEF,        0, 0, 1, 0, 1, 1, 0, 1)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 0, 0, 0)
                 .withRaider(TOWER_WITCH,            0, 1, 0, 1, 0, 1, 1, 0)
                 .withRaider(MUSKET_PILLAGER,        0, 0, 1, 1, 0, 1, 1, 0)
                 .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(CHRIMSONVEIL,           0, 0, 0, 0, 0, 0, 0, 1)
-                .withRaider(WARLORD,                0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(WIZARD,                 0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(PILEDRIVER,             0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(PIONEER,                0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPITTER,                0, 0, 0, 0, 1, 0, 1, 0)
@@ -1160,6 +1080,11 @@ public class RaidEnemyRegistry
                 .withRaider(WINDCALLER,             0, 1, 1, 2, 1, 2, 1, 3)
                 .withRaider(SQUALL_GOLEM,           0, 1, 1, 2, 1, 2, 1, 2)
                 .withRaider(REDSTONE_GOLEM,         0, 1, 1, 1, 1, 1, 1, 1)
+                .withRaider(ARMORED_PILLAGER,       0, 1, 1, 0, 2, 1, 1, 2)
+                .withRaider(ARMORED_VINDICATOR,     0, 0, 1, 2, 1, 1, 2, 1)
+                .withRaider(REDSTONE_MONSTROSITY,   0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(MOOSH_RED_MONSTROSITY,  0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(VINDICATOR_CHEF_DM,     0, 1, 1, 1, 2, 1, 1, 1)
                 .withRaider(BLADE_KNIGHT,           0, 0, 1, 1, 1, 0, 1, 2)
                 .withRaider(BEAST_TAMER,            0, 0, 1, 0, 1, 1, 1, 1)
                 .withRaider(SCAVENGER,              0, 1, 2, 1, 1, 2, 2, 3)
@@ -1225,10 +1150,8 @@ public class RaidEnemyRegistry
                 .withRaider(APOSTLE,                0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(CRONE,                  0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(THE_SUMMONER,           0, 1, 1, 0, 1, 1, 0, 1)
-                .withRaider(THE_SUMMONER_BOSS,      0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(NECROMANCER_BONES,      0, 0, 1, 1, 1, 0, 0, 1)
                 .withRaider(MODIFIGER,              0, 0, 0, 2, 1, 1, 2, 1)
-                .withRaider(MARKSMAN,               0, 1, 1, 1, 2, 1, 0, 1)
                 .withRaider(MASQUERADER,            0, 0, 0, 1, 1, 0, 1, 0)
                 .withRaider(TENGU,                  0, 1, 1, 1, 0, 1, 2, 1)
                 .withRaider(NINJAR,                 0, 1, 1, 1, 2, 2, 2, 1)
@@ -1256,7 +1179,6 @@ public class RaidEnemyRegistry
                 .withRaider(RED_MONSTROSITY_CSM,    0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(MINI_CRUDE_RED_GOLEM,   0, 1, 1, 1, 2, 1, 1, 1)
                 .withRaider(HOUNDMASTER,            0, 0, 1, 1, 0, 1, 0, 1)
-                .withRaider(KARATE,                 0, 1, 3, 2, 1, 2, 2, 2)
                 .withRaider(ILLAGER_BRUTE,          0, 0, 0, 1, 1, 1, 0, 1)
                 .withRaider(SORCERER_ILLAGER,       0, 1, 1, 2, 1, 2, 1, 1)
                 .withRaider(WANDERING_ILLAGER,      0, 0, 1, 1, 0, 1, 1, 0)
@@ -1267,16 +1189,6 @@ public class RaidEnemyRegistry
                 .withRaider(JUGGERNAUT,             0, 0, 1, 1, 0, 1, 0, 1)
                 .withRaider(BLUDGEONER,             0, 1, 0, 1, 0, 1, 1, 1)
                 .withRaider(GRINDICATOR,            0, 0, 0, 0, 0, 0, 0, 1)
-                .withRaider(PATROLOGER,             0, 0, 0, 1, 0, 1, 1, 0)
-                .withRaider(CHEFAGER,               0, 0, 1, 1, 1, 1, 0, 1)
-                .withRaider(GRINDICATOR_FRANCIS,    0, 0, 0, 0, 0, 1, 1, 0)
-                .withRaider(MAGE_FRANCIS,           0, 0, 1, 1, 1, 0, 2, 1)
-                .withRaider(CHEFOLOGER,             0, 0, 0, 1, 1, 2, 0, 0)
-                .withRaider(PYROBANDIT,             0, 0, 0, 1, 0, 1, 1, 0)
-                .withRaider(FIREOLOGER,             0, 0, 1, 1, 1, 2, 1, 1)
-                .withRaider(VRINCITADOR,            0, 0, 0, 1, 0, 1, 1, 0)
-                .withRaider(SANDOLOGER,             0, 1, 1, 0, 1, 1, 0, 1)
-                .withRaider(GRUMMICATOR,            0, 0, 0, 0, 1, 0, 1, 0)
                 .withRaider(VILER_WITCH,            0, 1, 1, 2, 1, 2, 2, 1)
                 .withRaider(PILLAGER_CAR,           0, 0, 1, 1, 0, 1, 1, 0)
                 .withRaider(PILLAGER_SOLDIER,       0, 1, 1, 2, 1, 2, 2, 1)
@@ -1284,7 +1196,6 @@ public class RaidEnemyRegistry
                 .withRaider(ASSAULT_PILLAGER,       0, 1, 2, 1, 2, 1, 1, 0)
                 .withRaider(PILLAGER_PLANE,         0, 0, 1, 0, 1, 2, 2, 1)
                 .withRaider(PILLAGER_CANNON,        0, 0, 0, 1, 2, 1, 1, 1)
-                .withRaider(WANDERING_TRAITOR,      0, 1, 1, 2, 2, 1, 1, 1)
                 .withRaider(DRUSKI,                 0, 2, 2, 3, 2, 1, 3, 2)
                 .withRaider(LACHER,                 0, 1, 1, 2, 1, 1, 1, 2)
                 .withRaider(CRISKO,                 0, 3, 3, 2, 2, 2, 3, 2)
@@ -1386,39 +1297,17 @@ public class RaidEnemyRegistry
                 .withRaider(OCEANOLOGER,            0, 0, 1, 1, 1, 1, 1, 1)
                 .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(TRAVELER,               0, 0, 0, 0, 0, 0, 0, 1)
-                .withRaider(BLOWER,                 0, 1, 0, 1, 1, 0, 0, 1)
-                .withRaider(STABBER,                0, 1, 1, 0, 0, 0, 1, 0)
-                .withRaider(HARVESTER,              0, 0, 0, 1, 1, 1, 0, 1)
                 .withRaider(MECHA_PILLAGER,         0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(MECHA_VINDICATOR,       0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(CRUSHER_RESILIANCE,     0, 1, 0, 1, 1, 0, 1, 1)
-                .withRaider(CLASHAGER,              0, 0, 1, 1, 1, 0, 1, 1)
-                .withRaider(SHIVERGER,              0, 0, 0, 1, 0, 1, 0, 0)
                 .withRaider(GUARDIAN,               0, 0, 0, 0, 0, 1, 1, 0)
                 .withRaider(ASSAILANT,              0, 0, 1, 1, 1, 1, 0, 1)
                 .withRaider(HARRIER,                0, 1, 1, 1, 1, 1, 1, 1)
-                .withRaider(PREACHER_VINDICATION,   0, 0, 1, 1, 1, 1, 1, 0)
-                .withRaider(BLACKMASTER,            0, 1, 0, 0, 1, 1, 0, 1)
-                .withRaider(PLANNER,                0, 0, 1, 1, 1, 0, 1, 1)
-                .withRaider(VISOLOGER,              0, 1, 1, 0, 0, 1, 1, 1)
-                .withRaider(INTRUDER_VINDICATION,   0, 1, 0, 1, 1, 1, 1, 0)
-                .withRaider(VOLTOLOGER,             0, 1, 1, 0, 0, 1, 0, 1)
-                .withRaider(SMITHER,                0, 1, 1, 1, 1, 0, 1, 1)
-                .withRaider(RAGER,                  0, 0, 0, 1, 1, 1, 1, 1)
-                .withRaider(PATROL_CAPTAIN,         0, 0, 0, 0, 1, 1, 0, 1)
-                .withRaider(RAIDER_RANDOMIZER,      0, 1, 1, 1, 0, 1, 0, 1)
                 .withRaider(VINDICATOR_CHEF,        0, 0, 1, 1, 1, 1, 1, 1)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 0, 1, 1, 1, 0, 0)
                 .withRaider(TOWER_WITCH,            0, 1, 1, 1, 0, 1, 1, 0)
                 .withRaider(MUSKET_PILLAGER,        0, 0, 1, 2, 1, 1, 2, 1)
                 .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(CHRIMSONVEIL,           0, 0, 0, 0, 0, 1, 0, 1)
-                .withRaider(WARLORD,                0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(WIZARD,                 0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(PILEDRIVER,             0, 0, 0, 0, 0, 0, 0, 1)
-                .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 0, 0, 1)
-                .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(PIONEER,                0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(SPITTER,                0, 0, 0, 1, 1, 0, 1, 1)
@@ -1505,6 +1394,11 @@ public class RaidEnemyRegistry
                 .withRaider(WINDCALLER,             0, 1, 2, 3, 2, 3, 2, 3)
                 .withRaider(SQUALL_GOLEM,           0, 1, 2, 2, 2, 3, 2, 3)
                 .withRaider(REDSTONE_GOLEM,         0, 1, 1, 2, 1, 2, 1, 2)
+                .withRaider(ARMORED_PILLAGER,       0, 1, 2, 2, 2, 1, 2, 2)
+                .withRaider(ARMORED_VINDICATOR,     0, 1, 1, 2, 1, 2, 3, 2)
+                .withRaider(REDSTONE_MONSTROSITY,   0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(MOOSH_RED_MONSTROSITY,  0, 0, 0, 0, 0, 0, 0, 0)
+                .withRaider(VINDICATOR_CHEF_DM,     0, 1, 2, 2, 2, 2, 2, 2)
                 .withRaider(BLADE_KNIGHT,           0, 1, 1, 1, 1, 1, 1, 2)
                 .withRaider(BEAST_TAMER,            0, 1, 2, 0, 2, 1, 2, 1)
                 .withRaider(SCAVENGER,              0, 2, 2, 2, 3, 2, 3, 4)
@@ -1570,10 +1464,8 @@ public class RaidEnemyRegistry
                 .withRaider(APOSTLE,                0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(CRONE,                  0, 0, 0, 0, 0, 0, 1, 0)
                 .withRaider(THE_SUMMONER,           0, 2, 1, 0, 1, 2, 0, 1)
-                .withRaider(THE_SUMMONER_BOSS,      0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(NECROMANCER_BONES,      0, 1, 1, 1, 1, 1, 1, 1)
                 .withRaider(MODIFIGER,              0, 1, 1, 3, 2, 2, 3, 3)
-                .withRaider(MARKSMAN,               0, 1, 2, 2, 3, 2, 1, 2)
                 .withRaider(MASQUERADER,            0, 0, 0, 0, 2, 0, 0, 0)
                 .withRaider(TENGU,                  0, 1, 2, 3, 2, 1, 2, 1)
                 .withRaider(NINJAR,                 0, 2, 2, 2, 3, 2, 2, 2)
@@ -1601,7 +1493,6 @@ public class RaidEnemyRegistry
                 .withRaider(RED_MONSTROSITY_CSM,    0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(MINI_CRUDE_RED_GOLEM,   0, 1, 2, 2, 3, 2, 2, 2)
                 .withRaider(HOUNDMASTER,            0, 1, 2, 1, 1, 1, 1, 1)
-                .withRaider(KARATE,                 0, 2, 3, 3, 2, 3, 3, 3)
                 .withRaider(ILLAGER_BRUTE,          0, 0, 1, 1, 2, 1, 1, 1)
                 .withRaider(SORCERER_ILLAGER,       0, 1, 2, 3, 2, 3, 2, 1)
                 .withRaider(WANDERING_ILLAGER,      0, 1, 1, 1, 1, 2, 1, 1)
@@ -1612,16 +1503,6 @@ public class RaidEnemyRegistry
                 .withRaider(JUGGERNAUT,             0, 0, 2, 1, 1, 2, 1, 1)
                 .withRaider(BLUDGEONER,             0, 1, 0, 2, 1, 1, 2, 1)
                 .withRaider(GRINDICATOR,            0, 0, 0, 0, 0, 1, 0, 1)
-                .withRaider(PATROLOGER,             0, 0, 1, 1, 0, 1, 1, 1)
-                .withRaider(CHEFAGER,               0, 0, 1, 1, 2, 1, 0, 1)
-                .withRaider(GRINDICATOR_FRANCIS,    0, 0, 0, 0, 0, 1, 1, 1)
-                .withRaider(MAGE_FRANCIS,           0, 1, 1, 2, 1, 1, 2, 1)
-                .withRaider(CHEFOLOGER,             0, 0, 1, 1, 1, 2, 0, 0)
-                .withRaider(PYROBANDIT,             0, 0, 0, 1, 1, 1, 1, 0)
-                .withRaider(FIREOLOGER,             0, 0, 1, 2, 2, 2, 1, 1)
-                .withRaider(VRINCITADOR,            0, 0, 0, 1, 1, 1, 1, 0)
-                .withRaider(SANDOLOGER,             0, 1, 1, 1, 2, 1, 1, 1)
-                .withRaider(GRUMMICATOR,            0, 0, 0, 0, 1, 1, 1, 0)
                 .withRaider(VILER_WITCH,            0, 2, 2, 2, 2, 3, 2, 1)
                 .withRaider(PILLAGER_CAR,           0, 1, 1, 1, 1, 2, 2, 1)
                 .withRaider(PILLAGER_SOLDIER,       0, 2, 2, 3, 2, 3, 2, 2)
@@ -1629,7 +1510,6 @@ public class RaidEnemyRegistry
                 .withRaider(ASSAULT_PILLAGER,       0, 2, 3, 2, 2, 2, 2, 2)
                 .withRaider(PILLAGER_PLANE,         0, 1, 1, 1, 2, 2, 2, 1)
                 .withRaider(PILLAGER_CANNON,        0, 1, 1, 1, 2, 1, 2, 2)
-                .withRaider(WANDERING_TRAITOR,      0, 1, 2, 2, 3, 2, 2, 1)
                 .withRaider(DRUSKI,                 0, 2, 3, 4, 3, 2, 3, 3)
                 .withRaider(LACHER,                 0, 1, 2, 2, 2, 1, 2, 3)
                 .withRaider(CRISKO,                 0, 3, 4, 3, 3, 3, 4, 3)
@@ -1731,39 +1611,17 @@ public class RaidEnemyRegistry
                 .withRaider(OCEANOLOGER,            0, 1, 1, 2, 1, 1, 2, 1)
                 .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(TRAVELER,               0, 0, 0, 0, 0, 0, 0, 1)
-                .withRaider(BLOWER,                 0, 1, 1, 1, 1, 0, 1, 1)
-                .withRaider(STABBER,                0, 1, 1, 1, 0, 1, 1, 1)
-                .withRaider(HARVESTER,              0, 1, 0, 1, 1, 1, 0, 1)
                 .withRaider(MECHA_PILLAGER,         0, 0, 0, 0, 0, 0, 1, 0)
                 .withRaider(MECHA_VINDICATOR,       0, 0, 0, 0, 0, 0, 0, 1)
-                .withRaider(CRUSHER_RESILIANCE,     0, 1, 1, 1, 1, 1, 1, 1)
-                .withRaider(CLASHAGER,              0, 1, 1, 1, 1, 1, 1, 1)
-                .withRaider(SHIVERGER,              0, 0, 0, 1, 1, 1, 0, 1)
                 .withRaider(GUARDIAN,               0, 0, 0, 0, 1, 1, 1, 1)
                 .withRaider(ASSAILANT,              0, 0, 1, 1, 2, 1, 1, 1)
                 .withRaider(HARRIER,                0, 1, 1, 2, 1, 1, 2, 1)
-                .withRaider(PREACHER_VINDICATION,   0, 1, 1, 1, 2, 2, 1, 1)
-                .withRaider(BLACKMASTER,            0, 1, 0, 1, 1, 1, 0, 1)
-                .withRaider(PLANNER,                0, 1, 1, 1, 1, 1, 1, 1)
-                .withRaider(VISOLOGER,              0, 1, 1, 0, 1, 1, 1, 1)
-                .withRaider(INTRUDER_VINDICATION,   0, 1, 1, 1, 2, 1, 1, 0)
-                .withRaider(VOLTOLOGER,             0, 1, 1, 1, 0, 1, 0, 1)
-                .withRaider(SMITHER,                0, 1, 2, 1, 1, 1, 1, 1)
-                .withRaider(RAGER,                  0, 0, 1, 1, 1, 2, 2, 1)
-                .withRaider(PATROL_CAPTAIN,         0, 1, 0, 0, 1, 1, 1, 1)
-                .withRaider(RAIDER_RANDOMIZER,      0, 1, 2, 1, 1, 2, 1, 1)
                 .withRaider(VINDICATOR_CHEF,        0, 1, 1, 2, 2, 1, 2, 1)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 0, 1, 1, 1, 2, 1, 0)
                 .withRaider(TOWER_WITCH,            0, 1, 1, 1, 1, 1, 1, 1)
                 .withRaider(MUSKET_PILLAGER,        0, 1, 1, 2, 2, 1, 2, 2)
                 .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(CHRIMSONVEIL,           0, 0, 0, 1, 0, 1, 0, 1)
-                .withRaider(WARLORD,                0, 0, 0, 0, 0, 0, 1, 0)
-                .withRaider(WIZARD,                 0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(PILEDRIVER,             0, 0, 0, 0, 0, 1, 0, 1)
-                .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 0, 0, 0, 0)
-                .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 1, 0, 0)
-                .withRaider(GIANTSAGER,             0, 0, 0, 0, 0, 0, 0, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 0, 0)
                 .withRaider(PIONEER,                0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(SPITTER,                0, 0, 1, 1, 2, 1, 1, 1)
@@ -1852,6 +1710,11 @@ public class RaidEnemyRegistry
                 .withRaider(WINDCALLER,             0, 1, 2, 3, 2, 3, 2, 3)
                 .withRaider(SQUALL_GOLEM,           0, 1, 2, 2, 2, 3, 2, 3)
                 .withRaider(REDSTONE_GOLEM,         0, 1, 1, 3, 1, 3, 1, 3)
+                .withRaider(ARMORED_PILLAGER,       0, 1, 3, 2, 3, 3, 2, 2)
+                .withRaider(ARMORED_VINDICATOR,     0, 1, 2, 3, 2, 3, 3, 2)
+                .withRaider(REDSTONE_MONSTROSITY,   0, 0, 0, 0, 1, 0, 0, 1)
+                .withRaider(MOOSH_RED_MONSTROSITY,  0, 0, 0, 0, 0, 1, 0, 1)
+                .withRaider(VINDICATOR_CHEF_DM,     0, 1, 2, 3, 3, 3, 2, 2)
                 .withRaider(BLADE_KNIGHT,           0, 1, 1, 1, 1, 1, 1, 2)
                 .withRaider(BEAST_TAMER,            0, 1, 2, 0, 2, 1, 2, 1)
                 .withRaider(SCAVENGER,              0, 2, 2, 2, 3, 2, 3, 4)
@@ -1917,10 +1780,8 @@ public class RaidEnemyRegistry
                 .withRaider(APOSTLE,                0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(CRONE,                  0, 0, 0, 0, 1, 0, 0, 0)
                 .withRaider(THE_SUMMONER,           0, 2, 2, 1, 2, 3, 1, 2)
-                .withRaider(THE_SUMMONER_BOSS,      0, 0, 0, 1, 1, 1, 0, 2)
                 .withRaider(NECROMANCER_BONES,      0, 1, 2, 2, 1, 2, 1, 2)
                 .withRaider(MODIFIGER,              0, 2, 2, 3, 2, 3, 3, 3)
-                .withRaider(MARKSMAN,               0, 2, 2, 3, 4, 3, 2, 2)
                 .withRaider(MASQUERADER,            0, 1, 0, 0, 3, 0, 0, 0)
                 .withRaider(TENGU,                  0, 2, 3, 4, 2, 2, 3, 2)
                 .withRaider(NINJAR,                 0, 2, 3, 2, 3, 2, 3, 2)
@@ -1948,7 +1809,6 @@ public class RaidEnemyRegistry
                 .withRaider(RED_MONSTROSITY_CSM,    0, 0, 0, 0, 0, 1, 0, 1)
                 .withRaider(MINI_CRUDE_RED_GOLEM,   0, 2, 3, 3, 4, 3, 2, 3)
                 .withRaider(HOUNDMASTER,            0, 2, 3, 2, 2, 1, 2, 2)
-                .withRaider(KARATE,                 0, 3, 4, 4, 3, 4, 4, 4)
                 .withRaider(ILLAGER_BRUTE,          0, 0, 2, 2, 3, 1, 2, 1)
                 .withRaider(SORCERER_ILLAGER,       0, 2, 3, 4, 2, 3, 3, 2)
                 .withRaider(WANDERING_ILLAGER,      0, 1, 2, 1, 2, 3, 1, 4)
@@ -1959,16 +1819,6 @@ public class RaidEnemyRegistry
                 .withRaider(JUGGERNAUT,             0, 1, 2, 2, 3, 2, 1, 1)
                 .withRaider(BLUDGEONER,             0, 1, 1, 2, 2, 2, 2, 1)
                 .withRaider(GRINDICATOR,            0, 0, 0, 1, 0, 1, 0, 1)
-                .withRaider(PATROLOGER,             0, 1, 1, 1, 1, 2, 1, 1)
-                .withRaider(CHEFAGER,               0, 1, 1, 2, 2, 1, 1, 2)
-                .withRaider(GRINDICATOR_FRANCIS,    0, 0, 0, 1, 0, 1, 1, 1)
-                .withRaider(MAGE_FRANCIS,           0, 1, 2, 2, 1, 2, 3, 1)
-                .withRaider(CHEFOLOGER,             0, 0, 1, 1, 2, 2, 0, 1)
-                .withRaider(PYROBANDIT,             0, 1, 0, 1, 1, 2, 1, 0)
-                .withRaider(FIREOLOGER,             0, 1, 2, 2, 2, 3, 1, 1)
-                .withRaider(VRINCITADOR,            0, 0, 1, 2, 1, 1, 1, 1)
-                .withRaider(SANDOLOGER,             0, 1, 2, 1, 2, 2, 1, 2)
-                .withRaider(GRUMMICATOR,            0, 0, 1, 0, 1, 1, 1, 1)
                 .withRaider(VILER_WITCH,            0, 2, 3, 2, 3, 4, 2, 2)
                 .withRaider(PILLAGER_CAR,           0, 1, 2, 2, 1, 2, 2, 1)
                 .withRaider(PILLAGER_SOLDIER,       0, 2, 3, 3, 3, 4, 3, 3)
@@ -1976,7 +1826,6 @@ public class RaidEnemyRegistry
                 .withRaider(ASSAULT_PILLAGER,       0, 3, 4, 3, 3, 3, 4, 4)
                 .withRaider(PILLAGER_PLANE,         0, 1, 2, 3, 3, 4, 2, 2)
                 .withRaider(PILLAGER_CANNON,        0, 1, 2, 2, 2, 3, 2, 2)
-                .withRaider(WANDERING_TRAITOR,      0, 1, 2, 3, 4, 3, 2, 2)
                 .withRaider(DRUSKI,                 0, 2, 4, 5, 3, 3, 3, 3)
                 .withRaider(LACHER,                 0, 1, 3, 3, 2, 2, 3, 3)
                 .withRaider(CRISKO,                 0, 4, 4, 3, 4, 4, 4, 3)
@@ -2078,39 +1927,17 @@ public class RaidEnemyRegistry
                 .withRaider(OCEANOLOGER,            0, 1, 2, 2, 2, 2, 2, 2)
                 .withRaider(CONQUEROR,              0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(TRAVELER,               0, 0, 0, 0, 1, 0, 0, 1)
-                .withRaider(BLOWER,                 0, 1, 2, 1, 1, 2, 1, 1)
-                .withRaider(STABBER,                0, 1, 1, 2, 1, 1, 2, 1)
-                .withRaider(HARVESTER,              0, 1, 1, 1, 2, 1, 1, 2)
                 .withRaider(MECHA_PILLAGER,         0, 0, 0, 0, 1, 0, 1, 1)
                 .withRaider(MECHA_VINDICATOR,       0, 0, 0, 0, 0, 1, 0, 1)
-                .withRaider(CRUSHER_RESILIANCE,     0, 1, 1, 2, 2, 1, 1, 2)
-                .withRaider(CLASHAGER,              0, 1, 2, 1, 1, 2, 1, 1)
-                .withRaider(SHIVERGER,              0, 1, 0, 1, 1, 1, 0, 2)
                 .withRaider(GUARDIAN,               0, 0, 1, 0, 1, 1, 1, 2)
                 .withRaider(ASSAILANT,              0, 1, 1, 1, 2, 1, 2, 1)
                 .withRaider(HARRIER,                0, 1, 2, 2, 1, 1, 2, 1)
-                .withRaider(PREACHER_VINDICATION,   0, 1, 1, 2, 2, 3, 1, 1)
-                .withRaider(BLACKMASTER,            0, 1, 1, 2, 1, 1, 0, 1)
-                .withRaider(PLANNER,                0, 1, 2, 1, 1, 2, 1, 1)
-                .withRaider(VISOLOGER,              0, 1, 1, 1, 2, 1, 1, 1)
-                .withRaider(INTRUDER_VINDICATION,   0, 1, 1, 1, 2, 2, 1, 1)
-                .withRaider(VOLTOLOGER,             0, 1, 1, 2, 1, 1, 0, 1)
-                .withRaider(SMITHER,                0, 1, 2, 1, 1, 1, 1, 1)
-                .withRaider(RAGER,                  0, 1, 1, 1, 2, 3, 2, 3)
-                .withRaider(PATROL_CAPTAIN,         0, 1, 1, 0, 2, 1, 1, 1)
-                .withRaider(RAIDER_RANDOMIZER,      0, 2, 3, 2, 1, 2, 3, 2)
                 .withRaider(VINDICATOR_CHEF,        0, 2, 2, 2, 3, 1, 3, 2)
                 .withRaider(HOSTILE_ROYAL_GUARD,    0, 1, 1, 2, 1, 3, 2, 2)
                 .withRaider(TOWER_WITCH,            0, 1, 2, 1, 2, 1, 1, 2)
                 .withRaider(MUSKET_PILLAGER,        0, 1, 2, 3, 2, 2, 3, 2)
                 .withRaider(ANCIENT_SORCERER,       0, 0, 0, 0, 0, 1, 0, 0)
                 .withRaider(CHRIMSONVEIL,           0, 0, 1, 1, 0, 1, 0, 1)
-                .withRaider(WARLORD,                0, 0, 0, 0, 0, 1, 1, 0)
-                .withRaider(WIZARD,                 0, 0, 0, 0, 1, 0, 0, 0)
-                .withRaider(PILEDRIVER,             0, 0, 0, 1, 0, 1, 0, 1)
-                .withRaider(WARLORD_RAVAGER,        0, 0, 0, 0, 1, 0, 0, 0)
-                .withRaider(DESTRUCTOR,             0, 0, 0, 0, 0, 1, 0, 1)
-                .withRaider(GIANTSAGER,             0, 0, 0, 0, 1, 0, 0, 1)
                 .withRaider(FOLLOWER,               0, 0, 0, 0, 0, 0, 1, 0)
                 .withRaider(PIONEER,                0, 0, 0, 1, 1, 0, 1, 0)
                 .withRaider(SPITTER,                0, 1, 1, 1, 2, 2, 1, 1)
